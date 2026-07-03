@@ -290,94 +290,74 @@ function render() {
 
 function renderMerch() {
   app.innerHTML = `
-    <article class="launch-page">
-      <section class="launch-hero">
-        <div class="launch-hero-media" data-parallax>
-          <img class="hero-bg-slide one" src="${A("hero-tableware-shelf.png")}" alt="Fableroom tableware arranged on a lit kitchen shelf" />
-          <img class="hero-bg-slide two" src="${A("hero-tableware-slide-2.png")}" alt="Fableroom cups and serveware arranged on a dining table" />
-          <div class="launch-product-video" aria-label="Moving product preview">
-            ${heroVideoProducts.map(([image, label], index) => `<img style="--frame:${index}" src="${A(image)}" alt="${label}" />`).join("")}
+    <article class="fr-launch">
+      <section class="fr-hero" aria-labelledby="fr-hero-title">
+        <div class="fr-hero-video" data-parallax aria-hidden="true">
+          <img src="${A("hero-tableware-shelf.png")}" alt="" />
+          <img src="${A("hero-tableware-slide-2.png")}" alt="" />
+          <img src="${A("hero-real-table.png")}" alt="" />
+        </div>
+        <div class="fr-hero-copy">
+          <span>New: Tableware & Kitchen</span>
+          <h1 id="fr-hero-title">A table made for every day, and every guest.</h1>
+          <p>Serveware, cookware and table linen come together in one considered launch for cooking, hosting and setting the room beautifully.</p>
+          <div class="fr-actions">
+            <a href="#/all">Shop the launch</a>
+            <a href="#fr-edit">Explore the edit</a>
           </div>
         </div>
-        <div class="launch-hero-panel">
-          <span>Tableware & Kitchen · New In</span>
-          <h1>Cook. Serve. Set the table.</h1>
-          <p>Discover serveware, cookware and table linen brought together for everyday meals, relaxed hosting and considered homes.</p>
-          <div class="launch-actions">
-            <a class="button" href="#/all">Shop the collection</a>
-            <a class="button secondary" href="#launch-edit">Explore new arrivals</a>
-          </div>
-        </div>
-        <nav class="launch-pill-nav" aria-label="Launch category shortcuts">
-          <a href="#/serveware">Serveware</a>
-          <a href="#/cookware">Cookware</a>
-          <a href="#/table-linen">Table Linen</a>
-          <a href="#/all">View All</a>
-        </nav>
       </section>
 
-      <section class="launch-stat-strip reveal-block" aria-label="Launch facts">
-        ${launchStats.map(([value, label]) => `<div><strong>${value}</strong><span>${label}</span></div>`).join("")}
+      <section class="fr-shop-paths" aria-label="Shop the launch by category">
+        <a href="#/serveware"><img src="${A("cat-dinnerware.jpg")}" alt="" /><span>Serveware</span></a>
+        <a href="#/cookware"><img src="${A("cookware-pan.jpg")}" alt="" /><span>Cookware</span></a>
+        <a href="#/table-linen"><img src="${A("linen-cotto.png")}" alt="" /><span>Table Linen</span></a>
+        <a href="#/all"><img src="${A("dinner_plates.jpg")}" alt="" /><span>View All</span></a>
       </section>
 
-      <section class="launch-editorial reveal-block">
-        <div class="launch-copy-block">
-          <span>The Launch Edit</span>
-          <h2>Everything the table needs, beautifully together.</h2>
-          <p>Start with cookware for the recipe, choose serveware for the occasion and finish with linen that softens the room.</p>
-          <a class="text-link" href="#/all">Shop the full edit</a>
+      <section class="fr-intro reveal-block">
+        <div>
+          <span>Designed To Layer</span>
+          <h2>From stove to table, every piece has a place.</h2>
         </div>
-        <div class="launch-category-grid">
-          ${categoryTiles.map(renderLaunchCategory).join("")}
-        </div>
+        <p>Build a table that feels effortless: cookware for the recipe, plates and bowls for the serve, linen for the final soft layer.</p>
       </section>
 
-      <section class="launch-layers reveal-block" aria-labelledby="launch-layers-title">
-        <div class="launch-section-head">
-          <span>How to Shop the Launch</span>
-          <h2 id="launch-layers-title">Build the table in layers.</h2>
-        </div>
-        <div class="launch-layer-grid">
-          ${launchLayers.map(renderLaunchLayer).join("")}
-        </div>
+      <section class="fr-category-stories reveal-block">
+        ${categoryTiles.map(renderFrCategory).join("")}
       </section>
 
-      <section class="launch-scene reveal-block">
+      <section class="fr-scene reveal-block">
         <figure>
-          <img src="${A("hero-real-table.png")}" alt="A dining table dressed with Fableroom table linen and serveware" />
+          <img src="${A("hero-real-table.png")}" alt="A dressed dining table with Fableroom serveware and linen" />
         </figure>
         <div>
           <span>Featured Setting</span>
-          <h2>Made for meals that linger.</h2>
-          <p>Layer plates, bowls, tea pieces and linen into a setting that feels collected, calm and ready for guests.</p>
-          <div class="launch-proof-list">
-            <span>Ready-to-ship favourites</span>
-            <span>Serveware, cookware and linen in one edit</span>
-            <span>Designed for everyday hosting</span>
-          </div>
+          <h2>Set the mood before the meal is served.</h2>
+          <p>Mix dinner plates, serving bowls, tea pieces and table linen for a home table that feels complete without feeling overdone.</p>
+          <a href="#/serveware">Shop serveware</a>
         </div>
       </section>
 
-      <section class="launch-products reveal-block" id="launch-edit">
-        <div class="launch-section-head split">
-          <div>
-            <span>Launch Edit</span>
-            <h2>New pieces to start with.</h2>
-          </div>
-          <a href="#/all">View all products</a>
+      <section class="fr-edit reveal-block" id="fr-edit">
+        <div class="fr-section-head">
+          <span>Launch Edit</span>
+          <h2>Pieces to begin with.</h2>
+          <a href="#/all">View all</a>
         </div>
-        <div class="launch-product-grid">
-          ${productsByTitle(launchProductTitles).map(renderLaunchProduct).join("")}
+        <div class="fr-product-row">
+          ${productsByTitle(launchProductTitles).slice(0, 8).map(renderFrProduct).join("")}
         </div>
       </section>
 
-      <section class="launch-conversion reveal-block">
+      <section class="fr-final reveal-block">
+        <img src="${A("linen-rivello.png")}" alt="Table linen styled for a Fableroom table" />
         <div>
-          <span>Table Linen</span>
-          <h2>The final layer for a finished table.</h2>
-          <p>Runners, napkins and linen sets now sit alongside the serveware they complete, so every table feels easy to build.</p>
+          <span>Table Linen Joins The Tableware Story</span>
+          <h2>The finishing layer now lives where customers build the table.</h2>
+          <p>Shop runners, napkins and linen sets alongside the serveware they complete.</p>
+          <a href="#/table-linen">Shop table linen</a>
         </div>
-        <a class="button" href="#/table-linen">Shop Table Linen</a>
       </section>
 
       <div class="sticky-shop" aria-label="Mobile shopping actions">
@@ -387,6 +367,31 @@ function renderMerch() {
         <a href="#/all">View all</a>
       </div>
     </article>
+  `;
+}
+
+function renderFrCategory(tile) {
+  return `
+    <a class="fr-category reveal-item" href="#/${tile.id}">
+      <figure><img src="${tile.image}" alt="${tile.title}" loading="lazy" /></figure>
+      <div>
+        <span>${tile.count}</span>
+        <h3>${tile.title}</h3>
+        <p>${tile.copy}</p>
+      </div>
+    </a>
+  `;
+}
+
+function renderFrProduct(product) {
+  const image = showcaseImages[product.sku] ? A(showcaseImages[product.sku]) : product.image;
+  return `
+    <a class="fr-product reveal-item" href="#/${product.category === "table-linen" ? "table-linen" : product.category}">
+      <figure><img src="${image}" alt="${product.title}" loading="lazy" /></figure>
+      <span>${product.type}</span>
+      <strong>${product.title}</strong>
+      <small>£${product.price}</small>
+    </a>
   `;
 }
 
