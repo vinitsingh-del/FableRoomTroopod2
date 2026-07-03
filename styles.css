@@ -4163,22 +4163,22 @@ body,
 
 .launch-hero {
   position: relative;
-  min-height: min(760px, calc(100vh - 80px));
+  min-height: min(760px, calc(100vh - 70px));
   display: grid;
   align-items: end;
   overflow: hidden;
   border-bottom: 1px solid var(--launch-line);
-  background: #fff;
+  background: #101010;
 }
 
 .launch-hero-media {
   position: absolute;
   inset: 0;
   overflow: hidden;
-  background: #fff;
+  background: #101010;
 }
 
-.launch-hero-media img {
+.launch-hero-media > .hero-bg-slide {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -4192,11 +4192,67 @@ body,
   animation-delay: 5s;
 }
 
+.launch-hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+.launch-product-video {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.launch-product-video img {
+  position: absolute;
+  width: clamp(160px, 18vw, 330px);
+  height: clamp(160px, 18vw, 330px);
+  object-fit: contain;
+  opacity: 0;
+  filter: drop-shadow(0 28px 26px rgba(0, 0, 0, 0.24));
+  animation: productVideoFrame 18s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  animation-delay: calc(var(--frame) * 3s);
+}
+
+.launch-product-video img:nth-child(1) {
+  left: 58%;
+  top: 12%;
+}
+
+.launch-product-video img:nth-child(2) {
+  right: 8%;
+  bottom: 20%;
+}
+
+.launch-product-video img:nth-child(3) {
+  left: 46%;
+  bottom: 10%;
+}
+
+.launch-product-video img:nth-child(4) {
+  right: 18%;
+  top: 26%;
+}
+
+.launch-product-video img:nth-child(5) {
+  left: 62%;
+  top: 43%;
+}
+
+.launch-product-video img:nth-child(6) {
+  right: 4%;
+  top: 7%;
+}
+
 .launch-hero-panel {
   position: relative;
   z-index: 2;
-  width: min(560px, calc(100% - 32px));
-  margin: clamp(90px, 12vw, 150px) 0 clamp(96px, 12vw, 132px) clamp(18px, 7vw, 96px);
+  width: min(590px, calc(100% - 32px));
+  margin: clamp(72px, 9vw, 124px) 0 clamp(86px, 10vw, 122px) clamp(18px, 7vw, 96px);
   padding: clamp(22px, 4vw, 42px);
   border: 1px solid rgba(255, 255, 255, 0.32);
   background:
@@ -4237,9 +4293,9 @@ body,
 }
 
 .launch-hero-panel h1 {
-  max-width: 8ch;
-  font-size: clamp(58px, 10vw, 118px);
-  line-height: 0.86;
+  max-width: 9ch;
+  font-size: clamp(54px, 8.8vw, 106px);
+  line-height: 0.9;
 }
 
 .launch-hero-panel p,
@@ -4260,6 +4316,11 @@ body,
   margin-top: 24px;
 }
 
+.launch-actions .button:not(.secondary) {
+  background: var(--launch-ink);
+  color: #fff;
+}
+
 .launch-hero .button.secondary,
 .launch-conversion .button {
   border: 1px solid var(--launch-ink);
@@ -4276,9 +4337,26 @@ body,
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   border: 1px solid rgba(255, 255, 255, 0.5);
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
+}
+
+@keyframes productVideoFrame {
+  0% {
+    opacity: 0;
+    transform: translate3d(22px, 20px, 0) scale(0.86) rotate(-3deg);
+  }
+  6%,
+  22% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  }
+  31%,
+  100% {
+    opacity: 0;
+    transform: translate3d(-20px, -18px, 0) scale(1.08) rotate(2deg);
+  }
 }
 
 .launch-pill-nav a {
@@ -4584,11 +4662,11 @@ body,
 
 @media (max-width: 980px) {
   .launch-hero {
-    min-height: 720px;
+    min-height: 690px;
   }
 
   .launch-hero-panel {
-    margin: 116px 18px 112px;
+    margin: 46px 18px 122px;
     width: auto;
   }
 
@@ -4624,15 +4702,64 @@ body,
 
 @media (max-width: 640px) {
   .launch-hero {
-    min-height: 690px;
+    min-height: 660px;
+    align-items: start;
+  }
+
+  .launch-product-video img {
+    width: clamp(116px, 42vw, 190px);
+    height: clamp(116px, 42vw, 190px);
+  }
+
+  .launch-product-video img:nth-child(1) {
+    left: 58%;
+    top: 9%;
+  }
+
+  .launch-product-video img:nth-child(2) {
+    right: -10%;
+    bottom: 31%;
+  }
+
+  .launch-product-video img:nth-child(3) {
+    left: 43%;
+    bottom: 25%;
+  }
+
+  .launch-product-video img:nth-child(4) {
+    right: 4%;
+    top: 25%;
+  }
+
+  .launch-product-video img:nth-child(5) {
+    left: 62%;
+    top: 43%;
+  }
+
+  .launch-product-video img:nth-child(6) {
+    right: -12%;
+    top: 4%;
+  }
+
+  .launch-hero-panel {
+    margin: 28px 14px 132px;
+    padding: 28px 22px;
   }
 
   .launch-hero-panel h1 {
-    font-size: clamp(50px, 17vw, 76px);
+    max-width: 8ch;
+    font-size: clamp(46px, 13.5vw, 64px);
+    line-height: 0.95;
+  }
+
+  .launch-hero-panel p {
+    font-size: 15px;
+    line-height: 1.45;
   }
 
   .launch-actions {
     display: grid;
+    gap: 10px;
   }
 
   .launch-pill-nav {
