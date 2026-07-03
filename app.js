@@ -222,6 +222,7 @@ function renderMerch() {
           <div class="stage-title">
             <span>Tableware & Kitchen</span>
             <h1>Cook. Serve. Layer.</h1>
+            <p>Serveware, cookware and table linen styled as one complete home table.</p>
             <a class="button" href="#/all">View All</a>
           </div>
           <figure class="stage-product table-showcase designed-table" aria-label="Animated table setting showcase">
