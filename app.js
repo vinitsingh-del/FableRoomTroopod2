@@ -223,10 +223,6 @@ function renderMerch() {
             <p>Serveware, cookware and table linen styled as one complete home table.</p>
             <a class="button" href="#/all">View All</a>
           </div>
-          <figure class="stage-product table-showcase designed-table shelf-showcase" aria-label="Styled tableware shelf showcase">
-            <img class="real-table-base shelf-zoom-image shelf-slide one" src="${A("hero-tableware-shelf.png")}" alt="Fableroom tableware arranged on a kitchen shelf" />
-            <img class="real-table-base shelf-zoom-image shelf-slide two" src="${A("hero-tableware-slide-2.png")}" alt="Fableroom cups and saucers arranged on a kitchen table" />
-          </figure>
         </div>
       </section>
 
