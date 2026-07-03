@@ -221,22 +221,28 @@ function renderMerch() {
           </nav>
           <div class="stage-title">
             <span>Tableware & Kitchen</span>
-            <h1>Cook. Serve. Layer.</h1>
+            <h1 class="hero-sequence" aria-label="Cook. Serve. Layer.">
+              <span style="--word-i:0">Cook.</span>
+              <span style="--word-i:1">Serve.</span>
+              <span style="--word-i:2">Layer.</span>
+            </h1>
             <p>Serveware, cookware and table linen styled as one complete home table.</p>
             <a class="button" href="#/all">View All</a>
           </div>
           <figure class="stage-product table-showcase designed-table" aria-label="Animated table setting showcase">
             <img class="real-table-base" src="${A("hero-real-table.png")}" alt="Real dining table setting for Fableroom products" />
-            ${heroShowcaseImages.map((item, index) => `
-              <span class="table-hotspot ${item.cls}" style="--i:${index}">
-                <img class="table-item ${item.cls}" src="${item.src}" alt="${item.tag}" />
-                <em>${item.tag}</em>
-              </span>
-            `).join("")}
-            <span class="linen-card">
-              <img src="${A("linen-rivello.png")}" alt="Table linen collection" />
-              <em>Table Linen</em>
-            </span>
+            <div class="table-product-tray" aria-label="Products in this setting">
+              ${heroShowcaseImages.map((item, index) => `
+                <article class="table-product-card" style="--i:${index}">
+                  <img src="${item.src}" alt="${item.tag}" />
+                  <span>${item.tag}</span>
+                </article>
+              `).join("")}
+              <article class="table-product-card linen-card" style="--i:${heroShowcaseImages.length}">
+                <img src="${A("linen-rivello.png")}" alt="Table linen collection" />
+                <span>Table Linen</span>
+              </article>
+            </div>
           </figure>
         </div>
       </section>
