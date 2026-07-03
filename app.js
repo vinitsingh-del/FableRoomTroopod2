@@ -208,10 +208,10 @@ function renderMerch() {
             <img class="hero-bg-slide two" src="${A("hero-tableware-slide-2.png")}" alt="Fableroom cups and saucers arranged on a kitchen table" />
           </figure>
           <nav class="palette-nav fx-spotlight">
-            <a href="#/serveware">Serveware</a>
-            <a href="#/cookware">Cookware</a>
-            <a href="#/table-linen">Table Linen</a>
-            <a href="#/all">View All</a>
+            <a href="#/serveware"><span class="nav-thumb"><img src="${A("cat-serveware.jpg")}" alt="" /></span><span class="nav-label">Serveware</span></a>
+            <a href="#/cookware"><span class="nav-thumb"><img src="${A("cookware-pan.jpg")}" alt="" /></span><span class="nav-label">Cookware</span></a>
+            <a href="#/table-linen"><span class="nav-thumb"><img src="${A("linen-cotto.png")}" alt="" /></span><span class="nav-label">Table Linen</span></a>
+            <a href="#/all"><span class="nav-thumb"><img src="${A("dinner_plates.jpg")}" alt="" /></span><span class="nav-label">View All</span></a>
           </nav>
           <div class="stage-title">
             <span>Tableware & Kitchen</span>
