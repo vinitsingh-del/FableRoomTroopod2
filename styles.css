@@ -3455,3 +3455,221 @@ h3 {
     line-height: 1.45;
   }
 }
+
+/* Merch page compact scale: reduce visual weight by roughly 20% */
+.visual-page .palette-stage {
+  grid-template-rows: auto minmax(500px, 1fr);
+  padding: 14px clamp(18px, 3.4vw, 58px) 34px;
+}
+
+.visual-page .palette-nav {
+  min-height: 46px;
+}
+
+.visual-page .palette-nav a {
+  min-height: 46px;
+  font-size: 9px;
+}
+
+.visual-page .stage-main {
+  top: 60px;
+  right: clamp(18px, 3.4vw, 58px);
+  bottom: 34px;
+  left: clamp(18px, 3.4vw, 58px);
+}
+
+.visual-page .palette-hero .stage-title {
+  width: min(416px, 42vw);
+  margin-left: clamp(16px, 3.7vw, 51px);
+  padding: clamp(18px, 2.4vw, 27px);
+}
+
+.visual-page .palette-hero .stage-title > span {
+  font-size: 10px;
+}
+
+.visual-page .palette-hero .stage-title h1 {
+  max-width: 368px;
+  font-size: clamp(46px, 5.45vw, 83px);
+}
+
+.visual-page .palette-hero .stage-title p {
+  max-width: 312px;
+  font-size: 12px;
+}
+
+.visual-page .button {
+  min-height: 42px;
+  padding: 0 20px;
+  font-size: 10px;
+}
+
+.visual-page .stage-title .button {
+  width: fit-content;
+  min-width: 110px;
+}
+
+.visual-page .visual-section {
+  padding-top: 42px;
+  padding-bottom: 42px;
+}
+
+.visual-page .featured-setting {
+  padding-top: clamp(22px, 3.2vw, 43px);
+  padding-bottom: clamp(24px, 3.7vw, 48px);
+}
+
+.visual-page .visual-head {
+  margin-bottom: 18px;
+}
+
+.visual-page .product-rail {
+  gap: 14px;
+}
+
+.visual-page .mini-product {
+  width: min(260px, 72vw);
+  padding: 11px;
+}
+
+.visual-page .mini-product figure {
+  min-height: 170px;
+}
+
+.visual-page .mini-product strong {
+  font-size: 15px;
+}
+
+.visual-page .room-cards {
+  gap: 14px;
+}
+
+.visual-page .room-cards .subcategory-card {
+  min-height: 304px;
+}
+
+.visual-page .room-cards .tile-image {
+  min-height: 176px;
+}
+
+.visual-page .room-cards h3 {
+  font-size: clamp(18px, 4.8vw, 30px);
+}
+
+.visual-page .room-board {
+  gap: 14px;
+  padding: 0 18px 42px;
+}
+
+.visual-page .room-panel.tall {
+  min-height: 576px;
+}
+
+.visual-page .room-panel {
+  min-height: 287px;
+}
+
+.visual-page .room-panel strong {
+  font-size: clamp(27px, 8vw, 62px);
+}
+
+.visual-page .split-visual {
+  gap: 14px;
+  padding: 0 18px 42px;
+}
+
+.visual-page .split-visual figure {
+  min-height: 300px;
+}
+
+.visual-page .sticky-shop a {
+  min-height: 46px;
+  font-size: 10px;
+}
+
+@media (max-width: 980px) {
+  .visual-page .palette-stage {
+    grid-template-rows: auto minmax(528px, 1fr);
+    padding: 12px 12px 24px;
+  }
+
+  .visual-page .stage-main {
+    top: 112px;
+    right: 0;
+    bottom: 24px;
+    left: 0;
+  }
+
+  .visual-page .palette-hero .stage-title {
+    width: min(344px, 82vw);
+    margin-left: 14px;
+    padding: 18px;
+  }
+
+  .visual-page .palette-hero .stage-title h1 {
+    font-size: clamp(40px, 11.2vw, 59px);
+  }
+}
+
+@media (max-width: 640px) {
+  .visual-page .palette-stage {
+    grid-template-rows: auto minmax(500px, 1fr);
+  }
+
+  .visual-page .palette-nav {
+    min-height: 94px;
+    gap: 10px;
+    padding: 6px 10px 10px;
+  }
+
+  .visual-page .palette-nav a {
+    flex-basis: 74px;
+    min-width: 74px;
+    min-height: 86px;
+    grid-template-rows: 58px auto;
+  }
+
+  .visual-page .palette-nav .nav-thumb {
+    width: 58px;
+    height: 58px;
+  }
+
+  .visual-page .palette-nav .nav-label {
+    max-width: 74px;
+    font-size: 9px;
+  }
+
+  .visual-page .stage-main {
+    top: 106px;
+  }
+
+  .visual-page .palette-hero .stage-title {
+    width: min(292px, calc(100vw - 64px));
+    margin-left: 8px;
+    padding: 13px;
+  }
+
+  .visual-page .palette-hero .stage-title > span {
+    font-size: 9px;
+  }
+
+  .visual-page .palette-hero .stage-title h1 {
+    font-size: clamp(34px, 10vw, 46px);
+  }
+
+  .visual-page .palette-hero .stage-title p {
+    max-width: 220px;
+    font-size: 10px;
+  }
+
+  .visual-page .stage-title .button {
+    min-width: 104px;
+    min-height: 38px;
+    padding: 0 16px;
+  }
+
+  .visual-page .visual-section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
