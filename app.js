@@ -99,6 +99,15 @@ const launchProductTitles = [
   "Rivello European Linen Fringe Table Linen Set",
 ];
 
+const heroVideoProducts = [
+  ["p-white-dinner.jpg", "Dinner plates"],
+  ["p-renata-dinner.jpg", "Dinner set"],
+  ["p-rainbow-cup.jpg", "Cup and saucer"],
+  ["p-grey-teapot.jpg", "Tea set"],
+  ["linen-pritha-runner.png", "Table runner"],
+  ["cookware-pan.jpg", "Cookware"],
+];
+
 const showcaseTitles = [
   "White Sparkle Dinner Plates (Set of 6)",
   "Crackled Blue Matt Dinner Plates (Set of 6)",
@@ -286,14 +295,17 @@ function renderMerch() {
         <div class="launch-hero-media" data-parallax>
           <img class="hero-bg-slide one" src="${A("hero-tableware-shelf.png")}" alt="Fableroom tableware arranged on a lit kitchen shelf" />
           <img class="hero-bg-slide two" src="${A("hero-tableware-slide-2.png")}" alt="Fableroom cups and serveware arranged on a dining table" />
+          <div class="launch-product-video" aria-label="Moving product preview">
+            ${heroVideoProducts.map(([image, label], index) => `<img style="--frame:${index}" src="${A(image)}" alt="${label}" />`).join("")}
+          </div>
         </div>
         <div class="launch-hero-panel">
-          <span>New Launch · Tableware & Kitchen</span>
-          <h1>Cook. Serve. Layer.</h1>
-          <p>A launch page for the full home-table ritual: serveware depth, cookware essentials and table linen brought into one editorial buying journey.</p>
+          <span>Tableware & Kitchen · New In</span>
+          <h1>Cook. Serve. Set the table.</h1>
+          <p>Discover serveware, cookware and table linen brought together for everyday meals, relaxed hosting and considered homes.</p>
           <div class="launch-actions">
-            <a class="button" href="#/all">Shop the launch</a>
-            <a class="button secondary" href="#launch-edit">See the edit</a>
+            <a class="button" href="#/all">Shop the collection</a>
+            <a class="button secondary" href="#launch-edit">Explore new arrivals</a>
           </div>
         </div>
         <nav class="launch-pill-nav" aria-label="Launch category shortcuts">
@@ -310,10 +322,10 @@ function renderMerch() {
 
       <section class="launch-editorial reveal-block">
         <div class="launch-copy-block">
-          <span>Landing Page Strategy</span>
-          <h2>One category launch. Three reasons to enter.</h2>
-          <p>This page sells the idea before it sells the SKU: a home table that starts in the kitchen, moves through serveware and lands with linen.</p>
-          <a class="text-link" href="#/all">Browse all Tableware & Kitchen</a>
+          <span>The Launch Edit</span>
+          <h2>Everything the table needs, beautifully together.</h2>
+          <p>Start with cookware for the recipe, choose serveware for the occasion and finish with linen that softens the room.</p>
+          <a class="text-link" href="#/all">Shop the full edit</a>
         </div>
         <div class="launch-category-grid">
           ${categoryTiles.map(renderLaunchCategory).join("")}
@@ -336,12 +348,12 @@ function renderMerch() {
         </figure>
         <div>
           <span>Featured Setting</span>
-          <h2>A complete room, not a product grid.</h2>
-          <p>Use the first scroll to prove the category belongs together. Then move shoppers into Serveware, Cookware, Table Linen or the full launch edit.</p>
+          <h2>Made for meals that linger.</h2>
+          <p>Layer plates, bowls, tea pieces and linen into a setting that feels collected, calm and ready for guests.</p>
           <div class="launch-proof-list">
-            <span>Ready-to-ship visibility</span>
-            <span>Category CTAs above the fold</span>
-            <span>Editorial room cue before products</span>
+            <span>Ready-to-ship favourites</span>
+            <span>Serveware, cookware and linen in one edit</span>
+            <span>Designed for everyday hosting</span>
           </div>
         </div>
       </section>
@@ -350,7 +362,7 @@ function renderMerch() {
         <div class="launch-section-head split">
           <div>
             <span>Launch Edit</span>
-            <h2>Hero products with buying cues.</h2>
+            <h2>New pieces to start with.</h2>
           </div>
           <a href="#/all">View all products</a>
         </div>
@@ -361,9 +373,9 @@ function renderMerch() {
 
       <section class="launch-conversion reveal-block">
         <div>
-          <span>Navigation Migration</span>
-          <h2>Table Linen moves here without changing its URL.</h2>
-          <p>Keep the existing table-linen page live, but make this launch page the merchandising doorway so customers understand the full table story.</p>
+          <span>Table Linen</span>
+          <h2>The final layer for a finished table.</h2>
+          <p>Runners, napkins and linen sets now sit alongside the serveware they complete, so every table feels easy to build.</p>
         </div>
         <a class="button" href="#/table-linen">Shop Table Linen</a>
       </section>
