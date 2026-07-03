@@ -54,6 +54,51 @@ const merchRails = {
   ],
 };
 
+const launchStats = [
+  ["New category", "Tableware & Kitchen"],
+  ["70+ serveware SKUs", "Dinner plates, bowls, cups and tea pieces"],
+  ["6 cookware SKUs", "Tri-ply essentials ready for launch"],
+  ["Table linen moved", "Same URL, stronger navigation context"],
+];
+
+const launchLayers = [
+  {
+    title: "Cook",
+    kicker: "The kitchen layer",
+    image: A("hero-tableware-slide-2.png"),
+    copy: "Tri-ply cookware anchors the prep ritual before the table is dressed.",
+    cta: "Explore cookware",
+    href: "#/cookware",
+  },
+  {
+    title: "Serve",
+    kicker: "The tableware layer",
+    image: A("cat-dinnerware.jpg"),
+    copy: "Dinner plates, bowls and tea pieces give the launch its product depth.",
+    cta: "Explore serveware",
+    href: "#/serveware",
+  },
+  {
+    title: "Layer",
+    kicker: "The linen layer",
+    image: A("linen-rivello.png"),
+    copy: "Runners and napkins finish the room, moving linen into the right buying journey.",
+    cta: "Explore table linen",
+    href: "#/table-linen",
+  },
+];
+
+const launchProductTitles = [
+  "White Sparkle Dinner Plates (Set of 6)",
+  "Renata Dinner Plates (Set of 6)",
+  "Zoraida Serving Bowl (Set of 2)",
+  "Rainbow Gold Cup & Saucer (Set of 2)",
+  "Matt Grey Sky Tea Pot & Creamer",
+  "Auren Tri-Ply Stainless Steel Frying Pan, 24 cm",
+  "Pritha Digital Print Table Runner",
+  "Rivello European Linen Fringe Table Linen Set",
+];
+
 const showcaseTitles = [
   "White Sparkle Dinner Plates (Set of 6)",
   "Crackled Blue Matt Dinner Plates (Set of 6)",
@@ -236,80 +281,143 @@ function render() {
 
 function renderMerch() {
   app.innerHTML = `
-    <article class="visual-page">
-      <section class="palette-hero">
-        <div class="palette-stage">
-          <figure class="stage-main parallax-frame" data-parallax>
-            <img class="hero-bg-slide one" src="${A("hero-tableware-shelf.png")}" alt="Fableroom tableware arranged on a kitchen shelf" />
-            <img class="hero-bg-slide two" src="${A("hero-tableware-slide-2.png")}" alt="Fableroom cups and saucers arranged on a kitchen table" />
-          </figure>
-          <nav class="palette-nav fx-spotlight">
-            <a href="#/serveware"><span class="nav-thumb"><img src="${A("cat-serveware.jpg")}" alt="" /></span><span class="nav-label">Serveware</span></a>
-            <a href="#/cookware"><span class="nav-thumb"><img src="${A("cookware-pan.jpg")}" alt="" /></span><span class="nav-label">Cookware</span></a>
-            <a href="#/table-linen"><span class="nav-thumb"><img src="${A("linen-cotto.png")}" alt="" /></span><span class="nav-label">Table Linen</span></a>
-            <a href="#/all"><span class="nav-thumb"><img src="${A("dinner_plates.jpg")}" alt="" /></span><span class="nav-label">View All</span></a>
-          </nav>
-          <div class="stage-title">
-            <span>Tableware & Kitchen</span>
-            <h1 class="hero-sequence" aria-label="Cook. Serve. Layer.">
-              <span style="--word-i:0">Cook.</span>
-              <span style="--word-i:1">Serve.</span>
-              <span style="--word-i:2">Layer.</span>
-            </h1>
-            <p>Serveware, cookware and table linen styled as one complete home table.</p>
-            <a class="button" href="#/all">View All</a>
+    <article class="launch-page">
+      <section class="launch-hero">
+        <div class="launch-hero-media" data-parallax>
+          <img class="hero-bg-slide one" src="${A("hero-tableware-shelf.png")}" alt="Fableroom tableware arranged on a lit kitchen shelf" />
+          <img class="hero-bg-slide two" src="${A("hero-tableware-slide-2.png")}" alt="Fableroom cups and serveware arranged on a dining table" />
+        </div>
+        <div class="launch-hero-panel">
+          <span>New Launch · Tableware & Kitchen</span>
+          <h1>Cook. Serve. Layer.</h1>
+          <p>A launch page for the full home-table ritual: serveware depth, cookware essentials and table linen brought into one editorial buying journey.</p>
+          <div class="launch-actions">
+            <a class="button" href="#/all">Shop the launch</a>
+            <a class="button secondary" href="#launch-edit">See the edit</a>
+          </div>
+        </div>
+        <nav class="launch-pill-nav" aria-label="Launch category shortcuts">
+          <a href="#/serveware">Serveware</a>
+          <a href="#/cookware">Cookware</a>
+          <a href="#/table-linen">Table Linen</a>
+          <a href="#/all">View All</a>
+        </nav>
+      </section>
+
+      <section class="launch-stat-strip reveal-block" aria-label="Launch facts">
+        ${launchStats.map(([value, label]) => `<div><strong>${value}</strong><span>${label}</span></div>`).join("")}
+      </section>
+
+      <section class="launch-editorial reveal-block">
+        <div class="launch-copy-block">
+          <span>Landing Page Strategy</span>
+          <h2>One category launch. Three reasons to enter.</h2>
+          <p>This page sells the idea before it sells the SKU: a home table that starts in the kitchen, moves through serveware and lands with linen.</p>
+          <a class="text-link" href="#/all">Browse all Tableware & Kitchen</a>
+        </div>
+        <div class="launch-category-grid">
+          ${categoryTiles.map(renderLaunchCategory).join("")}
+        </div>
+      </section>
+
+      <section class="launch-layers reveal-block" aria-labelledby="launch-layers-title">
+        <div class="launch-section-head">
+          <span>How to Shop the Launch</span>
+          <h2 id="launch-layers-title">Build the table in layers.</h2>
+        </div>
+        <div class="launch-layer-grid">
+          ${launchLayers.map(renderLaunchLayer).join("")}
+        </div>
+      </section>
+
+      <section class="launch-scene reveal-block">
+        <figure>
+          <img src="${A("hero-real-table.png")}" alt="A dining table dressed with Fableroom table linen and serveware" />
+        </figure>
+        <div>
+          <span>Featured Setting</span>
+          <h2>A complete room, not a product grid.</h2>
+          <p>Use the first scroll to prove the category belongs together. Then move shoppers into Serveware, Cookware, Table Linen or the full launch edit.</p>
+          <div class="launch-proof-list">
+            <span>Ready-to-ship visibility</span>
+            <span>Category CTAs above the fold</span>
+            <span>Editorial room cue before products</span>
           </div>
         </div>
       </section>
 
-      <section class="visual-section featured-setting reveal-block">
-        <div class="visual-head">
-          <span>Featured Setting</span>
-          <a href="#/serveware">Shop Serveware</a>
+      <section class="launch-products reveal-block" id="launch-edit">
+        <div class="launch-section-head split">
+          <div>
+            <span>Launch Edit</span>
+            <h2>Hero products with buying cues.</h2>
+          </div>
+          <a href="#/all">View all products</a>
         </div>
-        <div class="product-rail">${productsByTitle(merchRails.table).map(renderMiniProduct).join("")}</div>
+        <div class="launch-product-grid">
+          ${productsByTitle(launchProductTitles).map(renderLaunchProduct).join("")}
+        </div>
       </section>
 
-      <section class="visual-section reveal-block">
-        <div class="room-cards">
-          ${categoryTiles.map(renderCategoryTile).join("")}
+      <section class="launch-conversion reveal-block">
+        <div>
+          <span>Navigation Migration</span>
+          <h2>Table Linen moves here without changing its URL.</h2>
+          <p>Keep the existing table-linen page live, but make this launch page the merchandising doorway so customers understand the full table story.</p>
         </div>
-      </section>
-
-      <section class="room-board reveal-block">
-        <a class="room-panel tall fx-card" href="#/serveware">
-          <img src="${A("cat-dinnerware.jpg")}" alt="Dining room table setting" />
-          <span>Dining Room</span>
-          <strong>Serveware</strong>
-        </a>
-        <a class="room-panel fx-card" href="#/cookware">
-          <img src="${A("cookware-dutch.jpg")}" alt="Cookware" />
-          <span>Kitchen</span>
-          <strong>Cookware</strong>
-        </a>
-        <a class="room-panel fx-card" href="#/table-linen">
-          <img src="${A("linen-rivello.png")}" alt="Table linen in a home" />
-          <span>Table</span>
-          <strong>Linen</strong>
-        </a>
-      </section>
-
-      <section class="visual-product-showcase reveal-block">
-        <div class="visual-head">
-          <span>Serveware & Tableware Edit</span>
-          <a href="#/all">View All Products</a>
-        </div>
-        <div class="showcase-grid">
-          ${productsByTitle(showcaseTitles).map(renderShowcaseProduct).join("")}
-        </div>
+        <a class="button" href="#/table-linen">Shop Table Linen</a>
       </section>
 
       <div class="sticky-shop" aria-label="Mobile shopping actions">
-        <a href="#/all">View all</a>
         <a href="#/serveware">Serveware</a>
+        <a href="#/cookware">Cookware</a>
         <a href="#/table-linen">Linen</a>
+        <a href="#/all">View all</a>
       </div>
     </article>
+  `;
+}
+
+function renderLaunchCategory(tile) {
+  return `
+    <a class="launch-category-card reveal-item" href="#/${tile.id}">
+      <img src="${tile.image}" alt="${tile.title}" loading="lazy" />
+      <div>
+        <span>${tile.count}</span>
+        <strong>${tile.title}</strong>
+        <p>${tile.copy}</p>
+      </div>
+    </a>
+  `;
+}
+
+function renderLaunchLayer(layer, index) {
+  return `
+    <a class="launch-layer-card reveal-item" href="${layer.href}">
+      <figure><img src="${layer.image}" alt="${layer.title} layer" loading="lazy" /></figure>
+      <div>
+        <span>0${index + 1} · ${layer.kicker}</span>
+        <strong>${layer.title}</strong>
+        <p>${layer.copy}</p>
+        <em>${layer.cta}</em>
+      </div>
+    </a>
+  `;
+}
+
+function renderLaunchProduct(product) {
+  const image = showcaseImages[product.sku] ? A(showcaseImages[product.sku]) : product.image;
+  return `
+    <a class="launch-product-card reveal-item" href="#/${product.category === "table-linen" ? "table-linen" : product.category}">
+      <figure>
+        <img src="${image}" alt="${product.title}" loading="lazy" />
+      </figure>
+      <div>
+        <span>${product.badge}</span>
+        <strong>${product.title}</strong>
+        <small>${product.type} · £${product.price}</small>
+      </div>
+    </a>
   `;
 }
 
