@@ -10,8 +10,8 @@
   --accent-soft: #eadbcb;
   --sale: #8f3d24;
   --ready: #4f6344;
-  --font-sans: "Manrope", Arial, sans-serif;
-  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "HK Grotesk", Arial, sans-serif;
+  --font-serif: "IvyPresto Display", Georgia, serif;
 }
 
 * {
@@ -1565,8 +1565,8 @@ h3 {
   --accent-soft: #f2e5d5;
   --burgundy: #44181d;
   --camel: #bd8344;
-  --font-sans: "Montserrat", Arial, sans-serif;
-  --font-serif: "Montserrat", Arial, sans-serif;
+  --font-sans: "HK Grotesk", Arial, sans-serif;
+  --font-serif: "IvyPresto Display", Georgia, serif;
 }
 
 body {
@@ -1579,9 +1579,9 @@ h1,
 h2,
 h3,
 .stage-title h1 {
-  font-family: var(--font-sans);
-  font-weight: 500;
-  letter-spacing: 0.02em;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -3672,4 +3672,36 @@ h3 {
     padding-top: 30px;
     padding-bottom: 30px;
   }
+}
+
+/* Brand typography lock */
+:root {
+  --font-sans: "HK Grotesk", Arial, sans-serif;
+  --font-serif: "IvyPresto Display", Georgia, serif;
+}
+
+body,
+button,
+select,
+input,
+textarea,
+.primary-nav,
+.utility-nav,
+.palette-nav,
+.product-card,
+.mini-product,
+.collection-copy,
+.toolbar,
+.site-footer {
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+.stage-title h1,
+.room-panel strong,
+.collection-copy h1 {
+  font-family: var(--font-serif);
+  font-weight: 400;
 }
