@@ -3175,3 +3175,86 @@ h3 {
     display: none;
   }
 }
+
+/* Collection PLP hero redo: top-aligned, balanced across all categories */
+.collection-hero.room-collection {
+  min-height: auto;
+  display: grid;
+  gap: clamp(22px, 4vw, 56px);
+  align-items: start;
+  padding: clamp(30px, 5vw, 72px) clamp(20px, 5vw, 72px);
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+
+.collection-copy {
+  align-content: start;
+  gap: 16px;
+  padding-top: 6px;
+}
+
+.collection-copy h1 {
+  max-width: 100%;
+  font-size: clamp(50px, 6vw, 92px);
+  line-height: 0.9;
+  overflow-wrap: anywhere;
+}
+
+.collection-copy .lede {
+  max-width: 640px;
+  color: var(--muted);
+  font-size: clamp(18px, 1.7vw, 25px);
+  line-height: 1.55;
+}
+
+.collection-copy .meta,
+.collection-copy .eyebrow,
+.breadcrumbs {
+  letter-spacing: 0.16em;
+}
+
+.collection-image {
+  min-height: 0;
+  height: clamp(360px, 54vw, 680px);
+  margin: 0;
+  border: 1px solid rgba(16, 16, 16, 0.08);
+  background: #f7f3ed;
+  box-shadow: 0 28px 70px rgba(68, 24, 29, 0.08);
+}
+
+.collection-image.parallax-frame > img {
+  height: 100%;
+  transform: none;
+  object-fit: cover;
+}
+
+.collection-ctas {
+  margin-top: 10px;
+}
+
+@media (min-width: 820px) {
+  .collection-hero.room-collection {
+    grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1fr);
+  }
+}
+
+@media (max-width: 819px) {
+  .collection-hero.room-collection {
+    grid-template-columns: 1fr;
+    padding: 28px 16px;
+  }
+
+  .collection-copy {
+    order: 1;
+    padding-top: 0;
+  }
+
+  .collection-image {
+    order: 2;
+    height: clamp(280px, 82vw, 420px);
+  }
+
+  .collection-copy h1 {
+    font-size: clamp(44px, 15vw, 72px);
+  }
+}
