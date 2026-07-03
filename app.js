@@ -54,6 +54,42 @@ const merchRails = {
   ],
 };
 
+const showcaseTitles = [
+  "White Sparkle Dinner Plates (Set of 6)",
+  "Crackled Blue Matt Dinner Plates (Set of 6)",
+  "Renata Dinner Plates (Set of 6)",
+  "Zoraida Dinner Plates (Set of 6)",
+  "Rustic Navy Dinner Plates (Set of 6)",
+  "15205 Dinner Plates (Set of 6)",
+  "White Sparkle Side Plates (Set of 6)",
+  "Renata Side Plates (Set of 6)",
+  "Rainbow Gold Cup & Saucer (Set of 2)",
+  "Matt Grey Sky Cup & Saucer (Set of 2)",
+  "Copper Wash Cup & Saucer (Set of 2)",
+  "Rainbow Gold Tea Pot & Creamer",
+  "Matt Grey Sky Tea Pot & Creamer",
+  "Zoraida Serving Bowl (Set of 2)",
+  "Pritha Digital Print Table Runner",
+  "Rivello European Linen Fringe Table Linen Set",
+];
+
+const showcaseImages = {
+  FRHG00001A: "p-white-dinner.jpg",
+  FRHG00004A: "p-crackled-dinner.jpg",
+  FRHG00007A: "p-renata-dinner.jpg",
+  FRHG00010A: "p-zoraida-dinner.jpg",
+  FRHG00013A: "p-rustic-dinner.jpg",
+  FRHG00016A: "p-15205-dinner.jpg",
+  FRHG00002A: "p-white-side.jpg",
+  FRHG00008A: "p-renata-side.jpg",
+  FRHG00019A: "p-rainbow-cup.jpg",
+  FRHG00021A: "p-matt-grey-cup.jpg",
+  FRHG00023A: "p-copper-cup.jpg",
+  FRHG00020A: "p-rainbow-teapot.jpg",
+  FRHG00022A: "p-grey-teapot.jpg",
+  FRHG00012A: "p-zoraida-bowl.jpg",
+};
+
 const servewareProducts = [
   p("FRHG00019A", "Rainbow Gold Cup & Saucer (Set of 2)", "Cup & Saucer", "Porcelain", "Ready to Ship", "cutouts/c-rainbow-cup.png", 68, "serveware"),
   p("FRHG00021A", "Matt Grey Sky Cup & Saucer (Set of 2)", "Cup & Saucer", "Porcelain", "Ready to Ship", "cutouts/c-matt-grey-cup.png", 62, "serveware"),
@@ -258,9 +294,14 @@ function renderMerch() {
         </a>
       </section>
 
-      <section class="split-visual reveal-block">
-        <figure class="parallax-frame" data-parallax><img src="${A("hero-close.jpg")}" alt="Blue and white porcelain on table" /></figure>
-        <figure class="parallax-frame" data-parallax><img src="${A("cat-drinkware.jpg")}" alt="Drinkware styled in home" /></figure>
+      <section class="visual-product-showcase reveal-block">
+        <div class="visual-head">
+          <span>Serveware & Tableware Edit</span>
+          <a href="#/all">View All Products</a>
+        </div>
+        <div class="showcase-grid">
+          ${productsByTitle(showcaseTitles).map(renderShowcaseProduct).join("")}
+        </div>
       </section>
 
       <div class="sticky-shop" aria-label="Mobile shopping actions">
@@ -351,6 +392,19 @@ function renderMiniProduct(product) {
       <span>${product.type}</span>
       <strong>${product.title}</strong>
       <small>£${product.price}</small>
+    </a>
+  `;
+}
+
+function renderShowcaseProduct(product) {
+  const image = showcaseImages[product.sku] ? A(showcaseImages[product.sku]) : product.image;
+  return `
+    <a class="showcase-card reveal-item" href="#/${product.category === "table-linen" ? "table-linen" : product.category}">
+      <figure><img src="${image}" alt="${product.title}" loading="lazy" /></figure>
+      <div>
+        <span>${product.type}</span>
+        <strong>${product.title}</strong>
+      </div>
     </a>
   `;
 }
