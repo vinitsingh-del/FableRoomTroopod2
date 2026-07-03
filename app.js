@@ -104,13 +104,6 @@ const linenProducts = [
 
 const allMerchProducts = [...servewareProducts, ...cookwareProducts, ...linenProducts];
 
-const heroShowcaseImages = [
-  { src: A("cutouts/c-renata-dinner.png"), cls: "plate-main", tag: "Dinner plates" },
-  { src: A("cutouts/c-zoraida-bowl.png"), cls: "bowl-center", tag: "Serving bowl" },
-  { src: A("cutouts/c-rainbow-cup.png"), cls: "cup-left", tag: "Cup & saucer" },
-  { src: A("cutouts/c-grey-teapot.png"), cls: "teapot-back", tag: "Tea set" },
-];
-
 const guideGroups = [
   {
     title: "Serveware",
@@ -229,24 +222,8 @@ function renderMerch() {
             <p>Serveware, cookware and table linen styled as one complete home table.</p>
             <a class="button" href="#/all">View All</a>
           </div>
-          <figure class="stage-product table-showcase designed-table" aria-label="Animated table setting showcase">
-            <img class="real-table-base" src="${A("hero-real-table.png")}" alt="Real dining table setting for Fableroom products" />
-            <div class="selected-table-product" aria-live="polite">
-              <img src="${heroShowcaseImages[0].src}" alt="${heroShowcaseImages[0].tag}" />
-              <span>${heroShowcaseImages[0].tag}</span>
-            </div>
-            <div class="table-product-tray" aria-label="Products in this setting">
-              ${heroShowcaseImages.map((item, index) => `
-                <button class="table-product-card ${index === 0 ? "is-active" : ""}" type="button" style="--i:${index}" data-hero-product="${index}">
-                  <img src="${item.src}" alt="${item.tag}" />
-                  <span>${item.tag}</span>
-                </button>
-              `).join("")}
-              <button class="table-product-card linen-card" type="button" style="--i:${heroShowcaseImages.length}" data-hero-product="${heroShowcaseImages.length}">
-                <img src="${A("linen-rivello.png")}" alt="Table linen collection" />
-                <span>Table Linen</span>
-              </button>
-            </div>
+          <figure class="stage-product table-showcase designed-table shelf-showcase" aria-label="Styled tableware shelf showcase">
+            <img class="real-table-base shelf-zoom-image" src="${A("hero-tableware-shelf.png")}" alt="Fableroom tableware arranged on a kitchen shelf" />
           </figure>
         </div>
       </section>
@@ -458,7 +435,6 @@ function initParallax() {
 function initVengeanceEffects() {
   initSpotlight();
   initReveal();
-  initHeroProductPicker();
 }
 
 function initSpotlight() {
@@ -492,32 +468,6 @@ function initReveal() {
   items.forEach((item, index) => {
     item.style.setProperty("--reveal-delay", `${Math.min(index % 8, 6) * 45}ms`);
     observer.observe(item);
-  });
-}
-
-function initHeroProductPicker() {
-  const display = document.querySelector(".selected-table-product");
-  const cards = [...document.querySelectorAll("[data-hero-product]")];
-  if (!display || !cards.length) return;
-  const displayImage = display.querySelector("img");
-  const displayLabel = display.querySelector("span");
-  const products = [
-    ...heroShowcaseImages,
-    { src: A("linen-rivello.png"), tag: "Table Linen" },
-  ];
-
-  cards.forEach((card) => {
-    card.addEventListener("click", () => {
-      const product = products[Number(card.dataset.heroProduct)];
-      if (!product) return;
-      cards.forEach((item) => item.classList.toggle("is-active", item === card));
-      display.classList.remove("is-changing");
-      void display.offsetWidth;
-      displayImage.src = product.src;
-      displayImage.alt = product.tag;
-      displayLabel.textContent = product.tag;
-      display.classList.add("is-changing");
-    });
   });
 }
 
