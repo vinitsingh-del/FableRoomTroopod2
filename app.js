@@ -204,7 +204,8 @@ function renderMerch() {
       <section class="palette-hero">
         <div class="palette-stage">
           <figure class="stage-main parallax-frame" data-parallax>
-            <img src="${A("hero-dining.jpg")}" alt="Fableroom tableware styled in a home." />
+            <img class="hero-bg-slide one" src="${A("hero-tableware-shelf.png")}" alt="Fableroom tableware arranged on a kitchen shelf" />
+            <img class="hero-bg-slide two" src="${A("hero-tableware-slide-2.png")}" alt="Fableroom cups and saucers arranged on a kitchen table" />
           </figure>
           <nav class="palette-nav fx-spotlight">
             <a href="#/serveware">Serveware</a>
