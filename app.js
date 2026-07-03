@@ -400,10 +400,18 @@ function renderShowcaseProduct(product) {
   const image = showcaseImages[product.sku] ? A(showcaseImages[product.sku]) : product.image;
   return `
     <a class="showcase-card reveal-item" href="#/${product.category === "table-linen" ? "table-linen" : product.category}">
-      <figure><img src="${image}" alt="${product.title}" loading="lazy" /></figure>
-      <div>
+      <figure>
+        <span class="showcase-badge">${product.badge}</span>
+        <img src="${image}" alt="${product.title}" loading="lazy" />
+      </figure>
+      <div class="showcase-copy">
         <span>${product.type}</span>
         <strong>${product.title}</strong>
+        <small>${product.material} · ${product.sku}</small>
+        <div class="showcase-buy">
+          <b>£${product.price}</b>
+          <em>View product</em>
+        </div>
       </div>
     </a>
   `;
