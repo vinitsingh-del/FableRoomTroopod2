@@ -226,6 +226,14 @@ function renderMerch() {
         </div>
       </section>
 
+      <section class="visual-section featured-setting reveal-block">
+        <div class="visual-head">
+          <span>Featured Setting</span>
+          <a href="#/serveware">Shop Serveware</a>
+        </div>
+        <div class="product-rail">${productsByTitle(merchRails.table).map(renderMiniProduct).join("")}</div>
+      </section>
+
       <section class="visual-section reveal-block">
         <div class="room-cards">
           ${categoryTiles.map(renderCategoryTile).join("")}
@@ -248,14 +256,6 @@ function renderMerch() {
           <span>Table</span>
           <strong>Linen</strong>
         </a>
-      </section>
-
-      <section class="visual-section reveal-block">
-        <div class="visual-head">
-          <span>Featured Setting</span>
-          <a href="#/serveware">Shop Serveware</a>
-        </div>
-        <div class="product-rail">${productsByTitle(merchRails.table).map(renderMiniProduct).join("")}</div>
       </section>
 
       <section class="split-visual reveal-block">
