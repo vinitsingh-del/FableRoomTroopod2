@@ -2450,39 +2450,6 @@ h3 {
   filter: blur(0);
 }
 
-.fx-trail-zone {
-  cursor: crosshair;
-}
-
-.trail-pop {
-  position: absolute;
-  z-index: 6;
-  width: 104px;
-  aspect-ratio: 1;
-  object-fit: contain;
-  padding: 10px;
-  border: 1px solid rgba(68, 24, 29, 0.14);
-  background: rgba(255, 255, 255, 0.88);
-  box-shadow: 0 22px 42px rgba(68, 24, 29, 0.16);
-  pointer-events: none;
-  transform: translate(-50%, -50%) rotate(var(--trail-rotate)) scale(0.82);
-  animation: trailFloat 920ms ease forwards;
-}
-
-@keyframes trailFloat {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -50%) rotate(var(--trail-rotate)) scale(0.72);
-  }
-  18% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, calc(-50% - 26px)) rotate(var(--trail-rotate)) scale(1);
-  }
-}
-
 .table-hotspot img {
   filter: drop-shadow(0 16px 15px rgba(0,0,0,0.22));
 }
@@ -2556,10 +2523,6 @@ h3 {
     display: none;
   }
 
-  .fx-trail-zone {
-    cursor: default;
-  }
-
   .reveal-block,
   .reveal-item,
   .product-card,
@@ -2597,9 +2560,6 @@ h3 {
     filter: none !important;
   }
 
-  .trail-pop {
-    display: none;
-  }
 }
 
 /* Complete hero redo: editorial merch page, desktop and mobile */
@@ -2966,6 +2926,56 @@ h3 {
   pointer-events: none;
 }
 
+.selected-table-product {
+  position: absolute;
+  left: 50%;
+  bottom: 178px;
+  z-index: 3;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  width: min(34%, 190px);
+  min-width: 138px;
+  padding: 12px 12px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 18px 42px rgba(35, 22, 15, 0.18);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.selected-table-product img {
+  width: 100%;
+  height: 118px;
+  object-fit: contain;
+  padding: 0;
+  filter: drop-shadow(0 12px 14px rgba(0, 0, 0, 0.18));
+}
+
+.selected-table-product span {
+  color: var(--burgundy);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.selected-table-product.is-changing {
+  animation: selectedProductIn 440ms ease both;
+}
+
+@keyframes selectedProductIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
 .table-hotspot,
 .table-hotspot img,
 .table-hotspot em {
@@ -2985,6 +2995,7 @@ h3 {
 }
 
 .table-product-card {
+  appearance: none;
   min-width: 0;
   display: grid;
   gap: 7px;
@@ -2994,11 +3005,24 @@ h3 {
   padding: 10px 8px 9px;
   border: 1px solid rgba(255, 255, 255, 0.74);
   background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
   box-shadow: 0 14px 34px rgba(35, 22, 15, 0.2);
   opacity: 0;
   transform: translateY(18px) scale(0.96);
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
   animation: productCardIn 820ms cubic-bezier(.2, .72, .2, 1) forwards;
   animation-delay: calc(620ms + var(--i) * 260ms);
+}
+
+.table-product-card:hover,
+.table-product-card:focus-visible,
+.table-product-card.is-active {
+  border-color: rgba(68, 24, 29, 0.64);
+  box-shadow: 0 18px 38px rgba(35, 22, 15, 0.24);
+}
+
+.table-product-card.is-active {
+  background: rgba(255, 250, 244, 0.98);
 }
 
 .table-product-card img {
@@ -3051,6 +3075,16 @@ h3 {
     gap: 12px;
   }
 
+  .selected-table-product {
+    bottom: 154px;
+    width: min(38%, 168px);
+    min-width: 124px;
+  }
+
+  .selected-table-product img {
+    height: 94px;
+  }
+
   .table-product-card {
     min-height: 136px;
   }
@@ -3068,6 +3102,16 @@ h3 {
     left: 12px;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 7px;
+  }
+
+  .selected-table-product {
+    bottom: 204px;
+    width: 42%;
+    min-width: 132px;
+  }
+
+  .selected-table-product img {
+    height: 88px;
   }
 
   .table-product-card {
@@ -3111,6 +3155,10 @@ h3 {
   .table-product-card {
     opacity: 1 !important;
     transform: none !important;
+    animation: none !important;
+  }
+
+  .selected-table-product.is-changing {
     animation: none !important;
   }
 }

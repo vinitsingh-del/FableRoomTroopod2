@@ -209,7 +209,7 @@ function renderMerch() {
   app.innerHTML = `
     <article class="visual-page">
       <section class="palette-hero">
-        <div class="palette-stage fx-trail-zone">
+        <div class="palette-stage">
           <figure class="stage-main parallax-frame" data-parallax>
             <img src="${A("hero-dining.jpg")}" alt="Fableroom tableware styled in a home." />
           </figure>
@@ -231,17 +231,21 @@ function renderMerch() {
           </div>
           <figure class="stage-product table-showcase designed-table" aria-label="Animated table setting showcase">
             <img class="real-table-base" src="${A("hero-real-table.png")}" alt="Real dining table setting for Fableroom products" />
+            <div class="selected-table-product" aria-live="polite">
+              <img src="${heroShowcaseImages[0].src}" alt="${heroShowcaseImages[0].tag}" />
+              <span>${heroShowcaseImages[0].tag}</span>
+            </div>
             <div class="table-product-tray" aria-label="Products in this setting">
               ${heroShowcaseImages.map((item, index) => `
-                <article class="table-product-card" style="--i:${index}">
+                <button class="table-product-card ${index === 0 ? "is-active" : ""}" type="button" style="--i:${index}" data-hero-product="${index}">
                   <img src="${item.src}" alt="${item.tag}" />
                   <span>${item.tag}</span>
-                </article>
+                </button>
               `).join("")}
-              <article class="table-product-card linen-card" style="--i:${heroShowcaseImages.length}">
+              <button class="table-product-card linen-card" type="button" style="--i:${heroShowcaseImages.length}" data-hero-product="${heroShowcaseImages.length}">
                 <img src="${A("linen-rivello.png")}" alt="Table linen collection" />
                 <span>Table Linen</span>
-              </article>
+              </button>
             </div>
           </figure>
         </div>
@@ -454,7 +458,7 @@ function initParallax() {
 function initVengeanceEffects() {
   initSpotlight();
   initReveal();
-  initImageTrail();
+  initHeroProductPicker();
 }
 
 function initSpotlight() {
@@ -491,38 +495,29 @@ function initReveal() {
   });
 }
 
-function initImageTrail() {
-  const zone = document.querySelector(".fx-trail-zone");
-  if (!zone || zone.dataset.trailReady || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  zone.dataset.trailReady = "true";
-  const images = heroShowcaseImages.map((item) => item.src);
-  let imageIndex = 0;
-  let lastX = 0;
-  let lastY = 0;
-  let lastAt = 0;
+function initHeroProductPicker() {
+  const display = document.querySelector(".selected-table-product");
+  const cards = [...document.querySelectorAll("[data-hero-product]")];
+  if (!display || !cards.length) return;
+  const displayImage = display.querySelector("img");
+  const displayLabel = display.querySelector("span");
+  const products = [
+    ...heroShowcaseImages,
+    { src: A("linen-rivello.png"), tag: "Table Linen" },
+  ];
 
-  zone.addEventListener("pointermove", (event) => {
-    if (window.innerWidth < 760) return;
-    const rect = zone.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-    const now = performance.now();
-    if (Math.hypot(x - lastX, y - lastY) < 96 || now - lastAt < 90) return;
-
-    lastX = x;
-    lastY = y;
-    lastAt = now;
-    const node = document.createElement("img");
-    node.className = "trail-pop";
-    node.src = images[imageIndex % images.length];
-    node.alt = "";
-    node.setAttribute("aria-hidden", "true");
-    node.style.left = `${x}px`;
-    node.style.top = `${y}px`;
-    node.style.setProperty("--trail-rotate", `${(imageIndex % 2 ? 1 : -1) * (8 + imageIndex * 3)}deg`);
-    imageIndex += 1;
-    zone.appendChild(node);
-    window.setTimeout(() => node.remove(), 920);
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const product = products[Number(card.dataset.heroProduct)];
+      if (!product) return;
+      cards.forEach((item) => item.classList.toggle("is-active", item === card));
+      display.classList.remove("is-changing");
+      void display.offsetWidth;
+      displayImage.src = product.src;
+      displayImage.alt = product.tag;
+      displayLabel.textContent = product.tag;
+      display.classList.add("is-changing");
+    });
   });
 }
 
