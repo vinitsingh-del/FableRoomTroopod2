@@ -3808,3 +3808,36 @@ h3,
     width: 120px;
   }
 }
+
+/* Mobile category rail compact pass: reduce icon section by 20% */
+@media (max-width: 640px) {
+  .visual-page .palette-nav {
+    min-height: 75px;
+    gap: 8px;
+    padding: 5px 8px 8px;
+  }
+
+  .visual-page .palette-nav a {
+    flex-basis: 59px;
+    min-width: 59px;
+    min-height: 69px;
+    grid-template-rows: 46px auto;
+    gap: 5px;
+  }
+
+  .visual-page .palette-nav .nav-thumb {
+    width: 46px;
+    height: 46px;
+    box-shadow: 0 5px 14px rgba(68, 24, 29, 0.06);
+  }
+
+  .visual-page .palette-nav .nav-label {
+    max-width: 62px;
+    font-size: 8px;
+    line-height: 1.08;
+  }
+
+  .visual-page .stage-main {
+    top: 88px;
+  }
+}
