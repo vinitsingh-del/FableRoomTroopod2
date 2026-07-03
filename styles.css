@@ -2938,22 +2938,45 @@ h3 {
     radial-gradient(circle at 50% 50%, transparent 54%, rgba(68, 24, 29, 0.12));
 }
 
-.shelf-zoom-image {
+.shelf-slide {
+  opacity: 0;
   transform: scale(1.015);
   transform-origin: 50% 48%;
-  animation: shelfZoom 9s ease-in-out infinite alternate;
+  animation: shelfSlideZoom 10s ease-in-out infinite;
+  will-change: opacity, transform;
+}
+
+.shelf-slide.one {
+  animation-delay: 0s;
+}
+
+.shelf-slide.two {
+  animation-delay: 5s;
 }
 
 .shelf-showcase:hover .shelf-zoom-image {
   transform: scale(1.075);
 }
 
-@keyframes shelfZoom {
-  from {
+@keyframes shelfSlideZoom {
+  0% {
+    opacity: 0;
     transform: scale(1.015);
   }
-  to {
-    transform: scale(1.065);
+  8%,
+  46% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+    transform: scale(1.075);
+  }
+}
+
+@media (hover: hover) {
+  .shelf-showcase:hover .shelf-slide {
+    animation-play-state: paused;
   }
 }
 
@@ -2976,8 +2999,16 @@ h3 {
     animation: none !important;
   }
 
-  .shelf-zoom-image {
+  .shelf-slide {
     animation: none !important;
     transform: scale(1.03) !important;
+  }
+
+  .shelf-slide.one {
+    opacity: 1 !important;
+  }
+
+  .shelf-slide.two {
+    opacity: 0 !important;
   }
 }
