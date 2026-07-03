@@ -4162,6 +4162,10 @@ body,
   text-decoration: none;
 }
 
+.fr-launch .sticky-shop {
+  display: none;
+}
+
 .fr-hero {
   position: relative;
   min-height: min(760px, calc(100vh - 74px));

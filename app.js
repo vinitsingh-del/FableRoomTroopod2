@@ -303,7 +303,7 @@ function renderMerch() {
           <p>Serveware, cookware and table linen come together in one considered launch for cooking, hosting and setting the room beautifully.</p>
           <div class="fr-actions">
             <a href="#/all">Shop the launch</a>
-            <a href="#fr-edit">Explore the edit</a>
+            <a href="#/merch" data-scroll-target="fr-edit">Explore the edit</a>
           </div>
         </div>
       </section>
@@ -359,15 +359,12 @@ function renderMerch() {
           <a href="#/table-linen">Shop table linen</a>
         </div>
       </section>
-
-      <div class="sticky-shop" aria-label="Mobile shopping actions">
-        <a href="#/serveware">Serveware</a>
-        <a href="#/cookware">Cookware</a>
-        <a href="#/table-linen">Linen</a>
-        <a href="#/all">View all</a>
-      </div>
     </article>
   `;
+  document.querySelector('[data-scroll-target="fr-edit"]')?.addEventListener("click", (event) => {
+    event.preventDefault();
+    document.querySelector("#fr-edit")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 }
 
 function renderFrCategory(tile) {
