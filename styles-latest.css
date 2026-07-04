@@ -4777,35 +4777,45 @@ body,
 .launch-assurance-bar {
   max-width: 1180px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: center;
-  gap: 10px;
-  margin: 0 auto;
-  padding: 12px;
-  border-right: 1px solid var(--concept-line);
-  border-bottom: 1px solid var(--concept-line);
-  border-left: 1px solid var(--concept-line);
-  background: #fff;
-}
-
-.launch-assurance-bar div,
-.launch-assurance-bar a {
-  min-height: 86px;
-  display: grid;
-  align-content: center;
-  justify-items: center;
-  text-align: center;
-  border: 1px solid rgba(16, 16, 16, 0.08);
+  gap: 0;
+  margin: clamp(18px, 3vw, 30px) auto 0;
+  padding: 0;
+  border: 1px solid var(--concept-line);
   background: #fff;
 }
 
 .launch-assurance-bar div {
+  min-height: 96px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
   gap: 6px;
-  padding: 14px clamp(12px, 2vw, 24px);
+  padding: 18px clamp(12px, 2.2vw, 28px);
+  text-align: center;
+  border-right: 1px solid var(--concept-line);
+  background: #fff;
 }
 
-.launch-assurance-bar .icon-mark {
+.launch-assurance-bar div:last-child {
+  border-right: 0;
+}
+
+.launch-assurance-bar .assurance-tag {
+  min-width: 58px;
+  min-height: 26px;
+  display: inline-grid;
+  place-items: center;
+  padding: 0 10px;
+  border: 1px solid var(--concept-burgundy);
+  border-radius: 999px;
   color: var(--concept-burgundy);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 .launch-assurance-bar strong {
@@ -4814,27 +4824,10 @@ body,
   font-weight: 700;
 }
 
-.launch-assurance-bar span {
+.launch-assurance-bar div > span:not(.assurance-tag) {
   color: var(--concept-muted);
   font-size: 11px;
   line-height: 1.35;
-}
-
-.launch-assurance-bar a {
-  min-width: 150px;
-  gap: 7px;
-  padding: 0 20px;
-  background: var(--concept-burgundy);
-  color: #fff;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.launch-assurance-bar a span {
-  color: #fff;
-  letter-spacing: inherit;
 }
 
 .concept-hero {
@@ -6358,12 +6351,7 @@ body,
   .launch-assurance-bar {
     max-width: none;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    margin: 0 18px;
-  }
-
-  .launch-assurance-bar a {
-    grid-column: 1 / -1;
-    min-height: 48px;
+    margin: 18px 18px 0;
   }
 
   .launch-hero {
@@ -6436,37 +6424,36 @@ body,
 
   .launch-assurance-bar {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 6px;
-    padding: 8px;
-    margin: 0;
+    gap: 0;
+    padding: 0;
+    margin: 12px 0 0;
     border-right: 0;
     border-left: 0;
   }
 
   .launch-assurance-bar div {
-    min-height: 82px;
-    gap: 3px;
-    padding: 9px 6px;
+    min-height: 76px;
+    gap: 4px;
+    padding: 10px 6px;
     text-align: center;
   }
 
-  .launch-assurance-bar .icon-mark {
-    width: 18px;
-    height: 18px;
+  .launch-assurance-bar .assurance-tag {
+    min-width: 42px;
+    min-height: 22px;
+    padding: 0 7px;
+    font-size: 7px;
+    letter-spacing: 0.08em;
   }
 
   .launch-assurance-bar strong {
-    font-size: 10px;
+    font-size: 9px;
     line-height: 1.15;
   }
 
-  .launch-assurance-bar span {
-    font-size: 9px;
+  .launch-assurance-bar div > span:not(.assurance-tag) {
+    font-size: 8px;
     line-height: 1.25;
-  }
-
-  .launch-assurance-bar a {
-    display: none;
   }
 
   .hero-cta-group {

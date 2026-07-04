@@ -27,9 +27,9 @@ const categoryNavItems = [
 ];
 
 const assuranceItems = [
-  ["direct", "Direct pricing", "Fewer markups"],
-  ["homes", "12,000+ homes", "Loved daily"],
-  ["complete", "Complete edit", "Cook, serve, layer"],
+  ["DIRECT", "Straight from the makers", "Premium pieces, fewer markups"],
+  ["12K+", "Loved by 12,000+ homes", "Daily dining and hosting"],
+  ["COMPLETE", "Cook, serve, layer", "Everything for the table in one edit"],
 ];
 
 const categoryTiles = [
@@ -423,22 +423,12 @@ function renderMerch() {
           <span>New in Tableware & Kitchen</span>
           <h2 class="motion-text">One table, beautifully layered.</h2>
           <p>Serveware, cookware and linen styled for every meal, every host and every room.</p>
-          <div class="launch-highlight-cues" aria-label="Shop categories">
-            <a href="#/serveware">Serveware</a>
-            <a href="#/cookware">Cookware</a>
-            <a href="#/table-linen">Table Linen</a>
-          </div>
         </div>
       </section>
 
       <nav class="landing-pill-nav reveal-block" aria-label="Shop Tableware and Kitchen">
         ${categoryNavItems.map(renderLandingNavItem).join("")}
       </nav>
-
-      <section class="launch-assurance-bar reveal-block" aria-label="Why shop Fableroom Tableware and Kitchen">
-        ${assuranceItems.map(renderAssuranceItem).join("")}
-        <a class="assurance-shop-card" href="#/all">${iconSvg("all")}<span>Shop now</span></a>
-      </section>
 
       <section class="concept-products reveal-block" aria-labelledby="concept-products-title">
         <div class="concept-head reveal-block">
@@ -450,8 +440,8 @@ function renderMerch() {
         </div>
       </section>
 
-      <section class="concept-benefits reveal-block" aria-label="Fableroom benefits">
-        ${brandBenefits.map(([code, title, copy]) => renderConceptBenefit(code, title, copy)).join("")}
+      <section class="launch-assurance-bar reveal-block" aria-label="Why shop Fableroom Tableware and Kitchen">
+        ${assuranceItems.map(renderAssuranceItem).join("")}
       </section>
 
       <section class="launch-scene reveal-block">
@@ -554,10 +544,10 @@ function renderLandingNavItem([icon, title, href]) {
   `;
 }
 
-function renderAssuranceItem([icon, title, copy]) {
+function renderAssuranceItem([tag, title, copy]) {
   return `
     <div>
-      ${iconSvg(icon)}
+      <span class="assurance-tag">${tag}</span>
       <strong>${title}</strong>
       <span>${copy}</span>
     </div>
