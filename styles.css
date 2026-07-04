@@ -6821,6 +6821,110 @@ body,
   }
 }
 
+/* Launch page typography scale: titles and subtitles reduced by ~20%. */
+.concept-page.launch-page .concept-hero-copy > span,
+.concept-page.launch-page .launch-highlight-copy > span,
+.concept-page.launch-page .launch-review-head span,
+.concept-page.launch-page .concept-head a,
+.concept-page.launch-page .concept-head span,
+.concept-page.launch-page .launch-category-card span,
+.concept-page.launch-page .launch-layer-card span,
+.concept-page.launch-page .launch-product-card span,
+.concept-page.launch-page .concept-about-copy > span,
+.concept-page.launch-page .concept-category-strip span {
+  font-size: 9px;
+}
+
+.concept-page.launch-page .concept-hero-copy h1 {
+  font-size: clamp(30px, 3.48vw, 51px);
+}
+
+.concept-page.launch-page .concept-hero-copy p {
+  font-size: clamp(13px, 1.12vw, 15px);
+}
+
+.concept-page.launch-page .concept-head h2,
+.concept-page.launch-page .concept-about-copy h2 {
+  font-size: clamp(22px, 2.8vw, 35px);
+}
+
+.concept-page.launch-page .concept-circle-card strong {
+  font-size: 14px;
+}
+
+.concept-page.launch-page .concept-circle-card small {
+  font-size: 11px;
+}
+
+.concept-page.launch-page .launch-review-head h2 {
+  font-size: clamp(27px, 3.28vw, 46px);
+}
+
+.concept-page.launch-page .launch-review-head p {
+  font-size: 11px;
+}
+
+.concept-page.launch-page .review-card strong {
+  font-size: 12px;
+}
+
+.concept-page.launch-page .review-card p {
+  font-size: 10px;
+}
+
+.concept-page.launch-page .launch-highlight figcaption strong {
+  font-size: clamp(13px, 1.2vw, 18px);
+}
+
+.concept-page.launch-page .launch-highlight figcaption span {
+  font-size: 10px;
+}
+
+.concept-page.launch-page .launch-highlight-copy h2 {
+  font-size: clamp(27px, 3.52vw, 50px);
+}
+
+.concept-page.launch-page .launch-highlight-copy p,
+.concept-page.launch-page .launch-section-head p,
+.concept-page.launch-page .concept-about-copy p {
+  font-size: clamp(12px, 1.08vw, 14px);
+}
+
+.concept-page.launch-page .launch-copy-block h2,
+.concept-page.launch-page .launch-section-head h2,
+.concept-page.launch-page .launch-scene h2,
+.concept-page.launch-page .launch-conversion h2 {
+  font-size: clamp(24px, 3.36vw, 46px);
+}
+
+.concept-page.launch-page .launch-category-card strong {
+  font-size: clamp(24px, 2.72vw, 38px);
+}
+
+.concept-page.launch-page .launch-layer-card strong {
+  font-size: clamp(26px, 3.2vw, 45px);
+}
+
+.concept-page.launch-page .launch-layer-card p {
+  font-size: clamp(10px, 0.96vw, 12px);
+}
+
+.concept-page.launch-page .launch-proof-list span,
+.concept-page.launch-page .concept-campaign-strip,
+.concept-page.launch-page .launch-assurance-bar strong {
+  font-size: 9px;
+}
+
+.concept-page.launch-page .launch-assurance-bar div > span:not(.assurance-tag),
+.concept-page.launch-page .concept-benefit small {
+  font-size: 9px;
+}
+
+.concept-page.launch-page .concept-benefit strong,
+.concept-page.launch-page .launch-product-card strong {
+  font-size: 10px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .concept-hero-media img,
   .preloader-line::after,
