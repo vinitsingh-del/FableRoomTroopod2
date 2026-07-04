@@ -54,13 +54,6 @@ const merchRails = {
   ],
 };
 
-const launchStats = [
-  ["New in", "Tableware & Kitchen"],
-  ["70+ serveware pieces", "Plates, bowls, cups and tea sets for hosting"],
-  ["Cookware essentials", "Stainless steel pieces for everyday meals"],
-  ["Linen layers", "Runners, napkins and coasters for a finished table"],
-];
-
 const launchLayers = [
   {
     title: "Cook",
@@ -324,13 +317,20 @@ function renderMerch() {
         <a href="#/all">View All</a>
       </nav>
 
-      <section class="launch-stat-strip reveal-block" aria-label="Launch highlights">
-        ${launchStats.map(([stat, detail]) => `
-          <div class="reveal-item">
-            <strong>${stat}</strong>
-            <span>${detail}</span>
+      <section class="launch-highlight reveal-block" aria-label="Tableware and Kitchen launch highlight">
+        <figure>
+          <img src="${A("launch-highlight-lifestyle.png")}" alt="Fableroom tableware, cookware and linen styled together" loading="lazy" />
+        </figure>
+        <div class="launch-highlight-copy">
+          <span>New in Tableware & Kitchen</span>
+          <h2 class="motion-text">One table, beautifully layered.</h2>
+          <p>Serveware, cookware and linen styled for every meal, every host and every room.</p>
+          <div class="launch-highlight-cues" aria-label="Shop categories">
+            <a href="#/serveware">Serveware</a>
+            <a href="#/cookware">Cookware</a>
+            <a href="#/table-linen">Table Linen</a>
           </div>
-        `).join("")}
+        </div>
       </section>
 
       <section class="concept-products reveal-block" aria-labelledby="concept-products-title">
