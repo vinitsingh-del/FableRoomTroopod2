@@ -4672,8 +4672,8 @@ body,
   transform: translateY(24px);
 }
 
-.concept-hero-copy span,
-.concept-about-copy span {
+.concept-hero-copy > span,
+.concept-about-copy > span {
   color: var(--concept-burgundy);
   font-size: 12px;
   font-weight: 700;
@@ -4681,7 +4681,7 @@ body,
   text-transform: uppercase;
 }
 
-.concept-hero-copy span {
+.concept-hero-copy > span {
   color: #fff;
   text-shadow: 0 1px 12px rgba(16, 16, 16, 0.45);
 }
@@ -5090,27 +5090,32 @@ body,
 
 @media (max-width: 760px) {
   .concept-hero {
-    min-height: 460px;
+    min-height: min(560px, calc(100svh - 96px));
+    display: flex;
+    align-items: center;
   }
 
   .concept-hero-media img {
-    object-fit: contain;
-    object-position: center bottom;
-    transform: none;
+    object-fit: cover;
+    object-position: center center;
+    transform: scale(1.02);
   }
 
   .concept-hero::after {
-    background: linear-gradient(180deg, rgba(16, 16, 16, 0.5) 0%, rgba(16, 16, 16, 0.16) 50%, rgba(16, 16, 16, 0.04) 100%);
+    background:
+      linear-gradient(180deg, rgba(16, 16, 16, 0.58) 0%, rgba(16, 16, 16, 0.32) 48%, rgba(16, 16, 16, 0.18) 100%),
+      linear-gradient(90deg, rgba(16, 16, 16, 0.42) 0%, rgba(16, 16, 16, 0.08) 72%);
   }
 
   .concept-hero-copy {
     width: auto;
-    padding: 38px 22px 0;
+    padding: 0 24px;
   }
 
   .concept-hero-copy h1 {
-    max-width: 10ch;
-    font-size: clamp(36px, 10.8vw, 54px);
+    max-width: 11ch;
+    margin: 14px 0 18px;
+    font-size: clamp(34px, 9.4vw, 48px);
   }
 
   .concept-head {
