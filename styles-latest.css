@@ -4850,18 +4850,21 @@ body,
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.04);
-  animation: heroBreathZoom 14s ease-in-out infinite alternate;
+  transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.035);
+  animation: heroBreathZoom 12s ease-in-out infinite;
   transition: transform 180ms linear;
   will-change: transform;
 }
 
 @keyframes heroBreathZoom {
   0% {
-    transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.02);
+    transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.025);
+  }
+  50% {
+    transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.105);
   }
   100% {
-    transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.09);
+    transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.025);
   }
 }
 
@@ -5372,16 +5375,19 @@ body,
   .concept-hero-media img {
     object-fit: cover;
     object-position: center center;
-    animation: heroBreathZoomMobile 12s ease-in-out infinite alternate;
-    transform: scale(1.02);
+    animation: heroBreathZoomMobile 10s ease-in-out infinite;
+    transform: scale(1.025);
   }
 
   @keyframes heroBreathZoomMobile {
     0% {
-      transform: scale(1.02);
+      transform: scale(1.025);
+    }
+    50% {
+      transform: scale(1.095);
     }
     100% {
-      transform: scale(1.08);
+      transform: scale(1.025);
     }
   }
 
@@ -6246,7 +6252,7 @@ body,
   font-weight: 800;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  text-shadow: 0 1px 18px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 1px 16px rgba(68, 24, 29, 0.78), 0 0 22px rgba(150, 82, 49, 0.42);
 }
 
 .launch-layer-card strong {
@@ -6255,7 +6261,7 @@ body,
   font-size: clamp(32px, 4vw, 56px);
   font-weight: 400;
   line-height: 0.98;
-  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.38);
+  text-shadow: 0 2px 10px rgba(68, 24, 29, 0.92), 0 0 26px rgba(112, 47, 27, 0.82), 0 0 44px rgba(188, 128, 82, 0.42);
 }
 
 .launch-layer-card p {
