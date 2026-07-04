@@ -6,23 +6,23 @@ const categoryTiles = [
   {
     id: "serveware",
     title: "Serveware",
-    count: "70+ SKUs",
+    count: "70+ pieces",
     image: A("cat-serveware.jpg"),
     copy: "Dinner plates, side plates, bowls, cups, saucers and tea pieces for everyday hosting.",
   },
   {
     id: "cookware",
     title: "Cookware",
-    count: "6 SKUs",
+    count: "Everyday essentials",
     image: A("cookware-dutch.jpg"),
-    copy: "Tri-ply stainless steel essentials ready for launch once final client photography arrives.",
+    copy: "Stainless steel pans and pots made for everyday cooking, slow simmering and easy hosting.",
   },
   {
     id: "table-linen",
     title: "Table Linen",
     count: "36 products",
     image: A("linen-cotto.png"),
-    copy: "Runners, placemats, napkins and coasters, moved under this category with the live URL intact.",
+    copy: "Runners, placemats, napkins and coasters that soften the table and finish the setting.",
   },
 ];
 
@@ -55,10 +55,10 @@ const merchRails = {
 };
 
 const launchStats = [
-  ["New category", "Tableware & Kitchen"],
-  ["70+ serveware SKUs", "Dinner plates, bowls, cups and tea pieces"],
-  ["6 cookware SKUs", "Tri-ply essentials ready for launch"],
-  ["Table linen moved", "Same URL, stronger navigation context"],
+  ["New in", "Tableware & Kitchen"],
+  ["70+ serveware pieces", "Plates, bowls, cups and tea sets for hosting"],
+  ["Cookware essentials", "Stainless steel pieces for everyday meals"],
+  ["Linen layers", "Runners, napkins and coasters for a finished table"],
 ];
 
 const launchLayers = [
@@ -66,7 +66,7 @@ const launchLayers = [
     title: "Cook",
     kicker: "The kitchen layer",
     image: A("hero-tableware-slide-2.png"),
-    copy: "Tri-ply cookware anchors the prep ritual before the table is dressed.",
+    copy: "Begin with reliable cookware for weekday meals, slow dinners and everything that comes before the table is set.",
     cta: "Explore cookware",
     href: "#/cookware",
   },
@@ -74,7 +74,7 @@ const launchLayers = [
     title: "Serve",
     kicker: "The tableware layer",
     image: A("cat-dinnerware.jpg"),
-    copy: "Dinner plates, bowls and tea pieces give the launch its product depth.",
+    copy: "Bring out plates, bowls, cups and tea pieces that make everyday dining feel quietly considered.",
     cta: "Explore serveware",
     href: "#/serveware",
   },
@@ -82,7 +82,7 @@ const launchLayers = [
     title: "Layer",
     kicker: "The linen layer",
     image: A("linen-rivello.png"),
-    copy: "Runners and napkins finish the room, moving linen into the right buying journey.",
+    copy: "Finish the setting with runners, napkins and coasters that add softness, texture and a hosted feel.",
     cta: "Explore table linen",
     href: "#/table-linen",
   },
@@ -355,8 +355,8 @@ function renderMerch() {
       <section class="launch-editorial reveal-block" aria-labelledby="launch-category-title">
         <div class="launch-copy-block reveal-block">
           <span>Shop by ritual</span>
-          <h2 id="launch-category-title" class="motion-text">One launch for the whole table.</h2>
-          <p>Move from prep to plating to the final linen layer without leaving the Tableware & Kitchen story.</p>
+          <h2 id="launch-category-title" class="motion-text">Everything for a table that feels ready.</h2>
+          <p>Choose the pieces you cook with, serve in and layer with, all styled together for effortless hosting.</p>
         </div>
         <div class="launch-category-grid">
           ${categoryTiles.map(renderLaunchCategory).join("")}
@@ -379,13 +379,13 @@ function renderMerch() {
       <section class="launch-scene reveal-block">
         <figure><img src="${A("ai-tableware-about-v2.png")}" alt="Styled Fableroom dining table with serveware, cookware and linen" loading="lazy" /></figure>
         <div class="reveal-block">
-          <span>Why this launch works</span>
-          <h2 class="motion-text">A cleaner buying journey for every home-table ritual.</h2>
-          <p>Serveware leads the category depth, cookware gives the kitchen its essential prep layer, and table linen now sits where customers naturally expect it.</p>
-          <div class="launch-proof-list" aria-label="Launch proof points">
-            <span>Editorial-first merchandising page</span>
-            <span>Subcategory tiles with clear shop paths</span>
-            <span>Table Linen moved under Tableware & Kitchen</span>
+          <span>For everyday rituals</span>
+          <h2 class="motion-text">From the hob to the table, made to feel complete.</h2>
+          <p>Start with the recipe, serve it beautifully, then add the linen details that make even a simple meal feel considered.</p>
+          <div class="launch-proof-list" aria-label="Tableware and kitchen highlights">
+            <span>Premium tableware for daily dining</span>
+            <span>Cookware for weekday meals and slow dinners</span>
+            <span>Linen details for a softer, finished setting</span>
           </div>
         </div>
       </section>
@@ -394,7 +394,7 @@ function renderMerch() {
         <div class="launch-section-head split reveal-block">
           <div>
             <span>The launch edit</span>
-            <h2 id="launch-products-title" class="motion-text">A focused product strip, not a full PLP.</h2>
+            <h2 id="launch-products-title" class="motion-text">Pieces to start with, style with and gift.</h2>
           </div>
           <a href="#/all">View all products</a>
         </div>
@@ -432,7 +432,7 @@ function renderMerch() {
         <div>
           <span>Tableware & Kitchen</span>
           <h2 class="motion-text">Ready for cooking, hosting and setting the room.</h2>
-          <p>Use the launch page as the customer-facing entry point. Keep collection PLPs for deeper product browsing.</p>
+          <p>Explore coordinated serveware, cookware and table linen for meals that feel calm, complete and ready to share.</p>
         </div>
         <a class="button" href="#/all">Shop the launch</a>
       </section>
