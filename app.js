@@ -2,6 +2,36 @@ const A = (name) => `./assets/${name}`;
 
 const routes = ["merch", "all", "serveware", "cookware", "table-linen"];
 
+const iconPaths = {
+  serveware: '<path d="M7 9h10"/><path d="M8 9c.4 4.2 2.1 7 4 9 1.9-2 3.6-4.8 4-9"/><path d="M5 18h14"/>',
+  cookware: '<path d="M7 10h10v5a4 4 0 0 1-4 4h-2a4 4 0 0 1-4-4v-5Z"/><path d="M9 10V7a3 3 0 0 1 6 0v3"/><path d="M17 12h3"/>',
+  linen: '<path d="M7 5h10v14H7z"/><path d="M10 5v14"/><path d="M14 5v14"/><path d="M7 9h10"/>',
+  all: '<path d="M5 5h6v6H5z"/><path d="M13 5h6v6h-6z"/><path d="M5 13h6v6H5z"/><path d="M13 13h6v6h-6z"/>',
+  direct: '<path d="M5 12h14"/><path d="m13 6 6 6-6 6"/><path d="M5 7v10"/>',
+  homes: '<path d="m4 11 8-6 8 6"/><path d="M7 10v9h10v-9"/><path d="M10 19v-5h4v5"/>',
+  made: '<path d="M12 3v18"/><path d="M6 7h12"/><path d="M8 7l-3 5h6L8 7Z"/><path d="M16 7l-3 5h6l-3-5Z"/>',
+  complete: '<path d="M12 5v14"/><path d="M5 12h14"/><path d="M7 7l10 10"/><path d="m17 7-10 10"/>',
+};
+
+const iconSvg = (name) => `
+  <svg class="icon-mark" viewBox="0 0 24 24" aria-hidden="true">
+    ${iconPaths[name] || iconPaths.complete}
+  </svg>
+`;
+
+const categoryNavItems = [
+  ["serveware", "Serveware", "#/serveware"],
+  ["cookware", "Cookware", "#/cookware"],
+  ["linen", "Table Linen", "#/table-linen"],
+  ["all", "View All", "#/all"],
+];
+
+const assuranceItems = [
+  ["direct", "Direct pricing", "Fewer markups"],
+  ["homes", "12,000+ homes", "Loved daily"],
+  ["complete", "Complete edit", "Cook, serve, layer"],
+];
+
 const categoryTiles = [
   {
     id: "serveware",
@@ -99,9 +129,15 @@ const launchProductTitles = [
 ];
 
 const brandBenefits = [
-  ["Direct", "Straight from the makers", "Premium pieces made with fewer markups."],
-  ["12k+", "Loved by 12,000+ homes", "A calm home-table edit for daily rituals and hosting."],
-  ["Made", "Thoughtfully made", "Porcelain, stoneware, cotton, linen and tri-ply steel."],
+  ["direct", "Straight from the makers", "Fewer markups"],
+  ["homes", "Loved by 12,000+ homes", "Daily hosting"],
+  ["made", "Thoughtfully made", "Considered materials"],
+];
+
+const ritualProofItems = [
+  ["serveware", "Daily dining"],
+  ["cookware", "Weekday meals"],
+  ["linen", "Finished setting"],
 ];
 
 const heroVideoProducts = [
@@ -314,26 +350,12 @@ function renderMerch() {
       </section>
 
       <nav class="landing-pill-nav reveal-block" aria-label="Shop Tableware and Kitchen">
-        <a href="#/serveware">Serveware</a>
-        <a href="#/cookware">Cookware</a>
-        <a href="#/table-linen">Table Linen</a>
-        <a href="#/all">View All</a>
+        ${categoryNavItems.map(renderLandingNavItem).join("")}
       </nav>
 
       <section class="launch-assurance-bar reveal-block" aria-label="Why shop Fableroom Tableware and Kitchen">
-        <div>
-          <strong>Direct pricing</strong>
-          <span>Premium pieces, fewer markups</span>
-        </div>
-        <div>
-          <strong>12,000+ homes</strong>
-          <span>Loved for everyday hosting</span>
-        </div>
-        <div>
-          <strong>Complete the table</strong>
-          <span>Serveware, cookware and linen in one edit</span>
-        </div>
-        <a href="#/all">Shop now</a>
+        ${assuranceItems.map(renderAssuranceItem).join("")}
+        <a class="assurance-shop-card" href="#/all">${iconSvg("all")}<span>Shop now</span></a>
       </section>
 
       <section class="launch-highlight reveal-block" aria-label="Tableware and Kitchen launch highlight">
@@ -398,9 +420,7 @@ function renderMerch() {
           <h2 class="motion-text">From the hob to the table, made to feel complete.</h2>
           <p>Start with the recipe, serve it beautifully, then add the linen details that make even a simple meal feel considered.</p>
           <div class="launch-proof-list" aria-label="Tableware and kitchen highlights">
-            <span>Premium tableware for daily dining</span>
-            <span>Cookware for weekday meals and slow dinners</span>
-            <span>Linen details for a softer, finished setting</span>
+            ${ritualProofItems.map(renderProofItem).join("")}
           </div>
         </div>
       </section>
@@ -484,13 +504,41 @@ function renderConceptCircleCategory(tile) {
   `;
 }
 
-function renderConceptBenefit(code, title, copy) {
+function renderLandingNavItem([icon, title, href]) {
+  return `
+    <a href="${href}">
+      ${iconSvg(icon)}
+      <span>${title}</span>
+    </a>
+  `;
+}
+
+function renderAssuranceItem([icon, title, copy]) {
+  return `
+    <div>
+      ${iconSvg(icon)}
+      <strong>${title}</strong>
+      <span>${copy}</span>
+    </div>
+  `;
+}
+
+function renderConceptBenefit(icon, title, copy) {
   return `
     <div class="concept-benefit reveal-item">
-      <span>${code}</span>
+      <span>${iconSvg(icon)}</span>
       <strong>${title}</strong>
       <small>${copy}</small>
     </div>
+  `;
+}
+
+function renderProofItem([icon, title]) {
+  return `
+    <span>
+      ${iconSvg(icon)}
+      <strong>${title}</strong>
+    </span>
   `;
 }
 

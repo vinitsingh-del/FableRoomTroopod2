@@ -4722,11 +4722,25 @@ body,
   text-decoration: none;
 }
 
+.icon-mark {
+  width: 22px;
+  height: 22px;
+  display: block;
+  color: currentColor;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.55;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .landing-pill-nav {
   max-width: 1180px;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin: 0 auto;
+  gap: 1px;
+  padding: 1px;
   border-right: 1px solid var(--concept-line);
   border-bottom: 1px solid var(--concept-line);
   border-left: 1px solid var(--concept-line);
@@ -4734,27 +4748,30 @@ body,
 }
 
 .landing-pill-nav a {
-  min-height: 58px;
+  min-height: 74px;
   display: grid;
+  gap: 8px;
   place-items: center;
-  border-right: 1px solid var(--concept-line);
+  background: #fff;
   color: var(--concept-ink);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-align: center;
   text-transform: uppercase;
-  transition: background 220ms ease, color 220ms ease;
+  transition: background 220ms ease, color 220ms ease, transform 220ms ease;
 }
 
-.landing-pill-nav a:last-child {
-  border-right: 0;
+.landing-pill-nav .icon-mark {
+  width: 24px;
+  height: 24px;
 }
 
 .landing-pill-nav a:hover,
 .landing-pill-nav a:focus-visible {
   background: var(--concept-burgundy);
   color: #fff;
+  transform: translateY(-1px);
 }
 
 .launch-assurance-bar {
@@ -4762,25 +4779,33 @@ body,
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
   align-items: center;
-  gap: 1px;
+  gap: 10px;
   margin: 0 auto;
+  padding: 12px;
   border-right: 1px solid var(--concept-line);
   border-bottom: 1px solid var(--concept-line);
   border-left: 1px solid var(--concept-line);
-  background: var(--concept-line);
+  background: #fff;
 }
 
 .launch-assurance-bar div,
 .launch-assurance-bar a {
-  min-height: 76px;
+  min-height: 86px;
   display: grid;
   align-content: center;
+  justify-items: center;
+  text-align: center;
+  border: 1px solid rgba(16, 16, 16, 0.08);
   background: #fff;
 }
 
 .launch-assurance-bar div {
-  gap: 4px;
-  padding: 14px clamp(16px, 2vw, 28px);
+  gap: 6px;
+  padding: 14px clamp(12px, 2vw, 24px);
+}
+
+.launch-assurance-bar .icon-mark {
+  color: var(--concept-burgundy);
 }
 
 .launch-assurance-bar strong {
@@ -4791,20 +4816,25 @@ body,
 
 .launch-assurance-bar span {
   color: var(--concept-muted);
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.35;
 }
 
 .launch-assurance-bar a {
   min-width: 150px;
-  justify-items: center;
-  padding: 0 22px;
+  gap: 7px;
+  padding: 0 20px;
   background: var(--concept-burgundy);
   color: #fff;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+.launch-assurance-bar a span {
+  color: #fff;
+  letter-spacing: inherit;
 }
 
 .concept-hero {
@@ -5133,10 +5163,10 @@ body,
 }
 
 .concept-benefits {
-  max-width: 1020px;
+  max-width: 980px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0;
+  gap: 10px;
   margin: 0 auto;
   padding: 26px 22px 44px;
   text-align: center;
@@ -5144,10 +5174,13 @@ body,
 
 .concept-benefit {
   display: grid;
-  gap: 8px;
+  gap: 9px;
   justify-items: center;
-  padding: 10px clamp(14px, 3vw, 42px);
-  border-right: 1px solid var(--concept-line);
+  align-content: center;
+  min-height: 150px;
+  padding: 18px clamp(12px, 3vw, 34px);
+  border: 1px solid var(--concept-line);
+  background: #fff;
 }
 
 .concept-benefit span {
@@ -5161,31 +5194,29 @@ body,
 }
 
 .concept-benefit:last-child {
-  border-right: 0;
+  border-right: 1px solid var(--concept-line);
 }
 
 .concept-benefit span {
-  width: 58px;
-  height: 58px;
+  width: 54px;
+  height: 54px;
   display: grid;
   place-items: center;
   border: 1px solid var(--concept-burgundy);
   border-radius: 999px;
   color: var(--concept-burgundy);
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
 }
 
 .concept-benefit strong {
   color: var(--concept-ink);
+  max-width: 16ch;
   font-size: 13px;
   font-weight: 600;
+  line-height: 1.18;
 }
 
 .concept-benefit small {
-  max-width: 220px;
+  max-width: 160px;
   color: var(--concept-muted);
   font-size: 11px;
   line-height: 1.4;
@@ -5404,7 +5435,7 @@ body,
 
   .concept-benefits {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0;
+    gap: 6px;
     width: min(100%, 560px);
     padding: 18px 12px 28px;
   }
@@ -5417,20 +5448,24 @@ body,
 
   .concept-benefit {
     gap: 6px;
+    min-height: 112px;
     min-width: 0;
     padding: 8px 8px;
-    border-right: 1px solid var(--concept-line);
-    border-bottom: 0;
+    border: 1px solid var(--concept-line);
   }
 
   .concept-benefit:last-child {
-    border-right: 0;
+    border-right: 1px solid var(--concept-line);
   }
 
   .concept-benefit span {
-    width: 48px;
-    height: 48px;
-    font-size: 8px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .concept-benefit .icon-mark {
+    width: 18px;
+    height: 18px;
   }
 
   .concept-benefit strong {
@@ -6085,19 +6120,30 @@ body,
 
 .launch-proof-list {
   display: grid;
-  gap: 0;
-  margin-top: 10px;
-  border-top: 1px solid var(--launch-line);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 12px;
 }
 
 .launch-proof-list span {
-  padding: 15px 0;
-  border-bottom: 1px solid var(--launch-line);
+  min-height: 92px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 8px;
+  padding: 14px 10px;
+  border: 1px solid var(--launch-line);
+  background: #fff;
   color: var(--launch-ink);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
+  text-align: center;
   text-transform: uppercase;
+}
+
+.launch-proof-list .icon-mark {
+  color: var(--launch-burgundy);
 }
 
 .launch-product-grid {
@@ -6239,24 +6285,36 @@ body,
   }
 
   .landing-pill-nav a {
-    min-height: 48px;
+    min-height: 58px;
     padding: 0 4px;
     font-size: 8px;
     letter-spacing: 0.1em;
   }
 
+  .landing-pill-nav .icon-mark {
+    width: 20px;
+    height: 20px;
+  }
+
   .launch-assurance-bar {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    padding: 8px;
     margin: 0;
     border-right: 0;
     border-left: 0;
   }
 
   .launch-assurance-bar div {
-    min-height: 68px;
+    min-height: 82px;
     gap: 3px;
-    padding: 10px 7px;
+    padding: 9px 6px;
     text-align: center;
+  }
+
+  .launch-assurance-bar .icon-mark {
+    width: 18px;
+    height: 18px;
   }
 
   .launch-assurance-bar strong {
@@ -6486,6 +6544,24 @@ body,
 
   .launch-scene figure {
     min-height: 310px;
+  }
+
+  .launch-proof-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .launch-proof-list span {
+    min-height: 84px;
+    padding: 10px 6px;
+    font-size: 9px;
+    line-height: 1.22;
+    letter-spacing: 0.08em;
+  }
+
+  .launch-proof-list .icon-mark {
+    width: 18px;
+    height: 18px;
   }
 
   .launch-section-head.split {
