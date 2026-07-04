@@ -4609,6 +4609,20 @@ body,
   font-family: var(--font-sans);
 }
 
+.concept-page::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 2px;
+  background: var(--concept-burgundy);
+  transform: scaleX(var(--scroll-progress, 0));
+  transform-origin: left center;
+  pointer-events: none;
+}
+
 .concept-page a {
   color: inherit;
   text-decoration: none;
@@ -4634,15 +4648,16 @@ body,
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  transform: none;
-  transition: none;
+  transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.04);
+  transition: transform 180ms linear;
+  will-change: transform;
 }
 
 .concept-hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(255,255,255,0.78) 0%, rgba(255,255,255,0.34) 42%, rgba(255,255,255,0.02) 76%);
+  background: linear-gradient(90deg, rgba(16, 16, 16, 0.52) 0%, rgba(16, 16, 16, 0.28) 42%, rgba(16, 16, 16, 0.02) 78%);
   pointer-events: none;
 }
 
@@ -4651,6 +4666,10 @@ body,
   z-index: 1;
   width: min(620px, calc(100% - 34px));
   padding: clamp(44px, 7vw, 86px) 0 0 clamp(18px, 11vw, 150px);
+}
+
+.concept-hero-copy.reveal-block {
+  transform: translateY(24px);
 }
 
 .concept-hero-copy span,
@@ -4662,22 +4681,30 @@ body,
   text-transform: uppercase;
 }
 
+.concept-hero-copy span {
+  color: #fff;
+  text-shadow: 0 1px 12px rgba(16, 16, 16, 0.45);
+}
+
 .concept-hero-copy h1 {
   max-width: 11ch;
   margin: 18px 0 20px;
+  color: #fff;
   font-family: var(--font-serif);
   font-size: clamp(40px, 4.8vw, 72px);
   font-weight: 400;
   line-height: 0.98;
   letter-spacing: 0;
   text-transform: none;
+  text-shadow: 0 2px 18px rgba(16, 16, 16, 0.36);
 }
 
 .concept-hero-copy p {
   max-width: 520px;
-  color: var(--concept-muted);
+  color: rgba(255, 255, 255, 0.92);
   font-size: clamp(16px, 1.4vw, 19px);
   line-height: 1.55;
+  text-shadow: 0 1px 12px rgba(16, 16, 16, 0.38);
 }
 
 .concept-hero-copy a,
@@ -4696,10 +4723,35 @@ body,
   text-transform: uppercase;
 }
 
+.motion-text {
+  overflow: hidden;
+}
+
+.motion-text span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.95em) rotate(1.2deg);
+  transition:
+    opacity 680ms cubic-bezier(0.2, 0.72, 0.2, 1) calc(var(--reveal-delay, 0ms) + var(--word-delay, 0ms)),
+    transform 680ms cubic-bezier(0.2, 0.72, 0.2, 1) calc(var(--reveal-delay, 0ms) + var(--word-delay, 0ms));
+}
+
+.motion-text.is-visible span,
+.is-visible .motion-text span {
+  opacity: 1;
+  transform: translateY(0) rotate(0deg);
+}
+
 .concept-products {
   max-width: 1180px;
   margin: 0 auto;
   padding: clamp(34px, 5vw, 64px) 22px 26px;
+}
+
+.concept-products.reveal-block,
+.concept-benefits.reveal-block,
+.concept-category-strip.reveal-block {
+  transition-duration: 740ms;
 }
 
 .concept-head {
@@ -4749,20 +4801,73 @@ body,
 .concept-circle-card figure {
   width: min(260px, 26vw);
   aspect-ratio: 1;
-  display: grid;
-  place-items: center;
+  position: relative;
   margin: 0 0 10px;
   overflow: hidden;
   border-radius: 999px;
-  background: #ececec;
+  background: #fff;
   border: 1px solid rgba(16, 16, 16, 0.06);
+  box-shadow: 0 18px 34px rgba(16, 16, 16, 0.08);
+  transform: translateY(0) scale(1);
+  transition: transform 360ms ease, box-shadow 360ms ease;
 }
 
 .concept-circle-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 260ms ease, transform 360ms ease, filter 260ms ease;
+}
+
+.concept-circle-card .concept-lifestyle-img {
+  z-index: 0;
+  object-fit: cover;
+  transform: scale(1.02);
+}
+
+.concept-circle-card .concept-product-img {
+  z-index: 2;
   width: 88%;
   height: 88%;
+  inset: 6%;
   object-fit: contain;
-  filter: drop-shadow(0 14px 14px rgba(16, 16, 16, 0.12));
+  opacity: 0;
+  transform: scale(0.86);
+  filter: drop-shadow(0 18px 16px rgba(16, 16, 16, 0.16));
+}
+
+.concept-circle-card figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.72) 48%, rgba(255, 255, 255, 0.28) 100%);
+  opacity: 0;
+  transition: opacity 260ms ease;
+}
+
+.concept-circle-card:hover .concept-lifestyle-img,
+.concept-circle-card:focus-visible .concept-lifestyle-img {
+  transform: scale(1.08);
+  filter: saturate(0.86) contrast(0.98);
+}
+
+.concept-circle-card:hover figure,
+.concept-circle-card:focus-visible figure {
+  transform: translateY(-4px) scale(1.015);
+  box-shadow: 0 26px 44px rgba(16, 16, 16, 0.12);
+}
+
+.concept-circle-card:hover figure::after,
+.concept-circle-card:focus-visible figure::after {
+  opacity: 1;
+}
+
+.concept-circle-card:hover .concept-product-img,
+.concept-circle-card:focus-visible .concept-product-img {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .concept-circle-card strong {
@@ -4794,6 +4899,16 @@ body,
   justify-items: center;
   padding: 10px clamp(14px, 3vw, 42px);
   border-right: 1px solid var(--concept-line);
+}
+
+.concept-benefit span {
+  transition: background 260ms ease, color 260ms ease, transform 260ms ease;
+}
+
+.concept-benefit:hover span {
+  background: var(--concept-burgundy);
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 .concept-benefit:last-child {
@@ -4851,6 +4966,10 @@ body,
   background: #fff;
 }
 
+.concept-about.reveal-block {
+  transform: translateY(22px);
+}
+
 .concept-about figure {
   position: absolute;
   inset: 0;
@@ -4868,6 +4987,12 @@ body,
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1.04);
+  transition: transform 1200ms cubic-bezier(0.2, 0.72, 0.2, 1);
+}
+
+.concept-about.is-visible img {
+  transform: scale(1);
 }
 
 .concept-about-copy {
@@ -4924,9 +5049,19 @@ body,
   transition: transform 260ms ease;
 }
 
+.concept-category-strip a {
+  transition: transform 320ms ease, box-shadow 320ms ease;
+}
+
 .concept-category-strip a:hover img,
 .concept-category-strip a:focus-visible img {
   transform: scale(1.04);
+}
+
+.concept-category-strip a:hover,
+.concept-category-strip a:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 38px rgba(16, 16, 16, 0.1);
 }
 
 .concept-category-strip span {
@@ -4955,11 +5090,17 @@ body,
 
 @media (max-width: 760px) {
   .concept-hero {
-    min-height: 480px;
+    min-height: 460px;
+  }
+
+  .concept-hero-media img {
+    object-fit: contain;
+    object-position: center bottom;
+    transform: none;
   }
 
   .concept-hero::after {
-    background: linear-gradient(180deg, rgba(255,255,255,0.84) 0%, rgba(255,255,255,0.42) 56%, rgba(255,255,255,0.06) 100%);
+    background: linear-gradient(180deg, rgba(16, 16, 16, 0.5) 0%, rgba(16, 16, 16, 0.16) 50%, rgba(16, 16, 16, 0.04) 100%);
   }
 
   .concept-hero-copy {
@@ -4995,8 +5136,10 @@ body,
   }
 
   .concept-benefits {
-    grid-template-columns: 1fr;
-    gap: 18px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    width: min(100%, 560px);
+    padding: 18px 12px 28px;
   }
 
   .concept-campaign-strip {
@@ -5006,13 +5149,31 @@ body,
   }
 
   .concept-benefit {
-    border-right: 0;
-    border-bottom: 1px solid var(--concept-line);
-    padding-bottom: 20px;
+    gap: 6px;
+    min-width: 0;
+    padding: 8px 8px;
+    border-right: 1px solid var(--concept-line);
+    border-bottom: 0;
   }
 
   .concept-benefit:last-child {
-    border-bottom: 0;
+    border-right: 0;
+  }
+
+  .concept-benefit span {
+    width: 32px;
+    height: 32px;
+    font-size: 10px;
+  }
+
+  .concept-benefit strong {
+    max-width: 11ch;
+    font-size: 11px;
+    line-height: 1.2;
+  }
+
+  .concept-benefit small {
+    display: none;
   }
 
   .concept-about {

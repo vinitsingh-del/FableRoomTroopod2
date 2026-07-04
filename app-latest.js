@@ -88,6 +88,12 @@ const launchLayers = [
   },
 ];
 
+const conceptLifestyleImages = {
+  "White Sparkle Dinner Plates (Set of 6)": A("lifestyle-white-sparkle-plates.png"),
+  "Zoraida Serving Bowl (Set of 2)": A("lifestyle-zoraida-bowl.png"),
+  "Rainbow Gold Cup & Saucer (Set of 2)": A("lifestyle-rainbow-cup-saucer.png"),
+};
+
 const launchProductTitles = [
   "White Sparkle Dinner Plates (Set of 6)",
   "Renata Dinner Plates (Set of 6)",
@@ -289,8 +295,10 @@ function render() {
   document.querySelector(".primary-nav").classList.remove("is-open");
   document.querySelector(".menu-toggle").setAttribute("aria-expanded", "false");
   key === "merch" ? renderMerch() : renderCollection(key);
+  initMotionText();
   initParallax();
   initVengeanceEffects();
+  updateScrollProgress();
   window.scrollTo({ top: 0, behavior: "auto" });
 }
 
@@ -306,16 +314,16 @@ function renderMerch() {
         <figure class="concept-hero-media" data-parallax>
           <img src="${A("ai-tableware-hero-v2.png")}" alt="Fableroom tableware, cookware and linen styled in a bright home kitchen" />
         </figure>
-        <div class="concept-hero-copy">
+        <div class="concept-hero-copy reveal-block">
           <span>New · Tableware & Kitchen</span>
-          <h1 id="concept-title">Set the table for every kind of gathering.</h1>
+          <h1 id="concept-title" class="motion-text">Set the table for every kind of gathering.</h1>
           <a href="#/all">Shop now</a>
         </div>
       </section>
 
-      <section class="concept-products" aria-labelledby="concept-products-title">
-        <div class="concept-head">
-          <h2 id="concept-products-title">Explore our newest collections</h2>
+      <section class="concept-products reveal-block" aria-labelledby="concept-products-title">
+        <div class="concept-head reveal-block">
+          <h2 id="concept-products-title" class="motion-text">Explore our newest collections</h2>
           <a href="#/all">View all products</a>
         </div>
         <div class="concept-circle-row">
@@ -323,29 +331,29 @@ function renderMerch() {
         </div>
       </section>
 
-      <section class="concept-benefits" aria-label="Fableroom benefits">
+      <section class="concept-benefits reveal-block" aria-label="Fableroom benefits">
         ${brandBenefits.map(([code, title, copy]) => renderConceptBenefit(code, title, copy)).join("")}
       </section>
 
-      <section class="concept-about">
-        <div class="concept-about-copy">
+      <section class="concept-about reveal-block">
+        <div class="concept-about-copy reveal-block">
           <span>About The Launch</span>
-          <h2>Everything the table needs, beautifully together.</h2>
+          <h2 class="motion-text">Everything the table needs, beautifully together.</h2>
           <p>Cookware for the recipe, serveware for the moment and linen for the final layer. Build a table that feels calm, complete and ready for guests.</p>
           <a href="#/serveware">Shop serveware</a>
         </div>
         <figure><img src="${A("ai-tableware-about-v2.png")}" alt="Fableroom dining table styled with table linen and serveware" /></figure>
       </section>
 
-      <section class="concept-campaign-strip" aria-label="Current Fableroom campaign">
+      <section class="concept-campaign-strip reveal-block" aria-label="Current Fableroom campaign">
         <span>Thoughtfully made, fairly priced</span>
         <span>Straight from the makers</span>
         <span>Loved by 12,000+ homes</span>
       </section>
 
-      <section class="concept-category-strip">
+      <section class="concept-category-strip reveal-block">
         ${categoryTiles.map((tile) => `
-          <a href="#/${tile.id}">
+          <a class="reveal-item" href="#/${tile.id}">
             <img src="${tile.image}" alt="${tile.title}" />
             <span>${tile.title}</span>
           </a>
@@ -357,9 +365,13 @@ function renderMerch() {
 
 function renderConceptCircleProduct(product) {
   const image = product.image;
+  const lifestyleImage = conceptLifestyleImages[product.title] || image;
   return `
     <a class="concept-circle-card reveal-item" href="#/${product.category === "table-linen" ? "table-linen" : product.category}">
-      <figure><img src="${image}" alt="${product.title}" loading="lazy" /></figure>
+      <figure>
+        <img class="concept-lifestyle-img" src="${lifestyleImage}" alt="${product.title} styled in a Fableroom home setting" loading="lazy" />
+        <img class="concept-product-img" src="${image}" alt="${product.title}" loading="lazy" />
+      </figure>
       <strong>${product.title.replace(" (Set of 6)", "").replace(" (Set of 2)", "")}</strong>
       <small>£${product.price}</small>
     </a>
@@ -479,17 +491,17 @@ function renderCollection(key) {
         <figure class="concept-hero-media" data-parallax>
           <img src="${collectionHeroImage(collection)}" alt="${collection.title} styled by Fableroom" />
         </figure>
-        <div class="concept-hero-copy">
+        <div class="concept-hero-copy reveal-block">
           <span>${collection.room}</span>
-          <h1 id="collection-concept-title">${collection.title}</h1>
+          <h1 id="collection-concept-title" class="motion-text">${collection.title}</h1>
           <p>${collection.intro}</p>
           <a href="#/${key}" data-scroll-target="product-grid">Shop now</a>
         </div>
       </section>
 
-      <section class="concept-products" aria-labelledby="collection-new-title">
-        <div class="concept-head">
-          <h2 id="collection-new-title">Explore our newest collections</h2>
+      <section class="concept-products reveal-block" aria-labelledby="collection-new-title">
+        <div class="concept-head reveal-block">
+          <h2 id="collection-new-title" class="motion-text">Explore our newest collections</h2>
           <span>${collection.count} products</span>
         </div>
         <div class="concept-circle-row">
@@ -497,14 +509,14 @@ function renderCollection(key) {
         </div>
       </section>
 
-      <section class="concept-benefits" aria-label="${collection.title} benefits">
+      <section class="concept-benefits reveal-block" aria-label="${collection.title} benefits">
         ${brandBenefits.map(([code, title, copy]) => renderConceptBenefit(code, title, copy)).join("")}
       </section>
 
-      <section class="concept-about">
-        <div class="concept-about-copy">
+      <section class="concept-about reveal-block">
+        <div class="concept-about-copy reveal-block">
           <span>About ${collection.title}</span>
-          <h2>${collection.title === "All Tableware & Kitchen" ? "A complete home-table edit." : `The ${collection.title.toLowerCase()} layer for a finished home table.`}</h2>
+          <h2 class="motion-text">${collection.title === "All Tableware & Kitchen" ? "A complete home-table edit." : `The ${collection.title.toLowerCase()} layer for a finished home table.`}</h2>
           <p>${collection.intro}</p>
           <a href="#/merch">Back to Tableware & Kitchen</a>
         </div>
@@ -643,7 +655,10 @@ document.querySelector(".menu-toggle").addEventListener("click", (event) => {
 });
 
 let parallaxBound = false;
+let scrollProgressBound = false;
+
 function updateParallax() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   const frames = [...document.querySelectorAll("[data-parallax]")];
   frames.forEach((frame) => {
     const rect = frame.getBoundingClientRect();
@@ -661,7 +676,22 @@ function initParallax() {
   }
 }
 
+function updateScrollProgress() {
+  const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+  document.documentElement.style.setProperty("--scroll-progress", `${Math.min(1, Math.max(0, window.scrollY / max))}`);
+}
+
+function initScrollProgress() {
+  updateScrollProgress();
+  if (!scrollProgressBound) {
+    window.addEventListener("scroll", () => requestAnimationFrame(updateScrollProgress), { passive: true });
+    window.addEventListener("resize", updateScrollProgress);
+    scrollProgressBound = true;
+  }
+}
+
 function initVengeanceEffects() {
+  initScrollProgress();
   initSpotlight();
   initReveal();
 }
@@ -681,7 +711,7 @@ function initSpotlight() {
 }
 
 function initReveal() {
-  const items = document.querySelectorAll(".reveal-block, .reveal-item, .product-card, .mini-product, .room-panel");
+  const items = document.querySelectorAll(".reveal-block, .reveal-item, .motion-text, .product-card, .mini-product, .room-panel");
   if (!("IntersectionObserver" in window)) {
     items.forEach((item) => item.classList.add("is-visible"));
     return;
@@ -697,6 +727,16 @@ function initReveal() {
   items.forEach((item, index) => {
     item.style.setProperty("--reveal-delay", `${Math.min(index % 8, 6) * 45}ms`);
     observer.observe(item);
+  });
+}
+
+function initMotionText() {
+  document.querySelectorAll(".motion-text").forEach((node) => {
+    if (node.dataset.motionReady) return;
+    const words = node.textContent.trim().split(/\s+/);
+    node.dataset.motionReady = "true";
+    node.setAttribute("aria-label", node.textContent.trim());
+    node.innerHTML = words.map((word, index) => `<span aria-hidden="true" style="--word-delay:${index * 42}ms">${word}</span>`).join(" ");
   });
 }
 
