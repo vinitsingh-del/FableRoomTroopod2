@@ -4642,7 +4642,7 @@ body,
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(255,255,255,0.78) 0%, rgba(255,255,255,0.34) 42%, rgba(255,255,255,0.02) 76%);
+  background: linear-gradient(90deg, rgba(16, 16, 16, 0.52) 0%, rgba(16, 16, 16, 0.28) 42%, rgba(16, 16, 16, 0.02) 78%);
   pointer-events: none;
 }
 
@@ -4662,22 +4662,30 @@ body,
   text-transform: uppercase;
 }
 
+.concept-hero-copy span {
+  color: #fff;
+  text-shadow: 0 1px 12px rgba(16, 16, 16, 0.45);
+}
+
 .concept-hero-copy h1 {
   max-width: 11ch;
   margin: 18px 0 20px;
+  color: #fff;
   font-family: var(--font-serif);
   font-size: clamp(40px, 4.8vw, 72px);
   font-weight: 400;
   line-height: 0.98;
   letter-spacing: 0;
   text-transform: none;
+  text-shadow: 0 2px 18px rgba(16, 16, 16, 0.36);
 }
 
 .concept-hero-copy p {
   max-width: 520px;
-  color: var(--concept-muted);
+  color: rgba(255, 255, 255, 0.92);
   font-size: clamp(16px, 1.4vw, 19px);
   line-height: 1.55;
+  text-shadow: 0 1px 12px rgba(16, 16, 16, 0.38);
 }
 
 .concept-hero-copy a,
@@ -4964,7 +4972,7 @@ body,
   }
 
   .concept-hero::after {
-    background: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.28) 58%, rgba(255,255,255,0.04) 100%);
+    background: linear-gradient(180deg, rgba(16, 16, 16, 0.5) 0%, rgba(16, 16, 16, 0.16) 50%, rgba(16, 16, 16, 0.04) 100%);
   }
 
   .concept-hero-copy {
