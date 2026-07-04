@@ -88,7 +88,7 @@ const launchLayers = [
   {
     title: "Cook",
     kicker: "The kitchen layer",
-    image: A("hero-tableware-slide-2.png"),
+    image: A("ai-cook-layer-symmetric.png"),
     copy: "Begin with reliable cookware for weekday meals, slow dinners and everything that comes before the table is set.",
     cta: "Explore cookware",
     href: "#/cookware",
@@ -96,7 +96,7 @@ const launchLayers = [
   {
     title: "Serve",
     kicker: "The tableware layer",
-    image: A("cat-dinnerware.jpg"),
+    image: A("ai-serve-layer-symmetric.png"),
     copy: "Bring out plates, bowls, cups and tea pieces that make everyday dining feel quietly considered.",
     cta: "Explore serveware",
     href: "#/serveware",
@@ -104,7 +104,7 @@ const launchLayers = [
   {
     title: "Layer",
     kicker: "The linen layer",
-    image: A("linen-rivello.png"),
+    image: A("ai-linen-layer-symmetric.png"),
     copy: "Finish the setting with runners, napkins and coasters that add softness, texture and a hosted feel.",
     cta: "Explore table linen",
     href: "#/table-linen",

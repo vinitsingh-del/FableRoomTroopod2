@@ -6163,6 +6163,7 @@ body,
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .launch-layer-card::after {
@@ -6170,7 +6171,7 @@ body,
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(16, 16, 16, 0.02) 25%, rgba(16, 16, 16, 0.74) 100%);
+  background: linear-gradient(180deg, rgba(16, 16, 16, 0) 22%, rgba(16, 16, 16, 0.18) 52%, rgba(16, 16, 16, 0.72) 100%);
   pointer-events: none;
 }
 
@@ -6196,11 +6197,12 @@ body,
 }
 
 .launch-layer-card span {
-  color: rgba(255, 255, 255, 0.86);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  text-shadow: 0 1px 18px rgba(0, 0, 0, 0.35);
 }
 
 .launch-layer-card strong {
@@ -6209,6 +6211,7 @@ body,
   font-size: clamp(32px, 4vw, 56px);
   font-weight: 400;
   line-height: 0.98;
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.38);
 }
 
 .launch-layer-card p {
@@ -6217,6 +6220,7 @@ body,
   color: rgba(255, 255, 255, 0.88);
   font-size: clamp(12px, 1.2vw, 15px);
   line-height: 1.45;
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.35);
 }
 
 .launch-layer-card em,
