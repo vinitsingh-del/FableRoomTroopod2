@@ -303,11 +303,6 @@ function render() {
 }
 
 function renderMerch() {
-  const featuredProducts = productsByTitle([
-    "White Sparkle Dinner Plates (Set of 6)",
-    "Zoraida Serving Bowl (Set of 2)",
-    "Rainbow Gold Cup & Saucer (Set of 2)",
-  ]);
   const launchProducts = productsByTitle(launchProductTitles);
   app.innerHTML = `
     <article class="concept-page launch-page">
@@ -344,7 +339,7 @@ function renderMerch() {
           <a href="#/all">View all products</a>
         </div>
         <div class="concept-circle-row">
-          ${featuredProducts.map(renderConceptCircleProduct).join("")}
+          ${categoryTiles.map(renderConceptCircleCategory).join("")}
         </div>
       </section>
 
@@ -441,6 +436,18 @@ function renderConceptCircleProduct(product) {
       </figure>
       <strong>${product.title.replace(" (Set of 6)", "").replace(" (Set of 2)", "")}</strong>
       <small>£${product.price}</small>
+    </a>
+  `;
+}
+
+function renderConceptCircleCategory(tile) {
+  return `
+    <a class="concept-circle-card concept-category-circle reveal-item" href="#/${tile.id}">
+      <figure>
+        <img class="concept-lifestyle-img" src="${tile.image}" alt="${tile.title} styled in a Fableroom home setting" loading="lazy" />
+      </figure>
+      <strong>${tile.title}</strong>
+      <small>${tile.count}</small>
     </a>
   `;
 }
