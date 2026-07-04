@@ -6218,8 +6218,10 @@ body,
 .launch-layer-card {
   position: relative;
   display: grid;
+  min-width: 0;
   min-height: 0;
   align-self: stretch;
+  box-sizing: border-box;
   overflow: hidden;
   border: 1px solid var(--launch-line);
   background: #fff;
@@ -6258,7 +6260,7 @@ body,
   min-height: 0;
   margin: 0;
   object-fit: cover;
-  transform: scale(1.01);
+  transform: scale(1);
   transition: transform 700ms cubic-bezier(0.2, 0.72, 0.2, 1);
 }
 
@@ -6295,6 +6297,7 @@ body,
   display: grid;
   align-content: end;
   gap: 8px;
+  min-width: 0;
   min-height: 100%;
   padding: clamp(16px, 2.2vw, 28px);
 }
@@ -6318,6 +6321,7 @@ body,
 }
 
 .launch-layer-card p {
+  width: 100%;
   max-width: 420px;
   margin: 0;
   color: rgba(255, 255, 255, 0.88);
@@ -6328,6 +6332,7 @@ body,
 
 .launch-layer-card em,
 .launch-layer-card a {
+  max-width: 100%;
   width: fit-content;
   color: #fff;
   font-size: 10px;
@@ -6395,7 +6400,8 @@ body,
 
 .launch-product-card {
   display: grid;
-  grid-template-rows: minmax(210px, 1fr) auto;
+  grid-template-rows: 220px 118px;
+  min-height: 338px;
   overflow: hidden;
   border: 1px solid var(--launch-line);
   background: #fff;
@@ -6405,7 +6411,7 @@ body,
 .launch-product-card figure {
   display: grid;
   place-items: center;
-  min-height: 210px;
+  min-height: 0;
   margin: 0;
   background: #fff;
 }
@@ -6420,12 +6426,18 @@ body,
 .launch-product-card > div {
   display: grid;
   gap: 8px;
+  align-content: start;
   padding: 15px;
   border-top: 1px solid var(--launch-line);
+  overflow: hidden;
 }
 
 .launch-product-card strong {
-  min-height: 42px;
+  min-height: 0;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
   font-size: 15px;
   line-height: 1.28;
 }
@@ -6552,7 +6564,7 @@ body,
     min-width: 42px;
     min-height: 22px;
     padding: 0 7px;
-    font-size: 7px;
+    font-size: 8px;
     letter-spacing: 0.08em;
   }
 
@@ -6868,7 +6880,8 @@ body,
   }
 
   .launch-product-card {
-    grid-template-rows: minmax(190px, 1fr) auto;
+    grid-template-rows: 198px 112px;
+    min-height: 310px;
   }
 
   .launch-copy-block h2,
