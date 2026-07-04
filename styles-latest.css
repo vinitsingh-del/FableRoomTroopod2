@@ -4919,6 +4919,16 @@ body,
   transform: scale(1);
 }
 
+.concept-category-circle figure::after {
+  background: linear-gradient(180deg, rgba(16, 16, 16, 0) 30%, rgba(16, 16, 16, 0.18) 100%);
+  opacity: 0.2;
+}
+
+.concept-category-circle:hover figure::after,
+.concept-category-circle:focus-visible figure::after {
+  opacity: 0.36;
+}
+
 .concept-circle-card strong {
   color: var(--concept-ink);
   font-size: 18px;
