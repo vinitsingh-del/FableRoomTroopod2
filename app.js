@@ -514,8 +514,14 @@ function renderMerch() {
       </section>
 
       <div class="launch-sticky-actions" aria-label="Fableroom quick actions">
-        <a href="https://fableroom.com/collections/dining-furniture">Explore furniture</a>
-        <a href="https://fableroom.com/pages/contact">Talk to founder</a>
+        <a class="sticky-furniture-link" href="https://fableroom.com/collections/dining-furniture" aria-label="Explore Fableroom furniture">
+          <span class="sticky-f-mark" aria-hidden="true">F</span>
+        </a>
+        <a class="sticky-founder-link" href="https://fableroom.com/pages/contact" aria-label="Talk to founder">
+          <svg class="sticky-phone-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M22 16.9v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.78.59 2.63a2 2 0 0 1-.45 2.11L8 9.71a16 16 0 0 0 6.29 6.29l1.25-1.25a2 2 0 0 1 2.11-.45c.85.27 1.73.47 2.63.59A2 2 0 0 1 22 16.9Z"/>
+          </svg>
+        </a>
       </div>
       <a class="mobile-sticky-cta" href="#/all" aria-label="Shop the Tableware and Kitchen launch">Shop the launch</a>
     </article>
