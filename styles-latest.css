@@ -4955,11 +4955,16 @@ body,
 
 @media (max-width: 760px) {
   .concept-hero {
-    min-height: 480px;
+    min-height: 460px;
+  }
+
+  .concept-hero-media img {
+    object-fit: contain;
+    object-position: center bottom;
   }
 
   .concept-hero::after {
-    background: linear-gradient(180deg, rgba(255,255,255,0.84) 0%, rgba(255,255,255,0.42) 56%, rgba(255,255,255,0.06) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.28) 58%, rgba(255,255,255,0.04) 100%);
   }
 
   .concept-hero-copy {
@@ -4995,8 +5000,10 @@ body,
   }
 
   .concept-benefits {
-    grid-template-columns: 1fr;
-    gap: 18px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    width: min(100%, 560px);
+    padding: 18px 12px 28px;
   }
 
   .concept-campaign-strip {
@@ -5006,13 +5013,31 @@ body,
   }
 
   .concept-benefit {
-    border-right: 0;
-    border-bottom: 1px solid var(--concept-line);
-    padding-bottom: 20px;
+    gap: 6px;
+    min-width: 0;
+    padding: 8px 8px;
+    border-right: 1px solid var(--concept-line);
+    border-bottom: 0;
   }
 
   .concept-benefit:last-child {
-    border-bottom: 0;
+    border-right: 0;
+  }
+
+  .concept-benefit span {
+    width: 32px;
+    height: 32px;
+    font-size: 10px;
+  }
+
+  .concept-benefit strong {
+    max-width: 11ch;
+    font-size: 11px;
+    line-height: 1.2;
+  }
+
+  .concept-benefit small {
+    display: none;
   }
 
   .concept-about {
