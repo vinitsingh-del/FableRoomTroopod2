@@ -352,22 +352,12 @@ function renderMerch() {
         ${brandBenefits.map(([code, title, copy]) => renderConceptBenefit(code, title, copy)).join("")}
       </section>
 
-      <section class="launch-editorial reveal-block" aria-labelledby="launch-category-title">
-        <div class="launch-copy-block reveal-block">
-          <span>Shop by ritual</span>
-          <h2 id="launch-category-title" class="motion-text">Everything for a table that feels ready.</h2>
-          <p>Choose the pieces you cook with, serve in and layer with, all styled together for effortless hosting.</p>
-        </div>
-        <div class="launch-category-grid">
-          ${categoryTiles.map(renderLaunchCategory).join("")}
-        </div>
-      </section>
-
       <section class="launch-layers reveal-block" aria-labelledby="launch-layer-title">
         <div class="launch-section-head split reveal-block">
           <div>
             <span>Cook · Serve · Layer</span>
-            <h2 id="launch-layer-title" class="motion-text">Build the table in three considered moves.</h2>
+            <h2 id="launch-layer-title" class="motion-text">Everything for a table that feels ready.</h2>
+            <p>Prepare the meal, serve it beautifully and finish the setting with linen details.</p>
           </div>
           <a href="#/all">Shop all products</a>
         </div>
