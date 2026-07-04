@@ -99,9 +99,9 @@ const launchProductTitles = [
 ];
 
 const brandBenefits = [
-  ["C1", "Straight from the makers", "Premium pieces made with fewer markups."],
-  ["C2", "Loved by 12,000+ homes", "A calm home-table edit for daily rituals and hosting."],
-  ["C3", "Thoughtfully made", "Porcelain, stoneware, cotton, linen and tri-ply steel."],
+  ["Direct", "Straight from the makers", "Premium pieces made with fewer markups."],
+  ["12k+", "Loved by 12,000+ homes", "A calm home-table edit for daily rituals and hosting."],
+  ["Made", "Thoughtfully made", "Porcelain, stoneware, cotton, linen and tri-ply steel."],
 ];
 
 const heroVideoProducts = [
