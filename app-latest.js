@@ -367,16 +367,27 @@ function renderMerch() {
       </section>
 
       <section id="launch-edit" class="launch-layers reveal-block" aria-labelledby="launch-layer-title">
+        <div class="launch-ritual-panel">
         <div class="launch-section-head split reveal-block">
           <div>
-            <span>Cook · Serve · Layer</span>
+            <span>Most loved edit</span>
             <h2 id="launch-layer-title" class="motion-text">Everything for a table that feels ready.</h2>
             <p>Prepare the meal, serve it beautifully and finish the setting with linen details.</p>
           </div>
-          <a href="#/all">Shop all products</a>
+          <a href="#/all">Shop the edit</a>
         </div>
-        <div class="launch-layer-grid">
+        <div class="launch-layer-grid" aria-label="Cook Serve Layer editorial edit">
+          <article class="launch-layer-card launch-layer-video reveal-item">
+            <video src="${A("ritual-edit-video.mp4")}" poster="${A("ai-tableware-about-v2.png")}" autoplay muted loop playsinline preload="metadata"></video>
+            <div>
+              <span>01 · The full table ritual</span>
+              <strong>Cook. Serve. Layer.</strong>
+              <p>A moving glimpse of the launch edit: cookware, serveware and linen working together as one table story.</p>
+              <a href="#/all">Shop the launch</a>
+            </div>
+          </article>
           ${launchLayers.map(renderLaunchLayer).join("")}
+        </div>
         </div>
       </section>
 
@@ -538,7 +549,7 @@ function renderLaunchLayer(layer, index) {
     <a class="launch-layer-card reveal-item" href="${layer.href}">
       <figure><img src="${layer.image}" alt="${layer.title} layer" loading="lazy" /></figure>
       <div>
-        <span>0${index + 1} · ${layer.kicker}</span>
+        <span>0${index + 2} · ${layer.kicker}</span>
         <strong>${layer.title}</strong>
         <p>${layer.copy}</p>
         <em>${layer.cta}</em>
