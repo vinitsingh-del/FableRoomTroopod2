@@ -513,6 +513,10 @@ function renderMerch() {
         <a class="button" href="#/all">Shop the launch</a>
       </section>
 
+      <div class="launch-sticky-actions" aria-label="Fableroom quick actions">
+        <a href="https://fableroom.com/collections/dining-furniture">Explore furniture</a>
+        <a href="https://fableroom.com/pages/contact">Talk to founder</a>
+      </div>
       <a class="mobile-sticky-cta" href="#/all" aria-label="Shop the Tableware and Kitchen launch">Shop the launch</a>
     </article>
   `;
