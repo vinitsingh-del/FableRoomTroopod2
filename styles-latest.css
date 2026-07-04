@@ -4684,8 +4684,18 @@ body,
   object-fit: cover;
   object-position: center center;
   transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.04);
+  animation: heroBreathZoom 14s ease-in-out infinite alternate;
   transition: transform 180ms linear;
   will-change: transform;
+}
+
+@keyframes heroBreathZoom {
+  0% {
+    transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.02);
+  }
+  100% {
+    transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.09);
+  }
 }
 
 .concept-hero::after {
@@ -5137,7 +5147,17 @@ body,
   .concept-hero-media img {
     object-fit: cover;
     object-position: center center;
+    animation: heroBreathZoomMobile 12s ease-in-out infinite alternate;
     transform: scale(1.02);
+  }
+
+  @keyframes heroBreathZoomMobile {
+    0% {
+      transform: scale(1.02);
+    }
+    100% {
+      transform: scale(1.08);
+    }
   }
 
   .concept-hero::after {
@@ -5967,5 +5987,11 @@ body,
   .launch-layer-card strong {
     font-size: clamp(30px, 9vw, 40px);
     line-height: 1.04;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .concept-hero-media img {
+    animation: none !important;
   }
 }
