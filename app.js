@@ -306,7 +306,10 @@ function renderMerch() {
         <div class="concept-hero-copy reveal-block">
           <span>New · Tableware & Kitchen</span>
           <h1 id="concept-title" class="motion-text">Set the table for every kind of gathering.</h1>
-          <a href="#/all">Shop now</a>
+          <div class="hero-cta-group" aria-label="Launch actions">
+            <a href="#/all">Shop the launch</a>
+            <a class="secondary" href="#launch-edit">Explore the edit</a>
+          </div>
         </div>
       </section>
 
@@ -316,6 +319,22 @@ function renderMerch() {
         <a href="#/table-linen">Table Linen</a>
         <a href="#/all">View All</a>
       </nav>
+
+      <section class="launch-assurance-bar reveal-block" aria-label="Why shop Fableroom Tableware and Kitchen">
+        <div>
+          <strong>Direct pricing</strong>
+          <span>Premium pieces, fewer markups</span>
+        </div>
+        <div>
+          <strong>12,000+ homes</strong>
+          <span>Loved for everyday hosting</span>
+        </div>
+        <div>
+          <strong>Complete the table</strong>
+          <span>Serveware, cookware and linen in one edit</span>
+        </div>
+        <a href="#/all">Shop now</a>
+      </section>
 
       <section class="launch-highlight reveal-block" aria-label="Tableware and Kitchen launch highlight">
         <figure>
@@ -347,7 +366,7 @@ function renderMerch() {
         ${brandBenefits.map(([code, title, copy]) => renderConceptBenefit(code, title, copy)).join("")}
       </section>
 
-      <section class="launch-layers reveal-block" aria-labelledby="launch-layer-title">
+      <section id="launch-edit" class="launch-layers reveal-block" aria-labelledby="launch-layer-title">
         <div class="launch-section-head split reveal-block">
           <div>
             <span>Cook · Serve · Layer</span>
@@ -421,6 +440,8 @@ function renderMerch() {
         </div>
         <a class="button" href="#/all">Shop the launch</a>
       </section>
+
+      <a class="mobile-sticky-cta" href="#/all" aria-label="Shop the Tableware and Kitchen launch">Shop the launch</a>
     </article>
   `;
 }
@@ -730,6 +751,7 @@ document.querySelector(".menu-toggle").addEventListener("click", (event) => {
 
 let parallaxBound = false;
 let scrollProgressBound = false;
+let preloaderReady = false;
 
 function updateParallax() {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -768,6 +790,18 @@ function initVengeanceEffects() {
   initScrollProgress();
   initSpotlight();
   initReveal();
+}
+
+function initPreloader() {
+  if (preloaderReady) return;
+  preloaderReady = true;
+  const complete = () => document.body.classList.add("is-loaded");
+  if (document.readyState === "complete") {
+    window.setTimeout(complete, 420);
+  } else {
+    window.addEventListener("load", () => window.setTimeout(complete, 420), { once: true });
+  }
+  window.setTimeout(complete, 1800);
 }
 
 function initSpotlight() {
@@ -815,4 +849,5 @@ function initMotionText() {
 }
 
 window.addEventListener("hashchange", render);
+initPreloader();
 render();
