@@ -407,11 +407,17 @@ function renderMerch() {
 
       <section class="launch-reviews reveal-block" aria-labelledby="launch-reviews-title">
         <div class="launch-review-head">
-          <span>Loved by 12,000+ homes</span>
-          <h2 id="launch-reviews-title" class="motion-text">Reviewed around real tables.</h2>
+          <div>
+            <span>Loved by 12,000+ homes</span>
+            <h2 id="launch-reviews-title" class="motion-text">Real reviews. Real tables.</h2>
+          </div>
+          <p>Notes from everyday meals, hosted dinners and complete table settings.</p>
         </div>
-        <div class="review-scroll" aria-label="Customer reviews">
-          ${[...customerReviews, ...customerReviews].map(renderReviewCard).join("")}
+        <div class="review-marquee" aria-label="Customer reviews">
+          <div class="review-scroll">
+            ${customerReviews.map((review) => renderReviewCard(review)).join("")}
+            ${customerReviews.map((review) => renderReviewCard(review, true)).join("")}
+          </div>
         </div>
       </section>
 
@@ -573,9 +579,9 @@ function renderProofItem([icon, title]) {
   `;
 }
 
-function renderReviewCard(review) {
+function renderReviewCard(review, isDuplicate = false) {
   return `
-    <article class="review-card">
+    <article class="review-card"${isDuplicate ? ' aria-hidden="true"' : ""}>
       <figure>
         <img src="${review.image}" alt="${review.meta} reviewed by a Fableroom customer" loading="lazy" />
         ${iconSvg(review.icon)}
