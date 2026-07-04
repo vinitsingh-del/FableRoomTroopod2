@@ -308,8 +308,9 @@ function renderMerch() {
     "Zoraida Serving Bowl (Set of 2)",
     "Rainbow Gold Cup & Saucer (Set of 2)",
   ]);
+  const launchProducts = productsByTitle(launchProductTitles);
   app.innerHTML = `
-    <article class="concept-page">
+    <article class="concept-page launch-page">
       <section class="concept-hero" aria-labelledby="concept-title">
         <figure class="concept-hero-media" data-parallax>
           <img src="${A("ai-tableware-hero-v2.png")}" alt="Fableroom tableware, cookware and linen styled in a bright home kitchen" />
@@ -319,6 +320,22 @@ function renderMerch() {
           <h1 id="concept-title" class="motion-text">Set the table for every kind of gathering.</h1>
           <a href="#/all">Shop now</a>
         </div>
+      </section>
+
+      <nav class="landing-pill-nav reveal-block" aria-label="Shop Tableware and Kitchen">
+        <a href="#/serveware">Serveware</a>
+        <a href="#/cookware">Cookware</a>
+        <a href="#/table-linen">Table Linen</a>
+        <a href="#/all">View All</a>
+      </nav>
+
+      <section class="launch-stat-strip reveal-block" aria-label="Launch highlights">
+        ${launchStats.map(([stat, detail]) => `
+          <div class="reveal-item">
+            <strong>${stat}</strong>
+            <span>${detail}</span>
+          </div>
+        `).join("")}
       </section>
 
       <section class="concept-products reveal-block" aria-labelledby="concept-products-title">
@@ -333,6 +350,57 @@ function renderMerch() {
 
       <section class="concept-benefits reveal-block" aria-label="Fableroom benefits">
         ${brandBenefits.map(([code, title, copy]) => renderConceptBenefit(code, title, copy)).join("")}
+      </section>
+
+      <section class="launch-editorial reveal-block" aria-labelledby="launch-category-title">
+        <div class="launch-copy-block reveal-block">
+          <span>Shop by ritual</span>
+          <h2 id="launch-category-title" class="motion-text">One launch for the whole table.</h2>
+          <p>Move from prep to plating to the final linen layer without leaving the Tableware & Kitchen story.</p>
+        </div>
+        <div class="launch-category-grid">
+          ${categoryTiles.map(renderLaunchCategory).join("")}
+        </div>
+      </section>
+
+      <section class="launch-layers reveal-block" aria-labelledby="launch-layer-title">
+        <div class="launch-section-head split reveal-block">
+          <div>
+            <span>Cook · Serve · Layer</span>
+            <h2 id="launch-layer-title" class="motion-text">Build the table in three considered moves.</h2>
+          </div>
+          <a href="#/all">Shop all products</a>
+        </div>
+        <div class="launch-layer-grid">
+          ${launchLayers.map(renderLaunchLayer).join("")}
+        </div>
+      </section>
+
+      <section class="launch-scene reveal-block">
+        <figure><img src="${A("ai-tableware-about-v2.png")}" alt="Styled Fableroom dining table with serveware, cookware and linen" loading="lazy" /></figure>
+        <div class="reveal-block">
+          <span>Why this launch works</span>
+          <h2 class="motion-text">A cleaner buying journey for every home-table ritual.</h2>
+          <p>Serveware leads the category depth, cookware gives the kitchen its essential prep layer, and table linen now sits where customers naturally expect it.</p>
+          <div class="launch-proof-list" aria-label="Launch proof points">
+            <span>Editorial-first merchandising page</span>
+            <span>Subcategory tiles with clear shop paths</span>
+            <span>Table Linen moved under Tableware & Kitchen</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="launch-products reveal-block" aria-labelledby="launch-products-title">
+        <div class="launch-section-head split reveal-block">
+          <div>
+            <span>The launch edit</span>
+            <h2 id="launch-products-title" class="motion-text">A focused product strip, not a full PLP.</h2>
+          </div>
+          <a href="#/all">View all products</a>
+        </div>
+        <div class="launch-product-grid">
+          ${launchProducts.map(renderLaunchProduct).join("")}
+        </div>
       </section>
 
       <section class="concept-about reveal-block">
@@ -358,6 +426,15 @@ function renderMerch() {
             <span>${tile.title}</span>
           </a>
         `).join("")}
+      </section>
+
+      <section class="launch-conversion reveal-block">
+        <div>
+          <span>Tableware & Kitchen</span>
+          <h2 class="motion-text">Ready for cooking, hosting and setting the room.</h2>
+          <p>Use the launch page as the customer-facing entry point. Keep collection PLPs for deeper product browsing.</p>
+        </div>
+        <a class="button" href="#/all">Shop the launch</a>
       </section>
     </article>
   `;
