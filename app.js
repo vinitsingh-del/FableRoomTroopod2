@@ -140,6 +140,37 @@ const ritualProofItems = [
   ["linen", "Finished setting"],
 ];
 
+const customerReviews = [
+  {
+    icon: "serveware",
+    image: A("p-white-dinner.jpg"),
+    title: "Dinner set that feels special",
+    quote: "The plates feel premium without being too delicate for everyday meals.",
+    meta: "Dinner Plates",
+  },
+  {
+    icon: "cookware",
+    image: A("cookware-pan.jpg"),
+    title: "From hob to hosting",
+    quote: "Cookware, bowls and linen together made the table feel instantly complete.",
+    meta: "Cookware",
+  },
+  {
+    icon: "linen",
+    image: A("linen-rivello.png"),
+    title: "Softens the full setting",
+    quote: "The runner changed the whole table without needing a heavy centrepiece.",
+    meta: "Table Linen",
+  },
+  {
+    icon: "homes",
+    image: A("p-rainbow-cup.jpg"),
+    title: "A hosted feel at home",
+    quote: "The tea pieces are the first thing guests notice when we bring dessert out.",
+    meta: "Tea & Serveware",
+  },
+];
+
 const heroVideoProducts = [
   ["p-white-dinner.jpg", "Dinner plates"],
   ["p-renata-dinner.jpg", "Dinner set"],
@@ -344,18 +375,44 @@ function renderMerch() {
           <h1 id="concept-title" class="motion-text">Set the table for every kind of gathering.</h1>
           <div class="hero-cta-group" aria-label="Launch actions">
             <a href="#/all">Shop the launch</a>
-            <a class="secondary" href="#launch-edit">Explore the edit</a>
+            <a class="secondary" href="#launch-edit">Explore the collection</a>
           </div>
         </div>
       </section>
 
-      <nav class="landing-pill-nav reveal-block" aria-label="Shop Tableware and Kitchen">
-        ${categoryNavItems.map(renderLandingNavItem).join("")}
-      </nav>
+      <section id="launch-edit" class="launch-layers reveal-block" aria-labelledby="launch-layer-title">
+        <div class="launch-ritual-panel">
+        <div class="launch-section-head split reveal-block">
+          <div>
+            <span>Most loved collection</span>
+            <h2 id="launch-layer-title" class="motion-text">Everything for a table that feels ready.</h2>
+            <p>Prepare the meal, serve it beautifully and finish the setting with linen details.</p>
+          </div>
+          <a href="#/all">Shop the collection</a>
+        </div>
+        <div class="launch-layer-grid" aria-label="Cook Serve Layer editorial collection">
+          <article class="launch-layer-card launch-layer-video reveal-item">
+            <video src="${A("ritual-edit-video-v2.mp4")}" poster="${A("ai-tableware-about-v2.png")}" autoplay muted loop playsinline preload="metadata"></video>
+            <div>
+              <span>01 · The full table ritual</span>
+              <strong>Cook. Serve. Layer.</strong>
+              <p>A moving glimpse of the launch collection: cookware, serveware and linen working together as one table story.</p>
+              <a href="#/all">Shop the launch</a>
+            </div>
+          </article>
+          ${launchLayers.map(renderLaunchLayer).join("")}
+        </div>
+        </div>
+      </section>
 
-      <section class="launch-assurance-bar reveal-block" aria-label="Why shop Fableroom Tableware and Kitchen">
-        ${assuranceItems.map(renderAssuranceItem).join("")}
-        <a class="assurance-shop-card" href="#/all">${iconSvg("all")}<span>Shop now</span></a>
+      <section class="launch-reviews reveal-block" aria-labelledby="launch-reviews-title">
+        <div class="launch-review-head">
+          <span>Loved by 12,000+ homes</span>
+          <h2 id="launch-reviews-title" class="motion-text">Reviewed around real tables.</h2>
+        </div>
+        <div class="review-scroll" aria-label="Customer reviews">
+          ${[...customerReviews, ...customerReviews].map(renderReviewCard).join("")}
+        </div>
       </section>
 
       <section class="launch-highlight reveal-block" aria-label="Tableware and Kitchen launch highlight">
@@ -374,6 +431,15 @@ function renderMerch() {
         </div>
       </section>
 
+      <nav class="landing-pill-nav reveal-block" aria-label="Shop Tableware and Kitchen">
+        ${categoryNavItems.map(renderLandingNavItem).join("")}
+      </nav>
+
+      <section class="launch-assurance-bar reveal-block" aria-label="Why shop Fableroom Tableware and Kitchen">
+        ${assuranceItems.map(renderAssuranceItem).join("")}
+        <a class="assurance-shop-card" href="#/all">${iconSvg("all")}<span>Shop now</span></a>
+      </section>
+
       <section class="concept-products reveal-block" aria-labelledby="concept-products-title">
         <div class="concept-head reveal-block">
           <h2 id="concept-products-title" class="motion-text">Explore our newest collections</h2>
@@ -386,31 +452,6 @@ function renderMerch() {
 
       <section class="concept-benefits reveal-block" aria-label="Fableroom benefits">
         ${brandBenefits.map(([code, title, copy]) => renderConceptBenefit(code, title, copy)).join("")}
-      </section>
-
-      <section id="launch-edit" class="launch-layers reveal-block" aria-labelledby="launch-layer-title">
-        <div class="launch-ritual-panel">
-        <div class="launch-section-head split reveal-block">
-          <div>
-            <span>Most loved edit</span>
-            <h2 id="launch-layer-title" class="motion-text">Everything for a table that feels ready.</h2>
-            <p>Prepare the meal, serve it beautifully and finish the setting with linen details.</p>
-          </div>
-          <a href="#/all">Shop the edit</a>
-        </div>
-        <div class="launch-layer-grid" aria-label="Cook Serve Layer editorial edit">
-          <article class="launch-layer-card launch-layer-video reveal-item">
-            <video src="${A("ritual-edit-video-v2.mp4")}" poster="${A("ai-tableware-about-v2.png")}" autoplay muted loop playsinline preload="metadata"></video>
-            <div>
-              <span>01 · The full table ritual</span>
-              <strong>Cook. Serve. Layer.</strong>
-              <p>A moving glimpse of the launch edit: cookware, serveware and linen working together as one table story.</p>
-              <a href="#/all">Shop the launch</a>
-            </div>
-          </article>
-          ${launchLayers.map(renderLaunchLayer).join("")}
-        </div>
-        </div>
       </section>
 
       <section class="launch-scene reveal-block">
@@ -428,7 +469,7 @@ function renderMerch() {
       <section class="launch-products reveal-block" aria-labelledby="launch-products-title">
         <div class="launch-section-head split reveal-block">
           <div>
-            <span>The launch edit</span>
+            <span>The launch collection</span>
             <h2 id="launch-products-title" class="motion-text">Pieces to start with, style with and gift.</h2>
           </div>
           <a href="#/all">View all products</a>
@@ -539,6 +580,23 @@ function renderProofItem([icon, title]) {
       ${iconSvg(icon)}
       <strong>${title}</strong>
     </span>
+  `;
+}
+
+function renderReviewCard(review) {
+  return `
+    <article class="review-card">
+      <figure>
+        <img src="${review.image}" alt="${review.meta} reviewed by a Fableroom customer" loading="lazy" />
+        ${iconSvg(review.icon)}
+      </figure>
+      <div>
+        <span aria-label="Five star review">★★★★★</span>
+        <strong>${review.title}</strong>
+        <p>${review.quote}</p>
+        <small>${review.meta}</small>
+      </div>
+    </article>
   `;
 }
 
