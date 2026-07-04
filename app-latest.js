@@ -378,7 +378,7 @@ function renderMerch() {
         </div>
         <div class="launch-layer-grid" aria-label="Cook Serve Layer editorial edit">
           <article class="launch-layer-card launch-layer-video reveal-item">
-            <video src="${A("ritual-edit-video.mp4")}" poster="${A("ai-tableware-about-v2.png")}" autoplay muted loop playsinline preload="metadata"></video>
+            <video src="${A("ritual-edit-video-v2.mp4")}" poster="${A("ai-tableware-about-v2.png")}" autoplay muted loop playsinline preload="metadata"></video>
             <div>
               <span>01 · The full table ritual</span>
               <strong>Cook. Serve. Layer.</strong>
