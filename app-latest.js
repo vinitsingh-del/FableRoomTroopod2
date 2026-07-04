@@ -424,6 +424,10 @@ function renderMerch() {
       <section class="launch-highlight reveal-block" aria-label="Tableware and Kitchen launch highlight">
         <figure>
           <img src="${A("launch-highlight-lifestyle.png")}" alt="Fableroom tableware, cookware and linen styled together" loading="lazy" />
+          <figcaption>
+            <strong>The Complete Tableware & Kitchen Set</strong>
+            <span>Cookware, serveware and linen styled together.</span>
+          </figcaption>
         </figure>
         <div class="launch-highlight-copy">
           <span>New in Tableware & Kitchen</span>
