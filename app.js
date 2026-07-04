@@ -99,6 +99,12 @@ const launchProductTitles = [
   "Rivello European Linen Fringe Table Linen Set",
 ];
 
+const brandBenefits = [
+  ["Made to layer", "Serveware, cookware and linen styled as one complete table."],
+  ["Premium materials", "Porcelain, stoneware, cotton, linen and tri-ply steel."],
+  ["Ready to host", "Pieces chosen for everyday meals and considered gatherings."],
+];
+
 const heroVideoProducts = [
   ["p-white-dinner.jpg", "Dinner plates"],
   ["p-renata-dinner.jpg", "Dinner set"],
@@ -289,82 +295,79 @@ function render() {
 }
 
 function renderMerch() {
+  const featuredProducts = productsByTitle([
+    "White Sparkle Dinner Plates (Set of 6)",
+    "Zoraida Serving Bowl (Set of 2)",
+    "Rainbow Gold Cup & Saucer (Set of 2)",
+  ]);
   app.innerHTML = `
-    <article class="fr-launch">
-      <section class="fr-hero" aria-labelledby="fr-hero-title">
-        <div class="fr-hero-video" data-parallax aria-hidden="true">
-          <img src="${A("hero-tableware-shelf.png")}" alt="" />
-          <img src="${A("hero-tableware-slide-2.png")}" alt="" />
-          <img src="${A("hero-real-table.png")}" alt="" />
-        </div>
-        <div class="fr-hero-copy">
-          <span>New: Tableware & Kitchen</span>
-          <h1 id="fr-hero-title">A table made for every day, and every guest.</h1>
-          <p>Serveware, cookware and table linen come together in one considered launch for cooking, hosting and setting the room beautifully.</p>
-          <div class="fr-actions">
-            <a href="#/all">Shop the launch</a>
-            <a href="#/merch" data-scroll-target="fr-edit">Explore the edit</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="fr-shop-paths" aria-label="Shop the launch by category">
-        <a href="#/serveware"><img src="${A("cat-dinnerware.jpg")}" alt="" /><span>Serveware</span></a>
-        <a href="#/cookware"><img src="${A("cookware-pan.jpg")}" alt="" /><span>Cookware</span></a>
-        <a href="#/table-linen"><img src="${A("linen-cotto.png")}" alt="" /><span>Table Linen</span></a>
-        <a href="#/all"><img src="${A("dinner_plates.jpg")}" alt="" /><span>View All</span></a>
-      </section>
-
-      <section class="fr-intro reveal-block">
-        <div>
-          <span>Designed To Layer</span>
-          <h2>From stove to table, every piece has a place.</h2>
-        </div>
-        <p>Build a table that feels effortless: cookware for the recipe, plates and bowls for the serve, linen for the final soft layer.</p>
-      </section>
-
-      <section class="fr-category-stories reveal-block">
-        ${categoryTiles.map(renderFrCategory).join("")}
-      </section>
-
-      <section class="fr-scene reveal-block">
-        <figure>
-          <img src="${A("hero-real-table.png")}" alt="A dressed dining table with Fableroom serveware and linen" />
+    <article class="concept-page">
+      <section class="concept-hero" aria-labelledby="concept-title">
+        <figure class="concept-hero-media" data-parallax>
+          <img src="${A("hero-tableware-slide-2.png")}" alt="Fableroom tableware and cups styled in a warm home kitchen" />
         </figure>
-        <div>
-          <span>Featured Setting</span>
-          <h2>Set the mood before the meal is served.</h2>
-          <p>Mix dinner plates, serving bowls, tea pieces and table linen for a home table that feels complete without feeling overdone.</p>
+        <div class="concept-hero-copy">
+          <span>New · Tableware & Kitchen</span>
+          <h1 id="concept-title">Set the table for every kind of gathering.</h1>
+          <a href="#/all">Shop now</a>
+        </div>
+      </section>
+
+      <section class="concept-products" aria-labelledby="concept-products-title">
+        <div class="concept-head">
+          <h2 id="concept-products-title">Explore our newest collections</h2>
+          <a href="#/all">View all products</a>
+        </div>
+        <div class="concept-circle-row">
+          ${featuredProducts.map(renderConceptCircleProduct).join("")}
+        </div>
+      </section>
+
+      <section class="concept-benefits" aria-label="Fableroom benefits">
+        ${brandBenefits.map(([title, copy]) => renderConceptBenefit(title, copy)).join("")}
+      </section>
+
+      <section class="concept-about">
+        <div class="concept-about-copy">
+          <span>About The Launch</span>
+          <h2>Everything the table needs, beautifully together.</h2>
+          <p>Cookware for the recipe, serveware for the moment and linen for the final layer. Build a table that feels calm, complete and ready for guests.</p>
           <a href="#/serveware">Shop serveware</a>
         </div>
+        <figure><img src="${A("hero-real-table.png")}" alt="Fableroom dining table styled with table linen and serveware" /></figure>
       </section>
 
-      <section class="fr-edit reveal-block" id="fr-edit">
-        <div class="fr-section-head">
-          <span>Launch Edit</span>
-          <h2>Pieces to begin with.</h2>
-          <a href="#/all">View all</a>
-        </div>
-        <div class="fr-product-row">
-          ${productsByTitle(launchProductTitles).slice(0, 8).map(renderFrProduct).join("")}
-        </div>
-      </section>
-
-      <section class="fr-final reveal-block">
-        <img src="${A("linen-rivello.png")}" alt="Table linen styled for a Fableroom table" />
-        <div>
-          <span>Table Linen Joins The Tableware Story</span>
-          <h2>The finishing layer now lives where customers build the table.</h2>
-          <p>Shop runners, napkins and linen sets alongside the serveware they complete.</p>
-          <a href="#/table-linen">Shop table linen</a>
-        </div>
+      <section class="concept-category-strip">
+        ${categoryTiles.map((tile) => `
+          <a href="#/${tile.id}">
+            <img src="${tile.image}" alt="${tile.title}" />
+            <span>${tile.title}</span>
+          </a>
+        `).join("")}
       </section>
     </article>
   `;
-  document.querySelector('[data-scroll-target="fr-edit"]')?.addEventListener("click", (event) => {
-    event.preventDefault();
-    document.querySelector("#fr-edit")?.scrollIntoView({ behavior: "smooth", block: "start" });
-  });
+}
+
+function renderConceptCircleProduct(product) {
+  const image = showcaseImages[product.sku] ? A(showcaseImages[product.sku]) : product.image;
+  return `
+    <a class="concept-circle-card reveal-item" href="#/${product.category === "table-linen" ? "table-linen" : product.category}">
+      <figure><img src="${image}" alt="${product.title}" loading="lazy" /></figure>
+      <strong>${product.title.replace(" (Set of 6)", "").replace(" (Set of 2)", "")}</strong>
+      <small>£${product.price}</small>
+    </a>
+  `;
+}
+
+function renderConceptBenefit(title, copy) {
+  return `
+    <div class="concept-benefit reveal-item">
+      <span aria-hidden="true">◎</span>
+      <strong>${title}</strong>
+      <small>${copy}</small>
+    </div>
+  `;
 }
 
 function renderFrCategory(tile) {
@@ -451,21 +454,43 @@ function renderCategoryTile(tile) {
 
 function renderCollection(key) {
   const collection = collections[key];
+  const featuredProducts = collection.products.slice(0, 3);
   app.innerHTML = `
-    <article>
-      <section class="collection-hero room-collection">
-        <div class="collection-copy">
-          <div class="breadcrumbs">Home / Tableware & Kitchen / ${collection.title}</div>
-          <span class="eyebrow">${collection.room}</span>
-          <h1>${collection.title}</h1>
-          <span class="meta">${collection.count} products · ${collection.path}</span>
-          <p class="lede">${collection.intro}</p>
-          <div class="collection-ctas">
-            <a class="button" href="#/all">View all</a>
-            <a class="button secondary" href="#/merch">Back to rooms</a>
-          </div>
+    <article class="concept-page collection-concept">
+      <section class="concept-hero" aria-labelledby="collection-concept-title">
+        <figure class="concept-hero-media" data-parallax>
+          <img src="${collection.image}" alt="${collection.title} styled by Fableroom" />
+        </figure>
+        <div class="concept-hero-copy">
+          <span>${collection.room}</span>
+          <h1 id="collection-concept-title">${collection.title}</h1>
+          <p>${collection.intro}</p>
+          <a href="#/${key}" data-scroll-target="product-grid">Shop now</a>
         </div>
-        <figure class="collection-image parallax-frame" data-parallax><img src="${collection.image}" alt="${collection.title} collection image" /></figure>
+      </section>
+
+      <section class="concept-products" aria-labelledby="collection-new-title">
+        <div class="concept-head">
+          <h2 id="collection-new-title">Explore our newest collections</h2>
+          <span>${collection.count} products</span>
+        </div>
+        <div class="concept-circle-row">
+          ${featuredProducts.map(renderConceptCircleProduct).join("")}
+        </div>
+      </section>
+
+      <section class="concept-benefits" aria-label="${collection.title} benefits">
+        ${brandBenefits.map(([title, copy]) => renderConceptBenefit(title, copy)).join("")}
+      </section>
+
+      <section class="concept-about">
+        <div class="concept-about-copy">
+          <span>About ${collection.title}</span>
+          <h2>${collection.title === "All Tableware & Kitchen" ? "A complete home-table edit." : `The ${collection.title.toLowerCase()} layer for a finished home table.`}</h2>
+          <p>${collection.intro}</p>
+          <a href="#/merch">Back to Tableware & Kitchen</a>
+        </div>
+        <figure><img src="${collection.image}" alt="${collection.title} collection detail" /></figure>
       </section>
 
       <section class="toolbar" aria-label="${collection.title} controls">
@@ -496,6 +521,10 @@ function renderCollection(key) {
   document.querySelector("#sort-select").addEventListener("change", (event) => {
     activeSort = event.target.value;
     updateProducts(collection);
+  });
+  document.querySelector('[data-scroll-target="product-grid"]')?.addEventListener("click", (event) => {
+    event.preventDefault();
+    document.querySelector("#product-grid")?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
   updateProducts(collection);
 }
