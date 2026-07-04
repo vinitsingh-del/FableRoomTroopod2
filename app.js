@@ -100,9 +100,9 @@ const launchProductTitles = [
 ];
 
 const brandBenefits = [
-  ["Made to layer", "Serveware, cookware and linen styled as one complete table."],
-  ["Premium materials", "Porcelain, stoneware, cotton, linen and tri-ply steel."],
-  ["Ready to host", "Pieces chosen for everyday meals and considered gatherings."],
+  ["C1", "Straight from the makers", "Premium pieces made with fewer markups."],
+  ["C2", "Loved by 12,000+ homes", "A calm home-table edit for daily rituals and hosting."],
+  ["C3", "Thoughtfully made", "Porcelain, stoneware, cotton, linen and tri-ply steel."],
 ];
 
 const heroVideoProducts = [
@@ -304,7 +304,7 @@ function renderMerch() {
     <article class="concept-page">
       <section class="concept-hero" aria-labelledby="concept-title">
         <figure class="concept-hero-media" data-parallax>
-          <img src="${A("hero-tableware-slide-2.png")}" alt="Fableroom tableware and cups styled in a warm home kitchen" />
+          <img src="${A("ai-tableware-hero.png")}" alt="Fableroom tableware, cookware and linen styled in a bright home kitchen" />
         </figure>
         <div class="concept-hero-copy">
           <span>New · Tableware & Kitchen</span>
@@ -324,7 +324,7 @@ function renderMerch() {
       </section>
 
       <section class="concept-benefits" aria-label="Fableroom benefits">
-        ${brandBenefits.map(([title, copy]) => renderConceptBenefit(title, copy)).join("")}
+        ${brandBenefits.map(([code, title, copy]) => renderConceptBenefit(code, title, copy)).join("")}
       </section>
 
       <section class="concept-about">
@@ -334,7 +334,13 @@ function renderMerch() {
           <p>Cookware for the recipe, serveware for the moment and linen for the final layer. Build a table that feels calm, complete and ready for guests.</p>
           <a href="#/serveware">Shop serveware</a>
         </div>
-        <figure><img src="${A("hero-real-table.png")}" alt="Fableroom dining table styled with table linen and serveware" /></figure>
+        <figure><img src="${A("ai-tableware-about.png")}" alt="Fableroom dining table styled with table linen and serveware" /></figure>
+      </section>
+
+      <section class="concept-campaign-strip" aria-label="Current Fableroom campaign">
+        <span>Thoughtfully made, fairly priced</span>
+        <span>Straight from the makers</span>
+        <span>Loved by 12,000+ homes</span>
       </section>
 
       <section class="concept-category-strip">
@@ -350,7 +356,7 @@ function renderMerch() {
 }
 
 function renderConceptCircleProduct(product) {
-  const image = showcaseImages[product.sku] ? A(showcaseImages[product.sku]) : product.image;
+  const image = product.image;
   return `
     <a class="concept-circle-card reveal-item" href="#/${product.category === "table-linen" ? "table-linen" : product.category}">
       <figure><img src="${image}" alt="${product.title}" loading="lazy" /></figure>
@@ -360,14 +366,26 @@ function renderConceptCircleProduct(product) {
   `;
 }
 
-function renderConceptBenefit(title, copy) {
+function renderConceptBenefit(code, title, copy) {
   return `
     <div class="concept-benefit reveal-item">
-      <span aria-hidden="true">◎</span>
+      <span>${code}</span>
       <strong>${title}</strong>
       <small>${copy}</small>
     </div>
   `;
+}
+
+function collectionHeroImage(collection) {
+  if (collection.title === "Cookware") return A("ai-tableware-about.png");
+  if (collection.title === "Table Linen") return A("ai-tableware-hero.png");
+  return A("ai-tableware-hero.png");
+}
+
+function collectionAboutImage(collection) {
+  if (collection.title === "Cookware") return A("hero-tableware-shelf.png");
+  if (collection.title === "Table Linen") return A("ai-tableware-about.png");
+  return A("ai-tableware-about.png");
 }
 
 function renderFrCategory(tile) {
@@ -459,7 +477,7 @@ function renderCollection(key) {
     <article class="concept-page collection-concept">
       <section class="concept-hero" aria-labelledby="collection-concept-title">
         <figure class="concept-hero-media" data-parallax>
-          <img src="${collection.image}" alt="${collection.title} styled by Fableroom" />
+          <img src="${collectionHeroImage(collection)}" alt="${collection.title} styled by Fableroom" />
         </figure>
         <div class="concept-hero-copy">
           <span>${collection.room}</span>
@@ -480,7 +498,7 @@ function renderCollection(key) {
       </section>
 
       <section class="concept-benefits" aria-label="${collection.title} benefits">
-        ${brandBenefits.map(([title, copy]) => renderConceptBenefit(title, copy)).join("")}
+        ${brandBenefits.map(([code, title, copy]) => renderConceptBenefit(code, title, copy)).join("")}
       </section>
 
       <section class="concept-about">
@@ -490,7 +508,7 @@ function renderCollection(key) {
           <p>${collection.intro}</p>
           <a href="#/merch">Back to Tableware & Kitchen</a>
         </div>
-        <figure><img src="${collection.image}" alt="${collection.title} collection detail" /></figure>
+        <figure><img src="${collectionAboutImage(collection)}" alt="${collection.title} collection detail" /></figure>
       </section>
 
       <section class="toolbar" aria-label="${collection.title} controls">
