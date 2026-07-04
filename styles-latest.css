@@ -5827,6 +5827,7 @@ body,
   margin: 0 auto;
   padding: clamp(34px, 5vw, 68px) 0;
   background: #fff;
+  overflow: hidden;
 }
 
 .launch-review-head {
@@ -5837,7 +5838,12 @@ body,
   padding: 0 clamp(18px, 4vw, 54px) 22px;
 }
 
-.launch-review-head > span {
+.launch-review-head > div {
+  display: grid;
+  gap: 18px;
+}
+
+.launch-review-head span {
   color: var(--launch-burgundy);
   font-size: 11px;
   font-weight: 800;
@@ -5855,24 +5861,35 @@ body,
   line-height: 1.02;
 }
 
-.review-scroll {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(260px, 31%);
-  gap: 12px;
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-  padding: 0 clamp(18px, 4vw, 54px) 8px;
-  scrollbar-width: none;
+.launch-review-head p {
+  max-width: 380px;
+  margin: 0 0 5px;
+  color: var(--launch-muted);
+  font-size: 14px;
+  line-height: 1.5;
 }
 
-.review-scroll::-webkit-scrollbar {
-  display: none;
+.review-marquee {
+  overflow: hidden;
+  cursor: grab;
+}
+
+.review-scroll {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  padding: 0 clamp(18px, 4vw, 54px) 8px;
+  animation: reviewMarquee 34s linear infinite;
+  will-change: transform;
+}
+
+.review-marquee:hover .review-scroll,
+.review-marquee:focus-within .review-scroll {
+  animation-play-state: paused;
 }
 
 .review-card {
-  scroll-snap-align: start;
+  flex: 0 0 clamp(310px, 30vw, 420px);
   display: grid;
   grid-template-columns: 108px minmax(0, 1fr);
   gap: 16px;
@@ -5954,6 +5971,16 @@ body,
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+@keyframes reviewMarquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 
 .launch-editorial {
@@ -6567,8 +6594,12 @@ body,
 
   .launch-review-head {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 12px;
     padding: 0 18px 18px;
+  }
+
+  .launch-review-head > div {
+    gap: 12px;
   }
 
   .launch-review-head h2 {
@@ -6576,13 +6607,19 @@ body,
     font-size: clamp(30px, 8.8vw, 40px);
   }
 
+  .launch-review-head p {
+    max-width: 310px;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
   .review-scroll {
-    grid-auto-columns: minmax(280px, 84%);
     gap: 10px;
     padding: 0 18px 6px;
   }
 
   .review-card {
+    flex-basis: 300px;
     grid-template-columns: 88px minmax(0, 1fr);
     gap: 13px;
     min-height: 156px;
@@ -6758,7 +6795,8 @@ body,
   .concept-hero-media img,
   .preloader-line::after,
   body.is-loaded .site-header,
-  body.is-loaded .announcement-card {
+  body.is-loaded .announcement-card,
+  .review-scroll {
     animation: none !important;
   }
 
