@@ -4975,16 +4975,17 @@ body,
 }
 
 .concept-benefit span {
-  width: 38px;
-  height: 38px;
+  width: 58px;
+  height: 58px;
   display: grid;
   place-items: center;
   border: 1px solid var(--concept-burgundy);
   border-radius: 999px;
   color: var(--concept-burgundy);
-  font-size: 11px;
+  font-size: 9px;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .concept-benefit strong {
@@ -5237,9 +5238,9 @@ body,
   }
 
   .concept-benefit span {
-    width: 32px;
-    height: 32px;
-    font-size: 10px;
+    width: 48px;
+    height: 48px;
+    font-size: 8px;
   }
 
   .concept-benefit strong {
