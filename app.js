@@ -88,6 +88,12 @@ const launchLayers = [
   },
 ];
 
+const conceptLifestyleImages = {
+  "White Sparkle Dinner Plates (Set of 6)": A("lifestyle-white-sparkle-plates.png"),
+  "Zoraida Serving Bowl (Set of 2)": A("lifestyle-zoraida-bowl.png"),
+  "Rainbow Gold Cup & Saucer (Set of 2)": A("lifestyle-rainbow-cup-saucer.png"),
+};
+
 const launchProductTitles = [
   "White Sparkle Dinner Plates (Set of 6)",
   "Renata Dinner Plates (Set of 6)",
@@ -357,9 +363,13 @@ function renderMerch() {
 
 function renderConceptCircleProduct(product) {
   const image = product.image;
+  const lifestyleImage = conceptLifestyleImages[product.title] || image;
   return `
     <a class="concept-circle-card reveal-item" href="#/${product.category === "table-linen" ? "table-linen" : product.category}">
-      <figure><img src="${image}" alt="${product.title}" loading="lazy" /></figure>
+      <figure>
+        <img class="concept-lifestyle-img" src="${lifestyleImage}" alt="${product.title} styled in a Fableroom home setting" loading="lazy" />
+        <img class="concept-product-img" src="${image}" alt="${product.title}" loading="lazy" />
+      </figure>
       <strong>${product.title.replace(" (Set of 6)", "").replace(" (Set of 2)", "")}</strong>
       <small>£${product.price}</small>
     </a>
