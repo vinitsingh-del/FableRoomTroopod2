@@ -7543,7 +7543,8 @@ body,
   opacity: 0.08;
 }
 
-.concept-page.launch-page .launch-ritual-panel::before {
+.concept-page.launch-page .launch-ritual-panel::before,
+.concept-page.launch-page .launch-ritual-panel::after {
   display: none;
 }
 
