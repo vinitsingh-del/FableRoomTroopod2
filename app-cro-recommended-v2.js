@@ -399,7 +399,7 @@ function renderMerch() {
             <video src="${A("ritual-edit-video-v2.mp4")}" poster="${A("ai-tableware-about-v2.png")}" autoplay muted loop playsinline preload="metadata"></video>
             <div>
               <strong>Cook. Serve. Layer.</strong>
-              <p>A moving glimpse of the launch collection: cookware, serveware and linen working together as one table story.</p>
+              <p>Explore the collection through cookware, serveware and linen made to complete the table.</p>
               <a href="#/all">Shop the launch</a>
             </div>
           </article>
