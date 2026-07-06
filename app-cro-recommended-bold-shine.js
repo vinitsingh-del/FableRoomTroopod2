@@ -413,7 +413,6 @@ function renderMerch() {
           <div>
             <span>Most loved collection</span>
             <h2 id="launch-layer-title" class="motion-text">The ready table edit.</h2>
-            <p>Cook, serve and finish with linen.</p>
           </div>
           <a href="#/all">Shop the collection</a>
         </div>
@@ -422,7 +421,6 @@ function renderMerch() {
             <video src="${A("ritual-edit-video-v2.mp4")}" poster="${A("ai-tableware-about-v2.png")}" autoplay muted loop playsinline preload="metadata"></video>
             <div>
               <strong>Cook. Serve. Layer.</strong>
-              <p>Explore the collection through cookware, serveware and linen made to complete the table.</p>
               <a href="#/all">Shop the launch</a>
             </div>
           </article>
@@ -673,7 +671,6 @@ function renderLaunchLayer(layer, index) {
       <figure><img src="${layer.image}" alt="${layer.title} layer" loading="lazy" /></figure>
       <div>
         <strong>${layer.title}</strong>
-        <p>${layer.copy}</p>
         <em>${layer.cta}</em>
       </div>
     </a>
