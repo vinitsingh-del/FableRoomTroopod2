@@ -8586,3 +8586,84 @@ body,
     font-size: 10px;
   }
 }
+
+/* Desktop-only symmetry pass: wider canvas, centered rhythm, glowing section titles. */
+@media (min-width: 1024px) {
+  .concept-page.launch-page {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .concept-page.launch-page .launch-layers,
+  .concept-page.launch-page .concept-products,
+  .concept-page.launch-page .launch-highlight,
+  .concept-page.launch-page .launch-reviews,
+  .concept-page.launch-page .launch-products,
+  .concept-page.launch-page .launch-featured,
+  .concept-page.launch-page .launch-scene,
+  .concept-page.launch-page .launch-conversion {
+    width: calc(100vw - clamp(48px, 5vw, 88px)) !important;
+    max-width: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .concept-page.launch-page .launch-layers,
+  .concept-page.launch-page .concept-products,
+  .concept-page.launch-page .launch-products,
+  .concept-page.launch-page .launch-featured,
+  .concept-page.launch-page .launch-reviews {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .concept-page.launch-page .launch-ritual-panel {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: clamp(18px, 2vw, 30px) !important;
+  }
+
+  .concept-page.launch-page .launch-layer-grid {
+    gap: clamp(12px, 1.25vw, 18px);
+    grid-auto-rows: minmax(232px, auto);
+  }
+
+  .concept-page.launch-page .launch-layer-video {
+    min-height: clamp(500px, 41vw, 680px);
+  }
+
+  .concept-page.launch-page .launch-layer-card:not(.launch-layer-video) {
+    grid-template-rows: minmax(245px, 1fr);
+  }
+
+  .concept-page.launch-page .launch-layer-card > div {
+    gap: 10px;
+    padding: clamp(20px, 2.2vw, 34px);
+  }
+
+  .concept-page.launch-page .launch-section-head,
+  .concept-page.launch-page .concept-head,
+  .concept-page.launch-page .launch-featured-head,
+  .concept-page.launch-page .launch-review-head {
+    width: 100%;
+    max-width: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .concept-page.launch-page .launch-section-head h2,
+  .concept-page.launch-page .concept-head h2,
+  .concept-page.launch-page .launch-review-head h2,
+  .concept-page.launch-page .launch-featured-head h2,
+  .concept-page.launch-page .launch-scene h2,
+  .concept-page.launch-page .launch-conversion h2 {
+    animation: fableroomTitleGlow 3.8s ease-in-out infinite;
+  }
+
+  .concept-page.launch-page .motion-text.is-visible span,
+  .concept-page.launch-page .is-visible .motion-text span {
+    animation: fableroomTitleGlow 3.8s ease-in-out infinite;
+  }
+}
