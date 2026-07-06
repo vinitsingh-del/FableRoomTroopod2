@@ -399,7 +399,6 @@ function renderMerch() {
           <h1 id="concept-title" class="motion-text">Set the table for every kind of gathering.</h1>
           <div class="hero-cta-group" aria-label="Launch actions">
             <a href="#/all">Shop the launch</a>
-            <a class="secondary" href="#launch-edit">Explore the collection</a>
           </div>
         </div>
       </section>
