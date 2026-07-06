@@ -540,8 +540,10 @@ function renderLandingNavItem([icon, title, href]) {
 }
 
 function renderAssuranceItem([tag, title, copy]) {
+  const icon = tag === "DIRECT" ? "direct" : tag === "12K+" ? "homes" : "complete";
   return `
-    <div>
+    <div class="assurance-card assurance-${icon}">
+      <span class="assurance-icon">${iconSvg(icon)}</span>
       <span class="assurance-tag">${tag}</span>
       <strong>${title}</strong>
       <span>${copy}</span>
