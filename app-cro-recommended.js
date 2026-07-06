@@ -534,7 +534,6 @@ function renderConceptCircleCategory(tile) {
         <img class="concept-lifestyle-img" src="${tile.image}" alt="${tile.title} styled in a Fableroom home setting" loading="lazy" />
       </figure>
       <strong>${tile.title}</strong>
-      <small>${tile.count}</small>
     </a>
   `;
 }
