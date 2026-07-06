@@ -142,32 +142,32 @@ const ritualProofItems = [
 
 const customerReviews = [
   {
-    icon: "serveware",
-    image: A("p-white-dinner.jpg"),
-    title: "Dinner set that feels special",
-    quote: "The plates feel premium without being too delicate for everyday meals.",
-    meta: "Dinner Plates",
-  },
-  {
-    icon: "cookware",
-    image: A("cookware-pan.jpg"),
-    title: "From hob to hosting",
-    quote: "Cookware, bowls and linen together made the table feel instantly complete.",
-    meta: "Cookware",
-  },
-  {
-    icon: "linen",
-    image: A("linen-rivello.png"),
-    title: "Softens the full setting",
-    quote: "The runner changed the whole table without needing a heavy centrepiece.",
-    meta: "Table Linen",
+    icon: "direct",
+    image: A("ai-tableware-about-v2.png"),
+    title: "Great value without the markup",
+    quote: "Customers call out quality pieces at a fair price point, with the direct-from-makers model making the value feel clear.",
+    meta: "Fableroom Value",
   },
   {
     icon: "homes",
-    image: A("p-rainbow-cup.jpg"),
-    title: "A hosted feel at home",
-    quote: "The tea pieces are the first thing guests notice when we bring dessert out.",
-    meta: "Tea & Serveware",
+    image: A("hero-tableware-slide-2.png"),
+    title: "Delivery that keeps customers updated",
+    quote: "Many Fableroom shoppers mention quick delivery, clear courier updates and a smoother arrival experience.",
+    meta: "Delivery Experience",
+  },
+  {
+    icon: "made",
+    image: A("launch-highlight-lifestyle.png"),
+    title: "Service that feels responsive",
+    quote: "Reviews often highlight helpful support, regular communication and a team that stays close to the order.",
+    meta: "Customer Support",
+  },
+  {
+    icon: "serveware",
+    image: A("ai-tableware-hero-v2.png"),
+    title: "Thoughtfully priced home pieces",
+    quote: "The pricing story is simple: considered materials, fewer middlemen and pieces that feel more premium than expected.",
+    meta: "Brand Promise",
   },
 ];
 
@@ -436,8 +436,8 @@ function renderMerch() {
       <section class="launch-reviews reveal-block" aria-labelledby="launch-reviews-title">
         <div class="launch-review-head">
           <div>
-            <span>Loved by 12,000+ homes</span>
-            <h2 id="launch-reviews-title" class="motion-text">Real reviews. Real tables.</h2>
+            <span>Fableroom customer stories</span>
+            <h2 id="launch-reviews-title" class="motion-text">Loved for value, delivery and service.</h2>
           </div>
         </div>
         <div class="review-marquee" aria-label="Customer reviews">
