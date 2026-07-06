@@ -37,21 +37,21 @@ const categoryTiles = [
     id: "serveware",
     title: "Serveware",
     count: "70+ pieces",
-    image: A("cat-serveware.jpg"),
+    image: A("ai-circle-serveware-20260706.png"),
     copy: "Dinner plates, side plates, bowls, cups, saucers and tea pieces for everyday hosting.",
   },
   {
     id: "cookware",
     title: "Cookware",
     count: "Everyday essentials",
-    image: A("cookware-dutch.jpg"),
+    image: A("ai-circle-cookware-20260706.png"),
     copy: "Stainless steel pans and pots made for everyday cooking, slow simmering and easy hosting.",
   },
   {
     id: "table-linen",
     title: "Table Linen",
     count: "36 products",
-    image: A("linen-cotto.png"),
+    image: A("ai-circle-table-linen-20260706.png"),
     copy: "Runners, placemats, napkins and coasters that soften the table and finish the setting.",
   },
 ];
@@ -652,12 +652,18 @@ function renderLaunchLayer(layer, index) {
 
 function renderLaunchProduct(product) {
   const image = showcaseImages[product.sku] ? A(showcaseImages[product.sku]) : product.image;
+  const tags = product.category === "cookware"
+    ? ["Ready to cook", "Tri-ply"]
+    : product.category === "table-linen"
+      ? ["Finishing layer", "Soft setting"]
+      : ["Ready to host", "Fairly priced"];
   return `
     <a class="launch-product-card reveal-item" href="#/${product.category === "table-linen" ? "table-linen" : product.category}">
       <figure>
         <img src="${image}" alt="${product.title}" loading="lazy" />
       </figure>
       <div>
+        <div class="launch-product-tags">${tags.map((tag) => `<em>${tag}</em>`).join("")}</div>
         <span>${product.badge}</span>
         <strong>${product.title}</strong>
         <small>${product.type} · £${product.price}</small>
