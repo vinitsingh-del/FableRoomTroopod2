@@ -479,15 +479,6 @@ function renderMerch() {
         <span>Loved by 12,000+ homes</span>
       </section>
 
-      <section class="concept-category-strip reveal-block">
-        ${categoryTiles.map((tile) => `
-          <a class="reveal-item" href="#/${tile.id}">
-            <img src="${tile.image}" alt="${tile.title}" />
-            <span>${tile.title}</span>
-          </a>
-        `).join("")}
-      </section>
-
       <section class="launch-conversion reveal-block">
         <div>
           <span>Tableware & Kitchen</span>
