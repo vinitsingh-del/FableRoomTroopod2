@@ -6987,6 +6987,7 @@ body,
 
 .concept-page.launch-page .concept-circle-card strong {
   font-size: 14px;
+  font-weight: 800 !important;
 }
 
 .concept-page.launch-page .concept-circle-card small {
@@ -7400,6 +7401,7 @@ body,
   .concept-page.launch-page .concept-circle-card strong {
     font-size: 10px;
     line-height: 1.2;
+    font-weight: 800 !important;
   }
 }
 
@@ -7543,6 +7545,18 @@ body,
   opacity: 0.08;
 }
 
+.concept-page.launch-page .concept-products .concept-category-circle strong {
+  color: var(--launch-burgundy);
+  background: linear-gradient(110deg, var(--launch-burgundy) 0%, #111 34%, #9b6b4b 52%, var(--launch-burgundy) 72%, #111 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800 !important;
+  letter-spacing: 0.01em;
+  animation: fableroomLabelShine 3.8s ease-in-out infinite;
+}
+
 .concept-page.launch-page .launch-ritual-panel::before,
 .concept-page.launch-page .launch-ritual-panel::after {
   display: none;
@@ -7605,6 +7619,79 @@ body,
   text-transform: uppercase;
 }
 
+.launch-featured {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(24px, 3.4vw, 46px) clamp(18px, 5vw, 72px);
+  background: #fff;
+}
+
+.launch-featured-head {
+  display: grid;
+  gap: 8px;
+  margin: 0 auto clamp(16px, 2.4vw, 28px);
+  text-align: center;
+}
+
+.launch-featured-head span,
+.launch-featured-card span {
+  color: var(--launch-burgundy);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.launch-featured-head h2 {
+  max-width: 680px;
+  margin: 0 auto;
+  color: var(--launch-ink);
+  font-family: var(--font-serif);
+  font-size: clamp(25px, 3vw, 42px);
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: 0;
+  text-transform: none;
+  text-wrap: balance;
+}
+
+.launch-featured-grid {
+  max-width: 1180px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0 auto;
+  border-top: 1px solid var(--launch-line);
+  border-left: 1px solid var(--launch-line);
+}
+
+.launch-featured-card {
+  min-height: 116px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 12px;
+  padding: 18px 14px;
+  border-right: 1px solid var(--launch-line);
+  border-bottom: 1px solid var(--launch-line);
+  background: linear-gradient(180deg, #fff 0%, #fbfbfb 100%);
+  text-align: center;
+}
+
+.launch-featured-card strong {
+  color: var(--launch-ink);
+  font-family: var(--font-serif);
+  font-size: clamp(21px, 2.2vw, 34px);
+  font-weight: 400;
+  line-height: 0.96;
+  letter-spacing: 0.08em;
+}
+
+.launch-featured-card span {
+  color: var(--launch-muted);
+  font-size: 9px;
+  letter-spacing: 0.13em;
+}
+
 @media (max-width: 860px) {
   .concept-page.launch-page .concept-products .concept-circle-row {
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
@@ -7643,6 +7730,7 @@ body,
 
   .concept-page.launch-page .concept-products .concept-circle-card strong {
     font-size: 9px;
+    font-weight: 800 !important;
   }
 
   .concept-page.launch-page .launch-scene {
@@ -7662,5 +7750,772 @@ body,
     padding: 0 5px;
     font-size: 6px;
     letter-spacing: 0.06em;
+  }
+
+  .launch-featured {
+    padding: 24px 18px;
+  }
+
+  .launch-featured-head {
+    text-align: left;
+  }
+
+  .launch-featured-head h2 {
+    margin: 0;
+    font-size: 27px;
+  }
+
+  .launch-featured-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .launch-featured-card {
+    min-height: 94px;
+    gap: 8px;
+    padding: 14px 8px;
+  }
+
+  .launch-featured-card strong {
+    font-size: 19px;
+    letter-spacing: 0.05em;
+  }
+
+  .launch-featured-card span {
+    font-size: 7px;
+  }
+}
+
+/* Final CRO polish: tighter rhythm, visible CTAs, symmetric type, no stray dividers. */
+@keyframes fableroomTitleGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 0 rgba(68, 24, 29, 0);
+  }
+  50% {
+    text-shadow: 0 0 18px rgba(68, 24, 29, 0.18);
+  }
+}
+
+@keyframes fableroomCtaShine {
+  0% {
+    transform: translateX(-150%) skewX(-18deg);
+  }
+  52%,
+  100% {
+    transform: translateX(190%) skewX(-18deg);
+  }
+}
+
+@keyframes fableroomLabelShine {
+  0%,
+  100% {
+    background-position: 0% 50%;
+    text-shadow: 0 0 0 rgba(68, 24, 29, 0);
+  }
+  50% {
+    background-position: 100% 50%;
+    text-shadow: 0 0 14px rgba(68, 24, 29, 0.18);
+  }
+}
+
+@keyframes fableroomHeartBeat {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(68, 24, 29, 0);
+  }
+  18% {
+    transform: scale(1.14);
+    box-shadow: 0 0 16px rgba(68, 24, 29, 0.18);
+  }
+  34% {
+    transform: scale(0.98);
+    box-shadow: 0 0 6px rgba(68, 24, 29, 0.08);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 14px rgba(68, 24, 29, 0.14);
+  }
+}
+
+.concept-page.launch-page {
+  --section-tight: clamp(20px, 3vw, 38px);
+}
+
+.concept-page.launch-page *,
+.concept-page.launch-page *::before,
+.concept-page.launch-page *::after {
+  min-width: 0;
+}
+
+.concept-page.launch-page p,
+.concept-page.launch-page small,
+.concept-page.launch-page span,
+.concept-page.launch-page strong,
+.concept-page.launch-page em {
+  max-width: 100%;
+}
+
+.concept-page.launch-page .launch-ritual-panel::before,
+.concept-page.launch-page .launch-ritual-panel::after {
+  content: none !important;
+  display: none !important;
+  border: 0 !important;
+}
+
+.concept-page.launch-page .launch-ritual-panel {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
+
+.concept-page.launch-page #launch-edit {
+  padding-top: clamp(6px, 1.2vw, 14px) !important;
+}
+
+.concept-page.launch-page .launch-ritual-panel {
+  padding-top: clamp(14px, 2vw, 24px) !important;
+  padding-bottom: clamp(12px, 1.8vw, 22px) !important;
+}
+
+.concept-page.launch-page #launch-edit {
+  padding-bottom: clamp(8px, 1.4vw, 18px) !important;
+}
+
+.concept-page.launch-page .launch-layers,
+.concept-page.launch-page .launch-products,
+.concept-page.launch-page .launch-featured,
+.concept-page.launch-page .launch-reviews {
+  padding-top: var(--section-tight) !important;
+  padding-bottom: var(--section-tight) !important;
+}
+
+.concept-page.launch-page .launch-products {
+  margin-top: 0 !important;
+  padding-top: clamp(10px, 1.8vw, 24px) !important;
+}
+
+.concept-page.launch-page .launch-reviews {
+  padding-top: clamp(18px, 2.4vw, 30px) !important;
+  padding-bottom: clamp(10px, 1.6vw, 20px) !important;
+}
+
+.concept-page.launch-page .launch-review-head {
+  display: grid;
+  margin-bottom: 6px !important;
+}
+
+.concept-page.launch-page .launch-review-head > div {
+  gap: 8px !important;
+}
+
+.concept-page.launch-page .launch-review-head .review-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+}
+
+.concept-page.launch-page .launch-review-head span::before {
+  content: none !important;
+  display: none !important;
+}
+
+.concept-page.launch-page .launch-review-head h2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 !important;
+  max-width: 760px;
+}
+
+.concept-page.launch-page .launch-review-head h2::before {
+  content: "♥";
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid rgba(68, 24, 29, 0.35);
+  border-radius: 50%;
+  color: var(--launch-burgundy);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1;
+  animation: fableroomHeartBeat 1.75s ease-in-out infinite;
+}
+
+.concept-page.launch-page .review-scroll {
+  gap: 8px;
+  padding-top: 0;
+  padding-bottom: 4px;
+}
+
+.concept-page.launch-page .review-card {
+  flex-basis: clamp(218px, 20vw, 292px);
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 10px;
+  min-height: 92px;
+  padding: 10px;
+}
+
+.concept-page.launch-page .review-card figure {
+  width: 56px;
+}
+
+.concept-page.launch-page .review-card figure .icon-mark {
+  width: 19px;
+  height: 19px;
+  right: 1px;
+  bottom: 1px;
+}
+
+.concept-page.launch-page .review-card > div {
+  gap: 4px;
+}
+
+.concept-page.launch-page .review-card span {
+  font-size: 10px;
+}
+
+.concept-page.launch-page .review-card strong {
+  font-size: 14px;
+  line-height: 1.15;
+}
+
+.concept-page.launch-page .review-card p {
+  font-size: 11px;
+  line-height: 1.3;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+.concept-page.launch-page .review-card small {
+  font-size: 8px;
+  letter-spacing: 0.12em;
+}
+
+.concept-page.launch-page .launch-section-head,
+.concept-page.launch-page .concept-head,
+.concept-page.launch-page .launch-featured-head {
+  margin-bottom: clamp(12px, 1.8vw, 22px) !important;
+}
+
+.concept-page.launch-page .motion-text,
+.concept-page.launch-page h1,
+.concept-page.launch-page h2,
+.concept-page.launch-page h3,
+.concept-page.launch-page strong,
+.concept-page.launch-page a {
+  overflow-wrap: normal;
+  word-break: normal;
+  text-wrap: balance;
+}
+
+.concept-page.launch-page .motion-text.is-visible span,
+.concept-page.launch-page .is-visible .motion-text span {
+  animation: fableroomTitleGlow 3.8s ease-in-out infinite;
+}
+
+.concept-page.launch-page .button,
+.concept-page.launch-page .concept-head a,
+.concept-page.launch-page .launch-section-head.split a,
+.concept-page.launch-page .launch-layer-card em,
+.concept-page.launch-page .concept-circle-card,
+.concept-page.launch-page .launch-product-card,
+.concept-page.launch-page .landing-pill-nav a {
+  position: relative;
+  overflow: hidden;
+}
+
+.concept-page.launch-page .button::before,
+.concept-page.launch-page .concept-head a::before,
+.concept-page.launch-page .launch-section-head.split a::before,
+.concept-page.launch-page .launch-layer-card em::before,
+.concept-page.launch-page .concept-circle-card::before,
+.concept-page.launch-page .launch-product-card::before,
+.concept-page.launch-page .landing-pill-nav a::before {
+  content: "";
+  position: absolute;
+  inset: -35% auto -35% -55%;
+  width: 42%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.72), transparent);
+  opacity: 0.7;
+  transform: translateX(-150%) skewX(-18deg);
+  pointer-events: none;
+}
+
+.concept-page.launch-page .button::before,
+.concept-page.launch-page .concept-head a::before,
+.concept-page.launch-page .launch-section-head.split a::before,
+.concept-page.launch-page .launch-layer-card em::before,
+.concept-page.launch-page .landing-pill-nav a::before {
+  animation: fableroomCtaShine 4.2s ease-in-out infinite;
+}
+
+.concept-page.launch-page .concept-circle-card:hover::before,
+.concept-page.launch-page .concept-circle-card:focus-visible::before,
+.concept-page.launch-page .launch-product-card:hover::before,
+.concept-page.launch-page .launch-product-card:focus-visible::before {
+  animation: fableroomCtaShine 1.2s ease-out 1;
+}
+
+.concept-page.launch-page .button,
+.concept-page.launch-page .landing-pill-nav a,
+.concept-page.launch-page .launch-section-head.split a,
+.concept-page.launch-page .concept-head a {
+  box-shadow: 0 0 0 rgba(68, 24, 29, 0);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.concept-page.launch-page .button:hover,
+.concept-page.launch-page .button:focus-visible,
+.concept-page.launch-page .landing-pill-nav a:hover,
+.concept-page.launch-page .landing-pill-nav a:focus-visible,
+.concept-page.launch-page .launch-section-head.split a:hover,
+.concept-page.launch-page .launch-section-head.split a:focus-visible,
+.concept-page.launch-page .concept-head a:hover,
+.concept-page.launch-page .concept-head a:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(68, 24, 29, 0.15);
+}
+
+.concept-page.launch-page .launch-featured-grid {
+  border-top: 1px solid rgba(16, 16, 16, 0.08);
+}
+
+/* As featured in: Fableroom reference-inspired magazine rail. */
+.concept-page.launch-page .launch-featured {
+  overflow: hidden;
+  padding-top: clamp(20px, 3vw, 38px) !important;
+  padding-bottom: clamp(20px, 3vw, 38px) !important;
+}
+
+.launch-featured-rail {
+  max-width: 1180px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: clamp(300px, 30vw, 360px);
+  gap: clamp(14px, 2vw, 24px);
+  margin: 0 auto;
+  padding: 2px 2px 14px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-padding-inline: 2px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(68, 24, 29, 0.42) rgba(16, 16, 16, 0.06);
+}
+
+.launch-featured-rail::-webkit-scrollbar {
+  height: 7px;
+}
+
+.launch-featured-rail::-webkit-scrollbar-track {
+  background: rgba(16, 16, 16, 0.06);
+}
+
+.launch-featured-rail::-webkit-scrollbar-thumb {
+  background: rgba(68, 24, 29, 0.38);
+}
+
+.launch-featured-rail .launch-featured-card {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto auto;
+  align-content: start;
+  justify-items: stretch;
+  gap: 12px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  scroll-snap-align: start;
+}
+
+.launch-featured-rail .launch-featured-card figure {
+  position: relative;
+  aspect-ratio: 0.78;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--launch-line);
+  background: #f7f7f7;
+  box-shadow: 0 18px 34px rgba(16, 16, 16, 0.08);
+}
+
+.launch-featured-rail .launch-featured-card figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  pointer-events: none;
+}
+
+.launch-featured-rail .launch-featured-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 420ms ease;
+}
+
+.launch-featured-rail .launch-featured-card:hover img,
+.launch-featured-rail .launch-featured-card:focus-within img {
+  transform: scale(1.025);
+}
+
+.launch-featured-rail .launch-featured-card div {
+  display: grid;
+  gap: 4px;
+}
+
+.launch-featured-rail .launch-featured-card strong {
+  color: var(--launch-ink);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.launch-featured-rail .launch-featured-card span {
+  color: var(--launch-muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+@media (max-width: 640px) {
+  .concept-page.launch-page {
+    --section-tight: 22px;
+  }
+
+  .concept-page.launch-page .launch-products {
+    padding-top: 12px !important;
+  }
+
+  .concept-page.launch-page .launch-review-head > div {
+    gap: 7px !important;
+  }
+
+  .concept-page.launch-page .launch-review-head .review-kicker {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+  }
+
+  .concept-page.launch-page .launch-review-head h2 {
+    gap: 8px;
+  }
+
+  .concept-page.launch-page .launch-review-head h2::before {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+
+  .concept-page.launch-page .launch-review-head h2,
+  .concept-page.launch-page .launch-section-head h2,
+  .concept-page.launch-page .launch-featured-head h2 {
+    font-size: clamp(24px, 7.2vw, 30px) !important;
+    line-height: 1.06 !important;
+  }
+
+  .concept-page.launch-page .review-card {
+    flex-basis: 246px;
+    grid-template-columns: 54px minmax(0, 1fr);
+    min-height: 88px;
+    padding: 9px;
+  }
+
+  .concept-page.launch-page .review-card figure {
+    width: 52px;
+  }
+
+  .launch-featured-rail {
+    grid-auto-columns: minmax(160px, 58%);
+    gap: 14px;
+    margin-right: -18px;
+    padding-right: 18px;
+  }
+
+  .launch-featured-rail .launch-featured-card {
+    gap: 9px;
+  }
+
+  .launch-featured-rail .launch-featured-card strong {
+    font-size: 13px;
+  }
+
+  .launch-featured-rail .launch-featured-card span {
+    font-size: 11px;
+  }
+}
+
+/* Product card text must never crop on the launch collection. */
+.concept-page.launch-page .launch-product-card {
+  grid-template-rows: minmax(180px, auto) auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+}
+
+.concept-page.launch-page .launch-product-card figure {
+  min-height: 180px;
+}
+
+.concept-page.launch-page .launch-product-card > div {
+  min-height: 0 !important;
+  overflow: visible !important;
+  gap: 7px;
+  padding-bottom: 18px;
+}
+
+.concept-page.launch-page .launch-product-card strong {
+  display: block !important;
+  overflow: visible !important;
+  -webkit-line-clamp: unset !important;
+  -webkit-box-orient: initial !important;
+  font-size: clamp(12px, 1vw, 15px) !important;
+  line-height: 1.22 !important;
+}
+
+.concept-page.launch-page .launch-product-card small {
+  display: block;
+  overflow: visible;
+  font-size: clamp(10px, 0.9vw, 12px);
+  line-height: 1.2;
+}
+
+@media (max-width: 760px) {
+  .concept-page.launch-page .launch-product-card {
+    grid-template-rows: 150px auto !important;
+  }
+
+  .concept-page.launch-page .launch-product-card figure {
+    min-height: 150px;
+    padding: 12px;
+  }
+
+  .concept-page.launch-page .launch-product-card img {
+    max-height: 116px;
+  }
+
+  .concept-page.launch-page .launch-product-card > div {
+    gap: 6px;
+    padding: 12px 11px 14px;
+  }
+
+  .concept-page.launch-page .launch-product-card strong {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+  }
+
+  .concept-page.launch-page .launch-product-card small {
+    font-size: 10px;
+    line-height: 1.2;
+  }
+
+  .concept-page.launch-page .launch-product-tags em {
+    min-height: 16px;
+    font-size: 5.5px;
+  }
+}
+
+/* Cinematic CRO stats band inspired by Fableroom brand proof. */
+@keyframes statTextReveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes statWoodDrift {
+  0%,
+  100% {
+    background-position: center 52%;
+  }
+  50% {
+    background-position: center 47%;
+  }
+}
+
+.concept-page.launch-page .launch-assurance-bar {
+  position: relative;
+  max-width: 1440px;
+  min-height: clamp(124px, 12vw, 178px);
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 0 !important;
+  align-items: stretch;
+  margin: clamp(14px, 2.4vw, 26px) auto 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  border: 0 !important;
+  background:
+    linear-gradient(90deg, rgba(28, 13, 8, 0.76), rgba(64, 31, 20, 0.58), rgba(28, 13, 8, 0.74)),
+    url("./assets/hero-real-table.png") center 52% / cover no-repeat !important;
+  animation: statWoodDrift 12s ease-in-out infinite;
+}
+
+.concept-page.launch-page .launch-assurance-bar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 38%, rgba(0, 0, 0, 0.14)),
+    radial-gradient(circle at 22% 42%, rgba(255, 255, 255, 0.12), transparent 28%);
+  pointer-events: none;
+}
+
+.concept-page.launch-page .launch-assurance-bar .assurance-card {
+  position: relative;
+  z-index: 1;
+  min-height: clamp(124px, 12vw, 178px) !important;
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: clamp(12px, 1.2vw, 18px) !important;
+  padding: clamp(20px, 3vw, 42px) clamp(18px, 4vw, 54px) !important;
+  overflow: hidden;
+  border: 0 !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.18) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  text-align: left;
+}
+
+.concept-page.launch-page .launch-assurance-bar .assurance-card:last-child {
+  border-right: 0 !important;
+}
+
+.concept-page.launch-page .launch-assurance-bar .assurance-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+  opacity: 0;
+  transform: translateX(-90%);
+  transition: opacity 260ms ease, transform 720ms ease;
+}
+
+.concept-page.launch-page .launch-assurance-bar .assurance-card:hover::after,
+.concept-page.launch-page .launch-assurance-bar .assurance-card:focus-within::after {
+  opacity: 1;
+  transform: translateX(90%);
+}
+
+.concept-page.launch-page .launch-assurance-bar .assurance-card strong {
+  max-width: none !important;
+  color: #fff !important;
+  font-family: var(--font-sans);
+  font-size: clamp(38px, 4.7vw, 72px) !important;
+  font-weight: 700;
+  line-height: 0.9 !important;
+  letter-spacing: -0.02em;
+  text-shadow: 0 8px 28px rgba(0, 0, 0, 0.32);
+  animation: statTextReveal 720ms ease both;
+}
+
+.concept-page.launch-page .launch-assurance-bar .assurance-card > span {
+  max-width: none !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-family: var(--font-serif);
+  font-size: clamp(18px, 1.8vw, 30px) !important;
+  font-weight: 400;
+  line-height: 1.1 !important;
+  letter-spacing: 0;
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.36);
+  animation: statTextReveal 720ms ease 120ms both;
+}
+
+@media (max-width: 760px) {
+  .concept-page.launch-page .launch-assurance-bar {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    min-height: 0;
+    background-position: center center !important;
+  }
+
+  .concept-page.launch-page .launch-assurance-bar .assurance-card {
+    min-height: 108px !important;
+    padding: 18px 16px !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.16) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16) !important;
+  }
+
+  .concept-page.launch-page .launch-assurance-bar .assurance-card:nth-child(even) {
+    border-right: 0 !important;
+  }
+
+  .concept-page.launch-page .launch-assurance-bar .assurance-card:nth-last-child(-n + 2) {
+    border-bottom: 0 !important;
+  }
+
+  .concept-page.launch-page .launch-assurance-bar .assurance-card strong {
+    font-size: clamp(32px, 10vw, 46px) !important;
+  }
+
+  .concept-page.launch-page .launch-assurance-bar .assurance-card > span {
+    font-size: clamp(15px, 4.5vw, 19px) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .concept-page.launch-page .launch-assurance-bar,
+  .concept-page.launch-page .launch-assurance-bar .assurance-card strong,
+  .concept-page.launch-page .launch-assurance-bar .assurance-card > span {
+    animation: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .concept-page.launch-page .motion-text.is-visible span,
+  .concept-page.launch-page .is-visible .motion-text span,
+  .concept-page.launch-page .button::before,
+  .concept-page.launch-page .concept-head a::before,
+  .concept-page.launch-page .launch-section-head.split a::before,
+  .concept-page.launch-page .launch-layer-card em::before,
+  .concept-page.launch-page .landing-pill-nav a::before,
+  .concept-page.launch-page .launch-review-head h2::before {
+    animation: none !important;
+  }
+}
+
+/* Compact animated proof strip: 30% smaller, same cinematic structure. */
+.concept-page.launch-page .launch-assurance-bar {
+  min-height: clamp(88px, 8.4vw, 125px) !important;
+  margin-top: clamp(10px, 1.7vw, 18px) !important;
+}
+
+.concept-page.launch-page .launch-assurance-bar .assurance-card {
+  min-height: clamp(88px, 8.4vw, 125px) !important;
+  gap: clamp(8px, 0.85vw, 13px) !important;
+  padding: clamp(14px, 2.1vw, 29px) clamp(13px, 2.8vw, 38px) !important;
+}
+
+.concept-page.launch-page .launch-assurance-bar .assurance-card strong {
+  font-size: clamp(27px, 3.3vw, 50px) !important;
+  line-height: 0.92 !important;
+}
+
+.concept-page.launch-page .launch-assurance-bar .assurance-card > span {
+  font-size: clamp(13px, 1.25vw, 21px) !important;
+  line-height: 1.12 !important;
+}
+
+@media (max-width: 760px) {
+  .concept-page.launch-page .launch-assurance-bar .assurance-card {
+    min-height: 76px !important;
+    padding: 12px 11px !important;
+  }
+
+  .concept-page.launch-page .launch-assurance-bar .assurance-card strong {
+    font-size: clamp(23px, 7vw, 32px) !important;
+  }
+
+  .concept-page.launch-page .launch-assurance-bar .assurance-card > span {
+    font-size: clamp(11px, 3.15vw, 13px) !important;
   }
 }

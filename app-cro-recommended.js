@@ -27,9 +27,33 @@ const categoryNavItems = [
 ];
 
 const assuranceItems = [
-  ["DIRECT", "Straight from the makers", "Premium pieces, fewer markups"],
-  ["12K+", "Loved by 12,000+ homes", "Daily dining and hosting"],
-  ["COMPLETE", "Cook, serve, layer", "Everything for the table in one edit"],
+  ["12,000+", "Happy Homes", 12000, "", "+"],
+  ["£6M+", "Total Customer Savings", 6, "£", "M+"],
+  ["100%", "Responsibly Sourced", 100, "", "%"],
+  ["0", "Middlemen Markups", 0, "", ""],
+];
+
+const featuredInItems = [
+  {
+    name: "HouseBeautiful",
+    date: "April 2026",
+    image: A("press-housebeautiful-2026.png"),
+  },
+  {
+    name: "Daily Mail",
+    date: "March 2026",
+    image: A("press-daily-mail-2026.png"),
+  },
+  {
+    name: "Ideal Home",
+    date: "Jan 2026",
+    image: A("press-ideal-home-2026.png"),
+  },
+  {
+    name: "House & Garden",
+    date: "September 2025",
+    image: A("press-house-garden-2025.png"),
+  },
 ];
 
 const categoryTiles = [
@@ -436,7 +460,7 @@ function renderMerch() {
       <section class="launch-reviews reveal-block" aria-labelledby="launch-reviews-title">
         <div class="launch-review-head">
           <div>
-            <span>Fableroom customer stories</span>
+            <span class="review-kicker">Fableroom customer stories</span>
             <h2 id="launch-reviews-title" class="motion-text">Loved for value, delivery and service.</h2>
           </div>
         </div>
@@ -458,6 +482,16 @@ function renderMerch() {
         </div>
         <div class="launch-product-grid">
           ${launchProducts.map(renderLaunchProduct).join("")}
+        </div>
+      </section>
+
+      <section class="launch-featured reveal-block" aria-labelledby="launch-featured-title">
+        <div class="launch-featured-head">
+          <span>As featured in</span>
+          <h2 id="launch-featured-title" class="motion-text">Press stories from the Fableroom home.</h2>
+        </div>
+        <div class="launch-featured-rail" aria-label="Fableroom press features">
+          ${featuredInItems.map(renderFeaturedPress).join("")}
         </div>
       </section>
 
@@ -539,14 +573,11 @@ function renderLandingNavItem([icon, title, href]) {
   `;
 }
 
-function renderAssuranceItem([tag, title, copy]) {
-  const icon = tag === "DIRECT" ? "direct" : tag === "12K+" ? "homes" : "complete";
+function renderAssuranceItem([value, label, target, prefix, suffix]) {
   return `
-    <div class="assurance-card assurance-${icon}">
-      <span class="assurance-icon">${iconSvg(icon)}</span>
-      <span class="assurance-tag">${tag}</span>
-      <strong>${title}</strong>
-      <span>${copy}</span>
+    <div class="assurance-card reveal-item">
+      <strong class="stat-count" data-target="${target}" data-prefix="${prefix}" data-suffix="${suffix}">${value}</strong>
+      <span>${label}</span>
     </div>
   `;
 }
@@ -669,6 +700,20 @@ function renderLaunchProduct(product) {
         <small>${product.type} · £${product.price}</small>
       </div>
     </a>
+  `;
+}
+
+function renderFeaturedPress(item) {
+  return `
+    <article class="launch-featured-card reveal-item">
+      <figure>
+        <img src="${item.image}" alt="${item.name} feature for Fableroom" loading="lazy" />
+      </figure>
+      <div>
+        <strong>${item.name}</strong>
+        <span>${item.date}</span>
+      </div>
+    </article>
   `;
 }
 
@@ -899,6 +944,7 @@ function initVengeanceEffects() {
   initScrollProgress();
   initSpotlight();
   initReveal();
+  initStatCounters();
 }
 
 function initPreloader() {
@@ -955,6 +1001,68 @@ function initMotionText() {
     node.setAttribute("aria-label", node.textContent.trim());
     node.innerHTML = words.map((word, index) => `<span aria-hidden="true" style="--word-delay:${index * 42}ms">${word}</span>`).join(" ");
   });
+}
+
+function formatStatValue(value, prefix, suffix) {
+  const formatted = value >= 1000 ? value.toLocaleString("en-GB") : String(value);
+  return `${prefix}${formatted}${suffix}`;
+}
+
+function animateStat(node) {
+  const target = Number(node.dataset.target || 0);
+  const prefix = node.dataset.prefix || "";
+  const suffix = node.dataset.suffix || "";
+  const duration = target === 0 ? 520 : 1250;
+  const start = performance.now();
+  node.dataset.counting = "true";
+
+  const tick = (now) => {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const value = Math.round(target * eased);
+    node.textContent = formatStatValue(value, prefix, suffix);
+    if (progress < 1) {
+      requestAnimationFrame(tick);
+      return;
+    }
+    node.textContent = formatStatValue(target, prefix, suffix);
+    node.dataset.counting = "false";
+  };
+
+  requestAnimationFrame(tick);
+}
+
+function initStatCounters() {
+  const counters = document.querySelectorAll(".stat-count");
+  if (!counters.length) return;
+
+  const reset = (node) => {
+    const prefix = node.dataset.prefix || "";
+    const suffix = node.dataset.suffix || "";
+    node.textContent = formatStatValue(0, prefix, suffix);
+  };
+
+  if (!("IntersectionObserver" in window)) {
+    counters.forEach(animateStat);
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const nodes = entry.target.querySelectorAll(".stat-count");
+      if (entry.isIntersecting) {
+        nodes.forEach((node) => {
+          if (node.dataset.counting === "true") return;
+          reset(node);
+          animateStat(node);
+        });
+      } else {
+        nodes.forEach(reset);
+      }
+    });
+  }, { threshold: 0.45 });
+
+  document.querySelectorAll(".launch-assurance-bar").forEach((bar) => observer.observe(bar));
 }
 
 window.addEventListener("hashchange", render);
