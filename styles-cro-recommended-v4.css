@@ -9022,3 +9022,72 @@ body,
     min-height: clamp(220px, 17vw, 330px) !important;
   }
 }
+
+/* Desktop review emphasis: larger, stretched testimonial rail without touching mobile. */
+@media (min-width: 1024px) {
+  .concept-page.launch-page .launch-reviews {
+    min-height: clamp(390px, 25vw, 520px) !important;
+    padding-top: clamp(42px, 3.3vw, 72px) !important;
+    padding-bottom: clamp(40px, 3.1vw, 68px) !important;
+  }
+
+  .concept-page.launch-page .launch-review-head {
+    margin-bottom: clamp(22px, 2vw, 38px) !important;
+  }
+
+  .concept-page.launch-page .launch-review-head h2 {
+    max-width: 980px !important;
+  }
+
+  .concept-page.launch-page .review-scroll {
+    gap: clamp(18px, 1.7vw, 34px) !important;
+    padding-block: 6px 12px !important;
+  }
+
+  .concept-page.launch-page .review-card {
+    flex: 0 0 clamp(520px, 34vw, 720px) !important;
+    grid-template-columns: clamp(118px, 8vw, 160px) minmax(0, 1fr) !important;
+    align-items: center !important;
+    min-height: clamp(210px, 14vw, 300px) !important;
+    padding: clamp(26px, 2.25vw, 46px) !important;
+    gap: clamp(22px, 1.9vw, 38px) !important;
+  }
+
+  .concept-page.launch-page .review-card figure {
+    width: clamp(112px, 7.7vw, 156px) !important;
+  }
+
+  .concept-page.launch-page .review-card figure .icon-mark {
+    width: clamp(34px, 2.35vw, 48px) !important;
+    height: clamp(34px, 2.35vw, 48px) !important;
+    right: 0 !important;
+    bottom: 0 !important;
+  }
+
+  .concept-page.launch-page .review-card > div {
+    gap: clamp(8px, 0.75vw, 14px) !important;
+  }
+
+  .concept-page.launch-page .review-card span {
+    font-size: clamp(12px, 0.85vw, 16px) !important;
+    letter-spacing: 0.16em !important;
+  }
+
+  .concept-page.launch-page .review-card strong {
+    font-size: clamp(24px, 1.65vw, 34px) !important;
+    line-height: 1.08 !important;
+  }
+
+  .concept-page.launch-page .review-card p {
+    display: block !important;
+    overflow: visible !important;
+    -webkit-line-clamp: initial !important;
+    font-size: clamp(17px, 1.1vw, 22px) !important;
+    line-height: 1.42 !important;
+  }
+
+  .concept-page.launch-page .review-card small {
+    font-size: clamp(11px, 0.78vw, 15px) !important;
+    letter-spacing: 0.17em !important;
+  }
+}
