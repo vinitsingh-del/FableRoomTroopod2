@@ -7818,6 +7818,21 @@ body,
   }
 }
 
+@keyframes fableroomCategoryCardGlow {
+  0%,
+  28%,
+  100% {
+    box-shadow: 0 20px 38px rgba(16, 16, 16, 0.11);
+    transform: translateY(0) scale(1);
+  }
+  10% {
+    box-shadow:
+      0 24px 48px rgba(16, 16, 16, 0.13),
+      0 0 28px rgba(68, 24, 29, 0.18);
+    transform: translateY(-2px) scale(1.012);
+  }
+}
+
 @keyframes fableroomHeartBeat {
   0%,
   100% {
@@ -8505,6 +8520,37 @@ body,
   line-height: 1.12 !important;
 }
 
+/* Slightly larger newest collection cards with sequential Fableroom glow. */
+.concept-page.launch-page .concept-products .concept-circle-row {
+  max-width: 1012px;
+  gap: clamp(20px, 4.4vw, 48px);
+}
+
+.concept-page.launch-page .concept-products .concept-circle-card {
+  width: min(100%, 264px);
+}
+
+.concept-page.launch-page .concept-products .concept-circle-card figure {
+  width: min(253px, 24.2vw);
+}
+
+.concept-page.launch-page .concept-products .concept-category-circle figure {
+  animation: fableroomCategoryCardGlow 4.8s ease-in-out infinite;
+  will-change: transform, box-shadow;
+}
+
+.concept-page.launch-page .concept-products .concept-category-circle:nth-child(2) figure {
+  animation-delay: 1.6s;
+}
+
+.concept-page.launch-page .concept-products .concept-category-circle:nth-child(3) figure {
+  animation-delay: 3.2s;
+}
+
+.concept-page.launch-page .concept-products .concept-category-circle strong {
+  font-size: 15.5px;
+}
+
 @media (max-width: 760px) {
   .concept-page.launch-page .launch-assurance-bar .assurance-card {
     min-height: 76px !important;
@@ -8517,5 +8563,26 @@ body,
 
   .concept-page.launch-page .launch-assurance-bar .assurance-card > span {
     font-size: clamp(11px, 3.15vw, 13px) !important;
+  }
+
+  .concept-page.launch-page .concept-products .concept-circle-row {
+    gap: 4px;
+  }
+
+  .concept-page.launch-page .concept-products {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .concept-page.launch-page .concept-products .concept-circle-card {
+    width: 100%;
+  }
+
+  .concept-page.launch-page .concept-products .concept-circle-card figure {
+    width: min(119px, 30.8vw);
+  }
+
+  .concept-page.launch-page .concept-products .concept-category-circle strong {
+    font-size: 10px;
   }
 }
