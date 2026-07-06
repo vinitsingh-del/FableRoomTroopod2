@@ -389,8 +389,8 @@ function renderMerch() {
         <div class="launch-section-head split reveal-block">
           <div>
             <span>Most loved collection</span>
-            <h2 id="launch-layer-title" class="motion-text">Everything for a table that feels ready.</h2>
-            <p>Prepare the meal, serve it beautifully and finish the setting with linen details.</p>
+            <h2 id="launch-layer-title" class="motion-text">The ready table edit.</h2>
+            <p>Cook, serve and finish with linen.</p>
           </div>
           <a href="#/all">Shop the collection</a>
         </div>
@@ -398,7 +398,6 @@ function renderMerch() {
           <article class="launch-layer-card launch-layer-video reveal-item">
             <video src="${A("ritual-edit-video-v2.mp4")}" poster="${A("ai-tableware-about-v2.png")}" autoplay muted loop playsinline preload="metadata"></video>
             <div>
-              <span>01 · The full table ritual</span>
               <strong>Cook. Serve. Layer.</strong>
               <p>A moving glimpse of the launch collection: cookware, serveware and linen working together as one table story.</p>
               <a href="#/all">Shop the launch</a>
@@ -412,16 +411,16 @@ function renderMerch() {
       <section class="launch-highlight reveal-block" aria-label="Tableware and Kitchen launch highlight">
         <figure>
           <img src="${A("launch-highlight-lifestyle.png")}" alt="Fableroom tableware, cookware and linen styled together" loading="lazy" />
-          <figcaption>
-            <strong>The Complete Tableware & Kitchen Set</strong>
-            <span>Cookware, serveware and linen styled together.</span>
-          </figcaption>
         </figure>
         <div class="launch-highlight-copy">
           <span>New in Tableware & Kitchen</span>
           <h2 class="motion-text">One table, beautifully layered.</h2>
           <p>Serveware, cookware and linen styled for every meal, every host and every room.</p>
         </div>
+      </section>
+
+      <section class="launch-assurance-bar reveal-block" aria-label="Why shop Fableroom Tableware and Kitchen">
+        ${assuranceItems.map(renderAssuranceItem).join("")}
       </section>
 
       <section class="concept-products reveal-block" aria-labelledby="concept-products-title">
@@ -432,10 +431,6 @@ function renderMerch() {
         <div class="concept-circle-row">
           ${categoryTiles.map(renderConceptCircleCategory).join("")}
         </div>
-      </section>
-
-      <section class="launch-assurance-bar reveal-block" aria-label="Why shop Fableroom Tableware and Kitchen">
-        ${assuranceItems.map(renderAssuranceItem).join("")}
       </section>
 
       <section class="launch-reviews reveal-block" aria-labelledby="launch-reviews-title">
@@ -655,7 +650,6 @@ function renderLaunchLayer(layer, index) {
     <a class="launch-layer-card reveal-item" href="${layer.href}">
       <figure><img src="${layer.image}" alt="${layer.title} layer" loading="lazy" /></figure>
       <div>
-        <span>0${index + 2} · ${layer.kicker}</span>
         <strong>${layer.title}</strong>
         <p>${layer.copy}</p>
         <em>${layer.cta}</em>
