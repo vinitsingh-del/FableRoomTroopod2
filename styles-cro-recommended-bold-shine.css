@@ -8726,4 +8726,32 @@ body,
   .concept-page.launch-page .launch-layer-card strong {
     font-size: clamp(30px, 3vw, 42px) !important;
   }
+
+  .concept-page.launch-page .launch-featured-rail {
+    max-width: none !important;
+    width: 100% !important;
+    display: grid !important;
+    grid-auto-flow: row !important;
+    grid-auto-columns: initial !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: clamp(14px, 1.6vw, 22px) !important;
+    margin: 0 !important;
+    padding: 2px 0 0 !important;
+    overflow: visible !important;
+    scroll-snap-type: none !important;
+    scrollbar-width: none !important;
+  }
+
+  .concept-page.launch-page .launch-featured-rail::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .concept-page.launch-page .launch-featured-rail .launch-featured-card {
+    min-width: 0;
+    scroll-snap-align: none;
+  }
+
+  .concept-page.launch-page .launch-featured-rail .launch-featured-card figure {
+    aspect-ratio: 0.82;
+  }
 }
