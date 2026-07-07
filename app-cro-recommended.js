@@ -539,18 +539,56 @@ function renderMerch() {
       </section>
 
       <section class="launch-scene campaign-scene reveal-block">
-        <figure class="offer-catalogue" aria-label="Summer sale product catalogue">
-          <div class="offer-catalogue-slide">
-            <img src="${A("launch-highlight-lifestyle.png")}" alt="Complete Fableroom tableware setting with serveware and linen" loading="lazy" />
-            <figcaption>Special 10% off · use code EXTRA10</figcaption>
-          </div>
-          <div class="offer-catalogue-slide">
-            <img src="${A("hero-real-table.png")}" alt="Fableroom table setting with serveware and dining pieces" loading="lazy" />
-            <figcaption>Summer sale · dining sets from £68</figcaption>
-          </div>
-          <div class="offer-catalogue-slide">
-            <img src="${A("ai-tableware-about-v2.png")}" alt="Fableroom kitchen and tableware styled for hosting" loading="lazy" />
-            <figcaption>Extra savings · complete the table</figcaption>
+        <figure class="offer-product-carousel" aria-label="Summer sale product catalogue">
+          <div class="offer-product-track">
+            <article class="offer-product-card">
+              <div class="offer-product-image"><img src="${A("p-white-dinner.jpg")}" alt="White Sparkle Dinner Plates" loading="lazy" /></div>
+              <div class="offer-product-copy">
+                <span>Extra 10% off</span>
+                <strong>White Sparkle Dinner Plates</strong>
+                <small>Use code EXTRA10</small>
+              </div>
+            </article>
+            <article class="offer-product-card">
+              <div class="offer-product-image"><img src="${A("p-zoraida-bowl.jpg")}" alt="Zoraida Serving Bowl" loading="lazy" /></div>
+              <div class="offer-product-copy">
+                <span>Ready to host</span>
+                <strong>Zoraida Serving Bowl</strong>
+                <small>Summer sale edit</small>
+              </div>
+            </article>
+            <article class="offer-product-card">
+              <div class="offer-product-image"><img src="${A("p-rainbow-cup.jpg")}" alt="Rainbow Gold Cup and Saucer" loading="lazy" /></div>
+              <div class="offer-product-copy">
+                <span>£75 off £749+</span>
+                <strong>Rainbow Gold Cup & Saucer</strong>
+                <small>Limited offer</small>
+              </div>
+            </article>
+            <article class="offer-product-card" aria-hidden="true">
+              <div class="offer-product-image"><img src="${A("p-white-dinner.jpg")}" alt="" loading="lazy" /></div>
+              <div class="offer-product-copy">
+                <span>Extra 10% off</span>
+                <strong>White Sparkle Dinner Plates</strong>
+                <small>Use code EXTRA10</small>
+              </div>
+            </article>
+            <article class="offer-product-card" aria-hidden="true">
+              <div class="offer-product-image"><img src="${A("p-zoraida-bowl.jpg")}" alt="" loading="lazy" /></div>
+              <div class="offer-product-copy">
+                <span>Ready to host</span>
+                <strong>Zoraida Serving Bowl</strong>
+                <small>Summer sale edit</small>
+              </div>
+            </article>
+            <article class="offer-product-card" aria-hidden="true">
+              <div class="offer-product-image"><img src="${A("p-rainbow-cup.jpg")}" alt="" loading="lazy" /></div>
+              <div class="offer-product-copy">
+                <span>£75 off £749+</span>
+                <strong>Rainbow Gold Cup & Saucer</strong>
+                <small>Limited offer</small>
+              </div>
+            </article>
           </div>
         </figure>
         <div class="reveal-block">
