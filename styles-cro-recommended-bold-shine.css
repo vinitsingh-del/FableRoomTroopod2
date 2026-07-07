@@ -11665,3 +11665,46 @@ body.sticky-cta-visible .concept-page.launch-page .mobile-sticky-cta {
     padding-bottom: 0 !important;
   }
 }
+
+/* Product image thumbnails: force the visible thumbnail frame to 3:4 across card types. */
+.concept-page.launch-page .product-thumb-frame {
+  display: grid !important;
+  place-items: center !important;
+  aspect-ratio: 3 / 4 !important;
+  width: min(54%, 260px) !important;
+  height: auto !important;
+  max-width: 84% !important;
+  justify-self: center !important;
+  align-self: center !important;
+  background: #fff !important;
+  box-shadow: 0 24px 40px rgba(16, 16, 16, 0.08) !important;
+  overflow: hidden !important;
+}
+
+.concept-page.launch-page .offer-product-image .product-thumb-frame {
+  width: min(54%, 280px) !important;
+}
+
+.concept-page.launch-page .launch-product-carousel .launch-product-card figure,
+.concept-page.launch-page .offer-product-image {
+  display: grid !important;
+  place-items: center !important;
+}
+
+.concept-page.launch-page .launch-product-carousel .launch-product-card figure img,
+.concept-page.launch-page .offer-product-image img,
+.concept-page.launch-page .product-thumb-frame img {
+  width: 88% !important;
+  height: 88% !important;
+  max-width: 88% !important;
+  max-height: 88% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+@media (max-width: 760px) {
+  .concept-page.launch-page .product-thumb-frame {
+    width: min(54%, 210px) !important;
+    max-width: 86% !important;
+  }
+}
