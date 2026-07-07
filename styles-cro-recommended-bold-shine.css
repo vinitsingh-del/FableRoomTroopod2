@@ -12220,7 +12220,36 @@ body.sticky-cta-visible .concept-page.launch-page .mobile-sticky-cta {
     transform: translateY(-28px) !important;
   }
 
-  .concept-page.launch-page #concept-title {
+.concept-page.launch-page #concept-title {
     color: #fff !important;
   }
+}
+
+/* Product media background lock: grey visual panels must be 3:4, never square. */
+.concept-page.launch-page .launch-product-carousel .launch-product-card,
+.concept-page.launch-page .offer-product-card {
+  aspect-ratio: auto !important;
+  grid-template-rows: auto auto !important;
+}
+
+.concept-page.launch-page .launch-product-carousel .launch-product-card figure,
+.concept-page.launch-page .offer-product-image {
+  aspect-ratio: 3 / 4 !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  display: grid !important;
+  place-items: center !important;
+  padding: clamp(18px, 1.7vw, 30px) !important;
+  background: #fafafa !important;
+}
+
+.concept-page.launch-page .launch-product-carousel .launch-product-card > div,
+.concept-page.launch-page .offer-product-copy {
+  height: auto !important;
+  min-height: clamp(150px, 11vw, 190px) !important;
+}
+
+.concept-page.launch-page .product-thumb-frame {
+  aspect-ratio: 3 / 4 !important;
 }
