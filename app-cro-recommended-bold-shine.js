@@ -591,7 +591,11 @@ function renderMerch() {
           <h2 class="motion-text">Ready for cooking, hosting and setting the room.</h2>
           <p>Explore coordinated serveware, cookware and table linen for meals that feel calm, complete and ready to share.</p>
         </div>
-        <a class="button" href="#/all">Shop the collection</a>
+        <div class="furniture-cta-grid" aria-label="Explore Fableroom dining furniture">
+          <a href="https://fableroom.com/collections/dining-furniture">Dining Chairs</a>
+          <a href="https://fableroom.com/collections/dining-furniture">Dining Tables</a>
+          <a href="https://fableroom.com/collections/dining-furniture">Bench</a>
+        </div>
       </section>
 
       <div class="launch-sticky-actions" aria-label="Fableroom quick actions">
