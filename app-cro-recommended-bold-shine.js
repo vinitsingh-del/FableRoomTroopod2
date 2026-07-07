@@ -597,6 +597,7 @@ function renderMerch() {
                 <span>Extra 10% off</span>
                 <strong>White Sparkle Dinner Plates</strong>
                 <small>Use code EXTRA10</small>
+                <b class="product-price-highlight">£88</b>
               </div>
             </article>
             <article class="offer-product-card">
@@ -605,6 +606,7 @@ function renderMerch() {
                 <span>Ready to host</span>
                 <strong>Zoraida Serving Bowl</strong>
                 <small>Summer sale edit</small>
+                <b class="product-price-highlight">£78</b>
               </div>
             </article>
             <article class="offer-product-card">
@@ -613,6 +615,7 @@ function renderMerch() {
                 <span>£75 off £749+</span>
                 <strong>Rainbow Gold Cup & Saucer</strong>
                 <small>Limited offer</small>
+                <b class="product-price-highlight">£68</b>
               </div>
             </article>
             <article class="offer-product-card">
@@ -621,6 +624,7 @@ function renderMerch() {
                 <span>Summer savings</span>
                 <strong>Matt Grey Sky Tea Pot & Creamer</strong>
                 <small>Hosting favourite</small>
+                <b class="product-price-highlight">£84</b>
               </div>
             </article>
             <article class="offer-product-card">
@@ -628,7 +632,8 @@ function renderMerch() {
               <div class="offer-product-copy">
                 <span>Fairly priced</span>
                 <strong>Renata Dinner Plates</strong>
-                <small>Dinner Plates · £98</small>
+                <small>Dinner Plates</small>
+                <b class="product-price-highlight">£98</b>
               </div>
             </article>
             <article class="offer-product-card">
@@ -637,6 +642,7 @@ function renderMerch() {
                 <span>Cookware offer</span>
                 <strong>Auren Tri-Ply Frying Pan</strong>
                 <small>Summer cookware edit</small>
+                <b class="product-price-highlight">£88</b>
               </div>
             </article>
             <article class="offer-product-card">
@@ -645,6 +651,7 @@ function renderMerch() {
                 <span>Host-ready linen</span>
                 <strong>Pritha Digital Print Table Runner</strong>
                 <small>Table linen edit</small>
+                <b class="product-price-highlight">£55</b>
               </div>
             </article>
             <article class="offer-product-card">
@@ -653,6 +660,7 @@ function renderMerch() {
                 <span>Extra 10% off</span>
                 <strong>Arabella Merrow-Edge Napkins</strong>
                 <small>Use code EXTRA10</small>
+                <b class="product-price-highlight">£43</b>
               </div>
             </article>
           </div>
@@ -905,7 +913,7 @@ function renderLaunchProduct(product) {
         <div class="launch-product-tags">${tags.map((tag) => `<em>${tag}</em>`).join("")}</div>
         <span>${product.badge}</span>
         <strong>${product.title}</strong>
-        <small>${product.type} · £${product.price}</small>
+        <small><span>${product.type}</span><b class="product-price-highlight">£${product.price}</b></small>
       </div>
     </a>
   `;
