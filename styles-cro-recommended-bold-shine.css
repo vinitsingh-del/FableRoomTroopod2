@@ -11708,3 +11708,60 @@ body.sticky-cta-visible .concept-page.launch-page .mobile-sticky-cta {
     max-width: 86% !important;
   }
 }
+
+/* Compact sale block: remove proof-box row and keep product thumbnails unchanged. */
+.concept-page.launch-page .campaign-scene {
+  gap: clamp(16px, 1.6vw, 24px) !important;
+  margin: clamp(18px, 2vw, 30px) auto !important;
+  padding: clamp(24px, 2.8vw, 40px) clamp(28px, 3vw, 48px) !important;
+}
+
+.concept-page.launch-page .campaign-scene-head {
+  grid-template-areas:
+    "kicker cta"
+    "title cta"
+    "copy cta" !important;
+  gap: clamp(8px, 0.85vw, 12px) clamp(22px, 3vw, 46px) !important;
+}
+
+.concept-page.launch-page .campaign-scene-head h2 {
+  max-width: 7.4em !important;
+  font-size: clamp(42px, 4.35vw, 72px) !important;
+  line-height: 0.95 !important;
+}
+
+.concept-page.launch-page .campaign-scene-head p {
+  max-width: 690px !important;
+  font-size: clamp(14px, 1vw, 17px) !important;
+  line-height: 1.4 !important;
+}
+
+.concept-page.launch-page .campaign-scene .launch-proof-list {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .concept-page.launch-page .campaign-scene {
+    gap: 14px !important;
+    margin: 14px auto !important;
+    padding: 20px 18px !important;
+  }
+
+  .concept-page.launch-page .campaign-scene-head {
+    grid-template-areas:
+      "kicker"
+      "title"
+      "copy"
+      "cta" !important;
+    gap: 9px !important;
+  }
+
+  .concept-page.launch-page .campaign-scene-head h2 {
+    max-width: 8em !important;
+    font-size: clamp(34px, 9vw, 42px) !important;
+  }
+
+  .concept-page.launch-page .campaign-scene-head p {
+    font-size: 14px !important;
+  }
+}

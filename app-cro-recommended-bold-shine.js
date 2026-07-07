@@ -582,9 +582,6 @@ function renderMerch() {
           <h2 class="motion-text">Great pieces. Better rooms.</h2>
           <p>Explore tableware, cookware and linen with thoughtful savings across the full home-table edit.</p>
           <a class="campaign-shop-link" href="#/all">Shop the savings</a>
-          <div class="launch-proof-list" aria-label="Tableware and kitchen highlights">
-            ${ritualProofItems.map(renderProofItem).join("")}
-          </div>
         </div>
         <figure class="offer-product-carousel" aria-label="Summer sale product catalogue">
           <div class="offer-product-track">
