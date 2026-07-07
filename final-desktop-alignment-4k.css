@@ -894,7 +894,7 @@ html body .announcement-track span {
   font-weight: 1000 !important;
   letter-spacing: 0.18em !important;
   text-shadow: 0 0 12px rgba(255,255,255,0.34), 0 0 24px rgba(255,255,255,0.18) !important;
-  animation: qaTrustTextGlow 2.8s ease-in-out infinite !important;
+  animation: qaTrustTextGlow 2.2s ease-in-out infinite !important;
 }
 
 html body .announcement-track span::before {
@@ -903,14 +903,15 @@ html body .announcement-track span::before {
   inset: -10px 0 !important;
   background: linear-gradient(110deg, transparent 0%, transparent 30%, rgba(255,255,255,0.72) 47%, rgba(255,255,255,0.22) 54%, transparent 68%, transparent 100%) !important;
   transform: translateX(-145%) skewX(-18deg) !important;
-  animation: qaAnnouncementShine 2.8s ease-in-out infinite !important;
+  animation: qaAnnouncementShine 1.9s linear infinite !important;
   pointer-events: none !important;
 }
 
 @keyframes qaAnnouncementShine {
-  0%, 28% { transform: translateX(-145%) skewX(-18deg); opacity: 0; }
-  42% { opacity: 0.95; }
-  66%, 100% { transform: translateX(145%) skewX(-18deg); opacity: 0; }
+  0% { transform: translateX(-145%) skewX(-18deg); opacity: 0; }
+  18% { opacity: 0.95; }
+  52% { opacity: 0.72; }
+  100% { transform: translateX(145%) skewX(-18deg); opacity: 0; }
 }
 
 @keyframes qaTrustTextGlow {
