@@ -623,6 +623,38 @@ function renderMerch() {
                 <small>Hosting favourite</small>
               </div>
             </article>
+            <article class="offer-product-card">
+              <div class="offer-product-image"><span class="product-thumb-frame"><img src="${A("p-renata-dinner.jpg")}" alt="Renata Dinner Plates" loading="eager" decoding="async" /></span></div>
+              <div class="offer-product-copy">
+                <span>Fairly priced</span>
+                <strong>Renata Dinner Plates</strong>
+                <small>Dinner Plates · £98</small>
+              </div>
+            </article>
+            <article class="offer-product-card">
+              <div class="offer-product-image"><span class="product-thumb-frame"><img src="${A("cookware-pan.jpg")}" alt="Auren Tri-Ply Frying Pan" loading="eager" decoding="async" /></span></div>
+              <div class="offer-product-copy">
+                <span>Cookware offer</span>
+                <strong>Auren Tri-Ply Frying Pan</strong>
+                <small>Summer cookware edit</small>
+              </div>
+            </article>
+            <article class="offer-product-card">
+              <div class="offer-product-image"><span class="product-thumb-frame"><img src="${A("linen-pritha-runner.png")}" alt="Pritha Digital Print Table Runner" loading="eager" decoding="async" /></span></div>
+              <div class="offer-product-copy">
+                <span>Host-ready linen</span>
+                <strong>Pritha Digital Print Table Runner</strong>
+                <small>Table linen edit</small>
+              </div>
+            </article>
+            <article class="offer-product-card">
+              <div class="offer-product-image"><span class="product-thumb-frame"><img src="${A("linen-arabella.png")}" alt="Arabella Merrow-Edge Napkins" loading="eager" decoding="async" /></span></div>
+              <div class="offer-product-copy">
+                <span>Extra 10% off</span>
+                <strong>Arabella Merrow-Edge Napkins</strong>
+                <small>Use code EXTRA10</small>
+              </div>
+            </article>
           </div>
         </figure>
       </section>

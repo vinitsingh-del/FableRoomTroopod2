@@ -194,6 +194,23 @@ html body .concept-page.launch-page .product-thumb-frame img {
   }
 }
 
+html body .concept-page.launch-page section.launch-highlight.shop-look,
+html body .concept-page.launch-page .launch-highlight.shop-look {
+  border-left: 0 !important;
+  border-right: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .concept-page.launch-page section.launch-highlight.shop-look::before,
+html body .concept-page.launch-page section.launch-highlight.shop-look::after,
+html body .concept-page.launch-page .launch-highlight.shop-look::before,
+html body .concept-page.launch-page .launch-highlight.shop-look::after {
+  content: none !important;
+  display: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
 /* Burgundy CTA hover lock: keep capsule CTAs visible and shimmering, never white-on-white. */
 html body .concept-page.launch-page .landing-pill-nav a,
 html body .concept-page.launch-page .furniture-cta-grid a,
@@ -447,6 +464,239 @@ html body .concept-page.launch-page .furniture-cta-grid a:focus-visible .icon-ma
   html body .concept-page.launch-page #launch-reviews-title.motion-text:not(#qa-force-review-title-mobile) {
     max-width: 9.4em !important;
     font-size: clamp(28px, 7.2vw, 34px) !important;
+    line-height: 1 !important;
+    text-align: left !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  html body .concept-page.launch-page .launch-products #launch-products-title.motion-text:not(#qa-title-final-lock),
+  html body .concept-page.launch-page section.launch-reviews #launch-reviews-title.motion-text:not(#qa-title-final-lock),
+  html body .concept-page.launch-page section.campaign-scene .campaign-scene-head h2.motion-text:not(#qa-title-final-lock),
+  html body .concept-page.launch-page section.launch-highlight.shop-look .shop-look-title:not(#qa-title-final-lock) {
+    width: min(100%, 9.4em) !important;
+    max-width: 9.4em !important;
+    margin: 0 !important;
+    font-size: var(--qa-title-font) !important;
+    line-height: var(--qa-title-line) !important;
+    text-align: left !important;
+  }
+}
+
+@media (max-width: 760px) {
+  html body .concept-page.launch-page .launch-products #launch-products-title.motion-text:not(#qa-title-final-mobile-lock),
+  html body .concept-page.launch-page section.launch-reviews #launch-reviews-title.motion-text:not(#qa-title-final-mobile-lock),
+  html body .concept-page.launch-page section.campaign-scene .campaign-scene-head h2.motion-text:not(#qa-title-final-mobile-lock),
+  html body .concept-page.launch-page section.launch-highlight.shop-look .shop-look-title:not(#qa-title-final-mobile-lock) {
+    max-width: 9.4em !important;
+    margin: 0 !important;
+    font-size: var(--qa-title-font) !important;
+    line-height: 1 !important;
+    text-align: left !important;
+  }
+}
+
+/* Master title rail: match "Most loved collection / Tableware and kitchen." exactly. */
+@media (min-width: 1024px) {
+  html body .concept-page.launch-page {
+    --qa-master-margin: clamp(99px, 6.875vw, 228px);
+    --qa-4k-section: calc(100vw - (var(--qa-master-margin) * 2));
+    --qa-4k-pad: 0px;
+    --qa-title-font: clamp(59.76px, 3.125vw, 60px);
+    --qa-kicker-font: clamp(13.536px, 0.885vw, 17px);
+    --qa-title-line: 0.96;
+  }
+
+  html body .concept-page.launch-page .launch-products,
+  html body .concept-page.launch-page section.launch-reviews,
+  html body .concept-page.launch-page section.campaign-scene,
+  html body .concept-page.launch-page section.launch-highlight.shop-look {
+    box-sizing: border-box !important;
+    zoom: 1 !important;
+    width: var(--qa-4k-section) !important;
+    max-width: var(--qa-4k-section) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  html body .concept-page.launch-page .launch-products .launch-section-head,
+  html body .concept-page.launch-page .launch-review-head,
+  html body .concept-page.launch-page .launch-review-head > div,
+  html body .concept-page.launch-page section.campaign-scene .campaign-scene-head,
+  html body .concept-page.launch-page section.launch-highlight.shop-look .launch-highlight-copy {
+    width: 100% !important;
+    max-width: 760px !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    padding: 0 !important;
+    display: grid !important;
+    justify-items: start !important;
+    text-align: left !important;
+  }
+
+  html body .concept-page.launch-page .launch-products .launch-section-head.split {
+    max-width: 100% !important;
+    grid-template-columns: minmax(0, 760px) auto !important;
+    gap: clamp(28px, 4vw, 72px) !important;
+    align-items: end !important;
+  }
+
+  html body .concept-page.launch-page .launch-products .launch-section-head.split > div {
+    width: 100% !important;
+    max-width: 760px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  html body .concept-page.launch-page .launch-products .launch-section-head.split > a {
+    justify-self: start !important;
+    align-self: end !important;
+    margin: 0 0 8px !important;
+  }
+
+  html body .concept-page.launch-page section.campaign-scene .campaign-scene-head {
+    max-width: 100% !important;
+    margin-left: -1px !important;
+    grid-template-columns: minmax(0, 760px) auto !important;
+    grid-template-areas:
+      "kicker cta"
+      "title cta"
+      "copy cta" !important;
+    gap: 3px clamp(28px, 4vw, 72px) !important;
+    align-items: center !important;
+  }
+
+  html body .concept-page.launch-page section.campaign-scene .campaign-shop-link {
+    justify-self: start !important;
+    align-self: center !important;
+  }
+
+  html body .concept-page.launch-page section.launch-highlight.shop-look {
+    grid-template-columns: minmax(0, 760px) minmax(520px, 1fr) !important;
+    gap: clamp(48px, 5vw, 92px) !important;
+  }
+
+  html body .concept-page.launch-page section.launch-highlight.shop-look .launch-highlight-copy {
+    margin-left: 0 !important;
+  }
+
+  html body .concept-page.launch-page .launch-ritual-panel .launch-section-head > div > span,
+  html body .concept-page.launch-page .launch-products .launch-section-head > div > span,
+  html body .concept-page.launch-page .launch-review-head .review-kicker,
+  html body .concept-page.launch-page section.campaign-scene .campaign-scene-head > span,
+  html body .concept-page.launch-page section.launch-highlight.shop-look .launch-highlight-copy > span {
+    display: inline-block !important;
+    margin: 0 0 3px !important;
+    color: var(--launch-burgundy) !important;
+    font-family: var(--font-sans) !important;
+    font-size: var(--qa-kicker-font) !important;
+    font-weight: 1000 !important;
+    letter-spacing: 0.22em !important;
+    line-height: 1.2 !important;
+    text-align: left !important;
+    text-transform: uppercase !important;
+  }
+
+  html body .concept-page.launch-page #launch-layer-title.motion-text,
+  html body .concept-page.launch-page #launch-products-title.motion-text,
+  html body .concept-page.launch-page #launch-reviews-title.motion-text,
+  html body .concept-page.launch-page section.campaign-scene .campaign-scene-head h2,
+  html body .concept-page.launch-page section.launch-highlight.shop-look .shop-look-title:not(#qa-master-title-lock) {
+    width: min(100%, 9.4em) !important;
+    max-width: 9.4em !important;
+    margin: 0 !important;
+    color: var(--launch-ink) !important;
+    font-family: var(--font-serif) !important;
+    font-size: var(--qa-title-font) !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+    line-height: var(--qa-title-line) !important;
+    text-align: left !important;
+    text-transform: none !important;
+  }
+
+  html body .concept-page.launch-page section.campaign-scene .campaign-scene-head p,
+  html body .concept-page.launch-page section.launch-highlight.shop-look .launch-highlight-copy p {
+    width: min(100%, 760px) !important;
+    max-width: 760px !important;
+    margin: 10px 0 0 !important;
+    color: var(--launch-muted) !important;
+    font-family: var(--font-sans) !important;
+    font-size: clamp(13.536px, 0.78vw, 15px) !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+    line-height: 1.55 !important;
+    text-align: left !important;
+  }
+
+  html body .concept-page.launch-page .launch-products,
+  html body .concept-page.launch-page section.launch-reviews,
+  html body .concept-page.launch-page section.campaign-scene,
+  html body .concept-page.launch-page section.launch-highlight.shop-look {
+    padding-top: clamp(34px, 3vw, 56px) !important;
+    padding-bottom: clamp(34px, 3vw, 56px) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  html body .concept-page.launch-page {
+    --qa-mobile-title-rail: 17.5px;
+    --qa-mobile-section: calc(100vw - (var(--qa-mobile-title-rail) * 2));
+    --qa-title-font: 35.88px;
+    --qa-kicker-font: 13px;
+  }
+
+  html body .concept-page.launch-page .launch-products,
+  html body .concept-page.launch-page section.launch-reviews,
+  html body .concept-page.launch-page section.campaign-scene,
+  html body .concept-page.launch-page section.launch-highlight.shop-look {
+    box-sizing: border-box !important;
+    zoom: 1 !important;
+    width: var(--qa-mobile-section) !important;
+    max-width: var(--qa-mobile-section) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  html body .concept-page.launch-page .launch-products .launch-section-head,
+  html body .concept-page.launch-page .launch-review-head,
+  html body .concept-page.launch-page .launch-review-head > div,
+  html body .concept-page.launch-page section.campaign-scene .campaign-scene-head,
+  html body .concept-page.launch-page section.launch-highlight.shop-look .launch-highlight-copy {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    padding: 0 !important;
+    justify-items: start !important;
+    text-align: left !important;
+  }
+
+  html body .concept-page.launch-page section.campaign-scene .campaign-scene-head {
+    margin-left: -1px !important;
+  }
+
+  html body .concept-page.launch-page .launch-products .launch-section-head > div > span,
+  html body .concept-page.launch-page .launch-review-head .review-kicker,
+  html body .concept-page.launch-page section.campaign-scene .campaign-scene-head > span,
+  html body .concept-page.launch-page section.launch-highlight.shop-look .launch-highlight-copy > span {
+    margin: 0 0 4px !important;
+    font-size: var(--qa-kicker-font) !important;
+    letter-spacing: 0.22em !important;
+    line-height: 1.2 !important;
+    text-align: left !important;
+  }
+
+  html body .concept-page.launch-page #launch-products-title.motion-text,
+  html body .concept-page.launch-page #launch-reviews-title.motion-text,
+  html body .concept-page.launch-page section.campaign-scene .campaign-scene-head h2,
+  html body .concept-page.launch-page section.launch-highlight.shop-look .shop-look-title:not(#qa-master-title-mobile-lock) {
+    max-width: 9.4em !important;
+    margin: 0 !important;
+    font-size: var(--qa-title-font) !important;
     line-height: 1 !important;
     text-align: left !important;
   }
