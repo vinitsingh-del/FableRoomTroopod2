@@ -650,9 +650,9 @@ function renderMerch() {
           <p>Pair the table setting with dining chairs, tables and benches made for everyday hosting.</p>
         </div>
         <div class="furniture-cta-grid" aria-label="Explore Fableroom dining furniture">
-          <a href="https://fableroom.com/collections/dining-furniture">${iconSvg("diningChair")}<span>Dining Chairs</span></a>
-          <a href="https://fableroom.com/collections/dining-furniture">${iconSvg("diningTable")}<span>Dining Tables</span></a>
-          <a href="https://fableroom.com/collections/dining-furniture">${iconSvg("bench")}<span>Bench</span></a>
+          <a href="https://fableroom.com/collections/dining-furniture">${iconSvg("diningChair")}<span>Dining Chairs</span><small>Explore</small></a>
+          <a href="https://fableroom.com/collections/dining-furniture">${iconSvg("diningTable")}<span>Dining Tables</span><small>Explore</small></a>
+          <a href="https://fableroom.com/collections/dining-furniture">${iconSvg("bench")}<span>Bench</span><small>Explore</small></a>
         </div>
       </section>
 
