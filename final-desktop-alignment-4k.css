@@ -1943,3 +1943,42 @@ html body .concept-page.launch-page .launch-highlight-copy > span {
       0 0 48px rgba(68, 24, 29, 0.36);
   }
 }
+
+/* Absolute final cleanup: text-only glow, no grey background behind section labels. */
+html body .concept-page.launch-page #launch-edit .launch-section-head > div > span,
+html body .concept-page.launch-page .launch-products .launch-section-head > div > span,
+html body .concept-page.launch-page .launch-review-head .review-kicker,
+html body .concept-page.launch-page .campaign-scene-head > span,
+html body .concept-page.launch-page .launch-conversion > div:first-child > span,
+html body .concept-page.launch-page .launch-highlight-copy > span {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  border: 0 !important;
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  color: #44181d !important;
+  text-shadow: 0 0 2px rgba(68, 24, 29, 0.64), 0 0 13px rgba(68, 24, 29, 0.42) !important;
+  animation: qaCleanTextOnlyLabelGlow 1.16s ease-in-out infinite !important;
+  will-change: text-shadow, color !important;
+}
+
+@keyframes qaCleanTextOnlyLabelGlow {
+  0%, 100% {
+    color: #3a151a;
+    text-shadow:
+      0 0 1px rgba(68, 24, 29, 0.38),
+      0 0 6px rgba(68, 24, 29, 0.2),
+      0 0 12px rgba(68, 24, 29, 0.12);
+  }
+  48% {
+    color: #5b2028;
+    text-shadow:
+      0 0 2px rgba(68, 24, 29, 0.95),
+      0 0 12px rgba(68, 24, 29, 0.68),
+      0 0 24px rgba(68, 24, 29, 0.42),
+      0 0 34px rgba(68, 24, 29, 0.26);
+  }
+}
