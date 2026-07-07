@@ -10971,60 +10971,63 @@ body.sticky-cta-visible .concept-page.launch-page .mobile-sticky-cta {
 
 /* Conversion CTA redesign: no plain boxes, use editorial angled ribbons. */
 .concept-page.launch-page .furniture-cta-grid {
-  width: min(560px, 100%) !important;
-  display: flex !important;
-  flex-wrap: wrap !important;
+  width: min(620px, 100%) !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   align-items: center !important;
   justify-content: flex-end !important;
-  gap: clamp(10px, 1vw, 14px) !important;
+  gap: clamp(8px, 0.8vw, 12px) !important;
 }
 
 .concept-page.launch-page .furniture-cta-grid a {
   position: relative !important;
-  min-height: 52px !important;
-  min-width: clamp(152px, 11vw, 190px) !important;
+  min-height: 42px !important;
+  min-width: 0 !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 0 42px 0 24px !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  clip-path: polygon(9% 0, 100% 0, 91% 100%, 0 100%) !important;
+  padding: 0 30px 0 18px !important;
+  border: 1px solid rgba(68, 24, 29, 0.22) !important;
+  border-radius: 999px !important;
+  clip-path: none !important;
   background:
-    linear-gradient(120deg, rgba(255,255,255,0.18), rgba(255,255,255,0) 38%),
-    var(--launch-burgundy) !important;
-  color: #fff !important;
-  box-shadow: 0 16px 28px rgba(68, 24, 29, 0.16), inset 0 0 0 1px rgba(255,255,255,0.18) !important;
-  font-size: clamp(10px, 0.78vw, 12px) !important;
+    linear-gradient(120deg, rgba(68,24,29,0.08), rgba(255,255,255,0) 42%),
+    #fff !important;
+  color: var(--launch-burgundy) !important;
+  box-shadow: 0 10px 20px rgba(68, 24, 29, 0.07), inset 0 0 0 1px rgba(255,255,255,0.78) !important;
+  font-size: clamp(9px, 0.66vw, 11px) !important;
   font-weight: 1000 !important;
-  letter-spacing: 0.18em !important;
+  letter-spacing: 0.14em !important;
   overflow: hidden !important;
   text-align: center !important;
   text-transform: uppercase !important;
-  transform: translateY(0) rotate(-1deg) !important;
+  transform: none !important;
+  white-space: nowrap !important;
 }
 
 .concept-page.launch-page .furniture-cta-grid a:nth-child(2) {
   background:
-    linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,255,255,0) 38%),
-    #101010 !important;
-  transform: translateY(-7px) rotate(1deg) !important;
+    linear-gradient(120deg, rgba(68,24,29,0.08), rgba(255,255,255,0) 42%),
+    #fff !important;
+  color: var(--launch-burgundy) !important;
+  transform: none !important;
 }
 
 .concept-page.launch-page .furniture-cta-grid a:nth-child(3) {
   background:
-    linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,255,255,0) 38%),
-    #8a5a33 !important;
-  transform: translateY(4px) rotate(-1.5deg) !important;
+    linear-gradient(120deg, rgba(68,24,29,0.08), rgba(255,255,255,0) 42%),
+    #fff !important;
+  color: var(--launch-burgundy) !important;
+  transform: none !important;
 }
 
 .concept-page.launch-page .furniture-cta-grid a::before {
   content: "→";
   position: absolute;
-  right: 22px;
+  right: 13px;
   top: 50%;
   z-index: 3;
-  font-size: 17px;
+  font-size: 13px;
   line-height: 1;
   transform: translateY(-50%);
 }
@@ -11041,16 +11044,18 @@ body.sticky-cta-visible .concept-page.launch-page .mobile-sticky-cta {
 
 .concept-page.launch-page .furniture-cta-grid a:hover,
 .concept-page.launch-page .furniture-cta-grid a:focus-visible {
-  box-shadow: 0 22px 34px rgba(68, 24, 29, 0.24), inset 0 0 0 1px rgba(255,255,255,0.28) !important;
-  transform: translateY(-5px) rotate(0deg) scale(1.02) !important;
+  background: var(--launch-burgundy) !important;
+  color: #fff !important;
+  box-shadow: 0 14px 24px rgba(68, 24, 29, 0.16), inset 0 0 0 1px rgba(255,255,255,0.24) !important;
+  transform: translateY(-1px) !important;
 }
 
 @media (max-width: 760px) {
   .concept-page.launch-page .furniture-cta-grid {
     width: 100% !important;
     display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 7px !important;
     justify-content: stretch !important;
   }
 
@@ -11059,8 +11064,16 @@ body.sticky-cta-visible .concept-page.launch-page .mobile-sticky-cta {
   .concept-page.launch-page .furniture-cta-grid a:nth-child(3) {
     width: 100% !important;
     min-width: 0 !important;
-    min-height: 50px !important;
+    min-height: 38px !important;
+    padding: 0 18px 0 10px !important;
+    font-size: clamp(7px, 2.05vw, 9px) !important;
+    letter-spacing: 0.08em !important;
     transform: none !important;
+  }
+
+  .concept-page.launch-page .furniture-cta-grid a::before {
+    right: 8px !important;
+    font-size: 11px !important;
   }
 }
 
