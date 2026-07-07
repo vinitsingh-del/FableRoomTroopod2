@@ -539,7 +539,20 @@ function renderMerch() {
       </section>
 
       <section class="launch-scene campaign-scene reveal-block">
-        <figure><img src="${A("ai-tableware-about-v2.png")}" alt="Fableroom summer sale table setting" loading="lazy" /></figure>
+        <figure class="offer-catalogue" aria-label="Summer sale product catalogue">
+          <div class="offer-catalogue-slide">
+            <img src="${A("launch-highlight-lifestyle.png")}" alt="Complete Fableroom tableware setting with serveware and linen" loading="lazy" />
+            <figcaption>Special 10% off · use code EXTRA10</figcaption>
+          </div>
+          <div class="offer-catalogue-slide">
+            <img src="${A("hero-real-table.png")}" alt="Fableroom table setting with serveware and dining pieces" loading="lazy" />
+            <figcaption>Summer sale · dining sets from £68</figcaption>
+          </div>
+          <div class="offer-catalogue-slide">
+            <img src="${A("ai-tableware-about-v2.png")}" alt="Fableroom kitchen and tableware styled for hosting" loading="lazy" />
+            <figcaption>Extra savings · complete the table</figcaption>
+          </div>
+        </figure>
         <div class="reveal-block">
           <span>Summer Sale · Extra 10% Off</span>
           <h2 class="motion-text">Good rooms start with great pieces.</h2>
