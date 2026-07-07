@@ -193,3 +193,92 @@ html body .concept-page.launch-page .product-thumb-frame img {
     text-align: left !important;
   }
 }
+
+/* Burgundy CTA hover lock: keep capsule CTAs visible and shimmering, never white-on-white. */
+html body .concept-page.launch-page .landing-pill-nav a,
+html body .concept-page.launch-page .furniture-cta-grid a,
+html body .concept-page.launch-page .subcategory-pill {
+  position: relative !important;
+  isolation: isolate !important;
+  background: #fff !important;
+  border-color: rgba(68, 24, 29, 0.2) !important;
+  color: var(--launch-burgundy) !important;
+  overflow: hidden !important;
+}
+
+html body .concept-page.launch-page .landing-pill-nav a > *,
+html body .concept-page.launch-page .furniture-cta-grid a > *,
+html body .concept-page.launch-page .subcategory-pill > * {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+html body .concept-page.launch-page .landing-pill-nav a span,
+html body .concept-page.launch-page .landing-pill-nav a small,
+html body .concept-page.launch-page .furniture-cta-grid a span,
+html body .concept-page.launch-page .furniture-cta-grid a small,
+html body .concept-page.launch-page .subcategory-pill span,
+html body .concept-page.launch-page .landing-pill-nav a .icon-mark,
+html body .concept-page.launch-page .furniture-cta-grid a .icon-mark {
+  color: var(--launch-burgundy) !important;
+  opacity: 1 !important;
+}
+
+html body .concept-page.launch-page .landing-pill-nav a::after,
+html body .concept-page.launch-page .furniture-cta-grid a::after,
+html body .concept-page.launch-page .subcategory-pill::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  display: block !important;
+  border-radius: inherit !important;
+  background:
+    linear-gradient(115deg, transparent 0%, rgba(68, 24, 29, 0.16) 42%, rgba(68, 24, 29, 0.04) 56%, transparent 76%),
+    radial-gradient(circle at 18% 18%, rgba(68, 24, 29, 0.08), transparent 38%) !important;
+  opacity: 0 !important;
+  transform: translateX(-42%) skewX(-14deg) !important;
+  transition: opacity 180ms ease, transform 420ms ease !important;
+  pointer-events: none !important;
+}
+
+html body .concept-page.launch-page .landing-pill-nav a:hover,
+html body .concept-page.launch-page .landing-pill-nav a:focus-visible,
+html body .concept-page.launch-page .furniture-cta-grid a:hover,
+html body .concept-page.launch-page .furniture-cta-grid a:focus-visible,
+html body .concept-page.launch-page .subcategory-pill:hover,
+html body .concept-page.launch-page .subcategory-pill:focus-visible {
+  background: rgba(68, 24, 29, 0.045) !important;
+  border-color: rgba(68, 24, 29, 0.34) !important;
+  color: var(--launch-burgundy) !important;
+  box-shadow: 0 18px 34px rgba(68, 24, 29, 0.11) !important;
+  transform: translateY(-1px) !important;
+}
+
+html body .concept-page.launch-page .landing-pill-nav a:hover::after,
+html body .concept-page.launch-page .landing-pill-nav a:focus-visible::after,
+html body .concept-page.launch-page .furniture-cta-grid a:hover::after,
+html body .concept-page.launch-page .furniture-cta-grid a:focus-visible::after,
+html body .concept-page.launch-page .subcategory-pill:hover::after,
+html body .concept-page.launch-page .subcategory-pill:focus-visible::after {
+  opacity: 1 !important;
+  transform: translateX(42%) skewX(-14deg) !important;
+}
+
+html body .concept-page.launch-page .landing-pill-nav a:hover span,
+html body .concept-page.launch-page .landing-pill-nav a:hover small,
+html body .concept-page.launch-page .furniture-cta-grid a:hover span,
+html body .concept-page.launch-page .furniture-cta-grid a:hover small,
+html body .concept-page.launch-page .subcategory-pill:hover span,
+html body .concept-page.launch-page .landing-pill-nav a:focus-visible span,
+html body .concept-page.launch-page .landing-pill-nav a:focus-visible small,
+html body .concept-page.launch-page .furniture-cta-grid a:focus-visible span,
+html body .concept-page.launch-page .furniture-cta-grid a:focus-visible small,
+html body .concept-page.launch-page .subcategory-pill:focus-visible span,
+html body .concept-page.launch-page .landing-pill-nav a:hover .icon-mark,
+html body .concept-page.launch-page .furniture-cta-grid a:hover .icon-mark,
+html body .concept-page.launch-page .landing-pill-nav a:focus-visible .icon-mark,
+html body .concept-page.launch-page .furniture-cta-grid a:focus-visible .icon-mark {
+  color: var(--launch-burgundy) !important;
+  opacity: 1 !important;
+}
