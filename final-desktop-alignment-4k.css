@@ -1982,3 +1982,38 @@ html body .concept-page.launch-page .launch-highlight-copy > span {
       0 0 34px rgba(68, 24, 29, 0.26);
   }
 }
+
+/* Absolute final request: pure text bold in/out, no background or glow field. */
+html body .concept-page.launch-page #launch-edit .launch-section-head > div > span,
+html body .concept-page.launch-page .launch-products .launch-section-head > div > span,
+html body .concept-page.launch-page .launch-review-head .review-kicker,
+html body .concept-page.launch-page .campaign-scene-head > span,
+html body .concept-page.launch-page .launch-conversion > div:first-child > span,
+html body .concept-page.launch-page .launch-highlight-copy > span {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  outline: 0 !important;
+  border: 0 !important;
+  opacity: 1 !important;
+  filter: none !important;
+  color: #44181d !important;
+  transform: none !important;
+  -webkit-text-stroke-color: currentColor !important;
+  -webkit-text-stroke-width: 0;
+  animation: qaPureBoldTextPulse 1.05s steps(2, end) infinite !important;
+  will-change: font-weight, -webkit-text-stroke-width !important;
+}
+
+@keyframes qaPureBoldTextPulse {
+  0%, 100% {
+    font-weight: 760;
+    -webkit-text-stroke-width: 0;
+  }
+  50% {
+    font-weight: 1000;
+    -webkit-text-stroke-width: 0.42px;
+  }
+}
