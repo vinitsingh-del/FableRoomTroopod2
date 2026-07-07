@@ -9300,22 +9300,101 @@ body,
   background: #fff;
 }
 
-.concept-page.launch-page .campaign-scene figure {
+.concept-page.launch-page .campaign-scene .offer-catalogue {
   position: relative;
+  min-height: 0;
+  aspect-ratio: 3 / 2;
+  background: #fff;
+  isolation: isolate;
 }
 
-.concept-page.launch-page .campaign-scene figure::after {
-  content: "SPECIAL 10% OFF · USE CODE EXTRA10";
+.concept-page.launch-page .offer-catalogue-slide {
   position: absolute;
-  left: clamp(16px, 2vw, 30px);
-  bottom: clamp(16px, 2vw, 30px);
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.025);
+  animation: offerCatalogueFade 12s ease-in-out infinite;
+}
+
+.concept-page.launch-page .offer-catalogue-slide:nth-child(2) {
+  animation-delay: 4s;
+}
+
+.concept-page.launch-page .offer-catalogue-slide:nth-child(3) {
+  animation-delay: 8s;
+}
+
+.concept-page.launch-page .offer-catalogue-slide img {
+  width: 100%;
+  height: 100% !important;
+  min-height: 0 !important;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.concept-page.launch-page .offer-catalogue-slide::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 46%;
+  background: linear-gradient(180deg, rgba(16, 16, 16, 0) 0%, rgba(16, 16, 16, 0.24) 46%, rgba(16, 16, 16, 0.42) 100%);
+  pointer-events: none;
+}
+
+.concept-page.launch-page .offer-catalogue-slide figcaption {
+  position: absolute;
+  left: clamp(18px, 2.4vw, 34px);
+  bottom: clamp(18px, 2.2vw, 30px);
   z-index: 2;
-  padding: 10px 14px;
-  background: rgba(68, 24, 29, 0.92);
+  display: inline-flex;
+  align-items: center;
+  max-width: calc(100% - 48px);
+  min-height: clamp(40px, 3.4vw, 54px);
+  padding: 0 clamp(18px, 2.3vw, 34px);
+  background: rgba(68, 24, 29, 0.94);
   color: #fff;
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: 0.13em;
+  font-family: var(--font-sans);
+  font-size: clamp(11px, 1vw, 17px);
+  font-weight: 1000;
+  letter-spacing: 0.17em;
+  line-height: 1.15;
+  text-transform: uppercase;
+  box-shadow: 0 14px 30px rgba(68, 24, 29, 0.26);
+}
+
+@keyframes offerCatalogueFade {
+  0%, 7% {
+    opacity: 0;
+    transform: scale(1.025);
+  }
+  12%, 31% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  38%, 100% {
+    opacity: 0;
+    transform: scale(1.018);
+  }
+}
+
+@media (max-width: 760px) {
+  .concept-page.launch-page .campaign-scene .offer-catalogue {
+    aspect-ratio: 4 / 3;
+  }
+
+  .concept-page.launch-page .offer-catalogue-slide figcaption {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    justify-content: center;
+    max-width: none;
+    min-height: 40px;
+    padding: 0 14px;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-align: center;
+  }
 }
 
 @media (max-width: 760px) {
