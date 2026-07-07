@@ -10189,18 +10189,19 @@ body.sticky-cta-visible .concept-page.launch-page .mobile-sticky-cta {
 }
 
 .concept-page.launch-page .launch-product-carousel .launch-product-card {
-  aspect-ratio: 3 / 4 !important;
+  aspect-ratio: auto !important;
   height: auto !important;
   min-height: 0 !important;
   display: grid !important;
-  grid-template-rows: 54% 46% !important;
+  grid-template-rows: auto minmax(168px, auto) !important;
   overflow: hidden !important;
   background: #fff !important;
 }
 
 .concept-page.launch-page .launch-product-carousel .launch-product-card figure {
+  aspect-ratio: 3 / 4 !important;
   min-height: 0 !important;
-  height: 100% !important;
+  height: auto !important;
   display: grid !important;
   place-items: center !important;
   padding: clamp(14px, 1vw, 18px) !important;
@@ -10210,8 +10211,8 @@ body.sticky-cta-visible .concept-page.launch-page .mobile-sticky-cta {
 .concept-page.launch-page .launch-product-carousel .launch-product-card img {
   width: auto !important;
   height: auto !important;
-  max-width: 82% !important;
-  max-height: clamp(132px, 8.8vw, 168px) !important;
+  max-width: 84% !important;
+  max-height: 84% !important;
   object-fit: contain !important;
   object-position: center !important;
 }
