@@ -9997,3 +9997,8 @@ body,
     margin-top: clamp(12px, 1.15vw, 20px) !important;
   }
 }
+
+/* Remove the stray editorial frame around the first collection heading. */
+.concept-page.launch-page .launch-ritual-panel {
+  border: 0 !important;
+}
