@@ -9881,3 +9881,26 @@ body,
     text-transform: none !important;
   }
 }
+
+/* Final lock: Explore heading must match The Collection Edit label exactly. */
+.concept-page.launch-page #concept-products-title,
+.concept-page.launch-page .launch-products .launch-section-head > div > span {
+  display: inline-block !important;
+  width: auto !important;
+  max-width: max-content !important;
+  margin: 0 !important;
+  color: var(--launch-burgundy) !important;
+  font-family: var(--font-sans) !important;
+  font-size: clamp(12px, 0.86vw, 16px) !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.22em !important;
+  line-height: 1.25 !important;
+  text-align: left !important;
+  text-transform: uppercase !important;
+  word-spacing: 0.08em !important;
+}
+
+.concept-page.launch-page .concept-products .concept-head {
+  justify-items: start !important;
+  text-align: left !important;
+}
