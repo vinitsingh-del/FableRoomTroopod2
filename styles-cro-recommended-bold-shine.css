@@ -11971,3 +11971,197 @@ body.sticky-cta-visible .concept-page.launch-page .mobile-sticky-cta {
     letter-spacing: 0.1em !important;
   }
 }
+
+/* QA final correction: remove remaining inherited center-align and mobile kicker drift. */
+.concept-page.launch-page .launch-products .launch-section-head > div > span,
+.concept-page.launch-page .launch-section-head > div > span {
+  font-size: clamp(13px, 0.94vw, 17px) !important;
+  font-weight: 1000 !important;
+  letter-spacing: 0.22em !important;
+  line-height: 1.2 !important;
+  text-align: left !important;
+}
+
+.concept-page.launch-page .subcategory-pill,
+.concept-page.launch-page .subcategory-pill span,
+.concept-page.launch-page .furniture-cta-grid a,
+.concept-page.launch-page .furniture-cta-grid a:nth-child(2),
+.concept-page.launch-page .furniture-cta-grid a:nth-child(3),
+.concept-page.launch-page .furniture-cta-grid a > span,
+.concept-page.launch-page .furniture-cta-grid a small {
+  text-align: left !important;
+}
+
+/* QA consistency layer: titles, subheads, alignment, and spacing. */
+.concept-page.launch-page :is(h1, h2, h3, p, span, strong, small, a) {
+  text-align: left !important;
+}
+
+.concept-page.launch-page :is(
+  #concept-title,
+  #launch-layer-title,
+  #concept-products-title,
+  #launch-products-title,
+  #launch-featured-title,
+  #launch-reviews-title,
+  #collection-new-title,
+  #collection-concept-title,
+  .campaign-scene-head h2,
+  .shop-look-title,
+  .launch-conversion h2,
+  .concept-about h2
+) {
+  width: min(100%, 10.4em) !important;
+  max-width: 10.4em !important;
+  margin: 0 !important;
+  color: var(--launch-ink) !important;
+  font-family: var(--font-serif) !important;
+  font-size: clamp(42px, 4.15vw, 60px) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 0.96 !important;
+  text-align: left !important;
+  text-transform: none !important;
+}
+
+.concept-page.launch-page :is(
+  .launch-section-head > span,
+  .launch-section-head > div > span,
+  .launch-review-head .review-kicker,
+  .campaign-scene-head > span,
+  .launch-highlight-copy > span,
+  .launch-conversion > div > span,
+  .concept-hero-copy > span,
+  .concept-head > span
+) {
+  display: inline-block !important;
+  width: auto !important;
+  margin: 0 !important;
+  color: var(--launch-burgundy) !important;
+  font-family: var(--font-sans) !important;
+  font-size: clamp(13px, 0.94vw, 17px) !important;
+  font-weight: 1000 !important;
+  letter-spacing: 0.22em !important;
+  line-height: 1.2 !important;
+  text-align: left !important;
+  text-transform: uppercase !important;
+}
+
+.concept-page.launch-page :is(
+  .concept-hero-copy p,
+  .launch-section-head p,
+  .campaign-scene-head p,
+  .launch-highlight-copy p,
+  .launch-conversion p,
+  .launch-review-head p,
+  .review-card p,
+  .concept-about-copy p
+) {
+  margin: 0 !important;
+  color: var(--launch-muted) !important;
+  font-family: var(--font-sans) !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.55 !important;
+  text-align: left !important;
+}
+
+.concept-page.launch-page :is(
+  .launch-section-head,
+  .concept-head,
+  .launch-featured-head,
+  .launch-review-head,
+  .campaign-scene-head,
+  .launch-highlight-copy,
+  .launch-conversion > div:first-child,
+  .concept-hero-copy
+) {
+  display: grid !important;
+  justify-items: start !important;
+  align-content: start !important;
+  gap: 12px !important;
+  margin-bottom: 16px !important;
+  text-align: left !important;
+}
+
+.concept-page.launch-page .campaign-scene-head {
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  grid-template-areas:
+    "kicker cta"
+    "title cta"
+    "copy cta" !important;
+  column-gap: clamp(24px, 3vw, 48px) !important;
+}
+
+.concept-page.launch-page .campaign-scene-head > span {
+  grid-area: kicker !important;
+}
+
+.concept-page.launch-page .campaign-scene-head h2 {
+  grid-area: title !important;
+}
+
+.concept-page.launch-page .campaign-scene-head p {
+  grid-area: copy !important;
+  max-width: 760px !important;
+}
+
+.concept-page.launch-page .campaign-shop-link {
+  grid-area: cta !important;
+  align-self: center !important;
+}
+
+.concept-page.launch-page .launch-highlight-copy {
+  align-content: center !important;
+}
+
+.concept-page.launch-page .furniture-cta-grid a,
+.concept-page.launch-page .landing-pill-nav a,
+.concept-page.launch-page .subcategory-pill,
+.concept-page.launch-page .concept-campaign-strip span {
+  text-align: left !important;
+}
+
+@media (max-width: 760px) {
+  .concept-page.launch-page :is(
+    #concept-title,
+    #launch-layer-title,
+    #concept-products-title,
+    #launch-products-title,
+    #launch-featured-title,
+    #launch-reviews-title,
+    #collection-new-title,
+    #collection-concept-title,
+    .campaign-scene-head h2,
+    .shop-look-title,
+    .launch-conversion h2,
+    .concept-about h2
+  ) {
+    font-size: clamp(34px, 9.2vw, 40px) !important;
+    line-height: 1 !important;
+  }
+
+  .concept-page.launch-page :is(
+    .launch-section-head,
+    .concept-head,
+    .launch-featured-head,
+    .launch-review-head,
+    .campaign-scene-head,
+    .launch-highlight-copy,
+    .launch-conversion > div:first-child,
+    .concept-hero-copy
+  ) {
+    gap: 10px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .concept-page.launch-page .campaign-scene-head {
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "kicker"
+      "title"
+      "copy"
+      "cta" !important;
+  }
+}
