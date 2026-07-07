@@ -437,6 +437,183 @@ html body .announcement-track span:nth-child(3n)::before {
   100% { transform: skewX(-18deg) translateX(360%); }
 }
 
+/* True EOF top alignment lock: category pills and first collection block stay centered and symmetric. */
+@media (min-width: 1024px) {
+  html body article.concept-page.launch-page {
+    --qa-top-rail-final: min(1968px, calc(100vw - 80px));
+    --qa-top-content-pad-final: clamp(48px, 3.125vw, 64px);
+    --qa-top-gap-final: 24px;
+  }
+
+  html body article.concept-page.launch-page > .landing-pill-nav,
+  html body article.concept-page.launch-page > #launch-edit.launch-layers {
+    box-sizing: border-box !important;
+    width: var(--qa-top-rail-final) !important;
+    max-width: var(--qa-top-rail-final) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  html body article.concept-page.launch-page > .landing-pill-nav {
+    margin-top: var(--qa-top-gap-final) !important;
+    margin-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    gap: clamp(10px, 0.78vw, 16px) !important;
+    justify-content: center !important;
+  }
+
+  html body article.concept-page.launch-page > #launch-edit.launch-layers {
+    margin-top: var(--qa-top-gap-final) !important;
+    padding: 0 !important;
+  }
+
+  html body article.concept-page.launch-page > #launch-edit .launch-ritual-panel {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding-top: 0 !important;
+    padding-left: var(--qa-top-content-pad-final) !important;
+    padding-right: var(--qa-top-content-pad-final) !important;
+  }
+
+  html body article.concept-page.launch-page > #launch-edit .launch-ritual-panel .launch-section-head,
+  html body article.concept-page.launch-page > #launch-edit .launch-layer-grid {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+@media (max-width: 760px) {
+  html body article.concept-page.launch-page {
+    --qa-top-rail-final: calc(100vw - 32px);
+    --qa-top-gap-final: 18px;
+  }
+
+  html body article.concept-page.launch-page > .landing-pill-nav,
+  html body article.concept-page.launch-page > #launch-edit.launch-layers {
+    box-sizing: border-box !important;
+    width: var(--qa-top-rail-final) !important;
+    max-width: var(--qa-top-rail-final) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  html body article.concept-page.launch-page > .landing-pill-nav,
+  html body article.concept-page.launch-page > #launch-edit.launch-layers {
+    margin-top: var(--qa-top-gap-final) !important;
+    margin-bottom: 0 !important;
+  }
+
+  html body article.concept-page.launch-page > .landing-pill-nav {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  html body article.concept-page.launch-page > #launch-edit.launch-layers {
+    padding: 0 !important;
+  }
+
+  html body article.concept-page.launch-page > #launch-edit .launch-ritual-panel {
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  html body article.concept-page.launch-page > #launch-edit .launch-ritual-panel .launch-section-head,
+  html body article.concept-page.launch-page > #launch-edit .launch-layer-grid {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* Top landing alignment: hero, category pills, and first collection block share centered rhythm. */
+@media (min-width: 1024px) {
+  html body article.concept-page.launch-page {
+    --qa-top-rail: min(1968px, calc(100vw - 80px));
+    --qa-top-inner-pad: clamp(48px, 3.125vw, 64px);
+    --qa-top-gap: 24px;
+  }
+
+  html body article.concept-page.launch-page > .landing-pill-nav,
+  html body article.concept-page.launch-page > #launch-edit.launch-layers {
+    box-sizing: border-box !important;
+    width: var(--qa-top-rail) !important;
+    max-width: var(--qa-top-rail) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  html body article.concept-page.launch-page > .landing-pill-nav {
+    margin-top: var(--qa-top-gap) !important;
+    margin-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    column-gap: clamp(10px, 0.78vw, 16px) !important;
+    justify-content: center !important;
+  }
+
+  html body article.concept-page.launch-page > #launch-edit.launch-layers {
+    margin-top: var(--qa-top-gap) !important;
+    padding-top: 0 !important;
+  }
+
+  html body article.concept-page.launch-page #launch-edit .launch-ritual-panel {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-top: 0 !important;
+    padding-left: var(--qa-top-inner-pad) !important;
+    padding-right: var(--qa-top-inner-pad) !important;
+  }
+
+  html body article.concept-page.launch-page #launch-edit .launch-ritual-panel .launch-section-head,
+  html body article.concept-page.launch-page #launch-edit .launch-layer-grid {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+@media (max-width: 760px) {
+  html body article.concept-page.launch-page {
+    --qa-top-rail: calc(100vw - 32px);
+    --qa-top-gap: 18px;
+  }
+
+  html body article.concept-page.launch-page > .landing-pill-nav,
+  html body article.concept-page.launch-page > #launch-edit.launch-layers {
+    box-sizing: border-box !important;
+    width: var(--qa-top-rail) !important;
+    max-width: var(--qa-top-rail) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  html body article.concept-page.launch-page > .landing-pill-nav,
+  html body article.concept-page.launch-page > #launch-edit.launch-layers {
+    margin-top: var(--qa-top-gap) !important;
+    margin-bottom: 0 !important;
+  }
+
+  html body article.concept-page.launch-page #launch-edit .launch-ritual-panel {
+    width: 100% !important;
+    padding-top: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  html body article.concept-page.launch-page #launch-edit .launch-ritual-panel .launch-section-head,
+  html body article.concept-page.launch-page #launch-edit .launch-layer-grid {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
 /* Final spacing rhythm: keep the same visual gap between each landing-page section. */
 html body .concept-page.launch-page {
   --qa-section-gap: 20px;
@@ -1307,6 +1484,80 @@ html body .concept-page.launch-page .launch-product-carousel .launch-product-car
   html body .concept-page.launch-page section.campaign-scene .campaign-shop-link:hover::before,
   html body .concept-page.launch-page section.campaign-scene .campaign-shop-link:focus-visible::before {
     transform: translateX(140%) skewX(-18deg) !important;
+  }
+}
+
+/* True final top-section symmetry: same centered rail for pills and first collection block. */
+@media (min-width: 1024px) {
+  html body article.concept-page.launch-page > .landing-pill-nav,
+  html body article.concept-page.launch-page > #launch-edit.launch-layers {
+    box-sizing: border-box !important;
+    width: var(--qa-4k-section) !important;
+    max-width: var(--qa-4k-section) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  html body article.concept-page.launch-page > .landing-pill-nav,
+  html body article.concept-page.launch-page > #launch-edit.launch-layers {
+    margin-top: 24px !important;
+    margin-bottom: 0 !important;
+  }
+
+  html body article.concept-page.launch-page > .landing-pill-nav {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    gap: clamp(10px, 0.78vw, 16px) !important;
+    justify-content: center !important;
+  }
+
+  html body article.concept-page.launch-page > #launch-edit.launch-layers {
+    padding: 0 !important;
+  }
+
+  html body article.concept-page.launch-page > #launch-edit .launch-ritual-panel {
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding-top: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  html body article.concept-page.launch-page > #launch-edit .launch-ritual-panel .launch-section-head,
+  html body article.concept-page.launch-page > #launch-edit .launch-layer-grid {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+@media (max-width: 760px) {
+  html body article.concept-page.launch-page > .landing-pill-nav,
+  html body article.concept-page.launch-page > #launch-edit.launch-layers {
+    box-sizing: border-box !important;
+    width: calc(100vw - 32px) !important;
+    max-width: calc(100vw - 32px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 18px !important;
+    margin-bottom: 0 !important;
+  }
+
+  html body article.concept-page.launch-page > .landing-pill-nav {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  html body article.concept-page.launch-page > #launch-edit.launch-layers,
+  html body article.concept-page.launch-page > #launch-edit .launch-ritual-panel {
+    padding: 0 !important;
+  }
+
+  html body article.concept-page.launch-page > #launch-edit .launch-ritual-panel .launch-section-head,
+  html body article.concept-page.launch-page > #launch-edit .launch-layer-grid {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }
 
