@@ -9700,3 +9700,76 @@ body,
     grid-template-rows: 112px auto !important;
   }
 }
+
+/* Center active category product tiles and keep type in the Fableroom brand system. */
+.concept-page.launch-page .category-explorer {
+  justify-items: stretch;
+}
+
+.concept-page.launch-page .category-tabs,
+.concept-page.launch-page .category-tab,
+.concept-page.launch-page .subcategory-pill,
+.concept-page.launch-page .subcategory-pill span {
+  font-family: var(--font-sans) !important;
+}
+
+.concept-page.launch-page .category-tab {
+  font-size: clamp(11px, 0.72vw, 14px) !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.18em !important;
+}
+
+.concept-page.launch-page .category-panel.is-active {
+  width: 100%;
+  display: flex !important;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: clamp(14px, 1.35vw, 24px);
+}
+
+.concept-page.launch-page .subcategory-pill {
+  flex: 0 1 clamp(260px, 18vw, 360px);
+  max-width: clamp(260px, 18vw, 360px);
+  min-height: clamp(270px, 20vw, 390px);
+  align-content: start;
+  justify-items: center;
+  text-align: center;
+}
+
+.concept-page.launch-page .subcategory-pill figure {
+  width: min(100%, clamp(220px, 16vw, 320px));
+  aspect-ratio: 1 / 1;
+}
+
+.concept-page.launch-page .subcategory-pill span {
+  color: var(--launch-ink) !important;
+  font-size: clamp(15px, 1vw, 20px) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.01em !important;
+  line-height: 1.15 !important;
+  text-transform: none !important;
+}
+
+@media (max-width: 760px) {
+  .concept-page.launch-page .category-panel.is-active {
+    justify-content: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .concept-page.launch-page .subcategory-pill {
+    flex: 0 0 min(148px, 42vw);
+    max-width: min(148px, 42vw);
+    min-height: 178px;
+    scroll-snap-align: start;
+  }
+
+  .concept-page.launch-page .subcategory-pill figure {
+    width: min(112px, 30vw);
+  }
+
+  .concept-page.launch-page .subcategory-pill span {
+    font-size: 12px !important;
+  }
+}
