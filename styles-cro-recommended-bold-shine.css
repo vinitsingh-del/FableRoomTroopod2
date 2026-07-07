@@ -9838,3 +9838,43 @@ body,
     zoom: 0.9;
   }
 }
+
+/* Desktop category labels: one clean baseline under every image. */
+@media (min-width: 1024px) {
+  .concept-page.launch-page .category-panel.is-active {
+    align-items: stretch !important;
+  }
+
+  .concept-page.launch-page .subcategory-pill {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: clamp(250px, 16vw, 328px) !important;
+    padding: clamp(18px, 1.15vw, 24px) clamp(14px, 1vw, 22px) clamp(20px, 1.25vw, 26px) !important;
+  }
+
+  .concept-page.launch-page .subcategory-pill figure {
+    width: clamp(164px, 11.5vw, 230px) !important;
+    max-width: 100%;
+    margin: 0 auto clamp(16px, 1vw, 22px) !important;
+    flex: 0 0 auto;
+  }
+
+  .concept-page.launch-page .subcategory-pill span {
+    display: grid;
+    min-height: 2.4em;
+    align-items: start;
+    justify-items: center;
+    width: 100%;
+    margin: 0 !important;
+    color: var(--launch-ink) !important;
+    font-family: var(--font-sans) !important;
+    font-size: clamp(14px, 0.9vw, 18px) !important;
+    font-weight: 900 !important;
+    letter-spacing: 0 !important;
+    line-height: 1.18 !important;
+    text-align: center !important;
+    text-transform: none !important;
+  }
+}
