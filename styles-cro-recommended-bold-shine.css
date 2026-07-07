@@ -9904,3 +9904,24 @@ body,
   justify-items: start !important;
   text-align: left !important;
 }
+
+/* Desktop alignment polish: keep all section headings on the same page grid. */
+@media (min-width: 1024px) {
+  .concept-page.launch-page #concept-products-title,
+  .concept-page.launch-page .launch-products .launch-section-head > div > span {
+    font-size: clamp(13px, 0.94vw, 17px) !important;
+    font-weight: 1000 !important;
+    text-shadow: 0 0 0.01px currentColor;
+  }
+
+  .concept-page.launch-page .launch-ritual-panel .launch-section-head {
+    margin-left: calc(-1 * clamp(28px, 2.1vw, 36px)) !important;
+    width: calc(100% + clamp(28px, 2.1vw, 36px)) !important;
+  }
+
+  .concept-page.launch-page .launch-review-head,
+  .concept-page.launch-page .launch-conversion {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
