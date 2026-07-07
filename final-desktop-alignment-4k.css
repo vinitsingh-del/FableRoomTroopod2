@@ -355,6 +355,164 @@ html body .concept-page.launch-page .launch-product-carousel .launch-product-car
   }
 }
 
+/* Absolute final lock: visible continuous trust-strip letter shine. */
+html body .announcement-track span {
+  display: inline-flex !important;
+  align-items: center !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 18%,
+    #ffe8b8 30%,
+    #ffffff 42%,
+    #ffffff 56%,
+    #ffe0a0 70%,
+    #ffffff 84%,
+    #ffffff 100%
+  ) !important;
+  background-size: 260% 100% !important;
+  background-position: 0% 50% !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: #fff !important;
+  font-weight: 1000 !important;
+  letter-spacing: 0.18em !important;
+  text-shadow: 0 0 10px rgba(255,255,255,0.28), 0 0 22px rgba(255,255,255,0.16) !important;
+  animation-name: qaTrustLetterShine !important;
+  animation-duration: 1.25s !important;
+  animation-timing-function: linear !important;
+  animation-delay: 0s !important;
+  animation-iteration-count: infinite !important;
+}
+
+html body .announcement-track span::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -30% !important;
+  bottom: -30% !important;
+  left: -58% !important;
+  width: 48% !important;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.12) 25%, rgba(255,255,255,0.92) 50%, rgba(255,255,255,0.12) 75%, transparent 100%) !important;
+  transform: skewX(-18deg) translateX(0) !important;
+  animation-name: qaTrustOverlaySweep !important;
+  animation-duration: 1.25s !important;
+  animation-timing-function: linear !important;
+  animation-delay: 0s !important;
+  animation-iteration-count: infinite !important;
+  mix-blend-mode: screen !important;
+  opacity: 0.9 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+html body .announcement-track span:nth-child(3n + 1),
+html body .announcement-track span:nth-child(3n + 1)::before,
+html body .announcement-track span:nth-child(3n + 2),
+html body .announcement-track span:nth-child(3n + 2)::before,
+html body .announcement-track span:nth-child(3n),
+html body .announcement-track span:nth-child(3n)::before {
+  animation-delay: 0s !important;
+}
+
+@keyframes qaTrustLetterShine {
+  0% {
+    background-position: 0% 50%;
+    text-shadow: 0 0 10px rgba(255,255,255,0.24), 0 0 20px rgba(255,255,255,0.12);
+  }
+  50% {
+    background-position: 100% 50%;
+    text-shadow: 0 0 18px rgba(255,255,255,0.58), 0 0 36px rgba(255,255,255,0.28);
+  }
+  100% {
+    background-position: 200% 50%;
+    text-shadow: 0 0 10px rgba(255,255,255,0.24), 0 0 20px rgba(255,255,255,0.12);
+  }
+}
+
+@keyframes qaTrustOverlaySweep {
+  0% { transform: skewX(-18deg) translateX(0); }
+  100% { transform: skewX(-18deg) translateX(360%); }
+}
+
+/* Final trust-strip shine: animate the letters themselves, not only an overlay. */
+html body .announcement-track span {
+  display: inline-flex !important;
+  align-items: center !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 18%,
+    #ffe8b8 30%,
+    #ffffff 42%,
+    #ffffff 56%,
+    #ffe0a0 70%,
+    #ffffff 84%,
+    #ffffff 100%
+  ) !important;
+  background-size: 260% 100% !important;
+  background-position: 0% 50% !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: #fff !important;
+  font-weight: 1000 !important;
+  letter-spacing: 0.18em !important;
+  text-shadow: 0 0 10px rgba(255,255,255,0.28), 0 0 22px rgba(255,255,255,0.16) !important;
+  animation: qaTrustLetterShine 1.25s linear infinite !important;
+  animation-delay: 0s !important;
+}
+
+html body .announcement-track span::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -30% !important;
+  bottom: -30% !important;
+  left: -58% !important;
+  width: 48% !important;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.12) 25%, rgba(255,255,255,0.92) 50%, rgba(255,255,255,0.12) 75%, transparent 100%) !important;
+  transform: skewX(-18deg) translateX(0) !important;
+  animation: qaTrustOverlaySweep 1.25s linear infinite !important;
+  animation-delay: 0s !important;
+  mix-blend-mode: screen !important;
+  opacity: 0.9 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+html body .announcement-track span:nth-child(3n + 1),
+html body .announcement-track span:nth-child(3n + 1)::before,
+html body .announcement-track span:nth-child(3n + 2),
+html body .announcement-track span:nth-child(3n + 2)::before,
+html body .announcement-track span:nth-child(3n),
+html body .announcement-track span:nth-child(3n)::before {
+  animation-delay: 0s !important;
+}
+
+@keyframes qaTrustLetterShine {
+  0% {
+    background-position: 0% 50%;
+    text-shadow: 0 0 10px rgba(255,255,255,0.24), 0 0 20px rgba(255,255,255,0.12);
+  }
+  50% {
+    background-position: 100% 50%;
+    text-shadow: 0 0 18px rgba(255,255,255,0.58), 0 0 36px rgba(255,255,255,0.28);
+  }
+  100% {
+    background-position: 200% 50%;
+    text-shadow: 0 0 10px rgba(255,255,255,0.24), 0 0 20px rgba(255,255,255,0.12);
+  }
+}
+
+@keyframes qaTrustOverlaySweep {
+  0% { transform: skewX(-18deg) translateX(0); }
+  100% { transform: skewX(-18deg) translateX(360%); }
+}
+
 /* Burgundy CTA hover lock: keep capsule CTAs visible and shimmering, never white-on-white. */
 html body .concept-page.launch-page .landing-pill-nav a,
 html body .concept-page.launch-page .furniture-cta-grid a,
@@ -1030,4 +1188,76 @@ html body .concept-page.launch-page .launch-product-carousel .launch-product-car
   html body .concept-page.launch-page section.campaign-scene .campaign-shop-link:focus-visible::before {
     transform: translateX(140%) skewX(-18deg) !important;
   }
+}
+
+/* EOF lock: visible continuous trust-strip letter shine. */
+html body .announcement-track span {
+  display: inline-flex !important;
+  align-items: center !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  background: linear-gradient(90deg, #ffffff 0%, #ffffff 18%, #ffe8b8 30%, #ffffff 42%, #ffffff 56%, #ffe0a0 70%, #ffffff 84%, #ffffff 100%) !important;
+  background-size: 260% 100% !important;
+  background-position: 0% 50% !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: #fff !important;
+  font-weight: 1000 !important;
+  letter-spacing: 0.18em !important;
+  text-shadow: 0 0 10px rgba(255,255,255,0.28), 0 0 22px rgba(255,255,255,0.16) !important;
+  animation-name: qaTrustLetterShine !important;
+  animation-duration: 1.25s !important;
+  animation-timing-function: linear !important;
+  animation-delay: 0s !important;
+  animation-iteration-count: infinite !important;
+}
+
+html body .announcement-track span::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -30% !important;
+  bottom: -30% !important;
+  left: -58% !important;
+  width: 48% !important;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.12) 25%, rgba(255,255,255,0.92) 50%, rgba(255,255,255,0.12) 75%, transparent 100%) !important;
+  transform: skewX(-18deg) translateX(0) !important;
+  animation-name: qaTrustOverlaySweep !important;
+  animation-duration: 1.25s !important;
+  animation-timing-function: linear !important;
+  animation-delay: 0s !important;
+  animation-iteration-count: infinite !important;
+  mix-blend-mode: screen !important;
+  opacity: 0.9 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+html body .announcement-track span:nth-child(3n + 1),
+html body .announcement-track span:nth-child(3n + 1)::before,
+html body .announcement-track span:nth-child(3n + 2),
+html body .announcement-track span:nth-child(3n + 2)::before,
+html body .announcement-track span:nth-child(3n),
+html body .announcement-track span:nth-child(3n)::before {
+  animation-delay: 0s !important;
+}
+
+@keyframes qaTrustLetterShine {
+  0% {
+    background-position: 0% 50%;
+    text-shadow: 0 0 10px rgba(255,255,255,0.24), 0 0 20px rgba(255,255,255,0.12);
+  }
+  50% {
+    background-position: 100% 50%;
+    text-shadow: 0 0 18px rgba(255,255,255,0.58), 0 0 36px rgba(255,255,255,0.28);
+  }
+  100% {
+    background-position: 200% 50%;
+    text-shadow: 0 0 10px rgba(255,255,255,0.24), 0 0 20px rgba(255,255,255,0.12);
+  }
+}
+
+@keyframes qaTrustOverlaySweep {
+  0% { transform: skewX(-18deg) translateX(0); }
+  100% { transform: skewX(-18deg) translateX(360%); }
 }
