@@ -471,7 +471,7 @@ function renderMerch() {
         <div class="launch-section-head split reveal-block">
           <div>
             <span>Most loved collection</span>
-            <h2 id="launch-layer-title" class="motion-text">The ready table edit.</h2>
+            <h2 id="launch-layer-title" class="motion-text">The tableware and kitchen edit.</h2>
           </div>
           <a href="#/all">Shop the collection</a>
         </div>
@@ -495,12 +495,11 @@ function renderMerch() {
         </figure>
         <div class="launch-highlight-copy">
           <span>Shop the look</span>
-          <h2 class="motion-text">Build the whole table from one setting.</h2>
+          <h2 class="shop-look-title">Build the whole table<br />from one setting.</h2>
           <p>Tap each marker to move from inspiration to the exact tableware, linen and hosting pieces used in the room.</p>
           <div class="shop-look-usps" aria-label="Why shop this look">
             <span>Direct pricing</span>
             <span>Ready-to-host styling</span>
-            <span>Complete table edit</span>
           </div>
         </div>
       </section>
@@ -512,7 +511,6 @@ function renderMerch() {
       <section class="concept-products reveal-block" aria-labelledby="concept-products-title">
         <div class="concept-head reveal-block">
           <h2 id="concept-products-title" class="motion-text">Explore our newest collections</h2>
-          <a href="#/all">View all products</a>
         </div>
         ${renderCategoryExplorer()}
       </section>
