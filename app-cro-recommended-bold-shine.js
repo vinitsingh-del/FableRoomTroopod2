@@ -589,7 +589,7 @@ function renderMerch() {
         <figure class="offer-product-carousel" aria-label="Summer sale product catalogue">
           <div class="offer-product-track">
             <article class="offer-product-card">
-              <div class="offer-product-image"><img src="${A("p-white-dinner.jpg")}" alt="White Sparkle Dinner Plates" loading="lazy" /></div>
+              <div class="offer-product-image"><span class="product-thumb-frame"><img src="${A("p-white-dinner.jpg")}" alt="White Sparkle Dinner Plates" loading="lazy" /></span></div>
               <div class="offer-product-copy">
                 <span>Extra 10% off</span>
                 <strong>White Sparkle Dinner Plates</strong>
@@ -597,7 +597,7 @@ function renderMerch() {
               </div>
             </article>
             <article class="offer-product-card">
-              <div class="offer-product-image"><img src="${A("p-zoraida-bowl.jpg")}" alt="Zoraida Serving Bowl" loading="lazy" /></div>
+              <div class="offer-product-image"><span class="product-thumb-frame"><img src="${A("p-zoraida-bowl.jpg")}" alt="Zoraida Serving Bowl" loading="lazy" /></span></div>
               <div class="offer-product-copy">
                 <span>Ready to host</span>
                 <strong>Zoraida Serving Bowl</strong>
@@ -605,7 +605,7 @@ function renderMerch() {
               </div>
             </article>
             <article class="offer-product-card">
-              <div class="offer-product-image"><img src="${A("p-rainbow-cup.jpg")}" alt="Rainbow Gold Cup and Saucer" loading="lazy" /></div>
+              <div class="offer-product-image"><span class="product-thumb-frame"><img src="${A("p-rainbow-cup.jpg")}" alt="Rainbow Gold Cup and Saucer" loading="lazy" /></span></div>
               <div class="offer-product-copy">
                 <span>£75 off £749+</span>
                 <strong>Rainbow Gold Cup & Saucer</strong>
@@ -613,7 +613,7 @@ function renderMerch() {
               </div>
             </article>
             <article class="offer-product-card">
-              <div class="offer-product-image"><img src="${A("p-grey-teapot.jpg")}" alt="Matt Grey Sky Tea Pot and Creamer" loading="lazy" /></div>
+              <div class="offer-product-image"><span class="product-thumb-frame"><img src="${A("p-grey-teapot.jpg")}" alt="Matt Grey Sky Tea Pot and Creamer" loading="lazy" /></span></div>
               <div class="offer-product-copy">
                 <span>Summer savings</span>
                 <strong>Matt Grey Sky Tea Pot & Creamer</strong>
@@ -864,7 +864,7 @@ function renderLaunchProduct(product) {
   return `
     <a class="launch-product-card reveal-item" href="#/${product.category === "table-linen" ? "table-linen" : product.category}">
       <figure>
-        <img src="${image}" alt="${product.title}" loading="lazy" />
+        <span class="product-thumb-frame"><img src="${image}" alt="${product.title}" loading="lazy" /></span>
       </figure>
       <div>
         <div class="launch-product-tags">${tags.map((tag) => `<em>${tag}</em>`).join("")}</div>
