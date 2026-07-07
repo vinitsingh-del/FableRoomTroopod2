@@ -471,7 +471,7 @@ function renderMerch() {
         <div class="launch-section-head split reveal-block">
           <div>
             <span>Most loved collection</span>
-            <h2 id="launch-layer-title" class="motion-text">The tableware and kitchen edit.</h2>
+            <h2 id="launch-layer-title" class="motion-text">Tableware and kitchen.</h2>
           </div>
           <a href="#/all">Shop the collection</a>
         </div>
@@ -742,7 +742,7 @@ function renderLaunchLayer(layer, index) {
 function renderShopLookHotspot(item, index) {
   return `
     <a class="shop-look-dot" href="${item.href}" style="--dot-x:${item.x}%;--dot-y:${item.y}%;" aria-label="Shop ${item.title}">
-      <span>${index + 1}</span>
+      <span aria-hidden="true"></span>
       <strong>${item.label}</strong>
       <small>${item.title}</small>
     </a>
@@ -761,7 +761,6 @@ function renderCategoryExplorer() {
         <a class="subcategory-pill reveal-item" href="${href}">
           <figure><img src="${image}" alt="${title}" loading="lazy" /></figure>
           <span>${label}</span>
-          <strong>${title}</strong>
         </a>
       `).join("")}
     </div>

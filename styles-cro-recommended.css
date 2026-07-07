@@ -9547,3 +9547,156 @@ body,
     padding: 8px 9px 8px 34px !important;
   }
 }
+
+/* Final client cleanup: quieter look dots, title casing, aligned headings, no visible desktop rail sliders. */
+.concept-page.launch-page .shop-look-title {
+  font-family: var(--font-serif) !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+.concept-page.launch-page .launch-highlight-copy > span,
+.concept-page.launch-page .concept-head h2,
+.concept-page.launch-page .launch-featured-head > span {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+.concept-page.launch-page .launch-featured-head {
+  gap: 4px !important;
+  margin-bottom: clamp(10px, 1vw, 16px) !important;
+}
+
+.concept-page.launch-page .launch-featured-head h2 {
+  margin-top: 0 !important;
+}
+
+.concept-page.launch-page .shop-look-dot {
+  width: 13px !important;
+  min-width: 13px !important;
+  height: 13px !important;
+  min-height: 13px !important;
+  padding: 0 !important;
+  border: 2px solid #fff !important;
+  border-radius: 50% !important;
+  background: var(--launch-burgundy) !important;
+  box-shadow: 0 0 0 5px rgba(68, 24, 29, 0.12), 0 0 22px rgba(255, 255, 255, 0.86) !important;
+  overflow: visible !important;
+  transform: translate(-6px, -6px) !important;
+}
+
+.concept-page.launch-page .shop-look-dot::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: inherit;
+  background: rgba(255, 255, 255, 0.35);
+  animation: shopLookDotShine 1.8s ease-in-out infinite;
+}
+
+.concept-page.launch-page .shop-look-dot::after {
+  display: none !important;
+}
+
+.concept-page.launch-page .shop-look-dot span {
+  display: none !important;
+}
+
+.concept-page.launch-page .shop-look-dot strong,
+.concept-page.launch-page .shop-look-dot small {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  width: max-content;
+  max-width: 190px;
+  padding: 7px 10px;
+  border: 1px solid rgba(68, 24, 29, 0.2);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 12px 28px rgba(16, 16, 16, 0.14);
+  opacity: 0 !important;
+  pointer-events: none;
+  transform: translateY(-50%) translateX(-4px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.concept-page.launch-page .shop-look-dot small {
+  display: none !important;
+}
+
+.concept-page.launch-page .shop-look-dot strong {
+  color: var(--launch-ink);
+  font-size: 9px !important;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.concept-page.launch-page .shop-look-dot:hover,
+.concept-page.launch-page .shop-look-dot:focus-visible,
+.concept-page.launch-page .shop-look-dot:active {
+  width: 13px !important;
+  min-width: 13px !important;
+  height: 13px !important;
+  min-height: 13px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  background: var(--launch-burgundy) !important;
+  transform: translate(-6px, -6px) scale(1.08) !important;
+}
+
+.concept-page.launch-page .shop-look-dot:hover strong,
+.concept-page.launch-page .shop-look-dot:focus-visible strong,
+.concept-page.launch-page .shop-look-dot:active strong {
+  opacity: 1 !important;
+  transform: translateY(-50%) translateX(0);
+}
+
+@keyframes shopLookDotShine {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.55);
+  }
+}
+
+.concept-page.launch-page .subcategory-pill {
+  grid-template-rows: clamp(132px, 12vw, 210px) auto !important;
+}
+
+.concept-page.launch-page .subcategory-pill strong {
+  display: none !important;
+}
+
+.concept-page.launch-page .subcategory-pill span {
+  margin-top: 2px;
+  color: var(--launch-ink) !important;
+  font-size: clamp(12px, 0.9vw, 16px) !important;
+  letter-spacing: 0.06em !important;
+  text-transform: none !important;
+}
+
+.concept-page.launch-page .launch-product-carousel {
+  scrollbar-width: none !important;
+}
+
+.concept-page.launch-page .launch-product-carousel::-webkit-scrollbar {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .concept-page.launch-page .shop-look-dot strong {
+    left: 16px;
+    max-width: 132px;
+    font-size: 8px !important;
+  }
+
+  .concept-page.launch-page .subcategory-pill {
+    grid-template-rows: 112px auto !important;
+  }
+}
