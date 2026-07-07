@@ -437,6 +437,28 @@ html body .announcement-track span:nth-child(3n)::before {
   100% { transform: skewX(-18deg) translateX(360%); }
 }
 
+/* Remove the stray yellow/gold separator below the top announcement strip. */
+html body .announcement-card,
+html body.is-loaded .announcement-card,
+body.is-loaded .announcement-card {
+  border: 0 !important;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .announcement-card::before,
+html body .announcement-card::after,
+html body .announcement-track::before,
+html body .announcement-track::after {
+  content: none !important;
+  display: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
 /* Shop-the-look markers: keep dot size fixed, add burgundy cinematic LED blink. */
 html body .concept-page.launch-page .shop-look-dot {
   width: 13px !important;
