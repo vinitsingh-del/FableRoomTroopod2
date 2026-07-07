@@ -10002,3 +10002,51 @@ body,
 .concept-page.launch-page .launch-ritual-panel {
   border: 0 !important;
 }
+
+/* Sticky CTAs appear only after the third viewport, keeping early browsing clean. */
+.concept-page.launch-page .launch-sticky-actions,
+.concept-page.launch-page .mobile-sticky-cta {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(calc(-50% + 10px)) !important;
+  transition: opacity 220ms ease, transform 220ms ease !important;
+}
+
+body.sticky-cta-visible .concept-page.launch-page .launch-sticky-actions,
+body.sticky-cta-visible .concept-page.launch-page .mobile-sticky-cta {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: translateY(-50%) !important;
+}
+
+@media (max-width: 760px) {
+  .concept-page.launch-page .launch-sticky-actions,
+  .concept-page.launch-page .mobile-sticky-cta,
+  body.sticky-cta-visible .concept-page.launch-page .launch-sticky-actions,
+  body.sticky-cta-visible .concept-page.launch-page .mobile-sticky-cta {
+    transform: none !important;
+  }
+}
+
+/* Launch product cards: consistent 3:4 ratio for the View All product edit. */
+.concept-page.launch-page .launch-product-carousel .launch-product-card {
+  aspect-ratio: 3 / 4 !important;
+  min-height: auto !important;
+  grid-template-rows: 56% 44% !important;
+  overflow: hidden !important;
+}
+
+.concept-page.launch-page .launch-product-carousel .launch-product-card figure {
+  min-height: 0 !important;
+  height: auto !important;
+  padding: clamp(14px, 1.1vw, 18px) !important;
+}
+
+.concept-page.launch-page .launch-product-carousel .launch-product-card img {
+  max-height: 100% !important;
+}
+
+.concept-page.launch-page .launch-product-carousel .launch-product-card > div {
+  align-content: start !important;
+  overflow: hidden !important;
+}

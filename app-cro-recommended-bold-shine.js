@@ -446,6 +446,7 @@ function render() {
   initCategoryExplorer();
   updateScrollProgress();
   window.scrollTo({ top: 0, behavior: "auto" });
+  updateScrollProgress();
 }
 
 function renderMerch() {
@@ -488,21 +489,6 @@ function renderMerch() {
         </div>
       </section>
 
-      <section class="launch-highlight shop-look reveal-block" aria-label="Shop the look">
-        <figure class="shop-look-figure">
-          <img src="${A("launch-highlight-lifestyle.png")}" alt="Fableroom tableware, cookware and linen styled together" loading="lazy" />
-          ${shopLookItems.map(renderShopLookHotspot).join("")}
-        </figure>
-        <div class="launch-highlight-copy">
-          <span>Shop the look</span>
-          <h2 class="shop-look-title">Build the whole table<br />from one setting.</h2>
-          <p>Tap each marker to move from inspiration to the exact tableware, linen and hosting pieces used in the room.</p>
-          <div class="shop-look-usps" aria-label="Why shop this look">
-            <span>Direct pricing</span>
-            <span>Ready-to-host styling</span>
-          </div>
-        </div>
-      </section>
 
       <section class="launch-assurance-bar reveal-block" aria-label="Why shop Fableroom Tableware and Kitchen">
         ${assuranceItems.map(renderAssuranceItem).join("")}
@@ -560,6 +546,22 @@ function renderMerch() {
           <p>Explore tableware, cookware and linen with Fableroom's current savings story: thoughtful pieces, fair pricing and a complete home-table edit.</p>
           <div class="launch-proof-list" aria-label="Tableware and kitchen highlights">
             ${ritualProofItems.map(renderProofItem).join("")}
+          </div>
+        </div>
+      </section>
+
+      <section class="launch-highlight shop-look reveal-block" aria-label="Shop the look">
+        <figure class="shop-look-figure">
+          <img src="${A("launch-highlight-lifestyle.png")}" alt="Fableroom tableware, cookware and linen styled together" loading="lazy" />
+          ${shopLookItems.map(renderShopLookHotspot).join("")}
+        </figure>
+        <div class="launch-highlight-copy">
+          <span>Shop the look</span>
+          <h2 class="shop-look-title">Build the whole table<br />from one setting.</h2>
+          <p>Tap each marker to move from inspiration to the exact tableware, linen and hosting pieces used in the room.</p>
+          <div class="shop-look-usps" aria-label="Why shop this look">
+            <span>Direct pricing</span>
+            <span>Ready-to-host styling</span>
           </div>
         </div>
       </section>
@@ -1022,6 +1024,7 @@ function initParallax() {
 function updateScrollProgress() {
   const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
   document.documentElement.style.setProperty("--scroll-progress", `${Math.min(1, Math.max(0, window.scrollY / max))}`);
+  document.body.classList.toggle("sticky-cta-visible", window.scrollY >= window.innerHeight * 3);
 }
 
 function initScrollProgress() {
