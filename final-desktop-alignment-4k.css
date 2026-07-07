@@ -437,6 +437,44 @@ html body .announcement-track span:nth-child(3n)::before {
   100% { transform: skewX(-18deg) translateX(360%); }
 }
 
+/* Final spacing rhythm: keep the same visual gap between each landing-page section. */
+html body .concept-page.launch-page {
+  --qa-section-gap: 20px;
+}
+
+html body .concept-page.launch-page > section {
+  margin-bottom: 0 !important;
+}
+
+html body .concept-page.launch-page > section + section {
+  margin-top: var(--qa-section-gap) !important;
+}
+
+html body .concept-page.launch-page > section.concept-campaign-strip {
+  transform: none !important;
+}
+
+html body article.concept-page.launch-page > .landing-pill-nav,
+html body article.concept-page.launch-page > #launch-edit.launch-layers,
+html body article.concept-page.launch-page > .launch-assurance-bar,
+html body article.concept-page.launch-page > .concept-products,
+html body article.concept-page.launch-page > .launch-products,
+html body article.concept-page.launch-page > .launch-featured,
+html body article.concept-page.launch-page > .launch-reviews,
+html body article.concept-page.launch-page > .launch-scene.campaign-scene,
+html body article.concept-page.launch-page > .launch-highlight.shop-look,
+html body article.concept-page.launch-page > .concept-campaign-strip,
+html body article.concept-page.launch-page > .launch-conversion {
+  margin-top: var(--qa-section-gap) !important;
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 760px) {
+  html body .concept-page.launch-page {
+    --qa-section-gap: 18px;
+  }
+}
+
 /* Visible monochrome shine for the in-page white trust strip shown in the landing page. */
 html body .concept-page.launch-page .concept-campaign-strip {
   background: #fff !important;
