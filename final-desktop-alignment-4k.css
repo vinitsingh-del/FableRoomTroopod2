@@ -310,7 +310,7 @@ html body .concept-page.launch-page .launch-product-carousel .launch-product-car
     justify-content: center !important;
     overflow: hidden !important;
     padding: 0 34px !important;
-    border: 1px solid rgba(68, 24, 29, 0.24) !important;
+    border: 1px solid rgba(16, 16, 16, 0.16) !important;
     border-radius: 999px !important;
     background: rgba(255,255,255,0.94) !important;
     color: var(--launch-burgundy) !important;
@@ -322,7 +322,7 @@ html body .concept-page.launch-page .launch-product-carousel .launch-product-car
     text-align: center !important;
     text-decoration: none !important;
     text-transform: uppercase !important;
-    box-shadow: 0 18px 36px rgba(68, 24, 29, 0.09), inset 0 0 0 1px rgba(255,255,255,0.74) !important;
+    box-shadow: none !important;
     transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, color 180ms ease !important;
   }
 
@@ -331,7 +331,7 @@ html body .concept-page.launch-page .launch-product-carousel .launch-product-car
     content: "" !important;
     position: absolute !important;
     inset: 0 !important;
-    background: linear-gradient(110deg, transparent 0%, transparent 35%, rgba(68, 24, 29, 0.13) 48%, transparent 62%, transparent 100%) !important;
+    background: linear-gradient(110deg, transparent 0%, transparent 35%, rgba(16, 16, 16, 0.055) 48%, transparent 62%, transparent 100%) !important;
     transform: translateX(-140%) skewX(-18deg) !important;
     transition: transform 520ms ease !important;
     pointer-events: none !important;
@@ -342,9 +342,9 @@ html body .concept-page.launch-page .launch-product-carousel .launch-product-car
   html body .concept-page.launch-page section.campaign-scene .campaign-shop-link:hover,
   html body .concept-page.launch-page section.campaign-scene .campaign-shop-link:focus-visible {
     transform: translateY(-2px) !important;
-    border-color: rgba(68, 24, 29, 0.42) !important;
+    border-color: rgba(16, 16, 16, 0.28) !important;
     color: var(--launch-burgundy) !important;
-    box-shadow: 0 22px 42px rgba(68, 24, 29, 0.14), inset 0 0 0 1px rgba(255,255,255,0.84) !important;
+    box-shadow: 0 12px 24px rgba(16, 16, 16, 0.06) !important;
   }
 
   html body .concept-page.launch-page .launch-products .launch-section-head.split > a:hover::before,
@@ -892,24 +892,51 @@ html body .announcement-track span {
   overflow: hidden !important;
   color: #fff !important;
   font-weight: 1000 !important;
-  letter-spacing: 0.16em !important;
-  text-shadow: 0 0 10px rgba(255,255,255,0.26), 0 0 20px rgba(255,255,255,0.14) !important;
+  letter-spacing: 0.18em !important;
+  text-shadow: 0 0 12px rgba(255,255,255,0.34), 0 0 24px rgba(255,255,255,0.18) !important;
+  animation: qaTrustTextGlow 2.8s ease-in-out infinite !important;
 }
 
 html body .announcement-track span::before {
   content: "" !important;
   position: absolute !important;
-  inset: 0 !important;
-  background: linear-gradient(110deg, transparent 0%, transparent 34%, rgba(255,255,255,0.56) 48%, transparent 62%, transparent 100%) !important;
-  transform: translateX(-130%) skewX(-18deg) !important;
-  animation: qaAnnouncementShine 3.6s ease-in-out infinite !important;
+  inset: -10px 0 !important;
+  background: linear-gradient(110deg, transparent 0%, transparent 30%, rgba(255,255,255,0.72) 47%, rgba(255,255,255,0.22) 54%, transparent 68%, transparent 100%) !important;
+  transform: translateX(-145%) skewX(-18deg) !important;
+  animation: qaAnnouncementShine 2.8s ease-in-out infinite !important;
   pointer-events: none !important;
 }
 
 @keyframes qaAnnouncementShine {
-  0%, 38% { transform: translateX(-130%) skewX(-18deg); opacity: 0; }
-  48% { opacity: 0.85; }
-  68%, 100% { transform: translateX(130%) skewX(-18deg); opacity: 0; }
+  0%, 28% { transform: translateX(-145%) skewX(-18deg); opacity: 0; }
+  42% { opacity: 0.95; }
+  66%, 100% { transform: translateX(145%) skewX(-18deg); opacity: 0; }
+}
+
+@keyframes qaTrustTextGlow {
+  0%, 100% {
+    color: #fff;
+    text-shadow: 0 0 12px rgba(255,255,255,0.28), 0 0 22px rgba(255,255,255,0.14);
+  }
+  48% {
+    color: #fffdf7;
+    text-shadow: 0 0 16px rgba(255,255,255,0.5), 0 0 34px rgba(255,255,255,0.24), 0 0 8px rgba(255,255,255,0.32);
+  }
+}
+
+html body .announcement-track span:nth-child(3n + 1)::before,
+html body .announcement-track span:nth-child(3n + 1) {
+  animation-delay: 0s !important;
+}
+
+html body .announcement-track span:nth-child(3n + 2)::before,
+html body .announcement-track span:nth-child(3n + 2) {
+  animation-delay: 0.28s !important;
+}
+
+html body .announcement-track span:nth-child(3n)::before,
+html body .announcement-track span:nth-child(3n) {
+  animation-delay: 0.56s !important;
 }
 
 html body .concept-page.launch-page .product-price-highlight,
@@ -959,7 +986,7 @@ html body .concept-page.launch-page .launch-product-carousel .launch-product-car
     justify-self: end !important;
     overflow: hidden !important;
     padding: 0 34px !important;
-    border: 1px solid rgba(68, 24, 29, 0.24) !important;
+    border: 1px solid rgba(16, 16, 16, 0.16) !important;
     border-radius: 999px !important;
     background: rgba(255,255,255,0.94) !important;
     color: var(--launch-burgundy) !important;
@@ -971,7 +998,7 @@ html body .concept-page.launch-page .launch-product-carousel .launch-product-car
     text-align: center !important;
     text-decoration: none !important;
     text-transform: uppercase !important;
-    box-shadow: 0 18px 36px rgba(68, 24, 29, 0.09), inset 0 0 0 1px rgba(255,255,255,0.74) !important;
+    box-shadow: none !important;
     transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, color 180ms ease !important;
   }
 
@@ -980,7 +1007,7 @@ html body .concept-page.launch-page .launch-product-carousel .launch-product-car
     content: "" !important;
     position: absolute !important;
     inset: 0 !important;
-    background: linear-gradient(110deg, transparent 0%, transparent 35%, rgba(68, 24, 29, 0.13) 48%, transparent 62%, transparent 100%) !important;
+    background: linear-gradient(110deg, transparent 0%, transparent 35%, rgba(16, 16, 16, 0.055) 48%, transparent 62%, transparent 100%) !important;
     transform: translateX(-140%) skewX(-18deg) !important;
     transition: transform 520ms ease !important;
     pointer-events: none !important;
@@ -991,9 +1018,9 @@ html body .concept-page.launch-page .launch-product-carousel .launch-product-car
   html body .concept-page.launch-page section.campaign-scene .campaign-shop-link:hover,
   html body .concept-page.launch-page section.campaign-scene .campaign-shop-link:focus-visible {
     transform: translateY(-2px) !important;
-    border-color: rgba(68, 24, 29, 0.42) !important;
+    border-color: rgba(16, 16, 16, 0.28) !important;
     color: var(--launch-burgundy) !important;
-    box-shadow: 0 22px 42px rgba(68, 24, 29, 0.14), inset 0 0 0 1px rgba(255,255,255,0.84) !important;
+    box-shadow: 0 12px 24px rgba(16, 16, 16, 0.06) !important;
   }
 
   html body .concept-page.launch-page .launch-products .launch-section-head.split > a:hover::before,
