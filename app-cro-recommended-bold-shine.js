@@ -45,6 +45,9 @@ const iconPaths = {
   homes: '<path d="m4 11 8-6 8 6"/><path d="M7 10v9h10v-9"/><path d="M10 19v-5h4v5"/>',
   made: '<path d="M12 3v18"/><path d="M6 7h12"/><path d="M8 7l-3 5h6L8 7Z"/><path d="M16 7l-3 5h6l-3-5Z"/>',
   complete: '<path d="M12 5v14"/><path d="M5 12h14"/><path d="M7 7l10 10"/><path d="m17 7-10 10"/>',
+  diningChair: '<path d="M8 5h8v6H8z"/><path d="M6 11h12"/><path d="M8 11v8"/><path d="M16 11v8"/><path d="M7 19h10"/>',
+  diningTable: '<path d="M4 7h16v3H4z"/><path d="M6 10h12"/><path d="M8 10v9"/><path d="M16 10v9"/><path d="M7 19h10"/>',
+  bench: '<path d="M5 9h14v5H5z"/><path d="M7 14v5"/><path d="M17 14v5"/><path d="M6 19h12"/>',
 };
 
 const iconSvg = (name) => `
@@ -645,14 +648,14 @@ function renderMerch() {
 
       <section class="launch-conversion reveal-block">
         <div>
-        <span>Tableware & Kitchen</span>
-          <h2 class="motion-text">Ready for cooking, hosting and setting the room.</h2>
-          <p>Explore coordinated serveware, cookware and table linen for meals that feel calm, complete and ready to share.</p>
+        <span>Dining Furniture</span>
+          <h2 class="motion-text">Complete the dining room.</h2>
+          <p>Pair the table setting with dining chairs, tables and benches made for everyday hosting.</p>
         </div>
         <div class="furniture-cta-grid" aria-label="Explore Fableroom dining furniture">
-          <a href="https://fableroom.com/collections/dining-furniture">Dining Chairs</a>
-          <a href="https://fableroom.com/collections/dining-furniture">Dining Tables</a>
-          <a href="https://fableroom.com/collections/dining-furniture">Bench</a>
+          <a href="https://fableroom.com/collections/dining-furniture">${iconSvg("diningChair")}<span>Dining Chairs</span></a>
+          <a href="https://fableroom.com/collections/dining-furniture">${iconSvg("diningTable")}<span>Dining Tables</span></a>
+          <a href="https://fableroom.com/collections/dining-furniture">${iconSvg("bench")}<span>Bench</span></a>
         </div>
       </section>
 
