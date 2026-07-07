@@ -11899,6 +11899,150 @@ body.sticky-cta-visible .concept-page.launch-page .mobile-sticky-cta {
   }
 }
 
+/* True final hero lock: white serif title in the upper-left reference position. */
+html body .concept-page.launch-page .concept-hero {
+  position: relative !important;
+  min-height: clamp(610px, calc(100vh - 78px), 820px) !important;
+}
+
+html body .concept-page.launch-page .concept-hero::after {
+  background:
+    linear-gradient(90deg, rgba(16, 16, 16, 0.6) 0%, rgba(16, 16, 16, 0.36) 34%, rgba(16, 16, 16, 0.08) 72%),
+    linear-gradient(180deg, rgba(16, 16, 16, 0.14) 0%, transparent 42%) !important;
+}
+
+html body .concept-page.launch-page .concept-hero .concept-hero-copy {
+  position: absolute !important;
+  z-index: 2 !important;
+  top: clamp(42px, 4.8vw, 72px) !important;
+  left: clamp(78px, 8vw, 118px) !important;
+  width: min(560px, 43vw) !important;
+  max-width: none !important;
+  display: grid !important;
+  gap: clamp(12px, 1vw, 16px) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+  text-align: left !important;
+}
+
+html body .concept-page.launch-page .concept-hero .concept-hero-copy > span {
+  color: rgba(255, 255, 255, 0.94) !important;
+  font-family: var(--font-sans) !important;
+  font-size: clamp(10px, 0.72vw, 12px) !important;
+  font-weight: 1000 !important;
+  letter-spacing: 0.28em !important;
+  line-height: 1.1 !important;
+  text-align: left !important;
+  text-shadow: 0 2px 16px rgba(16, 16, 16, 0.42) !important;
+  text-transform: uppercase !important;
+}
+
+html body .concept-page.launch-page .concept-hero #concept-title.motion-text {
+  width: min(100%, 7.7em) !important;
+  max-width: 7.7em !important;
+  color: #fff !important;
+  font-family: var(--font-serif) !important;
+  font-size: clamp(68px, 6.4vw, 92px) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 0.87 !important;
+  text-align: left !important;
+  text-shadow: 0 4px 28px rgba(16, 16, 16, 0.5) !important;
+  text-transform: none !important;
+}
+
+@media (max-width: 760px) {
+  html body .concept-page.launch-page .concept-hero {
+    min-height: min(560px, calc(100svh - 72px)) !important;
+  }
+
+  html body .concept-page.launch-page .concept-hero .concept-hero-copy {
+    top: clamp(78px, 17svh, 128px) !important;
+    left: 24px !important;
+    width: min(335px, calc(100% - 48px)) !important;
+    gap: 10px !important;
+  }
+
+  html body .concept-page.launch-page .concept-hero #concept-title.motion-text {
+    max-width: 8em !important;
+    font-size: clamp(45px, 12.8vw, 60px) !important;
+    line-height: 0.91 !important;
+  }
+}
+
+/* Final hero title lock: match the white upper-left reference treatment. */
+.concept-page.launch-page .concept-hero {
+  position: relative !important;
+  min-height: clamp(610px, calc(100vh - 78px), 820px) !important;
+}
+
+.concept-page.launch-page .concept-hero::after {
+  background:
+    linear-gradient(90deg, rgba(16, 16, 16, 0.58) 0%, rgba(16, 16, 16, 0.34) 34%, rgba(16, 16, 16, 0.08) 72%),
+    linear-gradient(180deg, rgba(16, 16, 16, 0.14) 0%, transparent 42%) !important;
+}
+
+.concept-page.launch-page .concept-hero-copy {
+  position: absolute !important;
+  z-index: 2 !important;
+  top: clamp(64px, 7vw, 104px) !important;
+  left: clamp(78px, 8vw, 118px) !important;
+  width: min(520px, 42vw) !important;
+  max-width: none !important;
+  display: grid !important;
+  gap: clamp(14px, 1.15vw, 18px) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+  text-align: left !important;
+}
+
+.concept-page.launch-page .concept-hero-copy > span {
+  color: rgba(255, 255, 255, 0.92) !important;
+  font-family: var(--font-sans) !important;
+  font-size: clamp(10px, 0.72vw, 12px) !important;
+  font-weight: 1000 !important;
+  letter-spacing: 0.28em !important;
+  line-height: 1.1 !important;
+  text-align: left !important;
+  text-shadow: 0 2px 16px rgba(16, 16, 16, 0.38) !important;
+  text-transform: uppercase !important;
+}
+
+.concept-page.launch-page #concept-title {
+  width: min(100%, 7.8em) !important;
+  max-width: 7.8em !important;
+  color: #fff !important;
+  font-family: var(--font-serif) !important;
+  font-size: clamp(58px, 5.65vw, 84px) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 0.88 !important;
+  text-align: left !important;
+  text-shadow: 0 3px 26px rgba(16, 16, 16, 0.48) !important;
+  text-transform: none !important;
+}
+
+@media (max-width: 760px) {
+  .concept-page.launch-page .concept-hero {
+    min-height: min(560px, calc(100svh - 72px)) !important;
+  }
+
+  .concept-page.launch-page .concept-hero-copy {
+    top: clamp(100px, 21svh, 150px) !important;
+    left: 24px !important;
+    width: min(335px, calc(100% - 48px)) !important;
+    gap: 10px !important;
+  }
+
+  .concept-page.launch-page #concept-title {
+    max-width: 8em !important;
+    font-size: clamp(43px, 12.4vw, 58px) !important;
+    line-height: 0.92 !important;
+  }
+}
+
 .concept-page.launch-page .launch-highlight.shop-look,
 .concept-page.launch-page .launch-highlight,
 .concept-page.launch-page .launch-conversion {
