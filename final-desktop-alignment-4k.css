@@ -437,7 +437,7 @@ html body .announcement-track span:nth-child(3n)::before {
   100% { transform: skewX(-18deg) translateX(360%); }
 }
 
-/* Visible shine for the in-page white trust strip shown in the landing page. */
+/* Visible monochrome shine for the in-page white trust strip shown in the landing page. */
 html body .concept-page.launch-page .concept-campaign-strip {
   background: #fff !important;
   overflow: hidden !important;
@@ -451,24 +451,24 @@ html body .concept-page.launch-page .concept-campaign-strip.concept-campaign-str
   overflow: hidden !important;
   background: linear-gradient(
     90deg,
-    #44181d 0%,
-    #44181d 22%,
-    #b98735 36%,
-    #fff3bf 44%,
-    #44181d 56%,
-    #44181d 72%,
-    #d8a84b 84%,
-    #44181d 100%
+    #050505 0%,
+    #171717 20%,
+    #5f5f5f 34%,
+    #f7f7f7 44%,
+    #6a6a6a 53%,
+    #111111 66%,
+    #000000 100%
   ) !important;
   background-size: 280% 100% !important;
   background-position: 0% 50% !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
-  color: #44181d !important;
+  color: #050505 !important;
   font-weight: 1000 !important;
   letter-spacing: 0.2em !important;
-  text-shadow: 0 0 1px rgba(68, 24, 29, 0.16), 0 0 12px rgba(185, 135, 53, 0.18) !important;
+  white-space: nowrap !important;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.18), 0 0 12px rgba(0, 0, 0, 0.10) !important;
   animation-name: qaCampaignStripLetterShine, qaCampaignStripPulse !important;
   animation-duration: 1.18s, 1.7s !important;
   animation-timing-function: linear, ease-in-out !important;
@@ -483,7 +483,7 @@ html body .concept-page.launch-page .concept-campaign-strip > span::after {
   bottom: -45% !important;
   left: -55% !important;
   width: 46% !important;
-  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.12) 20%, rgba(255,255,255,0.92) 50%, rgba(255,255,255,0.12) 80%, transparent 100%) !important;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 20%, rgba(255,255,255,0.82) 50%, rgba(255,255,255,0.08) 80%, transparent 100%) !important;
   transform: skewX(-18deg) translateX(0) !important;
   mix-blend-mode: screen !important;
   opacity: 0.88 !important;
@@ -498,16 +498,25 @@ html body .concept-page.launch-page .concept-campaign-strip > span::after {
 
 @keyframes qaCampaignStripPulse {
   0%, 100% {
-    filter: brightness(1) drop-shadow(0 0 0 rgba(185, 135, 53, 0));
+    filter: brightness(1) drop-shadow(0 0 0 rgba(0, 0, 0, 0));
   }
   50% {
-    filter: brightness(1.22) drop-shadow(0 0 8px rgba(185, 135, 53, 0.36));
+    filter: brightness(1.28) drop-shadow(0 0 8px rgba(0, 0, 0, 0.26));
   }
 }
 
 @keyframes qaCampaignStripOverlaySweep {
   0% { transform: skewX(-18deg) translateX(0); }
   100% { transform: skewX(-18deg) translateX(360%); }
+}
+
+@media (min-width: 900px) {
+  html body .concept-page.launch-page .concept-campaign-strip > span,
+  html body .concept-page.launch-page .concept-campaign-strip.concept-campaign-strip > span {
+    font-size: clamp(14.5px, 0.78vw, 20px) !important;
+    line-height: 1.25 !important;
+    letter-spacing: 0.16em !important;
+  }
 }
 
 /* Final trust-strip shine: animate the letters themselves, not only an overlay. */
