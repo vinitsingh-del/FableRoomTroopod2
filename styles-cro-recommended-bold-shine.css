@@ -11642,3 +11642,26 @@ body.sticky-cta-visible .concept-page.launch-page .mobile-sticky-cta {
     letter-spacing: 0.09em !important;
   }
 }
+
+/* Desktop only: remove the grey carousel gutter/scroll track under sale products. */
+@media (min-width: 761px) {
+  .concept-page.launch-page .campaign-scene .offer-product-carousel {
+    padding-bottom: 0 !important;
+    scrollbar-width: none !important;
+  }
+
+  .concept-page.launch-page .campaign-scene .offer-product-carousel::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  .concept-page.launch-page .campaign-scene .offer-product-carousel::-webkit-scrollbar-track {
+    display: none !important;
+    background: transparent !important;
+  }
+
+  .concept-page.launch-page .offer-product-track {
+    padding-bottom: 0 !important;
+  }
+}
