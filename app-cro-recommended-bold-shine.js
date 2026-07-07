@@ -534,7 +534,7 @@ function renderMerch() {
 
       <section class="concept-products reveal-block" aria-labelledby="concept-products-title">
         <div class="concept-head reveal-block">
-          <h2 id="concept-products-title" class="motion-text">Explore our newest collections</h2>
+          <h2 id="concept-products-title" class="motion-text">EXPLORE OUR NEWEST COLLECTIONS</h2>
         </div>
         ${renderCategoryExplorer()}
       </section>
@@ -554,7 +554,7 @@ function renderMerch() {
 
       <section class="launch-featured reveal-block" aria-labelledby="launch-featured-title">
         <div class="launch-featured-head">
-          <h2 id="launch-featured-title" class="motion-text">As featured in</h2>
+          <h2 id="launch-featured-title" class="motion-text">AS FEATURED IN</h2>
         </div>
         <div class="launch-featured-rail" aria-label="Fableroom press features">
           ${featuredInItems.map(renderFeaturedPress).join("")}
@@ -920,7 +920,7 @@ function renderCollection(key) {
 
       <section class="concept-products reveal-block" aria-labelledby="collection-new-title">
         <div class="concept-head reveal-block">
-          <h2 id="collection-new-title" class="motion-text">Explore our newest collections</h2>
+          <h2 id="collection-new-title" class="motion-text">EXPLORE OUR NEWEST COLLECTIONS</h2>
           <span>${collection.count} products</span>
         </div>
         <div class="concept-circle-row">
