@@ -110,24 +110,24 @@ const merchRails = {
 
 const launchLayers = [
   {
-    title: "Cook",
-    kicker: "The kitchen layer",
+    title: "Prep",
+    kicker: "Cookware",
     image: A("ai-cook-layer-symmetric.png"),
     copy: "Begin with reliable cookware for weekday meals, slow dinners and everything that comes before the table is set.",
     cta: "Explore cookware",
     href: "#/cookware",
   },
   {
-    title: "Serve",
-    kicker: "The tableware layer",
+    title: "Set",
+    kicker: "Serveware",
     image: A("ai-serve-layer-symmetric.png"),
     copy: "Bring out plates, bowls, cups and tea pieces that make everyday dining feel quietly considered.",
     cta: "Explore serveware",
     href: "#/serveware",
   },
   {
-    title: "Layer",
-    kicker: "The linen layer",
+    title: "Finish",
+    kicker: "Table Linen",
     image: A("ai-linen-layer-symmetric.png"),
     copy: "Finish the setting with runners, napkins and coasters that add softness, texture and a hosted feel.",
     cta: "Explore table linen",
@@ -157,6 +157,67 @@ const brandBenefits = [
   ["homes", "Loved by 12,000+ homes", "Daily hosting"],
   ["made", "Thoughtfully made", "Considered materials"],
 ];
+
+const shopLookItems = [
+  {
+    label: "Dinner plates",
+    title: "Renata Dinner Plates",
+    href: "#/serveware",
+    x: 31,
+    y: 66,
+  },
+  {
+    label: "Serving bowl",
+    title: "Zoraida Serving Bowl",
+    href: "#/serveware",
+    x: 52,
+    y: 47,
+  },
+  {
+    label: "Table runner",
+    title: "Pritha Table Runner",
+    href: "#/table-linen",
+    x: 67,
+    y: 67,
+  },
+  {
+    label: "Tea set",
+    title: "Rainbow Gold Tea Pieces",
+    href: "#/serveware",
+    x: 42,
+    y: 56,
+  },
+];
+
+const categoryExplorer = {
+  serveware: {
+    title: "Serveware",
+    tiles: [
+      ["Cups & saucers", "Rainbow Gold Cup & Saucer (Set of 2)", A("lifestyle-rainbow-cup-saucer.png"), "#/serveware"],
+      ["Dinner plates", "Renata Dinner Plates (Set of 6)", A("p-renata-dinner.jpg"), "#/serveware"],
+      ["Serving bowls", "Zoraida Serving Bowl (Set of 2)", A("lifestyle-zoraida-bowl.png"), "#/serveware"],
+      ["Side plates", "White Sparkle Side Plates (Set of 6)", A("p-white-side.jpg"), "#/serveware"],
+      ["Teapots & creamers", "Matt Grey Sky Tea Pot & Creamer", A("p-grey-teapot.jpg"), "#/serveware"],
+    ],
+  },
+  cookware: {
+    title: "Cookware",
+    tiles: [
+      ["Frying pans", "Auren Tri-Ply Frying Pan", A("cookware-pan.jpg"), "#/cookware"],
+      ["Sauce pans", "Solis Tri-Ply Sauce Pan", A("cookware-sauce.jpg"), "#/cookware"],
+      ["Dutch ovens", "Verro Tri-Ply Dutch Oven", A("cookware-dutch.jpg"), "#/cookware"],
+    ],
+  },
+  "table-linen": {
+    title: "Table Linen",
+    tiles: [
+      ["Table runners", "Pritha Digital Print Table Runner", A("linen-pritha-runner.png"), "#/table-linen"],
+      ["Napkins", "Arabella Merrow-Edge Napkins", A("linen-arabella.png"), "#/table-linen"],
+      ["Coasters", "Hallie Merrow-Edge Coasters", A("linen-hallie.png"), "#/table-linen"],
+      ["Linen sets", "Rivello European Linen Fringe Set", A("linen-rivello.png"), "#/table-linen"],
+    ],
+  },
+};
 
 const ritualProofItems = [
   ["serveware", "Daily dining"],
@@ -382,6 +443,7 @@ function render() {
   initMotionText();
   initParallax();
   initVengeanceEffects();
+  initCategoryExplorer();
   updateScrollProgress();
   window.scrollTo({ top: 0, behavior: "auto" });
 }
@@ -397,9 +459,6 @@ function renderMerch() {
         <div class="concept-hero-copy reveal-block">
           <span>New · Tableware & Kitchen</span>
           <h1 id="concept-title" class="motion-text">Set the table for every kind of gathering.</h1>
-          <div class="hero-cta-group" aria-label="Launch actions">
-            <a href="#/all">Shop the launch</a>
-          </div>
         </div>
       </section>
 
@@ -421,7 +480,7 @@ function renderMerch() {
             <video src="${A("ritual-edit-video-v2.mp4")}" poster="${A("ai-tableware-about-v2.png")}" autoplay muted loop playsinline preload="metadata"></video>
             <div>
               <strong>Cook. Serve. Layer.</strong>
-              <a href="#/all">Shop the launch</a>
+              <a href="#/all">Shop the collection</a>
             </div>
           </article>
           ${launchLayers.map(renderLaunchLayer).join("")}
@@ -429,14 +488,20 @@ function renderMerch() {
         </div>
       </section>
 
-      <section class="launch-highlight reveal-block" aria-label="Tableware and Kitchen launch highlight">
-        <figure>
+      <section class="launch-highlight shop-look reveal-block" aria-label="Shop the look">
+        <figure class="shop-look-figure">
           <img src="${A("launch-highlight-lifestyle.png")}" alt="Fableroom tableware, cookware and linen styled together" loading="lazy" />
+          ${shopLookItems.map(renderShopLookHotspot).join("")}
         </figure>
         <div class="launch-highlight-copy">
-          <span>New in Tableware & Kitchen</span>
-          <h2 class="motion-text">One table, beautifully layered.</h2>
-          <p>Serveware, cookware and linen styled for every meal, every host and every room.</p>
+          <span>Shop the look</span>
+          <h2 class="motion-text">Build the whole table from one setting.</h2>
+          <p>Tap each marker to move from inspiration to the exact tableware, linen and hosting pieces used in the room.</p>
+          <div class="shop-look-usps" aria-label="Why shop this look">
+            <span>Direct pricing</span>
+            <span>Ready-to-host styling</span>
+            <span>Complete table edit</span>
+          </div>
         </div>
       </section>
 
@@ -449,8 +514,29 @@ function renderMerch() {
           <h2 id="concept-products-title" class="motion-text">Explore our newest collections</h2>
           <a href="#/all">View all products</a>
         </div>
-        <div class="concept-circle-row">
-          ${categoryTiles.map(renderConceptCircleCategory).join("")}
+        ${renderCategoryExplorer()}
+      </section>
+
+      <section class="launch-products reveal-block" aria-labelledby="launch-products-title">
+        <div class="launch-section-head split reveal-block">
+          <div>
+            <span>The collection edit</span>
+            <h2 id="launch-products-title" class="motion-text">Pieces to start with, style with and gift.</h2>
+          </div>
+          <a href="#/all">View all products</a>
+        </div>
+        <div class="launch-product-grid launch-product-carousel" aria-label="Curated tableware and kitchen products">
+          ${launchProducts.map(renderLaunchProduct).join("")}
+        </div>
+      </section>
+
+      <section class="launch-featured reveal-block" aria-labelledby="launch-featured-title">
+        <div class="launch-featured-head">
+          <span>As featured in</span>
+          <h2 id="launch-featured-title" class="motion-text">Press stories from the Fableroom home.</h2>
+        </div>
+        <div class="launch-featured-rail" aria-label="Fableroom press features">
+          ${featuredInItems.map(renderFeaturedPress).join("")}
         </div>
       </section>
 
@@ -469,35 +555,12 @@ function renderMerch() {
         </div>
       </section>
 
-      <section class="launch-products reveal-block" aria-labelledby="launch-products-title">
-        <div class="launch-section-head split reveal-block">
-          <div>
-            <span>The launch collection</span>
-            <h2 id="launch-products-title" class="motion-text">Pieces to start with, style with and gift.</h2>
-          </div>
-          <a href="#/all">View all products</a>
-        </div>
-        <div class="launch-product-grid">
-          ${launchProducts.map(renderLaunchProduct).join("")}
-        </div>
-      </section>
-
-      <section class="launch-featured reveal-block" aria-labelledby="launch-featured-title">
-        <div class="launch-featured-head">
-          <span>As featured in</span>
-          <h2 id="launch-featured-title" class="motion-text">Press stories from the Fableroom home.</h2>
-        </div>
-        <div class="launch-featured-rail" aria-label="Fableroom press features">
-          ${featuredInItems.map(renderFeaturedPress).join("")}
-        </div>
-      </section>
-
-      <section class="launch-scene reveal-block">
-        <figure><img src="${A("ai-tableware-about-v2.png")}" alt="Styled Fableroom dining table with serveware, cookware and linen" loading="lazy" /></figure>
+      <section class="launch-scene campaign-scene reveal-block">
+        <figure><img src="${A("ai-tableware-about-v2.png")}" alt="Fableroom summer sale table setting" loading="lazy" /></figure>
         <div class="reveal-block">
-          <span>For everyday rituals</span>
-          <h2 class="motion-text">From the hob to the table, made to feel complete.</h2>
-          <p>Start with the recipe, serve it beautifully, then add the linen details that make even a simple meal feel considered.</p>
+          <span>Summer Sale · Extra 10% Off</span>
+          <h2 class="motion-text">Good rooms start with great pieces.</h2>
+          <p>Explore tableware, cookware and linen with Fableroom's current savings story: thoughtful pieces, fair pricing and a complete home-table edit.</p>
           <div class="launch-proof-list" aria-label="Tableware and kitchen highlights">
             ${ritualProofItems.map(renderProofItem).join("")}
           </div>
@@ -512,11 +575,11 @@ function renderMerch() {
 
       <section class="launch-conversion reveal-block">
         <div>
-          <span>Tableware & Kitchen</span>
+        <span>Tableware & Kitchen</span>
           <h2 class="motion-text">Ready for cooking, hosting and setting the room.</h2>
           <p>Explore coordinated serveware, cookware and table linen for meals that feel calm, complete and ready to share.</p>
         </div>
-        <a class="button" href="#/all">Shop the launch</a>
+        <a class="button" href="#/all">Shop the collection</a>
       </section>
 
       <div class="launch-sticky-actions" aria-label="Fableroom quick actions">
@@ -529,7 +592,7 @@ function renderMerch() {
           </svg>
         </a>
       </div>
-      <a class="mobile-sticky-cta" href="#/all" aria-label="Shop the Tableware and Kitchen launch">Shop the launch</a>
+      <a class="mobile-sticky-cta" href="#/all" aria-label="Shop the Tableware and Kitchen collection">Shop the collection</a>
     </article>
   `;
 }
@@ -565,7 +628,7 @@ function renderLandingNavItem([icon, title, href]) {
     <a href="${href}">
       ${iconSvg(icon)}
       <span>${title}</span>
-      <small>${title === "View All" ? "Shop launch" : "Explore"}</small>
+      <small>${title === "View All" ? "Shop collection" : "Explore"}</small>
     </a>
   `;
 }
@@ -670,10 +733,48 @@ function renderLaunchLayer(layer, index) {
     <a class="launch-layer-card reveal-item" href="${layer.href}">
       <figure><img src="${layer.image}" alt="${layer.title} layer" loading="lazy" /></figure>
       <div>
+        <span>${layer.kicker}</span>
         <strong>${layer.title}</strong>
         <em>${layer.cta}</em>
       </div>
     </a>
+  `;
+}
+
+function renderShopLookHotspot(item, index) {
+  return `
+    <a class="shop-look-dot" href="${item.href}" style="--dot-x:${item.x}%;--dot-y:${item.y}%;" aria-label="Shop ${item.title}">
+      <span>${index + 1}</span>
+      <strong>${item.label}</strong>
+      <small>${item.title}</small>
+    </a>
+  `;
+}
+
+function renderCategoryExplorer() {
+  const tabs = Object.entries(categoryExplorer).map(([id, group], index) => `
+    <button class="category-tab${index === 0 ? " is-active" : ""}" type="button" data-category-tab="${id}" aria-pressed="${index === 0 ? "true" : "false"}">
+      ${group.title}
+    </button>
+  `).join("");
+  const panels = Object.entries(categoryExplorer).map(([id, group], index) => `
+    <div class="category-panel${index === 0 ? " is-active" : ""}" data-category-panel="${id}" ${index === 0 ? "" : "hidden"}>
+      ${group.tiles.map(([label, title, image, href]) => `
+        <a class="subcategory-pill reveal-item" href="${href}">
+          <figure><img src="${image}" alt="${title}" loading="lazy" /></figure>
+          <span>${label}</span>
+          <strong>${title}</strong>
+        </a>
+      `).join("")}
+    </div>
+  `).join("");
+  return `
+    <div class="category-explorer" data-category-explorer>
+      <div class="category-tabs" role="group" aria-label="Choose a collection">
+        ${tabs}
+      </div>
+      ${panels}
+    </div>
   `;
 }
 
@@ -996,6 +1097,30 @@ function initMotionText() {
     node.dataset.motionReady = "true";
     node.setAttribute("aria-label", node.textContent.trim());
     node.innerHTML = words.map((word, index) => `<span aria-hidden="true" style="--word-delay:${index * 42}ms">${word}</span>`).join(" ");
+  });
+}
+
+function initCategoryExplorer() {
+  document.querySelectorAll("[data-category-explorer]").forEach((explorer) => {
+    if (explorer.dataset.ready) return;
+    explorer.dataset.ready = "true";
+    const tabs = Array.from(explorer.querySelectorAll("[data-category-tab]"));
+    const panels = Array.from(explorer.querySelectorAll("[data-category-panel]"));
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const id = tab.dataset.categoryTab;
+        tabs.forEach((item) => {
+          const active = item === tab;
+          item.classList.toggle("is-active", active);
+          item.setAttribute("aria-pressed", String(active));
+        });
+        panels.forEach((panel) => {
+          const active = panel.dataset.categoryPanel === id;
+          panel.classList.toggle("is-active", active);
+          panel.hidden = !active;
+        });
+      });
+    });
   });
 }
 
