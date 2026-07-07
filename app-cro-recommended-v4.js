@@ -530,8 +530,7 @@ function renderMerch() {
 
       <section class="launch-featured reveal-block" aria-labelledby="launch-featured-title">
         <div class="launch-featured-head">
-          <span>As featured in</span>
-          <h2 id="launch-featured-title" class="motion-text">Press stories from the Fableroom home.</h2>
+          <h2 id="launch-featured-title" class="motion-text">As featured in</h2>
         </div>
         <div class="launch-featured-rail" aria-label="Fableroom press features">
           ${featuredInItems.map(renderFeaturedPress).join("")}

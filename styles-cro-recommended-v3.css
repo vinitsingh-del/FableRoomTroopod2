@@ -9773,3 +9773,40 @@ body,
     font-size: 12px !important;
   }
 }
+
+/* Normalize collection and featured headings to the main Fableroom section-title style. */
+.concept-page.launch-page .concept-products .concept-head,
+.concept-page.launch-page .launch-featured-head {
+  display: grid !important;
+  gap: 0 !important;
+  align-items: start !important;
+  justify-items: start !important;
+  margin-bottom: clamp(18px, 1.6vw, 28px) !important;
+  text-align: left !important;
+}
+
+.concept-page.launch-page .concept-products .concept-head h2,
+.concept-page.launch-page .launch-featured-head h2 {
+  max-width: 11em !important;
+  margin: 0 !important;
+  color: var(--launch-ink) !important;
+  font-family: var(--font-serif) !important;
+  font-size: clamp(34px, 3vw, 58px) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 0.98 !important;
+  text-transform: none !important;
+}
+
+.concept-page.launch-page .launch-featured-head > span {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .concept-page.launch-page .concept-products .concept-head h2,
+  .concept-page.launch-page .launch-featured-head h2 {
+    max-width: 12em !important;
+    font-size: clamp(28px, 8vw, 38px) !important;
+    line-height: 1.02 !important;
+  }
+}
