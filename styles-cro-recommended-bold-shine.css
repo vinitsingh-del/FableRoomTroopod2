@@ -10181,3 +10181,116 @@ body.sticky-cta-visible .concept-page.launch-page .mobile-sticky-cta {
   align-content: start !important;
   overflow: hidden !important;
 }
+
+/* Final 3:4 product catalogue lock: no asset or text bleed. */
+.concept-page.launch-page .launch-product-carousel {
+  grid-auto-columns: clamp(292px, 21vw, 340px) !important;
+  align-items: stretch !important;
+}
+
+.concept-page.launch-page .launch-product-carousel .launch-product-card {
+  aspect-ratio: 3 / 4 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  display: grid !important;
+  grid-template-rows: 54% 46% !important;
+  overflow: hidden !important;
+  background: #fff !important;
+}
+
+.concept-page.launch-page .launch-product-carousel .launch-product-card figure {
+  min-height: 0 !important;
+  height: 100% !important;
+  display: grid !important;
+  place-items: center !important;
+  padding: clamp(14px, 1vw, 18px) !important;
+  overflow: hidden !important;
+}
+
+.concept-page.launch-page .launch-product-carousel .launch-product-card img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 82% !important;
+  max-height: clamp(132px, 8.8vw, 168px) !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+.concept-page.launch-page .launch-product-carousel .launch-product-card > div {
+  min-height: 0 !important;
+  height: 100% !important;
+  display: grid !important;
+  grid-template-rows: auto auto minmax(2.4em, auto) auto !important;
+  align-content: start !important;
+  gap: clamp(5px, 0.45vw, 8px) !important;
+  padding: clamp(14px, 1vw, 18px) !important;
+  overflow: hidden !important;
+}
+
+.concept-page.launch-page .launch-product-carousel .launch-product-tags {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 5px !important;
+  min-height: 20px !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+.concept-page.launch-page .launch-product-carousel .launch-product-tags em {
+  padding: 4px 7px !important;
+  font-size: 8px !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+.concept-page.launch-page .launch-product-carousel .launch-product-card span {
+  display: block !important;
+  min-height: 1.1em !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  color: var(--launch-burgundy) !important;
+  font-size: clamp(9px, 0.68vw, 11px) !important;
+  font-weight: 1000 !important;
+  letter-spacing: 0.17em !important;
+  line-height: 1.1 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+
+.concept-page.launch-page .launch-product-carousel .launch-product-card strong {
+  min-height: 2.35em !important;
+  display: -webkit-box !important;
+  overflow: hidden !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 2 !important;
+  color: var(--launch-ink) !important;
+  font-size: clamp(12px, 0.86vw, 15px) !important;
+  font-weight: 900 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.18 !important;
+}
+
+.concept-page.launch-page .launch-product-carousel .launch-product-card small {
+  display: block !important;
+  overflow: hidden !important;
+  color: var(--launch-muted) !important;
+  font-size: clamp(10px, 0.72vw, 12px) !important;
+  font-weight: 800 !important;
+  line-height: 1.18 !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+}
+
+@media (max-width: 760px) {
+  .concept-page.launch-page .launch-product-carousel {
+    grid-auto-columns: minmax(240px, 72vw) !important;
+  }
+
+  .concept-page.launch-page .launch-product-carousel .launch-product-card > div {
+    padding: 13px !important;
+  }
+
+  .concept-page.launch-page .launch-product-carousel .launch-product-card img {
+    max-height: 132px !important;
+  }
+}
