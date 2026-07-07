@@ -10969,6 +10969,101 @@ body.sticky-cta-visible .concept-page.launch-page .mobile-sticky-cta {
   }
 }
 
+/* Conversion CTA redesign: no plain boxes, use editorial angled ribbons. */
+.concept-page.launch-page .furniture-cta-grid {
+  width: min(560px, 100%) !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: clamp(10px, 1vw, 14px) !important;
+}
+
+.concept-page.launch-page .furniture-cta-grid a {
+  position: relative !important;
+  min-height: 52px !important;
+  min-width: clamp(152px, 11vw, 190px) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 42px 0 24px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  clip-path: polygon(9% 0, 100% 0, 91% 100%, 0 100%) !important;
+  background:
+    linear-gradient(120deg, rgba(255,255,255,0.18), rgba(255,255,255,0) 38%),
+    var(--launch-burgundy) !important;
+  color: #fff !important;
+  box-shadow: 0 16px 28px rgba(68, 24, 29, 0.16), inset 0 0 0 1px rgba(255,255,255,0.18) !important;
+  font-size: clamp(10px, 0.78vw, 12px) !important;
+  font-weight: 1000 !important;
+  letter-spacing: 0.18em !important;
+  overflow: hidden !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  transform: translateY(0) rotate(-1deg) !important;
+}
+
+.concept-page.launch-page .furniture-cta-grid a:nth-child(2) {
+  background:
+    linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,255,255,0) 38%),
+    #101010 !important;
+  transform: translateY(-7px) rotate(1deg) !important;
+}
+
+.concept-page.launch-page .furniture-cta-grid a:nth-child(3) {
+  background:
+    linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,255,255,0) 38%),
+    #8a5a33 !important;
+  transform: translateY(4px) rotate(-1.5deg) !important;
+}
+
+.concept-page.launch-page .furniture-cta-grid a::before {
+  content: "→";
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  z-index: 3;
+  font-size: 17px;
+  line-height: 1;
+  transform: translateY(-50%);
+}
+
+.concept-page.launch-page .furniture-cta-grid a::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: -40% auto -40% -60% !important;
+  width: 42% !important;
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.5), rgba(255,255,255,0)) !important;
+  transform: skewX(-18deg) translateX(0) !important;
+  animation: fableroomLogoShine 4.8s ease-in-out infinite !important;
+}
+
+.concept-page.launch-page .furniture-cta-grid a:hover,
+.concept-page.launch-page .furniture-cta-grid a:focus-visible {
+  box-shadow: 0 22px 34px rgba(68, 24, 29, 0.24), inset 0 0 0 1px rgba(255,255,255,0.28) !important;
+  transform: translateY(-5px) rotate(0deg) scale(1.02) !important;
+}
+
+@media (max-width: 760px) {
+  .concept-page.launch-page .furniture-cta-grid {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    justify-content: stretch !important;
+  }
+
+  .concept-page.launch-page .furniture-cta-grid a,
+  .concept-page.launch-page .furniture-cta-grid a:nth-child(2),
+  .concept-page.launch-page .furniture-cta-grid a:nth-child(3) {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 50px !important;
+    transform: none !important;
+  }
+}
+
 /* Left-aligned symmetric title system requested for the launch page. */
 .concept-page.launch-page .launch-section-head,
 .concept-page.launch-page .launch-review-head,
