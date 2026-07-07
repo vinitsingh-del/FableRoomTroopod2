@@ -211,6 +211,23 @@ html body .concept-page.launch-page .launch-highlight.shop-look::after {
   box-shadow: none !important;
 }
 
+html body .concept-page.launch-page section.campaign-scene,
+html body .concept-page.launch-page .campaign-scene {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .concept-page.launch-page section.campaign-scene::before,
+html body .concept-page.launch-page section.campaign-scene::after,
+html body .concept-page.launch-page .campaign-scene::before,
+html body .concept-page.launch-page .campaign-scene::after {
+  content: none !important;
+  display: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
 /* Burgundy CTA hover lock: keep capsule CTAs visible and shimmering, never white-on-white. */
 html body .concept-page.launch-page .landing-pill-nav a,
 html body .concept-page.launch-page .furniture-cta-grid a,
