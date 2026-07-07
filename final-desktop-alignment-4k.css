@@ -216,6 +216,7 @@ html body .concept-page.launch-page .campaign-scene {
   border: 0 !important;
   outline: 0 !important;
   box-shadow: none !important;
+  background-clip: padding-box !important;
 }
 
 html body .concept-page.launch-page section.campaign-scene::before,
@@ -226,6 +227,132 @@ html body .concept-page.launch-page .campaign-scene::after {
   display: none !important;
   border: 0 !important;
   box-shadow: none !important;
+}
+
+html body .concept-page.launch-page section.campaign-scene.launch-scene,
+html body .concept-page.launch-page section.campaign-scene .offer-product-carousel,
+html body .concept-page.launch-page section.campaign-scene .offer-product-track {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .announcement-card {
+  border: 0 !important;
+  background:
+    linear-gradient(90deg, rgba(68, 24, 29, 0.98), rgba(16, 16, 16, 0.98) 48%, rgba(68, 24, 29, 0.98)) !important;
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,0.12), 0 10px 24px rgba(68, 24, 29, 0.08) !important;
+}
+
+html body .announcement-track span {
+  position: relative !important;
+  color: #fff !important;
+  font-weight: 1000 !important;
+  letter-spacing: 0.16em !important;
+  text-shadow: 0 0 10px rgba(255,255,255,0.26), 0 0 20px rgba(255,255,255,0.14) !important;
+}
+
+html body .announcement-track span::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(110deg, transparent 0%, transparent 34%, rgba(255,255,255,0.56) 48%, transparent 62%, transparent 100%) !important;
+  transform: translateX(-130%) skewX(-18deg) !important;
+  animation: qaAnnouncementShine 3.6s ease-in-out infinite !important;
+  pointer-events: none !important;
+}
+
+@keyframes qaAnnouncementShine {
+  0%, 38% { transform: translateX(-130%) skewX(-18deg); opacity: 0; }
+  48% { opacity: 0.85; }
+  68%, 100% { transform: translateX(130%) skewX(-18deg); opacity: 0; }
+}
+
+html body .concept-page.launch-page .product-price-highlight,
+html body .concept-page.launch-page .price-row > strong,
+html body .concept-page.launch-page .mini-product small,
+html body .concept-page.launch-page .fr-product small,
+html body .concept-page.launch-page .showcase-buy b {
+  display: inline-flex !important;
+  width: max-content !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-top: 8px !important;
+  padding: 7px 13px !important;
+  border: 1px solid rgba(68, 24, 29, 0.28) !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, rgba(68, 24, 29, 0.98), rgba(20, 16, 16, 0.98)) !important;
+  color: #fff !important;
+  font-family: var(--font-sans) !important;
+  font-size: 12px !important;
+  font-weight: 1000 !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 10px 20px rgba(68, 24, 29, 0.13), inset 0 0 0 1px rgba(255,255,255,0.16) !important;
+}
+
+html body .concept-page.launch-page .launch-product-carousel .launch-product-card small {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+@media (min-width: 1024px) {
+  html body .concept-page.launch-page .launch-products .launch-section-head.split > a,
+  html body .concept-page.launch-page section.campaign-scene .campaign-shop-link {
+    position: relative !important;
+    display: inline-flex !important;
+    min-width: 210px !important;
+    min-height: 54px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    padding: 0 34px !important;
+    border: 1px solid rgba(68, 24, 29, 0.24) !important;
+    border-radius: 999px !important;
+    background: rgba(255,255,255,0.94) !important;
+    color: var(--launch-burgundy) !important;
+    font-family: var(--font-sans) !important;
+    font-size: 12px !important;
+    font-weight: 1000 !important;
+    letter-spacing: 0.18em !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+    box-shadow: 0 18px 36px rgba(68, 24, 29, 0.09), inset 0 0 0 1px rgba(255,255,255,0.74) !important;
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, color 180ms ease !important;
+  }
+
+  html body .concept-page.launch-page .launch-products .launch-section-head.split > a::before,
+  html body .concept-page.launch-page section.campaign-scene .campaign-shop-link::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(110deg, transparent 0%, transparent 35%, rgba(68, 24, 29, 0.13) 48%, transparent 62%, transparent 100%) !important;
+    transform: translateX(-140%) skewX(-18deg) !important;
+    transition: transform 520ms ease !important;
+    pointer-events: none !important;
+  }
+
+  html body .concept-page.launch-page .launch-products .launch-section-head.split > a:hover,
+  html body .concept-page.launch-page .launch-products .launch-section-head.split > a:focus-visible,
+  html body .concept-page.launch-page section.campaign-scene .campaign-shop-link:hover,
+  html body .concept-page.launch-page section.campaign-scene .campaign-shop-link:focus-visible {
+    transform: translateY(-2px) !important;
+    border-color: rgba(68, 24, 29, 0.42) !important;
+    color: var(--launch-burgundy) !important;
+    box-shadow: 0 22px 42px rgba(68, 24, 29, 0.14), inset 0 0 0 1px rgba(255,255,255,0.84) !important;
+  }
+
+  html body .concept-page.launch-page .launch-products .launch-section-head.split > a:hover::before,
+  html body .concept-page.launch-page .launch-products .launch-section-head.split > a:focus-visible::before,
+  html body .concept-page.launch-page section.campaign-scene .campaign-shop-link:hover::before,
+  html body .concept-page.launch-page section.campaign-scene .campaign-shop-link:focus-visible::before {
+    transform: translateX(140%) skewX(-18deg) !important;
+  }
 }
 
 /* Burgundy CTA hover lock: keep capsule CTAs visible and shimmering, never white-on-white. */
@@ -555,7 +682,7 @@ html body .concept-page.launch-page .furniture-cta-grid a:focus-visible .icon-ma
 
   html body .concept-page.launch-page .launch-products .launch-section-head.split {
     max-width: 100% !important;
-    grid-template-columns: minmax(0, 760px) auto !important;
+    grid-template-columns: minmax(0, 760px) minmax(220px, 1fr) !important;
     gap: clamp(28px, 4vw, 72px) !important;
     align-items: end !important;
   }
@@ -568,7 +695,7 @@ html body .concept-page.launch-page .furniture-cta-grid a:focus-visible .icon-ma
   }
 
   html body .concept-page.launch-page .launch-products .launch-section-head.split > a {
-    justify-self: start !important;
+    justify-self: end !important;
     align-self: end !important;
     margin: 0 0 8px !important;
   }
@@ -586,7 +713,7 @@ html body .concept-page.launch-page .furniture-cta-grid a:focus-visible .icon-ma
   }
 
   html body .concept-page.launch-page section.campaign-scene .campaign-shop-link {
-    justify-self: start !important;
+    justify-self: end !important;
     align-self: center !important;
   }
 
@@ -716,5 +843,149 @@ html body .concept-page.launch-page .furniture-cta-grid a:focus-visible .icon-ma
     font-size: var(--qa-title-font) !important;
     line-height: 1 !important;
     text-align: left !important;
+  }
+}
+
+/* Current request lock: no Summer Sale frame, highlighted prices, shiny trust bar, desktop CTA pills. */
+html body .concept-page.launch-page section.campaign-scene,
+html body .concept-page.launch-page .campaign-scene,
+html body .concept-page.launch-page section.campaign-scene.launch-scene,
+html body .concept-page.launch-page section.campaign-scene .offer-product-carousel,
+html body .concept-page.launch-page section.campaign-scene .offer-product-track {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .concept-page.launch-page section.campaign-scene::before,
+html body .concept-page.launch-page section.campaign-scene::after,
+html body .concept-page.launch-page .campaign-scene::before,
+html body .concept-page.launch-page .campaign-scene::after {
+  content: none !important;
+  display: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .announcement-card {
+  border: 0 !important;
+  background: linear-gradient(90deg, rgba(68, 24, 29, 0.98), rgba(16, 16, 16, 0.98) 48%, rgba(68, 24, 29, 0.98)) !important;
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,0.12), 0 10px 24px rgba(68, 24, 29, 0.08) !important;
+}
+
+html body .announcement-track span {
+  position: relative !important;
+  overflow: hidden !important;
+  color: #fff !important;
+  font-weight: 1000 !important;
+  letter-spacing: 0.16em !important;
+  text-shadow: 0 0 10px rgba(255,255,255,0.26), 0 0 20px rgba(255,255,255,0.14) !important;
+}
+
+html body .announcement-track span::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(110deg, transparent 0%, transparent 34%, rgba(255,255,255,0.56) 48%, transparent 62%, transparent 100%) !important;
+  transform: translateX(-130%) skewX(-18deg) !important;
+  animation: qaAnnouncementShine 3.6s ease-in-out infinite !important;
+  pointer-events: none !important;
+}
+
+@keyframes qaAnnouncementShine {
+  0%, 38% { transform: translateX(-130%) skewX(-18deg); opacity: 0; }
+  48% { opacity: 0.85; }
+  68%, 100% { transform: translateX(130%) skewX(-18deg); opacity: 0; }
+}
+
+html body .concept-page.launch-page .product-price-highlight,
+html body .concept-page.launch-page .price-row > strong,
+html body .concept-page.launch-page .mini-product small,
+html body .concept-page.launch-page .fr-product small,
+html body .concept-page.launch-page .showcase-buy b {
+  display: inline-flex !important;
+  width: max-content !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-top: 8px !important;
+  padding: 7px 13px !important;
+  border: 1px solid rgba(68, 24, 29, 0.28) !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, rgba(68, 24, 29, 0.98), rgba(20, 16, 16, 0.98)) !important;
+  color: #fff !important;
+  font-family: var(--font-sans) !important;
+  font-size: 12px !important;
+  font-weight: 1000 !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 10px 20px rgba(68, 24, 29, 0.13), inset 0 0 0 1px rgba(255,255,255,0.16) !important;
+}
+
+html body .concept-page.launch-page .launch-product-carousel .launch-product-card small {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+@media (min-width: 1024px) {
+  html body .concept-page.launch-page .launch-products .launch-section-head.split {
+    grid-template-columns: minmax(0, 760px) minmax(220px, 1fr) !important;
+  }
+
+  html body .concept-page.launch-page .launch-products .launch-section-head.split > a,
+  html body .concept-page.launch-page section.campaign-scene .campaign-shop-link {
+    position: relative !important;
+    display: inline-flex !important;
+    min-width: 210px !important;
+    min-height: 54px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    justify-self: end !important;
+    overflow: hidden !important;
+    padding: 0 34px !important;
+    border: 1px solid rgba(68, 24, 29, 0.24) !important;
+    border-radius: 999px !important;
+    background: rgba(255,255,255,0.94) !important;
+    color: var(--launch-burgundy) !important;
+    font-family: var(--font-sans) !important;
+    font-size: 12px !important;
+    font-weight: 1000 !important;
+    letter-spacing: 0.18em !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+    box-shadow: 0 18px 36px rgba(68, 24, 29, 0.09), inset 0 0 0 1px rgba(255,255,255,0.74) !important;
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, color 180ms ease !important;
+  }
+
+  html body .concept-page.launch-page .launch-products .launch-section-head.split > a::before,
+  html body .concept-page.launch-page section.campaign-scene .campaign-shop-link::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(110deg, transparent 0%, transparent 35%, rgba(68, 24, 29, 0.13) 48%, transparent 62%, transparent 100%) !important;
+    transform: translateX(-140%) skewX(-18deg) !important;
+    transition: transform 520ms ease !important;
+    pointer-events: none !important;
+  }
+
+  html body .concept-page.launch-page .launch-products .launch-section-head.split > a:hover,
+  html body .concept-page.launch-page .launch-products .launch-section-head.split > a:focus-visible,
+  html body .concept-page.launch-page section.campaign-scene .campaign-shop-link:hover,
+  html body .concept-page.launch-page section.campaign-scene .campaign-shop-link:focus-visible {
+    transform: translateY(-2px) !important;
+    border-color: rgba(68, 24, 29, 0.42) !important;
+    color: var(--launch-burgundy) !important;
+    box-shadow: 0 22px 42px rgba(68, 24, 29, 0.14), inset 0 0 0 1px rgba(255,255,255,0.84) !important;
+  }
+
+  html body .concept-page.launch-page .launch-products .launch-section-head.split > a:hover::before,
+  html body .concept-page.launch-page .launch-products .launch-section-head.split > a:focus-visible::before,
+  html body .concept-page.launch-page section.campaign-scene .campaign-shop-link:hover::before,
+  html body .concept-page.launch-page section.campaign-scene .campaign-shop-link:focus-visible::before {
+    transform: translateX(140%) skewX(-18deg) !important;
   }
 }
