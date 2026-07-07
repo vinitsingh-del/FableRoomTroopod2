@@ -9813,22 +9813,25 @@ body,
 
 /* Match Explore heading to the SHOP THE COLLECTION EDIT editorial treatment. */
 .concept-page.launch-page .concept-products .concept-head h2 {
+  display: inline-block !important;
+  width: auto !important;
   max-width: none !important;
-  font-family: var(--font-serif) !important;
-  font-size: clamp(20px, 1.5vw, 30px) !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.16em !important;
-  line-height: 1.28 !important;
+  font-family: var(--font-sans) !important;
+  font-size: clamp(12px, 0.86vw, 15px) !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.22em !important;
+  line-height: 1.2 !important;
   text-transform: uppercase !important;
-  word-spacing: 0.22em !important;
+  word-spacing: 0.08em !important;
+  color: var(--launch-burgundy) !important;
 }
 
 @media (max-width: 760px) {
   .concept-page.launch-page .concept-products .concept-head h2 {
-    font-size: clamp(17px, 4.8vw, 23px) !important;
-    letter-spacing: 0.12em !important;
-    line-height: 1.35 !important;
-    word-spacing: 0.12em !important;
+    font-size: clamp(12px, 3.2vw, 14px) !important;
+    letter-spacing: 0.18em !important;
+    line-height: 1.25 !important;
+    word-spacing: 0.06em !important;
   }
 }
 
