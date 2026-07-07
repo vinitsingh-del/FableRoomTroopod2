@@ -1,4 +1,38 @@
-const A = (name) => `./assets/${name}`;
+const optimizedAssets = {
+  "ai-tableware-hero-v2.png": "optimized/ai-tableware-hero-v2.webp",
+  "ai-tableware-about-v2.png": "optimized/ai-tableware-about-v2.webp",
+  "ai-cook-layer-symmetric.png": "optimized/ai-cook-layer-symmetric.webp",
+  "ai-serve-layer-symmetric.png": "optimized/ai-serve-layer-symmetric.webp",
+  "ai-linen-layer-symmetric.png": "optimized/ai-linen-layer-symmetric.webp",
+  "ai-circle-serveware-20260706.png": "optimized/ai-circle-serveware-20260706.webp",
+  "ai-circle-cookware-20260706.png": "optimized/ai-circle-cookware-20260706.webp",
+  "ai-circle-table-linen-20260706.png": "optimized/ai-circle-table-linen-20260706.webp",
+  "launch-highlight-lifestyle.png": "optimized/launch-highlight-lifestyle.webp",
+  "lifestyle-white-sparkle-plates.png": "optimized/lifestyle-white-sparkle-plates.webp",
+  "lifestyle-zoraida-bowl.png": "optimized/lifestyle-zoraida-bowl.webp",
+  "lifestyle-rainbow-cup-saucer.png": "optimized/lifestyle-rainbow-cup-saucer.webp",
+  "hero-tableware-slide-2.png": "optimized/hero-tableware-slide-2.webp",
+  "hero-real-table.png": "optimized/hero-real-table.webp",
+  "p-white-dinner.jpg": "optimized/p-white-dinner.webp",
+  "p-zoraida-bowl.jpg": "optimized/p-zoraida-bowl.webp",
+  "p-rainbow-cup.jpg": "optimized/p-rainbow-cup.webp",
+  "p-grey-teapot.jpg": "optimized/p-grey-teapot.webp",
+  "p-renata-dinner.jpg": "optimized/p-renata-dinner.webp",
+  "p-white-side.jpg": "optimized/p-white-side.webp",
+  "cookware-pan.jpg": "optimized/cookware-pan.webp",
+  "cookware-sauce.jpg": "optimized/cookware-sauce.webp",
+  "cookware-dutch.jpg": "optimized/cookware-dutch.webp",
+  "linen-pritha-runner.png": "optimized/linen-pritha-runner.webp",
+  "linen-arabella.png": "optimized/linen-arabella.webp",
+  "linen-hallie.png": "optimized/linen-hallie.webp",
+  "linen-rivello.png": "optimized/linen-rivello.webp",
+  "press-housebeautiful-2026.png": "optimized/press-housebeautiful-2026.webp",
+  "press-daily-mail-2026.png": "optimized/press-daily-mail-2026.webp",
+  "press-ideal-home-2026.png": "optimized/press-ideal-home-2026.webp",
+  "press-house-garden-2025.png": "optimized/press-house-garden-2025.webp",
+};
+
+const A = (name) => `./assets/${optimizedAssets[name] || name}`;
 
 const routes = ["merch", "all", "serveware", "cookware", "table-linen"];
 
@@ -444,6 +478,7 @@ function render() {
   initParallax();
   initVengeanceEffects();
   initCategoryExplorer();
+  initFastMediaLoading();
   updateScrollProgress();
   window.scrollTo({ top: 0, behavior: "auto" });
   updateScrollProgress();
@@ -478,7 +513,7 @@ function renderMerch() {
         </div>
         <div class="launch-layer-grid" aria-label="Cook Serve Layer editorial collection">
           <article class="launch-layer-card launch-layer-video reveal-item">
-            <video src="${A("ritual-edit-video-v2.mp4")}" poster="${A("ai-tableware-about-v2.png")}" autoplay muted loop playsinline preload="metadata"></video>
+            <video data-lazy-video src="${A("ritual-edit-video-v2.mp4")}" poster="${A("ai-tableware-about-v2.png")}" muted loop playsinline preload="none"></video>
             <div>
               <strong>Cook. Serve. Layer.</strong>
               <a href="#/all">Shop the collection</a>
@@ -539,6 +574,14 @@ function renderMerch() {
       </section>
 
       <section class="launch-scene campaign-scene reveal-block">
+        <div class="campaign-scene-head reveal-block">
+          <span>Summer Sale · Extra 10% Off</span>
+          <h2 class="motion-text">Good rooms start with great pieces.</h2>
+          <p>Explore tableware, cookware and linen with Fableroom's current savings story: thoughtful pieces, fair pricing and a complete home-table edit.</p>
+          <div class="launch-proof-list" aria-label="Tableware and kitchen highlights">
+            ${ritualProofItems.map(renderProofItem).join("")}
+          </div>
+        </div>
         <figure class="offer-product-carousel" aria-label="Summer sale product catalogue">
           <div class="offer-product-track">
             <article class="offer-product-card">
@@ -565,40 +608,16 @@ function renderMerch() {
                 <small>Limited offer</small>
               </div>
             </article>
-            <article class="offer-product-card" aria-hidden="true">
-              <div class="offer-product-image"><img src="${A("p-white-dinner.jpg")}" alt="" loading="lazy" /></div>
+            <article class="offer-product-card">
+              <div class="offer-product-image"><img src="${A("p-grey-teapot.jpg")}" alt="Matt Grey Sky Tea Pot and Creamer" loading="lazy" /></div>
               <div class="offer-product-copy">
-                <span>Extra 10% off</span>
-                <strong>White Sparkle Dinner Plates</strong>
-                <small>Use code EXTRA10</small>
-              </div>
-            </article>
-            <article class="offer-product-card" aria-hidden="true">
-              <div class="offer-product-image"><img src="${A("p-zoraida-bowl.jpg")}" alt="" loading="lazy" /></div>
-              <div class="offer-product-copy">
-                <span>Ready to host</span>
-                <strong>Zoraida Serving Bowl</strong>
-                <small>Summer sale edit</small>
-              </div>
-            </article>
-            <article class="offer-product-card" aria-hidden="true">
-              <div class="offer-product-image"><img src="${A("p-rainbow-cup.jpg")}" alt="" loading="lazy" /></div>
-              <div class="offer-product-copy">
-                <span>£75 off £749+</span>
-                <strong>Rainbow Gold Cup & Saucer</strong>
-                <small>Limited offer</small>
+                <span>Summer savings</span>
+                <strong>Matt Grey Sky Tea Pot & Creamer</strong>
+                <small>Hosting favourite</small>
               </div>
             </article>
           </div>
         </figure>
-        <div class="reveal-block">
-          <span>Summer Sale · Extra 10% Off</span>
-          <h2 class="motion-text">Good rooms start with great pieces.</h2>
-          <p>Explore tableware, cookware and linen with Fableroom's current savings story: thoughtful pieces, fair pricing and a complete home-table edit.</p>
-          <div class="launch-proof-list" aria-label="Tableware and kitchen highlights">
-            ${ritualProofItems.map(renderProofItem).join("")}
-          </div>
-        </div>
       </section>
 
       <section class="launch-highlight shop-look reveal-block" aria-label="Shop the look">
@@ -1102,12 +1121,42 @@ function initPreloader() {
   if (preloaderReady) return;
   preloaderReady = true;
   const complete = () => document.body.classList.add("is-loaded");
-  if (document.readyState === "complete") {
-    window.setTimeout(complete, 420);
+  if (document.readyState !== "loading") {
+    window.setTimeout(complete, 120);
   } else {
-    window.addEventListener("load", () => window.setTimeout(complete, 420), { once: true });
+    document.addEventListener("DOMContentLoaded", () => window.setTimeout(complete, 120), { once: true });
   }
-  window.setTimeout(complete, 1800);
+  window.setTimeout(complete, 700);
+}
+
+function initFastMediaLoading() {
+  document.querySelectorAll("img").forEach((img) => {
+    const isCritical = Boolean(img.closest(".concept-hero-media, .logo, .preloader-mark"));
+    img.decoding = "async";
+    img.loading = isCritical ? "eager" : "lazy";
+    img.fetchPriority = isCritical ? "high" : "low";
+  });
+
+  const videos = document.querySelectorAll("video[data-lazy-video]");
+  if (!videos.length) return;
+
+  if (!("IntersectionObserver" in window)) {
+    videos.forEach((video) => video.play().catch(() => {}));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const video = entry.target;
+      if (entry.isIntersecting) {
+        video.play().catch(() => {});
+        return;
+      }
+      video.pause();
+    });
+  }, { rootMargin: "180px 0px", threshold: 0.12 });
+
+  videos.forEach((video) => observer.observe(video));
 }
 
 function initSpotlight() {
