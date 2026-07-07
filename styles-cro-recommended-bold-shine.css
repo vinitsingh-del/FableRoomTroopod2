@@ -11899,6 +11899,332 @@ body.sticky-cta-visible .concept-page.launch-page .mobile-sticky-cta {
   }
 }
 
+/* Absolute final 4K QA lock. Keep the three requested sections symmetric and products uncropped. */
+@media (min-width: 1024px) {
+  html body .concept-page.launch-page {
+    --qa-4k-section: min(1600px, calc(100vw - clamp(96px, 28vw, 980px)));
+    --qa-4k-pad: clamp(28px, 2.25vw, 54px);
+  }
+
+  html body .concept-page.launch-page .launch-products,
+  html body .concept-page.launch-page section.campaign-scene,
+  html body .concept-page.launch-page section.launch-highlight.shop-look {
+    box-sizing: border-box !important;
+    width: var(--qa-4k-section) !important;
+    max-width: var(--qa-4k-section) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: var(--qa-4k-pad) !important;
+    padding-right: var(--qa-4k-pad) !important;
+  }
+
+  html body .concept-page.launch-page .launch-products .launch-section-head,
+  html body .concept-page.launch-page section.campaign-scene .campaign-scene-head,
+  html body .concept-page.launch-page section.launch-highlight.shop-look .launch-highlight-copy {
+    width: 100% !important;
+    max-width: 680px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    justify-items: start !important;
+    text-align: left !important;
+  }
+
+  html body .concept-page.launch-page .launch-products .launch-section-head.split {
+    grid-template-columns: minmax(0, 680px) auto !important;
+    gap: clamp(24px, 3vw, 52px) !important;
+  }
+
+  html body .concept-page.launch-page section.campaign-scene .campaign-scene-head {
+    grid-template-columns: minmax(0, 680px) auto !important;
+    grid-template-areas:
+      "kicker cta"
+      "title cta"
+      "copy cta" !important;
+    align-items: center !important;
+  }
+
+  html body .concept-page.launch-page section.launch-highlight.shop-look {
+    grid-template-columns: minmax(390px, 0.88fr) minmax(520px, 1.12fr) !important;
+    gap: clamp(42px, 4vw, 76px) !important;
+  }
+
+  html body .concept-page.launch-page section.launch-highlight.shop-look .launch-highlight-copy {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    align-self: center !important;
+    padding: 0 !important;
+  }
+
+  html body .concept-page.launch-page section.launch-highlight.shop-look figure {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    width: 100% !important;
+    min-height: clamp(330px, 25vw, 470px) !important;
+    margin: 0 !important;
+  }
+
+  html body .concept-page.launch-page .launch-products .launch-section-head > div > span,
+  html body .concept-page.launch-page section.campaign-scene .campaign-scene-head > span,
+  html body .concept-page.launch-page section.launch-highlight.shop-look .launch-highlight-copy > span {
+    margin: 0 0 10px !important;
+    font-family: var(--font-sans) !important;
+    font-size: clamp(11px, 0.78vw, 14px) !important;
+    font-weight: 1000 !important;
+    letter-spacing: 0.22em !important;
+    line-height: 1.2 !important;
+    text-align: left !important;
+    text-transform: uppercase !important;
+  }
+
+  html body .concept-page.launch-page .launch-products #launch-products-title.motion-text,
+  html body .concept-page.launch-page section.campaign-scene .campaign-scene-head h2,
+  html body .concept-page.launch-page section.launch-highlight.shop-look .shop-look-title {
+    width: min(100%, 9.4em) !important;
+    max-width: 9.4em !important;
+    margin: 0 !important;
+    font-family: var(--font-serif) !important;
+    font-size: clamp(34px, 3.32vw, 48px) !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+    line-height: 0.96 !important;
+    text-align: left !important;
+    text-transform: none !important;
+  }
+
+  html body .concept-page.launch-page section.campaign-scene .campaign-scene-head p,
+  html body .concept-page.launch-page section.launch-highlight.shop-look .launch-highlight-copy p {
+    max-width: 680px !important;
+    margin: 0 !important;
+    font-family: var(--font-sans) !important;
+    font-size: clamp(13px, 0.94vw, 15px) !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+    line-height: 1.55 !important;
+    text-align: left !important;
+  }
+}
+
+@media (min-width: 2200px) {
+  html body .concept-page.launch-page {
+    --qa-4k-section: 1600px;
+    --qa-4k-pad: 54px;
+  }
+}
+
+html body .concept-page.launch-page .launch-product-carousel .launch-product-card figure,
+html body .concept-page.launch-page .offer-product-image {
+  aspect-ratio: 3 / 4 !important;
+  background: #fff !important;
+  padding: clamp(10px, 1vw, 18px) !important;
+  display: grid !important;
+  place-items: center !important;
+}
+
+html body .concept-page.launch-page .product-thumb-frame,
+html body .concept-page.launch-page .offer-product-image .product-thumb-frame {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  aspect-ratio: auto !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html body .concept-page.launch-page .launch-product-carousel .launch-product-card figure img,
+html body .concept-page.launch-page .offer-product-image img,
+html body .concept-page.launch-page .product-thumb-frame img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  padding: 0 !important;
+}
+
+/* Desktop/4K alignment lock: Collection Edit, Summer Sale, and Shop The Look share one left edge and title system. */
+@media (min-width: 1024px) {
+  html body .concept-page.launch-page {
+    --aligned-desktop-section: min(1600px, calc(100vw - clamp(96px, 28vw, 980px)));
+    --aligned-desktop-pad: clamp(28px, 2.25vw, 48px);
+  }
+
+  html body .concept-page.launch-page .launch-products,
+  html body .concept-page.launch-page section.campaign-scene,
+  html body .concept-page.launch-page section.launch-highlight.shop-look {
+    box-sizing: border-box !important;
+    width: var(--aligned-desktop-section) !important;
+    max-width: var(--aligned-desktop-section) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: var(--aligned-desktop-pad) !important;
+    padding-right: var(--aligned-desktop-pad) !important;
+  }
+
+  html body .concept-page.launch-page .launch-products {
+    padding-top: clamp(34px, 3vw, 54px) !important;
+    padding-bottom: clamp(34px, 3vw, 54px) !important;
+  }
+
+  html body .concept-page.launch-page section.campaign-scene {
+    margin-top: clamp(22px, 2vw, 34px) !important;
+    margin-bottom: clamp(32px, 3vw, 54px) !important;
+    padding-top: clamp(32px, 2.9vw, 52px) !important;
+    padding-bottom: clamp(32px, 2.9vw, 52px) !important;
+  }
+
+  html body .concept-page.launch-page section.launch-highlight.shop-look {
+    grid-template-columns: minmax(390px, 0.88fr) minmax(520px, 1.12fr) !important;
+    gap: clamp(42px, 4vw, 76px) !important;
+    margin-top: clamp(34px, 3.4vw, 62px) !important;
+    margin-bottom: clamp(34px, 3.4vw, 62px) !important;
+    padding-top: clamp(34px, 3.2vw, 58px) !important;
+    padding-bottom: clamp(34px, 3.2vw, 58px) !important;
+  }
+
+  html body .concept-page.launch-page section.launch-highlight.shop-look .launch-highlight-copy {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    width: 100% !important;
+    max-width: 640px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    justify-self: start !important;
+    align-self: center !important;
+  }
+
+  html body .concept-page.launch-page section.launch-highlight.shop-look figure {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    width: 100% !important;
+    min-height: clamp(330px, 25vw, 470px) !important;
+    margin: 0 !important;
+    justify-self: stretch !important;
+  }
+
+  html body .concept-page.launch-page .launch-products .launch-section-head,
+  html body .concept-page.launch-page section.campaign-scene .campaign-scene-head,
+  html body .concept-page.launch-page section.launch-highlight.shop-look .launch-highlight-copy {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+    justify-items: start !important;
+  }
+
+  html body .concept-page.launch-page .launch-products .launch-section-head.split {
+    grid-template-columns: minmax(0, 680px) auto !important;
+    align-items: end !important;
+    gap: clamp(24px, 3vw, 52px) !important;
+  }
+
+  html body .concept-page.launch-page section.campaign-scene .campaign-scene-head {
+    grid-template-columns: minmax(0, 680px) auto !important;
+    grid-template-areas:
+      "kicker cta"
+      "title cta"
+      "copy cta" !important;
+    align-items: center !important;
+    gap: 12px clamp(24px, 3vw, 52px) !important;
+    padding: 0 !important;
+  }
+
+  html body .concept-page.launch-page .launch-products .launch-section-head > div,
+  html body .concept-page.launch-page section.campaign-scene .campaign-scene-head,
+  html body .concept-page.launch-page section.launch-highlight.shop-look .launch-highlight-copy {
+    max-width: 680px !important;
+  }
+
+  html body .concept-page.launch-page .launch-products .launch-section-head > div > span,
+  html body .concept-page.launch-page section.campaign-scene .campaign-scene-head > span,
+  html body .concept-page.launch-page section.launch-highlight.shop-look .launch-highlight-copy > span {
+    margin: 0 0 10px !important;
+    color: var(--launch-burgundy) !important;
+    font-family: var(--font-sans) !important;
+    font-size: clamp(11px, 0.78vw, 14px) !important;
+    font-weight: 1000 !important;
+    letter-spacing: 0.22em !important;
+    line-height: 1.2 !important;
+    text-align: left !important;
+    text-transform: uppercase !important;
+  }
+
+  html body .concept-page.launch-page .launch-products #launch-products-title.motion-text,
+  html body .concept-page.launch-page section.campaign-scene .campaign-scene-head h2,
+  html body .concept-page.launch-page section.launch-highlight.shop-look .shop-look-title {
+    width: min(100%, 9.4em) !important;
+    max-width: 9.4em !important;
+    margin: 0 !important;
+    color: var(--launch-ink) !important;
+    font-family: var(--font-serif) !important;
+    font-size: clamp(34px, 3.32vw, 48px) !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+    line-height: 0.96 !important;
+    text-align: left !important;
+    text-transform: none !important;
+  }
+
+  html body .concept-page.launch-page section.campaign-scene .campaign-scene-head p,
+  html body .concept-page.launch-page section.launch-highlight.shop-look .launch-highlight-copy p {
+    width: min(100%, 680px) !important;
+    max-width: 680px !important;
+    margin: 0 !important;
+    color: var(--launch-muted) !important;
+    font-family: var(--font-sans) !important;
+    font-size: clamp(13px, 0.94vw, 15px) !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+    line-height: 1.55 !important;
+    text-align: left !important;
+  }
+
+  html body .concept-page.launch-page section.campaign-scene .campaign-shop-link {
+    justify-self: end !important;
+    align-self: center !important;
+  }
+}
+
+@media (min-width: 2200px) {
+  html body .concept-page.launch-page {
+    --aligned-desktop-section: 1600px;
+    --aligned-desktop-pad: 54px;
+  }
+}
+
+/* Last product fit lock: 3:4 media, full product visible, no grey thumbnail panel. */
+html body .concept-page.launch-page .launch-product-carousel .launch-product-card figure,
+html body .concept-page.launch-page .offer-product-image {
+  aspect-ratio: 3 / 4 !important;
+  background: #fff !important;
+  padding: clamp(10px, 1vw, 18px) !important;
+  display: grid !important;
+  place-items: center !important;
+}
+
+html body .concept-page.launch-page .product-thumb-frame,
+html body .concept-page.launch-page .offer-product-image .product-thumb-frame {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  aspect-ratio: auto !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html body .concept-page.launch-page .launch-product-carousel .launch-product-card figure img,
+html body .concept-page.launch-page .offer-product-image img,
+html body .concept-page.launch-page .product-thumb-frame img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  padding: 0 !important;
+}
+
 /* EOF request lock: final section scale and non-cropped 3:4 products. */
 html body .concept-page.launch-page .launch-products #launch-products-title.motion-text,
 html body .concept-page.launch-page section.campaign-scene .campaign-scene-head h2.motion-text {
