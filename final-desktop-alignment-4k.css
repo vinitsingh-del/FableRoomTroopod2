@@ -857,6 +857,20 @@ html body .concept-page.launch-page section.campaign-scene .offer-product-track 
   box-shadow: none !important;
 }
 
+html body .concept-page.launch-page section.campaign-scene,
+html body .concept-page.launch-page .campaign-scene,
+html body .concept-page.launch-page section.campaign-scene.launch-scene {
+  background: #fff !important;
+  background-image: none !important;
+}
+
+html body .concept-page.launch-page section.campaign-scene .campaign-scene-head,
+html body .concept-page.launch-page section.campaign-scene .offer-product-carousel,
+html body .concept-page.launch-page section.campaign-scene .offer-product-track {
+  background: transparent !important;
+  background-image: none !important;
+}
+
 html body .concept-page.launch-page section.campaign-scene::before,
 html body .concept-page.launch-page section.campaign-scene::after,
 html body .concept-page.launch-page .campaign-scene::before,
