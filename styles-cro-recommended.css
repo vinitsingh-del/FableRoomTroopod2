@@ -10294,3 +10294,187 @@ body.sticky-cta-visible .concept-page.launch-page .mobile-sticky-cta {
     max-height: 132px !important;
   }
 }
+
+/* Offer-led product carousel: actual product cards, not lifestyle panels. */
+.concept-page.launch-page .campaign-scene .offer-product-carousel {
+  position: relative;
+  display: block;
+  min-height: 0 !important;
+  aspect-ratio: 3 / 2;
+  margin: 0;
+  overflow: hidden;
+  border: 0;
+  background:
+    linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0) 12%, rgba(255, 255, 255, 0) 88%, #fff 100%),
+    #fff;
+}
+
+.concept-page.launch-page .offer-product-track {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 1.25vw, 22px);
+  width: max-content;
+  padding: clamp(18px, 2vw, 32px) clamp(34px, 3vw, 48px);
+  animation: offerProductCarousel 32s linear infinite;
+  will-change: transform;
+}
+
+.concept-page.launch-page .offer-product-carousel:hover .offer-product-track {
+  animation-play-state: paused;
+}
+
+.concept-page.launch-page .offer-product-card {
+  flex: 0 0 clamp(172px, 12.3vw, 196px);
+  aspect-ratio: 3 / 4;
+  display: grid;
+  grid-template-rows: 58% 42%;
+  overflow: hidden;
+  border: 1px solid var(--launch-line);
+  background: #fff;
+  box-shadow: 0 20px 44px rgba(16, 16, 16, 0.06);
+}
+
+.concept-page.launch-page .offer-product-image {
+  display: grid;
+  place-items: center;
+  min-height: 0;
+  padding: clamp(14px, 1vw, 18px);
+  border-bottom: 1px solid var(--launch-line);
+  background: linear-gradient(180deg, #fff 0%, #fbfbfb 100%);
+}
+
+.concept-page.launch-page .offer-product-image img {
+  width: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-width: 86% !important;
+  max-height: clamp(118px, 8.2vw, 146px) !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  filter: drop-shadow(0 10px 16px rgba(16, 16, 16, 0.08));
+}
+
+.concept-page.launch-page .offer-product-copy {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(2.3em, auto) auto;
+  align-content: start;
+  gap: 7px;
+  padding: clamp(13px, 0.95vw, 17px);
+  overflow: hidden;
+}
+
+.concept-page.launch-page .offer-product-copy span {
+  width: max-content;
+  max-width: 100%;
+  display: inline-flex;
+  min-height: 22px;
+  align-items: center;
+  padding: 0 9px;
+  border: 1px solid rgba(68, 24, 29, 0.22);
+  border-radius: 999px;
+  color: var(--launch-burgundy);
+  font-family: var(--font-sans);
+  font-size: 8px;
+  font-weight: 1000;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.concept-page.launch-page .offer-product-copy strong {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: var(--launch-ink);
+  font-family: var(--font-sans);
+  font-size: clamp(12px, 0.88vw, 15px);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.16;
+}
+
+.concept-page.launch-page .offer-product-copy small {
+  overflow: hidden;
+  color: var(--launch-muted);
+  font-family: var(--font-sans);
+  font-size: clamp(10px, 0.72vw, 12px);
+  font-weight: 800;
+  line-height: 1.1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.concept-page.launch-page .campaign-scene > div {
+  justify-items: start !important;
+  text-align: left !important;
+}
+
+.concept-page.launch-page .campaign-scene > div > span {
+  margin: 0 !important;
+  color: var(--launch-burgundy) !important;
+  font-family: var(--font-sans) !important;
+  font-size: clamp(13px, 0.94vw, 17px) !important;
+  font-weight: 1000 !important;
+  letter-spacing: 0.22em !important;
+  line-height: 1.2 !important;
+  text-transform: uppercase !important;
+}
+
+.concept-page.launch-page .campaign-scene h2 {
+  margin: 0 !important;
+  max-width: 9.5em !important;
+  line-height: 0.98 !important;
+}
+
+@keyframes offerProductCarousel {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - clamp(7px, 0.625vw, 11px)));
+  }
+}
+
+@media (max-width: 760px) {
+  .concept-page.launch-page .campaign-scene .offer-product-carousel {
+    aspect-ratio: 4 / 3;
+  }
+
+  .concept-page.launch-page .offer-product-track {
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .concept-page.launch-page .offer-product-card {
+    flex-basis: 168px;
+    grid-template-rows: 62% 38%;
+  }
+
+  .concept-page.launch-page .offer-product-image img {
+    max-height: 112px !important;
+  }
+
+  .concept-page.launch-page .offer-product-copy {
+    gap: 5px;
+    padding: 10px 11px;
+  }
+
+  .concept-page.launch-page .offer-product-copy span {
+    min-height: 20px;
+    padding: 0 8px;
+    font-size: 7px;
+  }
+
+  .concept-page.launch-page .offer-product-copy strong {
+    font-size: 11px;
+    line-height: 1.12;
+  }
+
+  .concept-page.launch-page .offer-product-copy small {
+    display: none;
+  }
+}
