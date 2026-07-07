@@ -10296,6 +10296,54 @@ body.sticky-cta-visible .concept-page.launch-page .mobile-sticky-cta {
   }
 }
 
+/* Neaten first editorial heading: no bleed, calmer scale, cleaner gap to imagery. */
+.concept-page.launch-page .launch-layers {
+  overflow: hidden !important;
+}
+
+.concept-page.launch-page .launch-ritual-panel {
+  padding-top: clamp(18px, 2.2vw, 30px) !important;
+}
+
+.concept-page.launch-page .launch-ritual-panel .launch-section-head {
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-bottom: clamp(16px, 1.5vw, 24px) !important;
+}
+
+.concept-page.launch-page .launch-ritual-panel .launch-section-head > div {
+  width: min(680px, 100%) !important;
+  margin-left: 0 !important;
+}
+
+.concept-page.launch-page #launch-layer-title {
+  max-width: 11em !important;
+  font-size: clamp(36px, 3.4vw, 62px) !important;
+  line-height: 0.98 !important;
+  letter-spacing: 0 !important;
+}
+
+.concept-page.launch-page .launch-layer-grid {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 760px) {
+  .concept-page.launch-page .launch-ritual-panel {
+    padding-top: 16px !important;
+  }
+
+  .concept-page.launch-page .launch-ritual-panel .launch-section-head {
+    margin-left: 0 !important;
+    width: 100% !important;
+    margin-bottom: 14px !important;
+  }
+
+  .concept-page.launch-page #launch-layer-title {
+    font-size: clamp(30px, 8.2vw, 38px) !important;
+    line-height: 1.02 !important;
+  }
+}
+
 /* Offer-led product carousel: actual product cards, not lifestyle panels. */
 .concept-page.launch-page .campaign-scene .offer-product-carousel {
   position: relative;
