@@ -11797,3 +11797,56 @@ body.sticky-cta-visible .concept-page.launch-page .mobile-sticky-cta {
   justify-items: start !important;
   text-align: left !important;
 }
+
+/* Final neat card lock: full cards and image thumbnails both stay exact 3:4. */
+.concept-page.launch-page .launch-product-carousel {
+  grid-auto-columns: clamp(260px, 21.5vw, 318px) !important;
+  align-items: start !important;
+}
+
+.concept-page.launch-page .launch-product-carousel .launch-product-card,
+.concept-page.launch-page .offer-product-card {
+  aspect-ratio: 3 / 4 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  display: grid !important;
+  overflow: hidden !important;
+}
+
+.concept-page.launch-page .launch-product-carousel .launch-product-card {
+  grid-template-rows: 55% 45% !important;
+}
+
+.concept-page.launch-page .offer-product-card {
+  flex-basis: clamp(318px, 30vw, 414px) !important;
+  grid-template-rows: 58% 42% !important;
+}
+
+.concept-page.launch-page .launch-product-carousel .launch-product-card figure,
+.concept-page.launch-page .offer-product-image {
+  min-height: 0 !important;
+  height: 100% !important;
+  padding: clamp(18px, 1.6vw, 28px) !important;
+}
+
+.concept-page.launch-page .launch-product-carousel .launch-product-card > div,
+.concept-page.launch-page .offer-product-copy {
+  min-height: 0 !important;
+  height: 100% !important;
+  align-content: start !important;
+  overflow: hidden !important;
+}
+
+.concept-page.launch-page .product-thumb-frame {
+  aspect-ratio: 3 / 4 !important;
+}
+
+@media (max-width: 760px) {
+  .concept-page.launch-page .launch-product-carousel {
+    grid-auto-columns: minmax(240px, 72vw) !important;
+  }
+
+  .concept-page.launch-page .offer-product-card {
+    flex-basis: min(74vw, 260px) !important;
+  }
+}
