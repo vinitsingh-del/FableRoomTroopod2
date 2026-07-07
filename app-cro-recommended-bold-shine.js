@@ -576,8 +576,9 @@ function renderMerch() {
       <section class="launch-scene campaign-scene reveal-block">
         <div class="campaign-scene-head reveal-block">
           <span>Summer Sale · Extra 10% Off</span>
-          <h2 class="motion-text">Good rooms start with great pieces.</h2>
-          <p>Explore tableware, cookware and linen with Fableroom's current savings story: thoughtful pieces, fair pricing and a complete home-table edit.</p>
+          <h2 class="motion-text">Great pieces. Better rooms.</h2>
+          <p>Shop tableware, cookware and linen with thoughtful savings across the full home-table edit.</p>
+          <a class="campaign-shop-link" href="#/all">Shop the savings</a>
           <div class="launch-proof-list" aria-label="Tableware and kitchen highlights">
             ${ritualProofItems.map(renderProofItem).join("")}
           </div>

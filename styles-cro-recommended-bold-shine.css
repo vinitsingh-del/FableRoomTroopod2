@@ -11159,6 +11159,55 @@ body.sticky-cta-visible .concept-page.launch-page .mobile-sticky-cta {
   margin-right: auto !important;
 }
 
+.concept-page.launch-page .campaign-shop-link {
+  position: relative;
+  width: max-content;
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 2px 0 4px !important;
+  padding: 0 18px 0 20px;
+  border: 1px solid rgba(68, 24, 29, 0.24);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--launch-burgundy) !important;
+  box-shadow: 0 10px 22px rgba(68, 24, 29, 0.08);
+  font-family: var(--font-sans);
+  font-size: clamp(10px, 0.74vw, 12px);
+  font-weight: 1000;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+.concept-page.launch-page .campaign-shop-link::after {
+  content: "→";
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: var(--launch-burgundy);
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 0;
+}
+
+.concept-page.launch-page .campaign-shop-link:hover,
+.concept-page.launch-page .campaign-shop-link:focus-visible {
+  background: var(--launch-burgundy);
+  color: #fff !important;
+  transform: translateY(-1px);
+}
+
+.concept-page.launch-page .campaign-shop-link:hover::after,
+.concept-page.launch-page .campaign-shop-link:focus-visible::after {
+  background: #fff;
+  color: var(--launch-burgundy);
+}
+
 @media (min-width: 1024px) {
   .concept-page.launch-page .launch-ritual-panel .launch-section-head {
     margin-left: calc(-1 * clamp(22px, 2.1vw, 40px)) !important;
