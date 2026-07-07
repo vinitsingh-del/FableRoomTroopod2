@@ -437,6 +437,92 @@ html body .announcement-track span:nth-child(3n)::before {
   100% { transform: skewX(-18deg) translateX(360%); }
 }
 
+/* Shop-the-look markers: keep dot size fixed, add burgundy cinematic LED blink. */
+html body .concept-page.launch-page .shop-look-dot {
+  width: 13px !important;
+  min-width: 13px !important;
+  height: 13px !important;
+  min-height: 13px !important;
+  padding: 0 !important;
+  border: 2px solid rgba(255, 255, 255, 0.92) !important;
+  border-radius: 50% !important;
+  background: #44181d !important;
+  box-shadow:
+    0 0 0 5px rgba(68, 24, 29, 0.16),
+    0 0 14px rgba(68, 24, 29, 0.72),
+    0 0 28px rgba(68, 24, 29, 0.36) !important;
+  transform: translate(-6px, -6px) !important;
+  animation: qaShopLookLedCore 1.18s ease-in-out infinite !important;
+}
+
+html body .concept-page.launch-page .shop-look-dot::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: -8px !important;
+  display: block !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, rgba(68, 24, 29, 0.34) 0%, rgba(68, 24, 29, 0.18) 42%, rgba(68, 24, 29, 0) 72%) !important;
+  box-shadow: 0 0 22px rgba(68, 24, 29, 0.36) !important;
+  animation: qaShopLookLedAura 1.18s ease-in-out infinite !important;
+  pointer-events: none !important;
+}
+
+html body .concept-page.launch-page .shop-look-dot::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 2px !important;
+  display: block !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle at 35% 28%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.18) 24%, rgba(68, 24, 29, 0) 54%) !important;
+  opacity: 0.82 !important;
+  animation: qaShopLookLedGlint 1.18s ease-in-out infinite !important;
+  pointer-events: none !important;
+}
+
+html body .concept-page.launch-page .shop-look-dot:hover,
+html body .concept-page.launch-page .shop-look-dot:focus-visible,
+html body .concept-page.launch-page .shop-look-dot:active {
+  width: 13px !important;
+  min-width: 13px !important;
+  height: 13px !important;
+  min-height: 13px !important;
+  transform: translate(-6px, -6px) scale(1.08) !important;
+  background: #44181d !important;
+}
+
+@keyframes qaShopLookLedCore {
+  0%, 100% {
+    filter: brightness(0.9);
+    box-shadow:
+      0 0 0 5px rgba(68, 24, 29, 0.12),
+      0 0 10px rgba(68, 24, 29, 0.52),
+      0 0 18px rgba(68, 24, 29, 0.24);
+  }
+  48% {
+    filter: brightness(1.38);
+    box-shadow:
+      0 0 0 5px rgba(68, 24, 29, 0.24),
+      0 0 18px rgba(68, 24, 29, 0.92),
+      0 0 36px rgba(68, 24, 29, 0.54);
+  }
+}
+
+@keyframes qaShopLookLedAura {
+  0%, 100% {
+    opacity: 0.38;
+    transform: scale(0.82);
+  }
+  48% {
+    opacity: 1;
+    transform: scale(1.62);
+  }
+}
+
+@keyframes qaShopLookLedGlint {
+  0%, 100% { opacity: 0.45; }
+  48% { opacity: 0.95; }
+}
+
 /* True EOF top alignment lock: category pills and first collection block stay centered and symmetric. */
 @media (min-width: 1024px) {
   html body article.concept-page.launch-page {

@@ -203,32 +203,32 @@ const brandBenefits = [
 
 const shopLookItems = [
   {
-    label: "Dinner plates",
-    title: "Renata Dinner Plates",
+    label: "Renata Dinner Plates",
+    title: "Renata Dinner Plates (Set of 6)",
     href: "#/serveware",
-    x: 31,
-    y: 66,
+    x: 53,
+    y: 76,
   },
   {
-    label: "Serving bowl",
-    title: "Zoraida Serving Bowl",
+    label: "Zoraida Serving Bowl",
+    title: "Zoraida Serving Bowl (Set of 2)",
     href: "#/serveware",
-    x: 52,
-    y: 47,
+    x: 38,
+    y: 55,
   },
   {
-    label: "Table runner",
-    title: "Pritha Table Runner",
+    label: "Pritha Table Runner",
+    title: "Pritha Digital Print Table Runner",
     href: "#/table-linen",
-    x: 67,
-    y: 67,
+    x: 74,
+    y: 60,
   },
   {
-    label: "Tea set",
-    title: "Rainbow Gold Tea Pieces",
+    label: "Rainbow Gold Tea Set",
+    title: "Rainbow Gold Cup & Saucer",
     href: "#/serveware",
-    x: 42,
-    y: 56,
+    x: 27,
+    y: 66,
   },
 ];
 
