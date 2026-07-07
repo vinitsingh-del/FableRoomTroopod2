@@ -11765,3 +11765,35 @@ body.sticky-cta-visible .concept-page.launch-page .mobile-sticky-cta {
     font-size: 14px !important;
   }
 }
+
+/* Match these section titles to the bold caps collection-kicker treatment. */
+.concept-page.launch-page #concept-products-title,
+.concept-page.launch-page #collection-new-title,
+.concept-page.launch-page #launch-featured-title {
+  width: auto !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  color: var(--launch-burgundy) !important;
+  font-family: var(--font-sans) !important;
+  font-size: clamp(13px, 0.94vw, 17px) !important;
+  font-weight: 1000 !important;
+  letter-spacing: 0.22em !important;
+  line-height: 1.2 !important;
+  text-align: left !important;
+  text-transform: uppercase !important;
+}
+
+.concept-page.launch-page #concept-products-title span,
+.concept-page.launch-page #collection-new-title span,
+.concept-page.launch-page #launch-featured-title span {
+  font: inherit !important;
+  color: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
+}
+
+.concept-page.launch-page .concept-products .concept-head,
+.concept-page.launch-page .launch-featured-head {
+  justify-items: start !important;
+  text-align: left !important;
+}
