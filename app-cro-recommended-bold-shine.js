@@ -11,6 +11,7 @@ const optimizedAssets = {
   "lifestyle-white-sparkle-plates.png": "optimized/lifestyle-white-sparkle-plates.webp",
   "lifestyle-zoraida-bowl.png": "optimized/lifestyle-zoraida-bowl.webp",
   "lifestyle-rainbow-cup-saucer.png": "optimized/lifestyle-rainbow-cup-saucer.webp",
+  "ai-white-sparkle-dinner-3x4.png": "optimized/ai-white-sparkle-dinner-3x4.webp",
   "hero-tableware-slide-2.png": "optimized/hero-tableware-slide-2.webp",
   "hero-real-table.png": "optimized/hero-real-table.webp",
   "p-white-dinner.jpg": "optimized/p-white-dinner.webp",
@@ -173,9 +174,14 @@ const launchLayers = [
 ];
 
 const conceptLifestyleImages = {
-  "White Sparkle Dinner Plates (Set of 6)": A("lifestyle-white-sparkle-plates.png"),
+  "White Sparkle Dinner Plates (Set of 6)": A("ai-white-sparkle-dinner-3x4.png"),
+  "Renata Dinner Plates (Set of 6)": A("p-renata-dinner.jpg"),
   "Zoraida Serving Bowl (Set of 2)": A("lifestyle-zoraida-bowl.png"),
   "Rainbow Gold Cup & Saucer (Set of 2)": A("lifestyle-rainbow-cup-saucer.png"),
+  "Matt Grey Sky Tea Pot & Creamer": A("p-grey-teapot.jpg"),
+  "Auren Tri-Ply Stainless Steel Frying Pan, 24 cm": A("cookware-pan.jpg"),
+  "Pritha Digital Print Table Runner": A("linen-pritha-runner.png"),
+  "Rivello European Linen Fringe Table Linen Set": A("linen-rivello.png"),
 };
 
 const launchProductTitles = [
@@ -322,18 +328,18 @@ const showcaseTitles = [
 ];
 
 const showcaseImages = {
-  FRHG00001A: "p-white-dinner.jpg",
-  FRHG00004A: "p-crackled-dinner.jpg",
+  FRHG00001A: "ai-white-sparkle-dinner-3x4.png",
+  FRHG00004A: "p-renata-dinner.jpg",
   FRHG00007A: "p-renata-dinner.jpg",
-  FRHG00010A: "p-zoraida-dinner.jpg",
-  FRHG00013A: "p-rustic-dinner.jpg",
-  FRHG00016A: "p-15205-dinner.jpg",
+  FRHG00010A: "lifestyle-zoraida-bowl.png",
+  FRHG00013A: "ai-white-sparkle-dinner-3x4.png",
+  FRHG00016A: "p-renata-dinner.jpg",
   FRHG00002A: "p-white-side.jpg",
-  FRHG00008A: "p-renata-side.jpg",
+  FRHG00008A: "p-renata-dinner.jpg",
   FRHG00019A: "p-rainbow-cup.jpg",
-  FRHG00021A: "p-matt-grey-cup.jpg",
-  FRHG00023A: "p-copper-cup.jpg",
-  FRHG00020A: "p-rainbow-teapot.jpg",
+  FRHG00021A: "p-grey-teapot.jpg",
+  FRHG00023A: "p-rainbow-cup.jpg",
+  FRHG00020A: "lifestyle-rainbow-cup-saucer.png",
   FRHG00022A: "p-grey-teapot.jpg",
   FRHG00012A: "p-zoraida-bowl.jpg",
 };
@@ -586,7 +592,7 @@ function renderMerch() {
         <figure class="offer-product-carousel" aria-label="Summer sale product catalogue">
           <div class="offer-product-track">
             <article class="offer-product-card">
-              <div class="offer-product-image"><span class="product-thumb-frame"><img src="${A("p-white-dinner.jpg")}" alt="White Sparkle Dinner Plates" loading="lazy" /></span></div>
+              <div class="offer-product-image"><span class="product-thumb-frame"><img src="${A("ai-white-sparkle-dinner-3x4.png")}" alt="White Sparkle Dinner Plates" loading="lazy" /></span></div>
               <div class="offer-product-copy">
                 <span>Extra 10% off</span>
                 <strong>White Sparkle Dinner Plates</strong>
@@ -594,7 +600,7 @@ function renderMerch() {
               </div>
             </article>
             <article class="offer-product-card">
-              <div class="offer-product-image"><span class="product-thumb-frame"><img src="${A("p-zoraida-bowl.jpg")}" alt="Zoraida Serving Bowl" loading="lazy" /></span></div>
+              <div class="offer-product-image"><span class="product-thumb-frame"><img src="${A("lifestyle-zoraida-bowl.png")}" alt="Zoraida Serving Bowl" loading="lazy" /></span></div>
               <div class="offer-product-copy">
                 <span>Ready to host</span>
                 <strong>Zoraida Serving Bowl</strong>
@@ -602,7 +608,7 @@ function renderMerch() {
               </div>
             </article>
             <article class="offer-product-card">
-              <div class="offer-product-image"><span class="product-thumb-frame"><img src="${A("p-rainbow-cup.jpg")}" alt="Rainbow Gold Cup and Saucer" loading="lazy" /></span></div>
+              <div class="offer-product-image"><span class="product-thumb-frame"><img src="${A("lifestyle-rainbow-cup-saucer.png")}" alt="Rainbow Gold Cup and Saucer" loading="lazy" /></span></div>
               <div class="offer-product-copy">
                 <span>£75 off £749+</span>
                 <strong>Rainbow Gold Cup & Saucer</strong>
@@ -778,7 +784,7 @@ function renderFrCategory(tile) {
 }
 
 function renderFrProduct(product) {
-  const image = showcaseImages[product.sku] ? A(showcaseImages[product.sku]) : product.image;
+  const image = conceptLifestyleImages[product.title] || (showcaseImages[product.sku] ? A(showcaseImages[product.sku]) : product.image);
   return `
     <a class="fr-product reveal-item" href="#/${product.category === "table-linen" ? "table-linen" : product.category}">
       <figure><img src="${image}" alt="${product.title}" loading="lazy" /></figure>
@@ -852,7 +858,7 @@ function renderCategoryExplorer() {
 }
 
 function renderLaunchProduct(product) {
-  const image = showcaseImages[product.sku] ? A(showcaseImages[product.sku]) : product.image;
+  const image = conceptLifestyleImages[product.title] || (showcaseImages[product.sku] ? A(showcaseImages[product.sku]) : product.image);
   const tags = product.category === "cookware"
     ? ["Ready to cook", "Tri-ply"]
     : product.category === "table-linen"
@@ -997,7 +1003,7 @@ function renderMiniProduct(product) {
 }
 
 function renderShowcaseProduct(product) {
-  const image = showcaseImages[product.sku] ? A(showcaseImages[product.sku]) : product.image;
+  const image = conceptLifestyleImages[product.title] || (showcaseImages[product.sku] ? A(showcaseImages[product.sku]) : product.image);
   return `
     <a class="showcase-card reveal-item" href="#/${product.category === "table-linen" ? "table-linen" : product.category}">
       <figure>
