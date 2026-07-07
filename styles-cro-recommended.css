@@ -9831,3 +9831,10 @@ body,
     word-spacing: 0.12em !important;
   }
 }
+
+/* Desktop proportion pass: keep hero prominent, make the rest 10% calmer. */
+@media (min-width: 1024px) {
+  .concept-page.launch-page > section:not(.concept-hero) {
+    zoom: 0.9;
+  }
+}
