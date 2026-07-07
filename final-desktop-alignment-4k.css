@@ -437,6 +437,106 @@ html body .announcement-track span:nth-child(3n)::before {
   100% { transform: skewX(-18deg) translateX(360%); }
 }
 
+/* Absolute EOF locks: remove header divider and make requested section labels visibly glow. */
+html body .announcement-card,
+html body.is-loaded .announcement-card,
+body.is-loaded .announcement-card {
+  border: 0 !important;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .site-header,
+html body header.site-header,
+html body.is-loaded .site-header,
+body.is-loaded .site-header {
+  border-top: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .announcement-card::before,
+html body .announcement-card::after,
+html body .announcement-track::before,
+html body .announcement-track::after {
+  content: none !important;
+  display: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+html body .concept-page.launch-page #launch-edit .launch-section-head > div > span,
+html body .concept-page.launch-page .launch-products .launch-section-head > div > span,
+html body .concept-page.launch-page .launch-review-head .review-kicker,
+html body .concept-page.launch-page .campaign-scene-head > span,
+html body .concept-page.launch-page .launch-conversion > div:first-child > span,
+html body .concept-page.launch-page .launch-highlight-copy > span {
+  display: inline-block !important;
+  color: #44181d !important;
+  font-weight: 1000 !important;
+  text-shadow:
+    0 0 2px rgba(68, 24, 29, 0.7),
+    0 0 10px rgba(68, 24, 29, 0.45),
+    0 0 20px rgba(68, 24, 29, 0.28) !important;
+  filter: brightness(1.05) saturate(1.18) !important;
+  animation: qaHardSectionLabelGlow 1.28s ease-in-out infinite !important;
+  will-change: filter, text-shadow !important;
+}
+
+@keyframes qaHardSectionLabelGlow {
+  0%, 100% {
+    filter: brightness(0.96) saturate(1.06);
+    text-shadow:
+      0 0 1px rgba(68, 24, 29, 0.42),
+      0 0 6px rgba(68, 24, 29, 0.22),
+      0 0 12px rgba(68, 24, 29, 0.12);
+  }
+  48% {
+    filter: brightness(1.48) saturate(1.55);
+    text-shadow:
+      0 0 2px rgba(68, 24, 29, 0.95),
+      0 0 12px rgba(68, 24, 29, 0.72),
+      0 0 24px rgba(68, 24, 29, 0.48),
+      0 0 38px rgba(68, 24, 29, 0.28);
+  }
+}
+
+/* Absolute EOF: no yellow/gold divider below the announcement strip. */
+html body .announcement-card,
+html body.is-loaded .announcement-card,
+body.is-loaded .announcement-card {
+  border: 0 !important;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .announcement-card::before,
+html body .announcement-card::after,
+html body .announcement-track::before,
+html body .announcement-track::after,
+html body.is-loaded .announcement-card::before,
+html body.is-loaded .announcement-card::after,
+body.is-loaded .announcement-card::before,
+body.is-loaded .announcement-card::after {
+  content: none !important;
+  display: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+html body .site-header,
+html body header.site-header,
+html body.is-loaded .site-header,
+body.is-loaded .site-header {
+  border-top: 0 !important;
+  box-shadow: none !important;
+}
+
 /* Subtle title glow for the requested section labels only. */
 html body .concept-page.launch-page .launch-products .launch-section-head > div > span,
 html body .concept-page.launch-page .launch-review-head .review-kicker,
@@ -1770,4 +1870,76 @@ html body .announcement-track span:nth-child(3n)::before {
 @keyframes qaTrustOverlaySweep {
   0% { transform: skewX(-18deg) translateX(0); }
   100% { transform: skewX(-18deg) translateX(360%); }
+}
+
+/* Absolute final override: no divider, hard visible glow on requested section labels. */
+html body .announcement-card,
+html body.is-loaded .announcement-card,
+body.is-loaded .announcement-card {
+  border: 0 !important;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .site-header,
+html body header.site-header,
+html body.is-loaded .site-header,
+body.is-loaded .site-header {
+  border-top: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .announcement-card::before,
+html body .announcement-card::after,
+html body .announcement-track::before,
+html body .announcement-track::after {
+  content: none !important;
+  display: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+html body .concept-page.launch-page #launch-edit .launch-section-head > div > span,
+html body .concept-page.launch-page .launch-products .launch-section-head > div > span,
+html body .concept-page.launch-page .launch-review-head .review-kicker,
+html body .concept-page.launch-page .campaign-scene-head > span,
+html body .concept-page.launch-page .launch-conversion > div:first-child > span,
+html body .concept-page.launch-page .launch-highlight-copy > span {
+  display: inline-block !important;
+  color: #44181d !important;
+  font-weight: 1000 !important;
+  text-shadow:
+    0 0 2px rgba(68, 24, 29, 0.75),
+    0 0 12px rgba(68, 24, 29, 0.58),
+    0 0 26px rgba(68, 24, 29, 0.42) !important;
+  filter: brightness(1.12) saturate(1.26);
+  opacity: 1;
+  transform: translateZ(0) scale(1);
+  animation: qaHardSectionLabelGlowFinal 1.12s ease-in-out infinite !important;
+  will-change: filter, text-shadow, opacity, transform !important;
+}
+
+@keyframes qaHardSectionLabelGlowFinal {
+  0%, 100% {
+    opacity: 0.68;
+    transform: translateZ(0) scale(0.99);
+    filter: brightness(0.96) saturate(1.08);
+    text-shadow:
+      0 0 1px rgba(68, 24, 29, 0.5),
+      0 0 7px rgba(68, 24, 29, 0.3),
+      0 0 14px rgba(68, 24, 29, 0.18);
+  }
+  48% {
+    opacity: 1;
+    transform: translateZ(0) scale(1.025);
+    filter: brightness(1.62) saturate(1.7);
+    text-shadow:
+      0 0 3px rgba(68, 24, 29, 1),
+      0 0 14px rgba(68, 24, 29, 0.85),
+      0 0 30px rgba(68, 24, 29, 0.6),
+      0 0 48px rgba(68, 24, 29, 0.36);
+  }
 }
