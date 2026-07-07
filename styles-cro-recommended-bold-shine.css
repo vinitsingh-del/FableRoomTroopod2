@@ -12165,3 +12165,40 @@ body.sticky-cta-visible .concept-page.launch-page .mobile-sticky-cta {
       "cta" !important;
   }
 }
+
+/* Remove the grey strip/shadow under the top capsule and collection-card zone. */
+.concept-page.launch-page .landing-pill-nav {
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+  border-left: 0 !important;
+  box-shadow: none !important;
+  background: #fff !important;
+  margin-bottom: clamp(8px, 0.9vw, 14px) !important;
+}
+
+.concept-page.launch-page .landing-pill-nav::before,
+.concept-page.launch-page .landing-pill-nav::after,
+.concept-page.launch-page .launch-layers::before,
+.concept-page.launch-page .launch-layers::after,
+.concept-page.launch-page .launch-ritual-panel::before,
+.concept-page.launch-page .launch-ritual-panel::after {
+  content: none !important;
+  display: none !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.concept-page.launch-page .launch-layers,
+.concept-page.launch-page #launch-edit,
+.concept-page.launch-page .launch-ritual-panel {
+  background: #fff !important;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+}
+
+.concept-page.launch-page .launch-ritual-panel {
+  border-left-color: rgba(16, 16, 16, 0.08) !important;
+  border-right-color: rgba(16, 16, 16, 0.08) !important;
+}
