@@ -469,8 +469,7 @@ function getUseImage(type, category) {
 }
 
 function currentRoute() {
-  const key = location.hash.replace("#/", "") || "merch";
-  return routes.includes(key) ? key : "merch";
+  return "merch";
 }
 
 function render() {
@@ -482,15 +481,29 @@ function render() {
   });
   document.querySelector(".primary-nav").classList.remove("is-open");
   document.querySelector(".menu-toggle").setAttribute("aria-expanded", "false");
-  key === "merch" ? renderMerch() : renderCollection(key);
+  renderMerch();
   initMotionText();
   initParallax();
   initVengeanceEffects();
   initCategoryExplorer();
   initFastMediaLoading();
+  neutralizeLandingLinks();
   updateScrollProgress();
   window.scrollTo({ top: 0, behavior: "auto" });
   updateScrollProgress();
+}
+
+function neutralizeLandingLinks(root = document) {
+  root.querySelectorAll("a[href]").forEach((anchor) => {
+    const href = anchor.getAttribute("href") || "";
+    const isRouteLink = href.startsWith("#/");
+    const isCollectionLink = href.startsWith("https://fableroom.com/collections");
+    const isFableroomPageLink = href.startsWith("https://fableroom.com/pages");
+    if (!isRouteLink && !isCollectionLink && !isFableroomPageLink) return;
+    anchor.setAttribute("href", "#");
+    anchor.dataset.landingOnly = "true";
+    anchor.setAttribute("aria-disabled", "true");
+  });
 }
 
 function renderMerch() {
@@ -1336,6 +1349,25 @@ function initStatCounters() {
   document.querySelectorAll(".launch-assurance-bar").forEach((bar) => observer.observe(bar));
 }
 
-window.addEventListener("hashchange", render);
+document.addEventListener("click", (event) => {
+  const link = event.target.closest("a[data-landing-only], a[href='#']");
+  if (!link) return;
+  event.preventDefault();
+  document.querySelector(".primary-nav")?.classList.remove("is-open");
+  document.querySelector(".menu-toggle")?.setAttribute("aria-expanded", "false");
+  if (location.hash) {
+    history.replaceState(null, "", `${location.pathname}${location.search}`);
+  }
+});
+
+window.addEventListener("hashchange", () => {
+  if (location.hash) {
+    history.replaceState(null, "", `${location.pathname}${location.search}`);
+  }
+  render();
+});
+if (location.hash) {
+  history.replaceState(null, "", `${location.pathname}${location.search}`);
+}
 initPreloader();
 render();
