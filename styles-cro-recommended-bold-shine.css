@@ -11375,3 +11375,30 @@ body.sticky-cta-visible .concept-page.launch-page .mobile-sticky-cta {
     text-align: left !important;
   }
 }
+
+/* Final product-card ratio lock: cards themselves stay 3:4, not only the image area. */
+.concept-page.launch-page .offer-product-card,
+.concept-page.launch-page .launch-product-carousel .launch-product-card {
+  aspect-ratio: 3 / 4 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+
+.concept-page.launch-page .offer-product-card {
+  grid-template-rows: 58% 42% !important;
+}
+
+.concept-page.launch-page .launch-product-carousel .launch-product-card {
+  grid-template-rows: 56% 44% !important;
+}
+
+.concept-page.launch-page .launch-product-carousel .launch-product-card figure {
+  aspect-ratio: auto !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.concept-page.launch-page .launch-product-carousel .launch-product-card > div {
+  height: 100% !important;
+}
