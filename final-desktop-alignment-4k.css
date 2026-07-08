@@ -2957,6 +2957,33 @@ html body .concept-page.launch-page section.campaign-scene .offer-product-card .
   }
 }
 
+/* Final Summer Sale carousel parity: match Collection Edit card widths and gaps only. */
+@media (max-width: 760px) {
+  html body .concept-page.launch-page section.campaign-scene .offer-product-track {
+    gap: 7px !important;
+  }
+
+  html body .concept-page.launch-page section.campaign-scene .offer-product-card {
+    width: 245px !important;
+    min-width: 245px !important;
+    max-width: 245px !important;
+    flex: 0 0 245px !important;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1023px) {
+  html body .concept-page.launch-page section.campaign-scene .offer-product-track {
+    gap: 12px !important;
+  }
+
+  html body .concept-page.launch-page section.campaign-scene .offer-product-card {
+    width: 218px !important;
+    min-width: 218px !important;
+    max-width: 218px !important;
+    flex: 0 0 218px !important;
+  }
+}
+
 @keyframes qaPlusGlyphBlink {
   0%, 100% { opacity: 0.78; }
   50% { opacity: 1; }
