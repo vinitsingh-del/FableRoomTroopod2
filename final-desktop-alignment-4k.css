@@ -2984,6 +2984,24 @@ html body .concept-page.launch-page section.campaign-scene .offer-product-card .
   }
 }
 
+/* Final product-card breathing room: prevent price/retailer crop in both product sections. */
+html body .concept-page.launch-page .launch-product-carousel .launch-product-card > div,
+html body .concept-page.launch-page section.campaign-scene .offer-product-copy {
+  min-height: clamp(178px, 10.2vw, 204px) !important;
+  padding-bottom: clamp(18px, 1.15vw, 24px) !important;
+  overflow: visible !important;
+}
+
+@media (max-width: 760px) {
+  html body .concept-page.launch-page .launch-product-carousel .launch-product-card > div,
+  html body .concept-page.launch-page section.campaign-scene .offer-product-copy {
+    height: 182px !important;
+    min-height: 182px !important;
+    max-height: 182px !important;
+    padding-bottom: 18px !important;
+  }
+}
+
 @keyframes qaPlusGlyphBlink {
   0%, 100% { opacity: 0.78; }
   50% { opacity: 1; }
