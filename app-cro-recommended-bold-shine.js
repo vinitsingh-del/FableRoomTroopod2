@@ -546,7 +546,7 @@ function renderMerch() {
         </div>
         <div class="launch-layer-grid" aria-label="Cook Serve Layer editorial collection">
           <article class="launch-layer-card launch-layer-video reveal-item">
-            <video data-lazy-video src="${A("ritual-edit-video-v2.mp4")}" poster="${A("ai-tableware-about-v2.png")}" muted loop playsinline preload="none"></video>
+            <img src="${A("ai-tableware-about-v2.png")}" alt="Fableroom tableware styling story" loading="lazy" decoding="async" />
             <div>
               <strong>Cook. Serve. Layer.</strong>
               <a href="#/all">Shop the collection</a>
