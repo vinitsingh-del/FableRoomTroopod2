@@ -2818,3 +2818,20 @@ html body .concept-page.launch-page .launch-product-card:focus-visible .merch-pr
 html body .concept-page.launch-page .offer-product-card:focus-visible .merch-price-row .merch-bag-mark {
   transform: none !important;
 }
+
+/* Summer Sale plus alignment: reserve equal title space so every plus sits on one row. */
+html body .concept-page.launch-page section.campaign-scene .offer-product-card .merch-chip-row {
+  min-height: 52px !important;
+  align-content: flex-start !important;
+}
+
+html body .concept-page.launch-page section.campaign-scene .offer-product-card .merch-title-row {
+  min-height: 2.24em !important;
+}
+
+html body .concept-page.launch-page section.campaign-scene .offer-product-card .merch-card-title {
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 2 !important;
+  overflow: hidden !important;
+}
