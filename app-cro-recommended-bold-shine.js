@@ -867,9 +867,12 @@ function merchTagLabel(tag) {
 
 function renderMerchCardInfo({ title, price, type, badge, tags = [] }) {
   const { was, retailer, saving } = merchPricing(price);
-  const chipTags = [`${saving}% Off`, tags[0] || badge, badge || "Ready to Ship"].slice(0, 3).map(merchTagLabel);
+  const chipTags = (tags.length ? tags : [`${saving}% Off`, badge || "Ready to Ship"]).slice(0, 2).map(merchTagLabel);
+  const statusLabel = merchTagLabel(badge || "Ready to Ship");
   return `
     <div class="merch-card-copy">
+      <div class="merch-chip-row">${chipTags.map((tag) => `<em>${tag}</em>`).join("")}</div>
+      <span class="merch-status-label">${statusLabel}</span>
       <div class="merch-title-row">
         <strong class="merch-card-title">${title}</strong>
         <span class="merch-bag-mark" aria-hidden="true">+</span>
@@ -879,7 +882,6 @@ function renderMerchCardInfo({ title, price, type, badge, tags = [] }) {
         <s class="merch-was-price">£${was}</s>
       </div>
       <small class="merch-retailer-price">Other Retailers £${retailer}</small>
-      <div class="merch-chip-row">${chipTags.map((tag) => `<em>${tag}</em>`).join("")}</div>
     </div>
   `;
 }

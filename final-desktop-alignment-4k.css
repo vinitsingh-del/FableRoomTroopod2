@@ -2278,3 +2278,62 @@ html body .concept-page.launch-page .merch-chip-row em {
     padding: 12px !important;
   }
 }
+
+/* Final product tag colour: burgundy outline pills and uppercase status, no yellow fill. */
+html body .concept-page.launch-page .merch-chip-row {
+  order: 0 !important;
+  gap: 7px !important;
+  padding: 0 !important;
+}
+
+html body .concept-page.launch-page .merch-chip-row em {
+  padding: 6px 10px !important;
+  border: 1px solid rgba(68, 24, 29, 0.24) !important;
+  border-radius: 999px !important;
+  background: #fff !important;
+  color: #44181d !important;
+  box-shadow: 0 1px 3px rgba(68, 24, 29, 0.06) !important;
+  font-family: var(--font-body, "Inter", Arial, sans-serif) !important;
+  font-size: clamp(8px, 0.53vw, 11px) !important;
+  line-height: 1 !important;
+  font-style: normal !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+
+html body .concept-page.launch-page .merch-status-label {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+  max-width: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #44181d !important;
+  font-family: var(--font-body, "Inter", Arial, sans-serif) !important;
+  font-size: clamp(10px, 0.72vw, 14px) !important;
+  line-height: 1 !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.24em !important;
+  text-transform: uppercase !important;
+}
+
+html body .concept-page.launch-page .merch-card-title {
+  color: #171717 !important;
+}
+
+@media (max-width: 760px) {
+  html body .concept-page.launch-page .merch-chip-row em {
+    padding: 6px 9px !important;
+    font-size: 9px !important;
+  }
+
+  html body .concept-page.launch-page .merch-status-label {
+    font-size: 10px !important;
+    letter-spacing: 0.18em !important;
+  }
+}
