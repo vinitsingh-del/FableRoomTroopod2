@@ -2066,6 +2066,10 @@ html body .concept-page.launch-page .merch-bag-mark {
   text-align: right !important;
 }
 
+html body .concept-page.launch-page .merch-title-row {
+  grid-template-columns: minmax(0, 1fr) 30px !important;
+}
+
 html body .concept-page.launch-page .merch-bag-mark::before {
   content: "";
   position: absolute;
@@ -2534,4 +2538,128 @@ html body .concept-page.launch-page .merch-retailer-price {
     min-height: 160px !important;
     max-height: 160px !important;
   }
+}
+
+/* Final visual polish: no cropped heading letters, bordered trust strip, shiny ATC icon. */
+html body .concept-page.launch-page section.campaign-scene,
+html body .concept-page.launch-page section.campaign-scene .campaign-scene-head,
+html body .concept-page.launch-page section.campaign-scene .campaign-scene-head h2,
+html body .concept-page.launch-page section.campaign-scene .campaign-scene-head h2.motion-text,
+html body .concept-page.launch-page section.campaign-scene .campaign-scene-head h2 span {
+  overflow: visible !important;
+  clip-path: none !important;
+  contain: none !important;
+}
+
+html body .concept-page.launch-page section.campaign-scene .campaign-scene-head h2 {
+  padding: 0.08em 0.04em 0.12em 0.04em !important;
+  margin-left: -0.04em !important;
+  margin-top: -0.08em !important;
+  margin-bottom: -0.12em !important;
+}
+
+html body .concept-page.launch-page .concept-campaign-strip {
+  max-width: min(1180px, calc(100% - 40px)) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: clamp(18px, 2.2vw, 30px) clamp(20px, 3vw, 42px) !important;
+  border: 1px solid rgba(68, 24, 29, 0.16) !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  box-shadow: 0 14px 34px rgba(68, 24, 29, 0.055) !important;
+}
+
+html body .concept-page.launch-page .merch-bag-mark {
+  position: relative !important;
+  z-index: 0 !important;
+  width: 30px !important;
+  height: 30px !important;
+  margin-top: 0 !important;
+  border: 1px solid rgba(68, 24, 29, 0.22) !important;
+  border-radius: 999px !important;
+  background:
+    linear-gradient(110deg, transparent 0%, transparent 32%, rgba(255,255,255,0.82) 48%, transparent 64%, transparent 100%),
+    linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.78) 44%, rgba(68,24,29,0.055) 100%) !important;
+  background-size: 220% 100%, 100% 100% !important;
+  background-position: -140% 0, 0 0 !important;
+  box-shadow: 0 6px 16px rgba(68, 24, 29, 0.10), inset 0 1px 0 rgba(255,255,255,0.92) !important;
+  color: #44181d !important;
+  cursor: pointer !important;
+  overflow: hidden !important;
+  text-indent: -999px !important;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease !important;
+  animation: qaAtcButtonShine 2.2s ease-in-out infinite !important;
+}
+
+html body .concept-page.launch-page .merch-bag-mark::before {
+  content: "" !important;
+  position: absolute !important;
+  right: 8px !important;
+  top: 10px !important;
+  width: 12px !important;
+  height: 11px !important;
+  border: 1.7px solid currentColor !important;
+  border-radius: 3px !important;
+  background: transparent !important;
+  z-index: 2 !important;
+}
+
+html body .concept-page.launch-page .merch-bag-mark::after {
+  content: "" !important;
+  position: absolute !important;
+  right: 11px !important;
+  top: 5px !important;
+  width: 6px !important;
+  height: 8px !important;
+  border: 1.7px solid currentColor !important;
+  border-bottom: 0 !important;
+  border-radius: 7px 7px 0 0 !important;
+  background: transparent !important;
+  z-index: 3 !important;
+}
+
+html body .concept-page.launch-page .merch-title-row::after {
+  content: none !important;
+  display: none !important;
+  animation: none !important;
+  pointer-events: none !important;
+}
+
+html body .concept-page.launch-page .launch-product-card:hover .merch-bag-mark,
+html body .concept-page.launch-page .offer-product-card:hover .merch-bag-mark,
+html body .concept-page.launch-page .launch-product-card:focus-visible .merch-bag-mark,
+html body .concept-page.launch-page .offer-product-card:focus-visible .merch-bag-mark {
+  transform: translateY(-1px) !important;
+  border-color: rgba(68, 24, 29, 0.42) !important;
+  box-shadow: 0 8px 20px rgba(68, 24, 29, 0.14), inset 0 1px 0 rgba(255,255,255,0.98) !important;
+}
+
+@keyframes qaAtcIconShine {
+  0%, 62% { opacity: 0; transform: translateX(-22px) skewX(-18deg); }
+  74% { opacity: 0.85; }
+  100% { opacity: 0; transform: translateX(22px) skewX(-18deg); }
+}
+
+@keyframes qaAtcButtonShine {
+  0%, 58% { background-position: -140% 0, 0 0; }
+  82%, 100% { background-position: 160% 0, 0 0; }
+}
+
+@media (max-width: 760px) {
+  html body .concept-page.launch-page .concept-campaign-strip {
+    max-width: calc(100% - 28px) !important;
+    border-radius: 10px !important;
+  }
+}
+
+/* Absolute final ATC sizing lock. */
+html body .concept-page.launch-page .merch-title-row {
+  grid-template-columns: minmax(0, 1fr) 30px !important;
+}
+
+html body .concept-page.launch-page .merch-bag-mark {
+  width: 30px !important;
+  min-width: 30px !important;
+  max-width: 30px !important;
+  height: 30px !important;
 }
