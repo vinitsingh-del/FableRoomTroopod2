@@ -2756,3 +2756,65 @@ html body .concept-page.launch-page .offer-product-card:focus-visible .merch-bag
   0%, 100% { opacity: 0; transform: scale(0.2); }
   50% { opacity: 0.55; transform: scale(1); }
 }
+
+/* Absolute final ATC placement: price-aligned simple plus, no duplicate border plus. */
+html body .concept-page.launch-page .merch-title-row {
+  display: block !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  padding-right: 0 !important;
+}
+
+html body .concept-page.launch-page .merch-price-row {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 30px !important;
+  align-items: center !important;
+  gap: 12px !important;
+  width: 100% !important;
+}
+
+html body .concept-page.launch-page .merch-price-values {
+  display: flex !important;
+  align-items: baseline !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  min-width: 0 !important;
+  width: auto !important;
+  max-width: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: inherit !important;
+  font: inherit !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+html body .concept-page.launch-page .merch-price-row .merch-bag-mark {
+  justify-self: end !important;
+  align-self: center !important;
+  position: relative !important;
+  right: auto !important;
+  top: auto !important;
+  transform: none !important;
+  text-indent: -999px !important;
+  font-size: 0 !important;
+}
+
+html body .concept-page.launch-page .merch-title-row .merch-bag-mark,
+html body .concept-page.launch-page .merch-bag-mark > * {
+  display: none !important;
+}
+
+html body .concept-page.launch-page .merch-bag-mark::before {
+  text-indent: 0 !important;
+}
+
+html body .concept-page.launch-page .launch-product-card:hover .merch-price-row .merch-bag-mark,
+html body .concept-page.launch-page .offer-product-card:hover .merch-price-row .merch-bag-mark,
+html body .concept-page.launch-page .launch-product-card:focus-visible .merch-price-row .merch-bag-mark,
+html body .concept-page.launch-page .offer-product-card:focus-visible .merch-price-row .merch-bag-mark {
+  transform: none !important;
+}

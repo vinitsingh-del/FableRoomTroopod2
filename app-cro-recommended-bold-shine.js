@@ -874,11 +874,13 @@ function renderMerchCardInfo({ title, price, type, badge, tags = [] }) {
       <div class="merch-chip-row">${chipTags.map((tag) => `<em>${tag}</em>`).join("")}</div>
       <div class="merch-title-row">
         <strong class="merch-card-title">${title}</strong>
-        <span class="merch-bag-mark" aria-hidden="true">+</span>
       </div>
       <div class="merch-price-row">
-        <b class="merch-sale-price">£${price}</b>
-        <s class="merch-was-price">£${was}</s>
+        <span class="merch-price-values">
+          <b class="merch-sale-price">£${price}</b>
+          <s class="merch-was-price">£${was}</s>
+        </span>
+        <span class="merch-bag-mark" aria-hidden="true"></span>
       </div>
       <small class="merch-retailer-price">Other Retailers £${retailer}</small>
     </div>
