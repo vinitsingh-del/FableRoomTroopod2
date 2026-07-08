@@ -220,8 +220,8 @@ const shopLookItems = [
     label: "Pritha Table Runner",
     title: "Pritha Digital Print Table Runner",
     href: "#/table-linen",
-    x: 74,
-    y: 60,
+    x: 59,
+    y: 69,
   },
   {
     label: "Rainbow Gold Tea Set",
@@ -393,6 +393,17 @@ const linenProducts = [
 ];
 
 const allMerchProducts = [...servewareProducts, ...cookwareProducts, ...linenProducts];
+
+const summerSaleProducts = [
+  { title: "White Sparkle Dinner Plates", type: "Dinner Plates", image: A("ai-white-sparkle-dinner-3x4.png"), alt: "White Sparkle Dinner Plates", price: 88, badge: "Ready to Ship", tags: ["Extra 10% Off", "Best Seller", "Ready to Ship"] },
+  { title: "Zoraida Serving Bowl", type: "Serving Bowl", image: A("lifestyle-zoraida-bowl.png"), alt: "Zoraida Serving Bowl", price: 78, badge: "Ready to Host", tags: ["Summer Edit", "Fairly Priced", "Ready to Ship"] },
+  { title: "Rainbow Gold Cup & Saucer", type: "Cup & Saucer", image: A("lifestyle-rainbow-cup-saucer.png"), alt: "Rainbow Gold Cup and Saucer", price: 68, badge: "Limited Offer", tags: ["£75 Off", "Gift Edit", "Ready to Ship"] },
+  { title: "Matt Grey Sky Tea Pot & Creamer", type: "Tea Pot & Creamer", image: A("p-grey-teapot.jpg"), alt: "Matt Grey Sky Tea Pot and Creamer", price: 84, badge: "New Arrival", tags: ["Summer Savings", "Hosting Pick", "Ready to Ship"] },
+  { title: "Renata Dinner Plates", type: "Dinner Plates", image: A("p-renata-dinner.jpg"), alt: "Renata Dinner Plates", price: 98, badge: "Ready to Host", tags: ["Fairly Priced", "Best Seller", "Ready to Ship"] },
+  { title: "Auren Tri-Ply Frying Pan", type: "Frying Pan", image: A("cookware-pan.jpg"), alt: "Auren Tri-Ply Frying Pan", price: 88, badge: "Cookware Offer", tags: ["Extra 10% Off", "Tri-Ply", "Ready to Cook"] },
+  { title: "Pritha Digital Print Table Runner", type: "Table Runner", image: A("linen-pritha-runner.png"), alt: "Pritha Digital Print Table Runner", price: 55, badge: "Host-Ready Linen", tags: ["Summer Edit", "Soft Finish", "Ready to Ship"] },
+  { title: "Arabella Merrow-Edge Napkins", type: "Napkins", image: A("linen-arabella.png"), alt: "Arabella Merrow-Edge Napkins", price: 43, badge: "Extra 10% Off", tags: ["Table Linen", "Fairly Priced", "Ready to Ship"] },
+];
 
 const guideGroups = [
   {
@@ -604,78 +615,7 @@ function renderMerch() {
         </div>
         <figure class="offer-product-carousel" aria-label="Summer sale product catalogue">
           <div class="offer-product-track">
-            <article class="offer-product-card">
-              <div class="offer-product-image"><span class="product-thumb-frame"><img src="${A("ai-white-sparkle-dinner-3x4.png")}" alt="White Sparkle Dinner Plates" loading="eager" decoding="async" /></span></div>
-              <div class="offer-product-copy">
-                <span>Extra 10% off</span>
-                <strong>White Sparkle Dinner Plates</strong>
-                <small>Use code EXTRA10</small>
-                <b class="product-price-highlight">£88</b>
-              </div>
-            </article>
-            <article class="offer-product-card">
-              <div class="offer-product-image"><span class="product-thumb-frame"><img src="${A("lifestyle-zoraida-bowl.png")}" alt="Zoraida Serving Bowl" loading="eager" decoding="async" /></span></div>
-              <div class="offer-product-copy">
-                <span>Ready to host</span>
-                <strong>Zoraida Serving Bowl</strong>
-                <small>Summer sale edit</small>
-                <b class="product-price-highlight">£78</b>
-              </div>
-            </article>
-            <article class="offer-product-card">
-              <div class="offer-product-image"><span class="product-thumb-frame"><img src="${A("lifestyle-rainbow-cup-saucer.png")}" alt="Rainbow Gold Cup and Saucer" loading="eager" decoding="async" /></span></div>
-              <div class="offer-product-copy">
-                <span>£75 off £749+</span>
-                <strong>Rainbow Gold Cup & Saucer</strong>
-                <small>Limited offer</small>
-                <b class="product-price-highlight">£68</b>
-              </div>
-            </article>
-            <article class="offer-product-card">
-              <div class="offer-product-image"><span class="product-thumb-frame"><img src="${A("p-grey-teapot.jpg")}" alt="Matt Grey Sky Tea Pot and Creamer" loading="eager" decoding="async" /></span></div>
-              <div class="offer-product-copy">
-                <span>Summer savings</span>
-                <strong>Matt Grey Sky Tea Pot & Creamer</strong>
-                <small>Hosting favourite</small>
-                <b class="product-price-highlight">£84</b>
-              </div>
-            </article>
-            <article class="offer-product-card">
-              <div class="offer-product-image"><span class="product-thumb-frame"><img src="${A("p-renata-dinner.jpg")}" alt="Renata Dinner Plates" loading="eager" decoding="async" /></span></div>
-              <div class="offer-product-copy">
-                <span>Fairly priced</span>
-                <strong>Renata Dinner Plates</strong>
-                <small>Dinner Plates</small>
-                <b class="product-price-highlight">£98</b>
-              </div>
-            </article>
-            <article class="offer-product-card">
-              <div class="offer-product-image"><span class="product-thumb-frame"><img src="${A("cookware-pan.jpg")}" alt="Auren Tri-Ply Frying Pan" loading="eager" decoding="async" /></span></div>
-              <div class="offer-product-copy">
-                <span>Cookware offer</span>
-                <strong>Auren Tri-Ply Frying Pan</strong>
-                <small>Summer cookware edit</small>
-                <b class="product-price-highlight">£88</b>
-              </div>
-            </article>
-            <article class="offer-product-card">
-              <div class="offer-product-image"><span class="product-thumb-frame"><img src="${A("linen-pritha-runner.png")}" alt="Pritha Digital Print Table Runner" loading="eager" decoding="async" /></span></div>
-              <div class="offer-product-copy">
-                <span>Host-ready linen</span>
-                <strong>Pritha Digital Print Table Runner</strong>
-                <small>Table linen edit</small>
-                <b class="product-price-highlight">£55</b>
-              </div>
-            </article>
-            <article class="offer-product-card">
-              <div class="offer-product-image"><span class="product-thumb-frame"><img src="${A("linen-arabella.png")}" alt="Arabella Merrow-Edge Napkins" loading="eager" decoding="async" /></span></div>
-              <div class="offer-product-copy">
-                <span>Extra 10% off</span>
-                <strong>Arabella Merrow-Edge Napkins</strong>
-                <small>Use code EXTRA10</small>
-                <b class="product-price-highlight">£43</b>
-              </div>
-            </article>
+            ${summerSaleProducts.map(renderOfferProduct).join("")}
           </div>
         </figure>
       </section>
@@ -910,6 +850,53 @@ function renderCategoryExplorer() {
   `;
 }
 
+function roundToNearest(value, step = 5) {
+  return Math.ceil(value / step) * step;
+}
+
+function merchPricing(price) {
+  const was = roundToNearest(price * 1.66);
+  const retailer = roundToNearest(price * 2.35);
+  const saving = Math.round((1 - price / was) * 100 / 5) * 5;
+  return { was, retailer, saving };
+}
+
+function merchTagLabel(tag) {
+  return String(tag).replace(/\b[a-z]/g, (letter) => letter.toUpperCase()).replace("Tri-Ply", "Tri-ply");
+}
+
+function renderMerchCardInfo({ title, price, type, badge, tags = [] }) {
+  const { was, retailer, saving } = merchPricing(price);
+  const chipTags = [`${saving}% Off`, tags[0] || badge, badge || "Ready to Ship"].slice(0, 3).map(merchTagLabel);
+  return `
+    <div class="merch-card-copy">
+      <div class="merch-title-row">
+        <strong class="merch-card-title">${title}</strong>
+        <span class="merch-bag-mark" aria-hidden="true">+</span>
+      </div>
+      <div class="merch-price-row">
+        <b class="merch-sale-price">£${price}</b>
+        <s class="merch-was-price">£${was}</s>
+      </div>
+      <small class="merch-retailer-price">Other Retailers £${retailer}</small>
+      <div class="merch-chip-row">${chipTags.map((tag) => `<em>${tag}</em>`).join("")}</div>
+    </div>
+  `;
+}
+
+function renderOfferProduct(product) {
+  return `
+    <article class="offer-product-card">
+      <div class="offer-product-image">
+        <span class="product-thumb-frame"><img src="${product.image}" alt="${product.alt || product.title}" loading="eager" decoding="async" /></span>
+      </div>
+      <div class="offer-product-copy">
+        ${renderMerchCardInfo(product)}
+      </div>
+    </article>
+  `;
+}
+
 function renderLaunchProduct(product) {
   const image = conceptLifestyleImages[product.title] || (showcaseImages[product.sku] ? A(showcaseImages[product.sku]) : product.image);
   const tags = product.category === "cookware"
@@ -923,10 +910,13 @@ function renderLaunchProduct(product) {
         <span class="product-thumb-frame"><img src="${image}" alt="${product.title}" loading="eager" decoding="async" /></span>
       </figure>
       <div>
-        <div class="launch-product-tags">${tags.map((tag) => `<em>${tag}</em>`).join("")}</div>
-        <span>${product.badge}</span>
-        <strong>${product.title}</strong>
-        <small><span>${product.type}</span><b class="product-price-highlight">£${product.price}</b></small>
+        ${renderMerchCardInfo({
+          title: product.title,
+          price: product.price,
+          type: product.type,
+          badge: product.badge,
+          tags,
+        })}
       </div>
     </a>
   `;
