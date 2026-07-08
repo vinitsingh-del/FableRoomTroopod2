@@ -2337,3 +2337,44 @@ html body .concept-page.launch-page .merch-card-title {
     letter-spacing: 0.18em !important;
   }
 }
+
+/* Final product info alignment: tags and status share one clean left edge. */
+html body .concept-page.launch-page .merch-card-copy {
+  justify-items: start !important;
+  align-items: start !important;
+  text-align: left !important;
+}
+
+html body .concept-page.launch-page .merch-chip-row {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 7px 8px !important;
+  margin: 0 0 2px 0 !important;
+  padding: 0 !important;
+}
+
+html body .concept-page.launch-page .merch-status-label,
+html body .concept-page.launch-page .merch-title-row,
+html body .concept-page.launch-page .merch-price-row,
+html body .concept-page.launch-page .merch-retailer-price {
+  justify-self: stretch !important;
+  align-self: start !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  text-align: left !important;
+}
+
+html body .concept-page.launch-page .merch-status-label {
+  margin-top: -1px !important;
+  margin-bottom: 2px !important;
+}
+
+html body .concept-page.launch-page .merch-chip-row em {
+  min-height: 24px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
