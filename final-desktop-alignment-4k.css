@@ -2663,3 +2663,96 @@ html body .concept-page.launch-page .merch-bag-mark {
   max-width: 30px !important;
   height: 30px !important;
 }
+
+/* Absolute final ATC icon: simple centered plus with inner blink. */
+html body .concept-page.launch-page .merch-bag-mark {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 30px !important;
+  min-width: 30px !important;
+  max-width: 30px !important;
+  height: 30px !important;
+  min-height: 30px !important;
+  max-height: 30px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 1px solid rgba(68, 24, 29, 0.24) !important;
+  border-radius: 999px !important;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(68, 24, 29, 0.13) 0%, rgba(68, 24, 29, 0.06) 34%, transparent 58%),
+    #fff !important;
+  background-size: 100% 100%, 100% 100% !important;
+  background-position: 50% 50%, 0 0 !important;
+  box-shadow: 0 6px 15px rgba(68, 24, 29, 0.10), inset 0 1px 0 rgba(255,255,255,0.9) !important;
+  color: #44181d !important;
+  cursor: pointer !important;
+  overflow: hidden !important;
+  text-indent: 0 !important;
+  font-size: 0 !important;
+  line-height: 1 !important;
+  animation: qaPlusButtonInnerBlink 1.25s ease-in-out infinite !important;
+}
+
+html body .concept-page.launch-page .merch-bag-mark::before {
+  content: "+" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  display: block !important;
+  width: 1em !important;
+  height: 1em !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: currentColor !important;
+  font-family: var(--font-body, "Inter", Arial, sans-serif) !important;
+  font-size: 20px !important;
+  line-height: 1 !important;
+  font-weight: 650 !important;
+  letter-spacing: 0 !important;
+  text-align: center !important;
+  transform: translate(-50%, -54%) !important;
+  opacity: 1 !important;
+  z-index: 2 !important;
+}
+
+html body .concept-page.launch-page .merch-bag-mark::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 7px !important;
+  width: auto !important;
+  height: auto !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: rgba(68, 24, 29, 0.12) !important;
+  transform: scale(0.3) !important;
+  opacity: 0 !important;
+  animation: qaPlusCoreBlink 1.25s ease-in-out infinite !important;
+  z-index: 1 !important;
+}
+
+html body .concept-page.launch-page .launch-product-card:hover .merch-bag-mark,
+html body .concept-page.launch-page .offer-product-card:hover .merch-bag-mark,
+html body .concept-page.launch-page .launch-product-card:focus-visible .merch-bag-mark,
+html body .concept-page.launch-page .offer-product-card:focus-visible .merch-bag-mark {
+  transform: translateY(-1px) !important;
+  border-color: rgba(68, 24, 29, 0.46) !important;
+  box-shadow: 0 8px 20px rgba(68, 24, 29, 0.14), inset 0 1px 0 rgba(255,255,255,0.98) !important;
+}
+
+@keyframes qaPlusButtonInnerBlink {
+  0%, 100% {
+    background-size: 92% 92%, 100% 100%;
+    box-shadow: 0 6px 15px rgba(68, 24, 29, 0.10), inset 0 0 0 rgba(68, 24, 29, 0);
+  }
+  50% {
+    background-size: 122% 122%, 100% 100%;
+    box-shadow: 0 8px 20px rgba(68, 24, 29, 0.16), inset 0 0 14px rgba(68, 24, 29, 0.13);
+  }
+}
+
+@keyframes qaPlusCoreBlink {
+  0%, 100% { opacity: 0; transform: scale(0.2); }
+  50% { opacity: 0.55; transform: scale(1); }
+}
