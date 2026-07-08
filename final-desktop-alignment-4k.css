@@ -2017,3 +2017,159 @@ html body .concept-page.launch-page .launch-highlight-copy > span {
     -webkit-text-stroke-width: 0.42px;
   }
 }
+
+/* Merch price-card format: applied to Collection Edit and Summer Sale cards only. */
+html body .concept-page.launch-page .launch-product-carousel .launch-product-card > div,
+html body .concept-page.launch-page .offer-product-copy {
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  gap: 0 !important;
+}
+
+html body .concept-page.launch-page .merch-card-copy {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  gap: clamp(8px, 0.7vw, 13px);
+  color: #161616;
+}
+
+html body .concept-page.launch-page .merch-title-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 34px;
+  align-items: start;
+  gap: 12px;
+}
+
+html body .concept-page.launch-page .merch-card-title {
+  display: block !important;
+  margin: 0 !important;
+  max-width: 100%;
+  color: #171717 !important;
+  font-family: var(--font-body, "Inter", Arial, sans-serif) !important;
+  font-size: clamp(16px, 1.05vw, 23px) !important;
+  line-height: 1.12 !important;
+  font-weight: 900 !important;
+  letter-spacing: 0 !important;
+}
+
+html body .concept-page.launch-page .merch-bag-mark {
+  position: relative;
+  width: 30px;
+  height: 32px;
+  justify-self: end;
+  color: #a36316 !important;
+  font-size: 24px !important;
+  line-height: 28px !important;
+  font-weight: 500 !important;
+  text-align: right !important;
+}
+
+html body .concept-page.launch-page .merch-bag-mark::before {
+  content: "";
+  position: absolute;
+  right: 7px;
+  top: 7px;
+  width: 17px;
+  height: 17px;
+  border: 2px solid currentColor;
+  border-radius: 2px 2px 4px 4px;
+}
+
+html body .concept-page.launch-page .merch-bag-mark::after {
+  content: "";
+  position: absolute;
+  right: 11px;
+  top: 1px;
+  width: 9px;
+  height: 12px;
+  border: 2px solid currentColor;
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+}
+
+html body .concept-page.launch-page .merch-price-row {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+html body .concept-page.launch-page .merch-sale-price {
+  color: #9b5f12 !important;
+  font-size: clamp(22px, 1.65vw, 34px) !important;
+  line-height: 1 !important;
+  font-weight: 950 !important;
+  letter-spacing: -0.01em !important;
+}
+
+html body .concept-page.launch-page .merch-was-price {
+  color: #242424 !important;
+  font-size: clamp(18px, 1.25vw, 29px) !important;
+  line-height: 1 !important;
+  font-weight: 600 !important;
+  text-decoration-thickness: 2px !important;
+  text-decoration-color: #242424 !important;
+}
+
+html body .concept-page.launch-page .merch-retailer-price {
+  display: block !important;
+  color: #5f5a55 !important;
+  font-size: clamp(13px, 0.88vw, 19px) !important;
+  line-height: 1.25 !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+}
+
+html body .concept-page.launch-page .merch-chip-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding-top: 2px;
+}
+
+html body .concept-page.launch-page .merch-chip-row em {
+  margin: 0 !important;
+  padding: 9px 13px !important;
+  border: 0 !important;
+  border-radius: 7px !important;
+  background: #eee5d3 !important;
+  color: #302514 !important;
+  font-family: var(--font-body, "Inter", Arial, sans-serif) !important;
+  font-size: clamp(11px, 0.72vw, 16px) !important;
+  line-height: 1 !important;
+  font-style: normal !important;
+  font-weight: 650 !important;
+  letter-spacing: 0 !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 760px) {
+  html body .concept-page.launch-page .merch-title-row {
+    grid-template-columns: minmax(0, 1fr) 28px;
+    gap: 8px;
+  }
+
+  html body .concept-page.launch-page .merch-card-title {
+    font-size: 15px !important;
+  }
+
+  html body .concept-page.launch-page .merch-sale-price {
+    font-size: 21px !important;
+  }
+
+  html body .concept-page.launch-page .merch-was-price {
+    font-size: 18px !important;
+  }
+
+  html body .concept-page.launch-page .merch-chip-row {
+    gap: 7px;
+  }
+
+  html body .concept-page.launch-page .merch-chip-row em {
+    padding: 8px 10px !important;
+    font-size: 11px !important;
+  }
+}
