@@ -636,12 +636,6 @@ function renderMerch() {
         </div>
       </section>
 
-      <section class="concept-campaign-strip reveal-block" aria-label="Current Fableroom campaign">
-        <span>Thoughtfully made, fairly priced</span>
-        <span>Straight from the makers</span>
-        <span>Loved by 12,000+ homes</span>
-      </section>
-
       <section class="launch-conversion reveal-block">
         <div>
         <span>Dining Furniture</span>

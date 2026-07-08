@@ -2794,7 +2794,7 @@ html body .concept-page.launch-page .merch-price-values {
 
 html body .concept-page.launch-page .merch-price-row .merch-bag-mark {
   justify-self: end !important;
-  align-self: center !important;
+  align-self: start !important;
   position: relative !important;
   right: auto !important;
   top: auto !important;
@@ -2834,4 +2834,111 @@ html body .concept-page.launch-page section.campaign-scene .offer-product-card .
   -webkit-box-orient: vertical !important;
   -webkit-line-clamp: 2 !important;
   overflow: hidden !important;
+}
+
+/* Final product-card symmetry pass: exact centered plus and matched card rhythm. */
+html body .concept-page.launch-page .launch-product-carousel .launch-product-card .merch-chip-row,
+html body .concept-page.launch-page section.campaign-scene .offer-product-card .merch-chip-row {
+  min-height: 52px !important;
+  align-content: flex-start !important;
+}
+
+html body .concept-page.launch-page .launch-product-carousel .launch-product-card .merch-title-row,
+html body .concept-page.launch-page section.campaign-scene .offer-product-card .merch-title-row {
+  min-height: 2.24em !important;
+}
+
+html body .concept-page.launch-page .launch-product-carousel .launch-product-card .merch-card-title,
+html body .concept-page.launch-page section.campaign-scene .offer-product-card .merch-card-title {
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 2 !important;
+  overflow: hidden !important;
+}
+
+html body .concept-page.launch-page .launch-product-carousel .launch-product-card > div,
+html body .concept-page.launch-page section.campaign-scene .offer-product-copy {
+  min-height: clamp(156px, 9.4vw, 184px) !important;
+}
+
+html body .concept-page.launch-page .merch-price-row {
+  grid-template-columns: minmax(0, 1fr) 30px !important;
+  align-items: center !important;
+}
+
+html body .concept-page.launch-page .merch-price-row .merch-bag-mark {
+  display: block !important;
+  position: relative !important;
+  width: 30px !important;
+  min-width: 30px !important;
+  max-width: 30px !important;
+  height: 30px !important;
+  min-height: 30px !important;
+  max-height: 30px !important;
+  justify-self: end !important;
+  align-self: center !important;
+  border: 1px solid rgba(68, 24, 29, 0.25) !important;
+  border-radius: 50% !important;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(68, 24, 29, 0.12) 0%, rgba(68, 24, 29, 0.055) 34%, transparent 60%),
+    #fff !important;
+  color: #44181d !important;
+  box-shadow: 0 6px 15px rgba(68, 24, 29, 0.10), inset 0 1px 0 rgba(255,255,255,0.92) !important;
+  overflow: hidden !important;
+  text-indent: -999px !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  transform: none !important;
+  animation: qaPlusButtonInnerBlink 1.25s ease-in-out infinite !important;
+}
+
+html body .concept-page.launch-page .merch-price-row .merch-bag-mark::before,
+html body .concept-page.launch-page .merch-price-row .merch-bag-mark::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  display: block !important;
+  border: 0 !important;
+  border-radius: 2px !important;
+  background: #44181d !important;
+  opacity: 1 !important;
+  z-index: 2 !important;
+  animation: qaPlusGlyphBlink 1.25s ease-in-out infinite !important;
+}
+
+html body .concept-page.launch-page .merch-price-row .merch-bag-mark::before {
+  width: 14px !important;
+  height: 4px !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+html body .concept-page.launch-page .merch-price-row .merch-bag-mark::after {
+  width: 4px !important;
+  height: 14px !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+html body .concept-page.launch-page .launch-highlight.shop-look + .launch-conversion {
+  margin-top: 24px !important;
+}
+
+html body .concept-page.launch-page .launch-highlight.shop-look {
+  padding-bottom: 24px !important;
+}
+
+html body .concept-page.launch-page section.campaign-scene .offer-product-card .merch-price-row .merch-bag-mark {
+  margin-top: 0 !important;
+  top: -3px !important;
+}
+
+@media (max-width: 760px) {
+  html body .concept-page.launch-page section.campaign-scene .offer-product-card .merch-price-row .merch-bag-mark {
+    top: 0 !important;
+  }
+}
+
+@keyframes qaPlusGlyphBlink {
+  0%, 100% { opacity: 0.78; }
+  50% { opacity: 1; }
 }
