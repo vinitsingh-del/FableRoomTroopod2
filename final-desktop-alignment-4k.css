@@ -2859,6 +2859,25 @@ html body .concept-page.launch-page section.campaign-scene .offer-product-card .
 html body .concept-page.launch-page .launch-product-carousel .launch-product-card > div,
 html body .concept-page.launch-page section.campaign-scene .offer-product-copy {
   min-height: clamp(156px, 9.4vw, 184px) !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  justify-items: stretch !important;
+  align-items: start !important;
+}
+
+html body .concept-page.launch-page .launch-product-carousel .launch-product-card .merch-card-copy,
+html body .concept-page.launch-page section.campaign-scene .offer-product-card .merch-card-copy,
+html body .concept-page.launch-page .launch-product-carousel .launch-product-card .merch-chip-row,
+html body .concept-page.launch-page section.campaign-scene .offer-product-card .merch-chip-row,
+html body .concept-page.launch-page .launch-product-carousel .launch-product-card .merch-title-row,
+html body .concept-page.launch-page section.campaign-scene .offer-product-card .merch-title-row,
+html body .concept-page.launch-page .launch-product-carousel .launch-product-card .merch-price-row,
+html body .concept-page.launch-page section.campaign-scene .offer-product-card .merch-price-row,
+html body .concept-page.launch-page .launch-product-carousel .launch-product-card .merch-retailer-price,
+html body .concept-page.launch-page section.campaign-scene .offer-product-card .merch-retailer-price {
+  width: 100% !important;
+  max-width: 100% !important;
+  justify-self: stretch !important;
 }
 
 html body .concept-page.launch-page .merch-price-row {
@@ -2929,7 +2948,7 @@ html body .concept-page.launch-page .launch-highlight.shop-look {
 
 html body .concept-page.launch-page section.campaign-scene .offer-product-card .merch-price-row .merch-bag-mark {
   margin-top: 0 !important;
-  top: -3px !important;
+  top: 0 !important;
 }
 
 @media (max-width: 760px) {
